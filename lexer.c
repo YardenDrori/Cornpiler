@@ -1,12 +1,14 @@
 #include "lexer.h"
 #include "token.h"
 #include "state.h"
+#include "util.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define FILENAME "ExampleScript.txt"
 
 Lexer *initLexer(const char *filename){
     printf("Initializing lexer\n");
+    char reservedSymbols[] = {"=><!+=&|*/%"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
     if (!lexer) {
         fprintf(stderr, "Memory allocation failed for Lexer.\n");
@@ -95,9 +97,10 @@ Lexer *initLexer(const char *filename){
         lexer->transition_table[3][i] = 1;
         lexer->transition_table[4][i] = 1;
         lexer->transition_table[5][i] = 6;
-        for (int j = 8; j <= 70; j++){
+        for (int j = 8; j <= 46; j++){
             lexer->transition_table[j][i] = 1;
         }
+
     }
     for(int i = 'a'; i <= 'z'; i++){ //a-z
         lexer->transition_table[0][i] = 1;
@@ -106,7 +109,7 @@ Lexer *initLexer(const char *filename){
         lexer->transition_table[3][i] = 1;
         lexer->transition_table[4][i] = 1;
         lexer->transition_table[5][i] = 6;
-        for (int j = 8; j <= 70; j++){
+        for (int j = 8; j <= 46; j++){
             lexer->transition_table[j][i] = 1;
         }
     }
@@ -117,53 +120,61 @@ Lexer *initLexer(const char *filename){
         lexer->transition_table[3][i] = 4;
         lexer->transition_table[4][i] = 4;
         lexer->transition_table[5][i] = 6;
-        for (int j = 8; j <= 70; j++){
+        for (int j = 8; j <= 46; j++){
             lexer->transition_table[j][i] = 1;
         }
     }
     //symbols
     for(int i = '!'; i <= '/'; i++){
-        lexer->transition_table[0][i] = -1;
-        lexer->transition_table[1][i] = 1;
-        lexer->transition_table[2][i] = 1;
-        lexer->transition_table[3][i] = 1;
-        lexer->transition_table[4][i] = 1;
-        lexer->transition_table[5][i] = 6;
-        for (int j = 8; j <= 70; j++){
-            lexer->transition_table[j][i] = 1;
+        if (!isCharInArray(i, reservedSymbols)){
+            lexer->transition_table[0][i] = -1;
+            lexer->transition_table[1][i] = 1;
+            lexer->transition_table[2][i] = 1;
+            lexer->transition_table[3][i] = 1;
+            lexer->transition_table[4][i] = 1;
+            lexer->transition_table[5][i] = 6;
+            for (int j = 8; j <= 46; j++){
+                lexer->transition_table[j][i] = 1;
+            }
         }
     }
     for(int i = ':'; i <= '@'; i++){
-        lexer->transition_table[0][i] = -1;
-        lexer->transition_table[1][i] = 1;
-        lexer->transition_table[2][i] = 1;
-        lexer->transition_table[3][i] = 1;
-        lexer->transition_table[4][i] = 1;
-        lexer->transition_table[5][i] = 6;
-        for (int j = 8; j <= 70; j++){
-            lexer->transition_table[j][i] = 1;
+        if (!isCharInArray(i, reservedSymbols)){
+            lexer->transition_table[0][i] = -1;
+            lexer->transition_table[1][i] = 1;
+            lexer->transition_table[2][i] = 1;
+            lexer->transition_table[3][i] = 1;
+            lexer->transition_table[4][i] = 1;
+            lexer->transition_table[5][i] = 6;
+            for (int j = 8; j <= 46; j++){
+                lexer->transition_table[j][i] = 1;
+            }
         }
     }
     for(int i = '['; i <= '`'; i++){
-        lexer->transition_table[0][i] = -1;
-        lexer->transition_table[1][i] = 1;
-        lexer->transition_table[2][i] = 1;
-        lexer->transition_table[3][i] = 1;
-        lexer->transition_table[4][i] = 1;
-        lexer->transition_table[5][i] = 6;
-        for (int j = 8; j <= 70; j++){
-            lexer->transition_table[j][i] = 1;
+        if (!isCharInArray(i, reservedSymbols)){
+            lexer->transition_table[0][i] = -1;
+            lexer->transition_table[1][i] = 1;
+            lexer->transition_table[2][i] = 1;
+            lexer->transition_table[3][i] = 1;
+            lexer->transition_table[4][i] = 1;
+            lexer->transition_table[5][i] = 6;
+            for (int j = 8; j <= 46; j++){
+                lexer->transition_table[j][i] = 1;
+            }
         }
     }
     for(int i = '{'; i <= '~'; i++){
-        lexer->transition_table[0][i] = -1;
-        lexer->transition_table[1][i] = 1;
-        lexer->transition_table[2][i] = 1;
-        lexer->transition_table[3][i] = 1;
-        lexer->transition_table[4][i] = 1;
-        lexer->transition_table[5][i] = 6;
-        for (int j = 8; j <= 70; j++){
-            lexer->transition_table[j][i] = 1;
+        if(!isCharInArray(i, reservedSymbols)){
+            lexer->transition_table[0][i] = -1;
+            lexer->transition_table[1][i] = 1;
+            lexer->transition_table[2][i] = 1;
+            lexer->transition_table[3][i] = 1;
+            lexer->transition_table[4][i] = 1;
+            lexer->transition_table[5][i] = 6;
+            for (int j = 8; j <= 46; j++){
+                lexer->transition_table[j][i] = 1;
+            }
         }
     }
 
@@ -171,6 +182,7 @@ Lexer *initLexer(const char *filename){
     //manual labor starts here :(
     lexer->transition_table[0]['.'] = 3;
     lexer->transition_table[0][' '] = 0;
+    lexer->transition_table[0]['\n'] = 0;
     lexer->transition_table[1]['+'] = -1;
     lexer->transition_table[1]['-'] = -1;
     lexer->transition_table[1]['*'] = -1;
@@ -296,14 +308,7 @@ Token nextToken(Lexer *lexer){
     char currentChar = lexer->buffer[lexer->pos];// the current charecter read from the buffer
     int lastState = 0; //the previous state read so that when the automaton finishes we can remember what it was on
     lexer->current_state = 0; // reset current state from last operatio
-    
-    // if (currentChar != ' '){
-    //     printf("%c-> ", currentChar);
-    // }else{
-    //     printf("space-> ");
-    // }
-    
-    
+    lastState = lexer->current_state;
     lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
     while (lexer->current_state != -1){
         if (lexer->current_state != 0 && currentChar != ' '){
@@ -336,4 +341,42 @@ void freeLexer(Lexer *lexer){
         fclose(lexer->file);
     }
     free(lexer);
-}	
+}
+// void getTokenList(Lexer *lexer){
+//     Token token = nextToken(lexer);
+//     int i = 0;
+//     lexer->token_count = 0;
+//     lexer->tokens[lexer->token_count] = token;
+//     lexer->token_count++;
+//     while (token.type != END_OF_FILE){
+//         lexer->token_count++;
+//         if (i >= lexer->token_capacity-1){
+//             lexer->token_capacity += 32;
+//             lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
+//             if (!lexer->tokens){
+//                 //printf("error reallocating the tokens array");
+//                 return;
+//             }
+//         }
+//         lexer->tokens[i] = token;
+//         token = nextToken(lexer);
+//     }
+//     if (i >= lexer->token_capacity-1){
+//         lexer->token_capacity += 1;
+//         lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
+//         if (!lexer->tokens){
+//             printf("error reallocating the tokens array");
+//             return;
+//         }
+//     }
+//     lexer->tokens[i] = token;
+//     lexer->token_count++;
+//     if (lexer->token_count < lexer->token_capacity){
+//         lexer->token_capacity = lexer->token_capacity-lexer->token_count;
+//         lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
+//         if (!lexer->tokens){
+//             printf("error reallocating the tokens array");
+//             return;
+//         }
+//     }
+// }

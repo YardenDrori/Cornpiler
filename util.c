@@ -51,3 +51,16 @@ const char enumToString[][20] = {
 void printTokenType(Token token){
     printf("%s ", enumToString[token.type]);
 }
+
+int isCharInArray(char target, char array[]){
+    int i = 0;
+    char current_char = array[i];
+    while (current_char != '\0'){
+        if (current_char == target){
+            return 1;
+        }
+        i++;
+        current_char = array[i];
+    }
+    return 0;
+}

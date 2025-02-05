@@ -11,5 +11,5 @@
 extern const char enumToString[][20];  // Declare as extern
 
 void printTokenType(Token token);
-
+int isCharInArray(char chr, char array[]);
 #endif

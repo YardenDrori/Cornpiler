@@ -1,1 +1,1 @@
-char num='3' for int else
+int num=17
