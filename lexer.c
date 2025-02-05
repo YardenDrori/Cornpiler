@@ -319,7 +319,6 @@ Token nextToken(Lexer *lexer){
     lexer->current_state = lexer->transition_table[lexer->current_state][currentChar]; //ask michael about if statements
     
     while (lexer->current_state != -1){
-        
         input[currentInput] = currentChar;
         currentInput++;
         lastState = lexer->current_state;
@@ -335,6 +334,7 @@ Token nextToken(Lexer *lexer){
     }
     free(input);
     returnToken.type = lexer->states[lastState].type;
+    returnToken.value = input;
     return returnToken;
 }
 void freeLexer(Lexer *lexer){
