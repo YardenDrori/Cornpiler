@@ -82,6 +82,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[69].type = MODULU;
     lexer->states[70].type = MODULU_EQUAL;
     lexer->states[71].type = END_OF_FILE;
+
     //=============================================
     printf("Completed state array\ninitializing state matrix\n");
     //initiallize state matrix=====================
@@ -178,6 +179,10 @@ Lexer *initLexer(const char *filename){
         }
     }
 
+    for (int i = 0; i < 256; i++){
+        lexer->transition_table[72][i] = 72;
+    }
+
 
     //manual labor starts here :(
     lexer->transition_table[0]['.'] = 3;
@@ -257,10 +262,13 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[0]['*'] = 65;
     lexer->transition_table[65]['='] = 66;
     lexer->transition_table[0]['/'] = 67;
+    lexer->transition_table[67]['/'] = 72;
     lexer->transition_table[67]['='] = 68;
     lexer->transition_table[0]['%'] = 69;
     lexer->transition_table[69]['='] = 70;
     lexer->transition_table[0]['\0'] = 71;
+    lexer->transition_table[72]['\n'] = 0;
+    lexer->transition_table[72]['\0'] = 0;
 //=================================================
     loadBuffer(lexer);
     printf("lexer initialized succesfully\n");
@@ -307,11 +315,10 @@ Token nextToken(Lexer *lexer){
     int currentInput = 0; //remembers the size of the current input incase the array isn't big enough, somehow
     char currentChar = lexer->buffer[lexer->pos];// the current charecter read from the buffer
     int lastState = 0; //the previous state read so that when the automaton finishes we can remember what it was on
-    lexer->current_state = 0; // reset current state from last operatio
-    lastState = lexer->current_state;
-    lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
+    lexer->current_state = 0; // reset current state from last operation
+    lexer->current_state = lexer->transition_table[lexer->current_state][currentChar]; //ask michael about if statements
     while (lexer->current_state != -1){
-        if (lexer->current_state != 0 && currentChar != ' '){
+        if (lexer->current_state != 0 && currentChar != ' ' && currentChar != '/' && lexer->current_state != 72){
             input[currentInput] = currentChar;
             currentInput++;
         }
@@ -342,41 +349,40 @@ void freeLexer(Lexer *lexer){
     }
     free(lexer);
 }
-// void getTokenList(Lexer *lexer){
-//     Token token = nextToken(lexer);
-//     int i = 0;
-//     lexer->token_count = 0;
-//     lexer->tokens[lexer->token_count] = token;
-//     lexer->token_count++;
-//     while (token.type != END_OF_FILE){
-//         lexer->token_count++;
-//         if (i >= lexer->token_capacity-1){
-//             lexer->token_capacity += 32;
-//             lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
-//             if (!lexer->tokens){
-//                 //printf("error reallocating the tokens array");
-//                 return;
-//             }
-//         }
-//         lexer->tokens[i] = token;
-//         token = nextToken(lexer);
-//     }
-//     if (i >= lexer->token_capacity-1){
-//         lexer->token_capacity += 1;
-//         lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
-//         if (!lexer->tokens){
-//             printf("error reallocating the tokens array");
-//             return;
-//         }
-//     }
-//     lexer->tokens[i] = token;
-//     lexer->token_count++;
-//     if (lexer->token_count < lexer->token_capacity){
-//         lexer->token_capacity = lexer->token_capacity-lexer->token_count;
-//         lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
-//         if (!lexer->tokens){
-//             printf("error reallocating the tokens array");
-//             return;
-//         }
-//     }
-// }
+void getTokenList(Lexer *lexer){
+    Token token = nextToken(lexer);
+    lexer->token_count = 0;
+    lexer->tokens[lexer->token_count] = token;
+    //lexer->token_count++;
+    while (token.type != END_OF_FILE){
+        lexer->token_count++;
+        if (lexer->token_count >= lexer->token_capacity-1){
+            lexer->token_capacity += 32;
+            lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
+            if (!lexer->tokens){
+                //printf("error reallocating the tokens array");
+                return;
+            }
+        }
+        token = nextToken(lexer);
+        lexer->tokens[lexer->token_count] = token;
+    }
+    if (lexer->token_count >= lexer->token_capacity-1){
+        lexer->token_capacity += 1;
+        lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
+        if (!lexer->tokens){
+            printf("error reallocating the tokens array");
+            return;
+        }
+    }
+    lexer->tokens[lexer->token_count] = token;
+    lexer->token_count++;
+    if (lexer->token_count < lexer->token_capacity){
+        lexer->token_capacity = lexer->token_capacity-lexer->token_count;
+        lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
+        if (!lexer->tokens){
+            printf("error reallocating the tokens array");
+            return;
+        }
+    }
+}

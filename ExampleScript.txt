@@ -1,1 +1,4 @@
-int num=17
+while //int for while
+num
+
+//intforwhile\nnum
