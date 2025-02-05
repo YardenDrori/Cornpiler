@@ -268,7 +268,7 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[69]['='] = 70;
     lexer->transition_table[0]['\0'] = 71;
     lexer->transition_table[72]['\n'] = 0;
-    lexer->transition_table[72]['\0'] = 0;
+    lexer->transition_table[72]['\0'] = 71;
 //=================================================
     loadBuffer(lexer);
     printf("lexer initialized succesfully\n");
@@ -317,18 +317,18 @@ Token nextToken(Lexer *lexer){
     int lastState = 0; //the previous state read so that when the automaton finishes we can remember what it was on
     lexer->current_state = 0; // reset current state from last operation
     lexer->current_state = lexer->transition_table[lexer->current_state][currentChar]; //ask michael about if statements
+    
     while (lexer->current_state != -1){
-        if (lexer->current_state != 0 && currentChar != ' ' && currentChar != '/' && lexer->current_state != 72){
-            input[currentInput] = currentChar;
-            currentInput++;
-        }
+        
+        input[currentInput] = currentChar;
+        currentInput++;
         lastState = lexer->current_state;
         currentChar = nextChar(lexer);
         if (currentInput >= currentInputSize-1){
-            currentInputSize += 10;
+            currentInputSize += 16;
             input = realloc(input, currentInputSize * sizeof(char));
             if (!input){
-                printf("Error REallocating memory for input");
+                printf("Error reallocating memory for input");
             }
         }
         lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];

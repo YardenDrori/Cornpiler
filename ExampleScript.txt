@@ -1,4 +1,4 @@
-while //int for while
-num
-
-//intforwhile\nnum
+while //cool shit
+char='f'
+float iHateThisShit = 14.3
+//test
