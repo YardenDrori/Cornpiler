@@ -307,10 +307,10 @@ Lexer *initLexer(const char *filename){
     return lexer;
 }
 void loadBuffer(Lexer *lexer){
-    printf("Loading the buffer: ");
+    //printf("Loading the buffer: ");
     size_t bytes_read = fread(lexer->buffer, 1, BUFFER_SIZE, lexer->file);
     lexer->buffer_length = (int)bytes_read;
-    printf("%d",lexer->buffer_length);
+    //printf("%d",lexer->buffer_length);
     lexer->pos = 0;
     if(bytes_read < BUFFER_SIZE){
         lexer->buffer[bytes_read] = '\0';
@@ -322,13 +322,12 @@ void loadBuffer(Lexer *lexer){
         perror("Failed to read file");
         lexer->buffer_length = 0;
     }
-    printf("buffer loaded successfully!\n");
+    //printf("buffer loaded successfully!\n");
 }
 
 char nextChar(Lexer *lexer){ // c=1
     
-    if (lexer->pos > lexer->buffer_length){
-        printf("pos %d buf %d",lexer->pos,lexer->buffer_length);
+    if (lexer->pos >= lexer->buffer_length-1){
         loadBuffer(lexer);
         lexer->pos = 0;
     }else{

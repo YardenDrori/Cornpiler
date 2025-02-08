@@ -6,7 +6,7 @@
 #include "token.h"
 #include "state.h"
 
-#define BUFFER_SIZE 4096 //4kb
+#define BUFFER_SIZE 2 //4kb
 #define INITIAL_TOKEN_CAPACITY 1
 #define MAX_STATES 78
 
