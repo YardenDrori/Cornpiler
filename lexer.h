@@ -31,5 +31,4 @@ char nextChar(Lexer *lexer);
 Token nextToken(Lexer *lexer);
 void freeLexer(Lexer *lexer);    
 void getTokenList(Lexer *Lexer);
-
 #endif 
