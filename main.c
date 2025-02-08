@@ -11,10 +11,8 @@ int main() {
         return 1;
     }
     getTokenList(lexer);
-    for (int i = 0; i < lexer->token_count; i++){
-        printTokenType(lexer->tokens[i]);
-    }
-    printf("\ntokens %d\ntoken capacity %d", lexer->token_count, lexer->token_capacity);
+    printTokenArray(lexer);
+    printf("\ntokens %d\ntoken capacity %d", lexer->token_id, lexer->token_capacity);
     freeLexer(lexer);
     return 0;
 }

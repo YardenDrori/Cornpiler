@@ -7,7 +7,7 @@
 #include "state.h"
 
 #define BUFFER_SIZE 4096 //4kb
-#define INITIAL_TOKEN_CAPACITY 64
+#define INITIAL_TOKEN_CAPACITY 1
 #define MAX_STATES 78
 
 
@@ -21,7 +21,7 @@ typedef struct
     int transition_table[MAX_STATES][256]; //the table for the dfa
     Token *tokens; //dynamic array
     State states[MAX_STATES];
-    int token_count; //amount of tokens saved so far
+    int token_id; //amount of tokens saved so far
     int token_capacity; //current max capacity of the dynamic array
 } Lexer;
 

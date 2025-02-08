@@ -49,11 +49,18 @@ const char enumToString[][30] = {
     "FOR",        
     "WHILE",          
     "IDENT",     
-    "END_OF_FILE"      
+    "END_OF_FILE",
+    "SKIP"
 };
 
 void printTokenType(Token token){
     printf("%s ", enumToString[token.type]);
+}
+
+void printTokenArray(Lexer *lexer){
+    for (int i = 0; i < lexer->token_id+1; i++){
+        printTokenType(lexer->tokens[i]);
+    }
 }
 
 int isCharInArray(char target, char array[]){

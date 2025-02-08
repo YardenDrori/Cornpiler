@@ -14,9 +14,11 @@
 //need to increase MAX_STATES in lexer.h accordingly
 //if path to state includes a special charecter i.e &^% need to add it to reservedSymbols array
 //add appropiate print in the util.c
+//add exceptions at manual labour section near the start should look like:
+//lexer->transition_table[1]['-'] = -1;
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-Lexer *initLexer(const char *filename){
+Lexer *initLexer(const char *filename){  
     printf("Initializing lexer\n");
     char reservedSymbols[] = {"=><!+=&|*/%{}()"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
@@ -34,7 +36,7 @@ Lexer *initLexer(const char *filename){
     lexer->buffer_length = 0;
     lexer->current_state = 0;
     lexer->token_capacity = INITIAL_TOKEN_CAPACITY;
-    lexer->token_count = 0;
+    lexer->token_id = 0;
     lexer->tokens = (Token *)malloc(sizeof(Token) * lexer->token_capacity);
     if (!lexer->tokens){
         printf("Memory allocation of token array failed");
@@ -96,7 +98,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[74].type = CLOSE_PARENTHESIS;
     lexer->states[75].type = OPEN_CURLY_BRACKETS;
     lexer->states[76].type = CLOSE_CURLY_BRACKETS;
-    //lexer->states[77].type = SKIP;
+    lexer->states[77].type = SKIP;
 
 
 
@@ -199,13 +201,14 @@ Lexer *initLexer(const char *filename){
 
     for (int i = 0; i < 256; i++){
         lexer->transition_table[72][i] = 72;
+        lexer->transition_table[77][i] = -1;
     }
 
 
     //manual labor starts here :(
     lexer->transition_table[0]['.'] = 3;
-    lexer->transition_table[0][' '] = 0;
-    lexer->transition_table[0]['\n'] = 0;
+    lexer->transition_table[0][' '] = 77;
+    lexer->transition_table[0]['\n'] = 77;
     lexer->transition_table[1]['+'] = -1;
     lexer->transition_table[1]['-'] = -1;
     lexer->transition_table[1]['*'] = -1;
@@ -217,6 +220,10 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[1]['<'] = -1;
     lexer->transition_table[1]['!'] = -1;
     lexer->transition_table[1]['%'] = -1;
+    lexer->transition_table[1]['('] = -1;
+    lexer->transition_table[1][')'] = -1;
+    lexer->transition_table[1]['{'] = -1;
+    lexer->transition_table[1]['}'] = -1;
     lexer->transition_table[2]['.'] = 3;
     lexer->transition_table[0]['\''] = 5;
     lexer->transition_table[6]['\''] = 7;
@@ -285,7 +292,7 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[0]['%'] = 69;
     lexer->transition_table[69]['='] = 70;
     lexer->transition_table[0]['\0'] = 71;
-    lexer->transition_table[72]['\n'] = 0;
+    lexer->transition_table[72]['\n'] = -1;
     lexer->transition_table[72]['\0'] = 71;
     lexer->transition_table[0]['('] = 73;
     lexer->transition_table[0][')'] = 74;
@@ -372,36 +379,35 @@ void freeLexer(Lexer *lexer){
     }
     free(lexer);
 }
+
 void getTokenList(Lexer *lexer){
+    lexer->token_id = 0;
     Token token = nextToken(lexer);
-    lexer->token_count = 0;
-    lexer->tokens[lexer->token_count] = token;
-    //lexer->token_count++;
+    if (token.type != SKIP){
+        lexer->tokens[lexer->token_id] = token;
+    }
     while (token.type != END_OF_FILE){
-        lexer->token_count++;
-        if (lexer->token_count >= lexer->token_capacity-1){
+        //increase array size if full
+        if (lexer->token_id >= lexer->token_capacity-1){
             lexer->token_capacity += 32;
             lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
             if (!lexer->tokens){
-                //printf("error reallocating the tokens array");
+                printf("error reallocating the tokens array");
                 return;
             }
         }
+        
+        //insert token to array
         token = nextToken(lexer);
-        lexer->tokens[lexer->token_count] = token;
-    }
-    if (lexer->token_count >= lexer->token_capacity-1){
-        lexer->token_capacity += 1;
-        lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
-        if (!lexer->tokens){
-            printf("error reallocating the tokens array");
-            return;
+        if (token.type !=SKIP){
+            lexer->token_id++;
+            lexer->tokens[lexer->token_id] = token;
         }
     }
-    lexer->tokens[lexer->token_count] = token;
-    lexer->token_count++;
-    if (lexer->token_count < lexer->token_capacity){
-        lexer->token_capacity = lexer->token_capacity-lexer->token_count;
+
+    //decrease token array size to fit perfectly
+    if (lexer->token_capacity-1 > lexer->token_id){
+        lexer->token_capacity = lexer->token_id+1;
         lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
         if (!lexer->tokens){
             printf("error reallocating the tokens array");

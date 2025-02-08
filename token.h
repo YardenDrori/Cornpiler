@@ -59,6 +59,7 @@ typedef enum {
     //misc
     IDENT,                  //40
     END_OF_FILE,            //41
+    SKIP                    //42
 } TokenType;
 
 typedef struct
