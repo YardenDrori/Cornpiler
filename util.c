@@ -58,6 +58,7 @@ void printTokenType(Token token){
 }
 
 void printTokenArray(Lexer *lexer){
+    getTokenList(lexer);
     for (int i = 0; i < lexer->token_id+1; i++){
         printTokenType(lexer->tokens[i]);
     }

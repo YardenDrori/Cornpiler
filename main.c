@@ -10,7 +10,6 @@ int main() {
         fprintf(stderr, "Failed to initialize lexer.\n");
         return 1;
     }
-    getTokenList(lexer);
     printTokenArray(lexer);
     printf("\ntokens %d\ntoken capacity %d", lexer->token_id, lexer->token_capacity);
     freeLexer(lexer);

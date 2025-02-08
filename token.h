@@ -62,11 +62,22 @@ typedef enum {
     SKIP                    //42
 } TokenType;
 
+typedef union
+{
+    int int_val;
+    float float_val;
+    int bool_val; //1 or zero
+    char char_val;
+    char *ident_val;
+} TokenValue;
+
 typedef struct
 { 
     TokenType type;
-    char *value;
+    TokenValue value;
 } Token;
+
+
 
 
 #endif //TOKEN_H

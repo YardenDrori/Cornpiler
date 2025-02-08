@@ -337,7 +337,7 @@ char nextChar(Lexer *lexer){ // c=1
 
 Token nextToken(Lexer *lexer){
     Token returnToken;
-    int currentInputSize = 128;
+    int currentInputSize = 4;
     char *input = malloc(sizeof(char) * currentInputSize); // the actuall input incase it is literal
     if (!input){
         printf("Error initializing array input");
@@ -354,7 +354,7 @@ Token nextToken(Lexer *lexer){
         lastState = lexer->current_state;
         currentChar = nextChar(lexer);
         if (currentInput >= currentInputSize-1){
-            currentInputSize += 16;
+            currentInputSize *= 2;
             input = realloc(input, currentInputSize * sizeof(char));
             if (!input){
                 printf("Error reallocating memory for input");
@@ -362,9 +362,34 @@ Token nextToken(Lexer *lexer){
         }
         lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
     }
-    free(input);
     returnToken.type = lexer->states[lastState].type;
-    returnToken.value = input;
+    switch (returnToken.type)
+    {
+        case INT:
+            returnToken.value.int_val = atoi(input);
+            break;
+        case BOOLEAN:
+            if (input[0] == 't'){
+                returnToken.value.bool_val = 1;
+            }else{
+                returnToken.value.bool_val = 0;
+            }
+            break;
+        case FLOAT:
+            returnToken.value.float_val = strtof(input, NULL);
+            break;
+        case CHAR_LITERAL:
+            returnToken.value.char_val = input[1];
+            break;
+        case IDENT:
+            returnToken.value.ident_val = malloc(sizeof(char) * currentInputSize);
+            if (!returnToken.value.ident_val){
+                printf("error allocating memory for temp in IDENT value allocation");
+            }
+            returnToken.value.ident_val = input;
+        default:
+        break;
+    }
     return returnToken;
 }
 void freeLexer(Lexer *lexer){
