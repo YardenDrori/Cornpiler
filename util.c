@@ -54,14 +54,42 @@ const char enumToString[][30] = {
 };
 
 void printTokenType(Token token){
-    printf("%s ", enumToString[token.type]);
+    switch (token.type)
+    {
+    case INT_LITERAL:
+        printf("%s - %d ", enumToString[token.type], token.value.int_val);
+        break;
+    case CHAR_LITERAL:
+        printf("%s - \'%c\' ", enumToString[token.type], token.value.char_val);
+        break;
+    case FLOAT_LITERAL:
+        printf("%s - %f ", enumToString[token.type], token.value.float_val);
+        break;
+    case TRUE:
+        printf("%s - 1 ", enumToString[token.type]);
+        break;
+    case FALSE:
+        printf("%s - 0 ", enumToString[token.type]);
+        break;
+    case IDENT:
+        printf("%s - \"%s\" ", enumToString[token.type], token.value.ident_val);
+        break;
+    default:
+        printf("%s ", enumToString[token.type]);
+
+    }
 }
 
 void printTokenArray(Lexer *lexer){
     getTokenList(lexer);
+    printf("\n");
     for (int i = 0; i < lexer->token_id+1; i++){
+        printf("\n---------------------\n");
         printTokenType(lexer->tokens[i]);
     }
+    printf("\n=-=-=-=-=-=-=-=-=-=-=");
+    printf("\ntokens %d\ntoken capacity %d", lexer->token_id, lexer->token_capacity);
+    printf("\n=-=-=-=-=-=-=-=-=-=-=\n");
 }
 
 int isCharInArray(char target, char array[]){

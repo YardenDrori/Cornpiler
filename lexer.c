@@ -99,6 +99,8 @@ Lexer *initLexer(const char *filename){
     lexer->states[75].type = OPEN_CURLY_BRACKETS;
     lexer->states[76].type = CLOSE_CURLY_BRACKETS;
     lexer->states[77].type = SKIP;
+    lexer->states[72].type = SKIP;
+
 
 
 
@@ -353,7 +355,7 @@ Token nextToken(Lexer *lexer){
         currentInput++;
         lastState = lexer->current_state;
         currentChar = nextChar(lexer);
-        if (currentInput >= currentInputSize-1){
+        if (currentInput >= currentInputSize){
             currentInputSize *= 2;
             input = realloc(input, currentInputSize * sizeof(char));
             if (!input){
@@ -365,17 +367,16 @@ Token nextToken(Lexer *lexer){
     returnToken.type = lexer->states[lastState].type;
     switch (returnToken.type)
     {
-        case INT:
+        case INT_LITERAL:
             returnToken.value.int_val = atoi(input);
             break;
-        case BOOLEAN:
-            if (input[0] == 't'){
-                returnToken.value.bool_val = 1;
-            }else{
-                returnToken.value.bool_val = 0;
-            }
+        case FALSE:
+            returnToken.value.bool_val = 0;
             break;
-        case FLOAT:
+        case TRUE:
+            returnToken.value.bool_val = 1;
+            break;
+        case FLOAT_LITERAL:
             returnToken.value.float_val = strtof(input, NULL);
             break;
         case CHAR_LITERAL:

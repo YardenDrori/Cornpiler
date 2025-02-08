@@ -1,2 +1,5 @@
-num = 3//fuck this shit im out
-num -= 15
+int i = 0
+int num
+for i = 0 i < 10 i++ {
+    num += 1 
+}
