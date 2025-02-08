@@ -61,7 +61,7 @@ typedef enum {
     END_OF_FILE,            //41
     SKIP                    //42
 } TokenType;
-
+#define TOTAL_TOKENS 43
 typedef union
 {
     int int_val;

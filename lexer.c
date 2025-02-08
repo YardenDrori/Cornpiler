@@ -337,6 +337,14 @@ char nextChar(Lexer *lexer){ // c=1
 }
 
 Token nextToken(Lexer *lexer){
+    void (*tokenValueAssignerArray[TOTAL_TOKENS])(Token *, char *) = {0};
+    tokenValueAssignerArray[INT_LITERAL] = handle_int_literal;
+    tokenValueAssignerArray[FLOAT_LITERAL] = handle_float_literal;
+    tokenValueAssignerArray[CHAR_LITERAL] = handle_char_literal;
+    tokenValueAssignerArray[IDENT] = handle_ident;
+    tokenValueAssignerArray[TRUE]= handle_true;
+    tokenValueAssignerArray[FALSE] = handle_false;
+
     Token returnToken;
     int currentInputSize = 4;
     char *input = malloc(sizeof(char) * currentInputSize); // the actuall input incase it is literal
@@ -354,7 +362,7 @@ Token nextToken(Lexer *lexer){
         currentInput++;
         lastState = lexer->current_state;
         currentChar = nextChar(lexer);
-        if (currentInput >= currentInputSize){
+        if (currentInput >= currentInputSize-1){
             currentInputSize *= 2;
             input = realloc(input, currentInputSize * sizeof(char));
             if (!input){
@@ -363,8 +371,9 @@ Token nextToken(Lexer *lexer){
         }
         lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
     }
+    input[currentInput] = '\0';
     returnToken.type = lexer->states[lastState].type;
-    switch (returnToken.type)
+    /*switch (returnToken.type)
     {
         case INT_LITERAL:
             returnToken.value.int_val = atoi(input);
@@ -389,7 +398,13 @@ Token nextToken(Lexer *lexer){
             returnToken.value.ident_val = input;
         default:
         break;
+    }*/
+
+
+    if (tokenValueAssignerArray[returnToken.type] != 0){
+        tokenValueAssignerArray[returnToken.type](&returnToken, input);
     }
+
     return returnToken;
 }
 void freeLexer(Lexer *lexer){

@@ -104,3 +104,34 @@ int isCharInArray(char target, char array[]){
     }
     return 0;
 }
+
+void handle_int_literal(Token *token, char *input) {
+    token->value.int_val = atoi(input);
+}
+void handle_false(Token *token, char *input) {
+    token->value.bool_val = 0;
+}
+
+void handle_true(Token *token, char *input) {
+    token->value.bool_val = 1;
+}
+
+void handle_float_literal(Token *token, char *input) {
+    token->value.float_val = strtof(input, NULL);
+}
+
+void handle_char_literal(Token *token, char *input) {
+    token->value.char_val = input[1];
+}
+
+void handle_ident(Token *token, char *input) {
+    int size = 0;
+    while (input[size++] != '\0');
+    size--;
+    token->value.ident_val = malloc(sizeof(char) * size);
+    if (!token->value.ident_val) {
+        printf("Error allocating memory for IDENT value.\n");
+        return;
+    }
+    token->value.ident_val = input;
+}
