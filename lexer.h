@@ -8,7 +8,7 @@
 
 #define BUFFER_SIZE 4096 //4kb
 #define INITIAL_TOKEN_CAPACITY 64
-#define MAX_STATES 78
+#define MAX_STATES 79
 
 
 typedef struct
@@ -23,6 +23,8 @@ typedef struct
     State states[MAX_STATES];
     int token_id; //amount of tokens saved so far
     int token_capacity; //current max capacity of the dynamic array
+    int row; //for error detection
+    int collumn; //for error detection
 } Lexer;
 
 Lexer *initLexer(const char *filename);

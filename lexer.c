@@ -57,6 +57,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[61].is_final = 0;
     lexer->states[63].is_final = 0;
 
+    lexer->states[0].type = ERROR;
     lexer->states[2].type = INT_LITERAL;
     lexer->states[4].type = FLOAT_LITERAL;
     lexer->states[7].type = CHAR_LITERAL;
@@ -100,6 +101,8 @@ Lexer *initLexer(const char *filename){
     lexer->states[76].type = CLOSE_CURLY_BRACKETS;
     lexer->states[77].type = SKIP;
     lexer->states[72].type = SKIP;
+    lexer->states[78].type = NEXT_LINE;
+
 
 
 
@@ -210,7 +213,7 @@ Lexer *initLexer(const char *filename){
     //manual labor starts here :(
     lexer->transition_table[0]['.'] = 3;
     lexer->transition_table[0][' '] = 77;
-    lexer->transition_table[0]['\n'] = 77;
+    lexer->transition_table[0]['\n'] = 78;
     lexer->transition_table[1]['+'] = -1;
     lexer->transition_table[1]['-'] = -1;
     lexer->transition_table[1]['*'] = -1;
@@ -358,6 +361,7 @@ Token nextToken(Lexer *lexer){
 
     lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
     while (lexer->current_state != -1){
+        lexer->collumn++;
         input[currentInput] = currentChar;
         currentInput++;
         lastState = lexer->current_state;
@@ -373,36 +377,13 @@ Token nextToken(Lexer *lexer){
     }
     input[currentInput] = '\0';
     returnToken.type = lexer->states[lastState].type;
-    /*switch (returnToken.type)
-    {
-        case INT_LITERAL:
-            returnToken.value.int_val = atoi(input);
-            break;
-        case FALSE:
-            returnToken.value.bool_val = 0;
-            break;
-        case TRUE:
-            returnToken.value.bool_val = 1;
-            break;
-        case FLOAT_LITERAL:
-            returnToken.value.float_val = strtof(input, NULL);
-            break;
-        case CHAR_LITERAL:
-            returnToken.value.char_val = input[1];
-            break;
-        case IDENT:
-            returnToken.value.ident_val = malloc(sizeof(char) * currentInputSize);
-            if (!returnToken.value.ident_val){
-                printf("error allocating memory for temp in IDENT value allocation");
-            }
-            returnToken.value.ident_val = input;
-        default:
-        break;
-    }*/
-
 
     if (tokenValueAssignerArray[returnToken.type] != 0){
         tokenValueAssignerArray[returnToken.type](&returnToken, input);
+    }
+    if (returnToken.type == NEXT_LINE){
+        lexer->row++;
+        lexer->collumn = -1;
     }
 
     return returnToken;
@@ -421,9 +402,11 @@ void freeLexer(Lexer *lexer){
 }
 
 void getTokenList(Lexer *lexer){
+    lexer->row = 1;
+    lexer->collumn = -1;
     lexer->token_id = 0;
     Token token = nextToken(lexer);
-    if (token.type != SKIP){
+    if (token.type != SKIP && token.type != NEXT_LINE){
         lexer->tokens[lexer->token_id] = token;
     }
     while (token.type != END_OF_FILE){
@@ -439,7 +422,7 @@ void getTokenList(Lexer *lexer){
         
         //insert token to array
         token = nextToken(lexer);
-        if (token.type !=SKIP){
+        if (token.type !=SKIP && token.type != NEXT_LINE){
             lexer->token_id++;
             lexer->tokens[lexer->token_id] = token;
         }

@@ -59,9 +59,12 @@ typedef enum {
     //misc
     IDENT,                  //40
     END_OF_FILE,            //41
-    SKIP                    //42
+    SKIP,                   //42
+    NEXT_LINE,              //43
+    ERROR                   //44
 } TokenType;
-#define TOTAL_TOKENS 43
+#define TOTAL_TOKENS 45
+
 typedef union
 {
     int int_val;
@@ -69,7 +72,14 @@ typedef union
     int bool_val; //1 or zero
     char char_val;
     char *ident_val;
+    Error error_val;
 } TokenValue;
+
+typedef struct
+{
+    int row;
+    int col;
+} Error;
 
 typedef struct
 { 

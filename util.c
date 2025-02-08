@@ -88,7 +88,7 @@ void printTokenArray(Lexer *lexer){
         printTokenType(lexer->tokens[i]);
     }
     printf("\n=-=-=-=-=-=-=-=-=-=-=");
-    printf("\ntokens %d\ntoken capacity %d", lexer->token_id, lexer->token_capacity);
+    printf("\ntokens %d\ntoken capacity %d\nfinal row: %d, final collumn: %d", lexer->token_id, lexer->token_capacity, lexer->row, lexer->collumn);
     printf("\n=-=-=-=-=-=-=-=-=-=-=\n");
 }
 
