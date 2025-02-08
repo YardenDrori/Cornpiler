@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #define FILENAME "ExampleScript.txt"
 
-extern const char enumToString[][20];  // Declare as extern
+extern const char enumToString[][30];  // Declare as extern
 
 void printTokenType(Token token);
 int isCharInArray(char chr, char array[]);

@@ -6,9 +6,19 @@
 #include <stdlib.h>
 #define FILENAME "ExampleScript.txt"
 
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//INSTRUCTIONS FOR ADDING NEW TOKENS IN CASE I FORGOR💀
+//when adding new token need to add it in token.h
+//need to write it's name letter by letter
+//need to add final state to array
+//need to increase MAX_STATES in lexer.h accordingly
+//if path to state includes a special charecter i.e &^% need to add it to reservedSymbols array
+//add appropiate print in the util.c
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 Lexer *initLexer(const char *filename){
     printf("Initializing lexer\n");
-    char reservedSymbols[] = {"=><!+=&|*/%"};
+    char reservedSymbols[] = {"=><!+=&|*/%{}()"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
     if (!lexer) {
         fprintf(stderr, "Memory allocation failed for Lexer.\n");
@@ -58,7 +68,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[38].type = WHILE;
     lexer->states[39].type = IF;
     lexer->states[43].type = ELSE;
-    lexer->states[46].type = THEN;
+    lexer->states[46].type = THEN; //deprecated
     lexer->states[47].type = EQUAL;
     lexer->states[48].type = IS_EQUAL;
     lexer->states[49].type = GREATER_THAN;
@@ -82,6 +92,14 @@ Lexer *initLexer(const char *filename){
     lexer->states[69].type = MODULU;
     lexer->states[70].type = MODULU_EQUAL;
     lexer->states[71].type = END_OF_FILE;
+    lexer->states[73].type = OPEN_PARENTHESIS;
+    lexer->states[74].type = CLOSE_PARENTHESIS;
+    lexer->states[75].type = OPEN_CURLY_BRACKETS;
+    lexer->states[76].type = CLOSE_CURLY_BRACKETS;
+    //lexer->states[77].type = SKIP;
+
+
+
 
     //=============================================
     printf("Completed state array\ninitializing state matrix\n");
@@ -211,9 +229,9 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[13]['a'] = 14;
     lexer->transition_table[14]['r'] = 15;
     lexer->transition_table[0]['t'] = 24;
-    lexer->transition_table[24]['h'] = 44;
-    lexer->transition_table[44]['e'] = 45;
-    lexer->transition_table[45]['n'] = 46;
+    //lexer->transition_table[24]['h'] = 44; DEPRECATED
+    //lexer->transition_table[44]['e'] = 45; DEPRECATED
+    //lexer->transition_table[45]['n'] = 46; DEPRECATED
     lexer->transition_table[24]['r'] = 25;
     lexer->transition_table[25]['u'] = 26;
     lexer->transition_table[26]['e'] = 27;
@@ -269,6 +287,11 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[0]['\0'] = 71;
     lexer->transition_table[72]['\n'] = 0;
     lexer->transition_table[72]['\0'] = 71;
+    lexer->transition_table[0]['('] = 73;
+    lexer->transition_table[0][')'] = 74;
+    lexer->transition_table[0]['{'] = 75;
+    lexer->transition_table[0]['}'] = 76;
+
 //=================================================
     loadBuffer(lexer);
     printf("lexer initialized succesfully\n");
@@ -316,8 +339,8 @@ Token nextToken(Lexer *lexer){
     char currentChar = lexer->buffer[lexer->pos];// the current charecter read from the buffer
     int lastState = 0; //the previous state read so that when the automaton finishes we can remember what it was on
     lexer->current_state = 0; // reset current state from last operation
-    lexer->current_state = lexer->transition_table[lexer->current_state][currentChar]; //ask michael about if statements
-    
+
+    lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
     while (lexer->current_state != -1){
         input[currentInput] = currentChar;
         currentInput++;

@@ -1,8 +1,1 @@
-while 0 int for
-num=3+17-14
-for int i = 0 i<10 i++ then
-
-int num = 13
-
-
-//add end for loops / and parenthesis / and special state for spaces which returns null pointer
+}

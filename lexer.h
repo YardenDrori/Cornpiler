@@ -8,7 +8,7 @@
 
 #define BUFFER_SIZE 4096 //4kb
 #define INITIAL_TOKEN_CAPACITY 64
-#define MAX_STATES 73
+#define MAX_STATES 78
 
 
 typedef struct

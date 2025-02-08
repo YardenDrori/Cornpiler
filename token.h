@@ -7,54 +7,58 @@
 
 typedef enum {
     //Opearators
-    EQUAL_LESSER,       //0
-    GREATER_THAN,       //1
-    LESSER_THAN,        //2
-    EQUAL,              //3
-    IS_EQUAL,           //4
-    NOT,                //5
-    NOT_EQUAL,          //6
-    EQUAL_GREATER,      //7
-    PLUS,               //8
-    INC,                //9
-    PLUS_EQUAL,         //10
-    MINUS,              //11
-    DEC,                //12
-    MINUS_EQUAL,        //13
-    DIVIDE,             //14
-    DIVIDE_EQUAL,       //15
-    MULTIPLY,           //16
-    MULTIPLY_EQUAL,     //17
-    MODULU,             //18
-    MODULU_EQUAL,       //19
+    EQUAL_LESSER,           //0
+    GREATER_THAN,           //1
+    LESSER_THAN,            //2
+    EQUAL,                  //3
+    IS_EQUAL,               //4
+    NOT,                    //5
+    NOT_EQUAL,              //6
+    EQUAL_GREATER,          //7
+    PLUS,                   //8
+    INC,                    //9
+    PLUS_EQUAL,             //10
+    MINUS,                  //11
+    DEC,                    //12
+    MINUS_EQUAL,            //13
+    DIVIDE,                 //14
+    DIVIDE_EQUAL,           //15
+    MULTIPLY,               //16
+    MULTIPLY_EQUAL,         //17
+    MODULU,                 //18
+    MODULU_EQUAL,           //19
+    OPEN_PARENTHESIS,       //20
+    CLOSE_PARENTHESIS,      //21
+    OPEN_CURLY_BRACKETS,    //22
+    CLOSE_CURLY_BRACKETS,   //23
 
     //literals
-    FLOAT_LITERAL,      //20
-    TRUE,               //21
-    FALSE,              //22
-    INT_LITERAL,        //23
-    CHAR_LITERAL,       //24
+    FLOAT_LITERAL,          //24
+    TRUE,                   //25
+    FALSE,                  //26
+    INT_LITERAL,            //27
+    CHAR_LITERAL,           //28
     
     //variables
-    FLOAT,              //25
-    INT,                //26
-    CHAR,               //27
-    BOOLEAN,            //28
+    FLOAT,                  //29
+    INT,                    //30
+    CHAR,                   //31
+    BOOLEAN,                //32
     
     //conditions
-    IF,                 //29
-    THEN,               //30
-    ELSE,               //31
-    AND,                //32
-    OR,                 //33
+    IF,                     //33
+    THEN,                   //34
+    ELSE,                   //35
+    AND,                    //36
+    OR,                     //37
 
     //loops
-    FOR,                //34
-    WHILE,              //35
+    FOR,                    //38
+    WHILE,                  //39
     
     //misc
-    IDENT,              //36
-    END_OF_FILE,        //37
+    IDENT,                  //40
+    END_OF_FILE,            //41
 } TokenType;
 
 typedef struct
