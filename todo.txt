@@ -1,1 +1,2 @@
-Add lexer arror handler
+find what error types there are
+make char accept \n, \0, 

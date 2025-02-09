@@ -1,3 +1,1 @@
-14 int num = '3'
-faggot //wow
-_cool-error
+'\n'

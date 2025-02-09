@@ -226,6 +226,7 @@ Lexer *initLexer(const char *filename){
     for (int i = 0; i < 256; i++){
         lexer->transition_table[72][i] = 72;
         lexer->transition_table[77][i] = -1;
+        lexer->transition_table[80][i] = 79;
     }
 
 
@@ -250,6 +251,18 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[1]['}'] = -1;
     lexer->transition_table[2]['.'] = 3;
     lexer->transition_table[0]['\''] = 5;
+    lexer->transition_table[5]['\\'] = 80;
+    lexer->transition_table[80]['\\'] = 6;
+    lexer->transition_table[80]['\''] = 6;
+    lexer->transition_table[80]['\"'] = 6;
+    lexer->transition_table[80]['n'] = 6;
+    lexer->transition_table[80]['t'] = 6;
+    lexer->transition_table[80]['r'] = 6;
+    lexer->transition_table[80]['b'] = 6;
+    lexer->transition_table[80]['f'] = 6;
+    lexer->transition_table[80]['v'] = 6;
+    lexer->transition_table[80]['0'] = 6;
+
     lexer->transition_table[6]['\''] = 7;
     lexer->transition_table[0]['b'] = 8;
     lexer->transition_table[8]['o'] = 9;

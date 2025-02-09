@@ -6,6 +6,21 @@
 #include <stdlib.h>
 #define FILENAME "ExampleScript.txt"
 
+//lookyp table for special charecters
+const char escape_map[16] = {
+    ['\\' & 0xF] = '\\',
+    ['\'' & 0xF] = '\'',
+    ['\"' & 0xF] = '\"',
+    ['n' & 0xF] = '\n',
+    ['t' & 0xF] = '\t',
+    ['r' & 0xF] = '\r',
+    ['b' & 0xF] = '\b',
+    ['f' & 0xF] = '\f',
+    ['v' & 0xF] = '\v',
+    ['0' & 0xF] = '\0'
+};
+
+
 // Define the array here
 const char enumToString[][30] = {
     "EQUAL_LESSER",   
@@ -62,8 +77,22 @@ void printTokenType(Token token){
         printf("\033[1;94m%s - %d \033[0m", enumToString[token.type], token.value.int_val);
         break;
     case CHAR_LITERAL:
-        printf("\033[1;94m%s - \'%c\' \033[0m", enumToString[token.type], token.value.char_val);
+        printf("\033[1;94m%s - '", enumToString[token.type]);
+        switch (token.value.char_val) {
+            case '\n': printf("\\n"); break;
+            case '\t': printf("\\t"); break;
+            case '\r': printf("\\r"); break;
+            case '\b': printf("\\b"); break;
+            case '\f': printf("\\f"); break;
+            case '\v': printf("\\v"); break;
+            case '\\': printf("\\\\"); break;
+            case '\'': printf("\\'"); break;
+            case '\"': printf("\\\""); break;
+            default: printf("%c", token.value.char_val); break;
+        }
+        printf("'\033[0m");
         break;
+    
     case FLOAT_LITERAL:
         printf("\033[1;94m%s - %f \033[0m", enumToString[token.type], token.value.float_val);
         break;
@@ -129,7 +158,12 @@ void handle_float_literal(Token *token, Lexme *lexme) {
 }
 
 void handle_char_literal(Token *token, Lexme *lexme) {
-    token->value.char_val = lexme->input[1];
+    if (lexme->input[1] != '\\'){
+        token->value.char_val = lexme->input[1];
+    }else{
+        char key = lexme->input[2] & 0xF;
+        token->value.char_val = (escape_map[key] ? escape_map[key] : lexme->input[2]);
+    }
 }
 
 void handle_ident(Token *token, Lexme *lexme) {
