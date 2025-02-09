@@ -20,7 +20,7 @@
 
 //self explanetory but for the dummies: 
 //initializes values and other stuff for a new lexer struct
-Lexer *initLexer(const char *filename){  
+Lexer *initLexer(const char *filename){
     printf("Initializing lexer\n");
     char reservedSymbols[] = {"=><!+-=&|*/\\%{}()"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
