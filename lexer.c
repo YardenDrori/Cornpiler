@@ -23,6 +23,7 @@
 Lexer *initLexer(const char *filename){
     printf("Initializing lexer\n");
     char reservedSymbols[] = {"=><!+-=&|*/\\%{}()"};
+    char escapeCharecters[] = {"\\\'\"ntrbfv0"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
     if (!lexer) {
         fprintf(stderr, "Memory allocation failed for Lexer.\n");
