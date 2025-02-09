@@ -18,6 +18,8 @@
 //lexer->transition_table[1]['-'] = -1;
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+//self explanetory but for the dummies: 
+//initializes values and other stuff for a new lexer struct
 Lexer *initLexer(const char *filename){  
     printf("Initializing lexer\n");
     char reservedSymbols[] = {"=><!+=&|*/%{}()"};
@@ -32,6 +34,11 @@ Lexer *initLexer(const char *filename){
         free(lexer);
         return NULL;
     }
+    Lexme *lexme = (Lexme *)malloc(sizeof(Lexme));
+    lexer->lexme = lexme;
+    lexer->lexme->row = 0;
+    lexer->lexme->col = -1;
+    lexer->lexme->input_len = 0;
     lexer->pos = 0;
     lexer->buffer_length = 0;
     lexer->current_state = 0;
@@ -57,7 +64,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[61].is_final = 0;
     lexer->states[63].is_final = 0;
 
-    lexer->states[0].type = ERROR;
+    //lexer->states[0].type = ERROR;
     lexer->states[2].type = INT_LITERAL;
     lexer->states[4].type = FLOAT_LITERAL;
     lexer->states[7].type = CHAR_LITERAL;
@@ -309,6 +316,8 @@ Lexer *initLexer(const char *filename){
     printf("lexer initialized succesfully\n");
     return lexer;
 }
+
+//loads the buffer from the input file
 void loadBuffer(Lexer *lexer){
     //printf("Loading the buffer: ");
     size_t bytes_read = fread(lexer->buffer, 1, BUFFER_SIZE, lexer->file);
@@ -328,6 +337,7 @@ void loadBuffer(Lexer *lexer){
     //printf("buffer loaded successfully!\n");
 }
 
+//reads a charecter from the buffer and reloads it if reached it's end
 char nextChar(Lexer *lexer){ // c=1
     
     if (lexer->pos >= lexer->buffer_length-1){
@@ -339,55 +349,57 @@ char nextChar(Lexer *lexer){ // c=1
     return lexer->buffer[lexer->pos];
 }
 
+//returns next read token from the buffer
 Token nextToken(Lexer *lexer){
-    void (*tokenValueAssignerArray[TOTAL_TOKENS])(Token *, char *) = {0};
+    //making function pointer array
+    void (*tokenValueAssignerArray[TOTAL_TOKENS])(Token *, Lexme *) = {0};
     tokenValueAssignerArray[INT_LITERAL] = handle_int_literal;
     tokenValueAssignerArray[FLOAT_LITERAL] = handle_float_literal;
     tokenValueAssignerArray[CHAR_LITERAL] = handle_char_literal;
     tokenValueAssignerArray[IDENT] = handle_ident;
     tokenValueAssignerArray[TRUE]= handle_true;
     tokenValueAssignerArray[FALSE] = handle_false;
+    tokenValueAssignerArray[NEXT_LINE] = handle_next_line;
+    tokenValueAssignerArray[ERROR] = handle_error;
 
-    Token returnToken;
-    int currentInputSize = 4;
-    char *input = malloc(sizeof(char) * currentInputSize); // the actuall input incase it is literal
-    if (!input){
+
+    
+    Token returnToken; //the token we return currently empty
+    int currentInputSize = 4; //self explanetory
+    lexer->lexme->input = malloc(sizeof(char) * currentInputSize); // the actuall input incase it is literal
+    if (!lexer->lexme->input){
         printf("Error initializing array input");
     }
-    int currentInput = 0; //remembers the size of the current input incase the array isn't big enough, somehow
+    lexer->lexme->input_len = 0; //remembers the size of the current input incase the array isn't big enough, somehow
     char currentChar = lexer->buffer[lexer->pos];// the current charecter read from the buffer
     int lastState = 0; //the previous state read so that when the automaton finishes we can remember what it was on
     lexer->current_state = 0; // reset current state from last operation
 
     lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
     while (lexer->current_state != -1){
-        lexer->collumn++;
-        input[currentInput] = currentChar;
-        currentInput++;
+        lexer->lexme->col++;
+        lexer->lexme->input[lexer->lexme->input_len] = currentChar;
+        lexer->lexme->input_len++;
         lastState = lexer->current_state;
         currentChar = nextChar(lexer);
-        if (currentInput >= currentInputSize-1){
+        if (lexer->lexme->input_len >= currentInputSize-1){
             currentInputSize *= 2;
-            input = realloc(input, currentInputSize * sizeof(char));
-            if (!input){
+            lexer->lexme->input = realloc(lexer->lexme->input, currentInputSize * sizeof(char));
+            if (!lexer->lexme->input){
                 printf("Error reallocating memory for input");
             }
         }
         lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
     }
-    input[currentInput] = '\0';
     returnToken.type = lexer->states[lastState].type;
 
     if (tokenValueAssignerArray[returnToken.type] != 0){
-        tokenValueAssignerArray[returnToken.type](&returnToken, input);
+        tokenValueAssignerArray[returnToken.type](&returnToken, lexer->lexme);
     }
-    if (returnToken.type == NEXT_LINE){
-        lexer->row++;
-        lexer->collumn = -1;
-    }
-
     return returnToken;
 }
+
+//frees all the memory in the lexer struct
 void freeLexer(Lexer *lexer){
     if (lexer == NULL){
         return;
@@ -401,9 +413,10 @@ void freeLexer(Lexer *lexer){
     free(lexer);
 }
 
+//fills the lexer's tokens array with the appropiate tokens
 void getTokenList(Lexer *lexer){
-    lexer->row = 1;
-    lexer->collumn = -1;
+    lexer->lexme->row = 1;
+    lexer->lexme->col = -1;
     lexer->token_id = 0;
     Token token = nextToken(lexer);
     if (token.type != SKIP && token.type != NEXT_LINE){

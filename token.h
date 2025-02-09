@@ -65,6 +65,12 @@ typedef enum {
 } TokenType;
 #define TOTAL_TOKENS 45
 
+typedef struct
+{
+    int row;
+    int col;
+} Error;
+
 typedef union
 {
     int int_val;
@@ -74,12 +80,6 @@ typedef union
     char *ident_val;
     Error error_val;
 } TokenValue;
-
-typedef struct
-{
-    int row;
-    int col;
-} Error;
 
 typedef struct
 { 
