@@ -50,47 +50,52 @@ const char enumToString[][30] = {
     "WHILE",          
     "IDENT",     
     "END_OF_FILE",
-    "SKIP"
+    "SKIP",
+    "NEXT_LINE",
+    "ERROR"
 };
 //prints a single token
 void printTokenType(Token token){
     switch (token.type)
     {
     case INT_LITERAL:
-        printf("%s - %d ", enumToString[token.type], token.value.int_val);
+        printf("\033[1;94m%s - %d \033[0m", enumToString[token.type], token.value.int_val);
         break;
     case CHAR_LITERAL:
-        printf("%s - \'%c\' ", enumToString[token.type], token.value.char_val);
+        printf("\033[1;94m%s - \'%c\' \033[0m", enumToString[token.type], token.value.char_val);
         break;
     case FLOAT_LITERAL:
-        printf("%s - %f ", enumToString[token.type], token.value.float_val);
+        printf("\033[1;94m%s - %f \033[0m", enumToString[token.type], token.value.float_val);
         break;
     case TRUE:
-        printf("%s - 1 ", enumToString[token.type]);
+        printf("\033[1;94m%s - 1 \033[0m", enumToString[token.type]);
         break;
     case FALSE:
-        printf("%s - 0 ", enumToString[token.type]);
+        printf("\033[1;94m%s - 0 \033[0m", enumToString[token.type]);
         break;
     case IDENT:
-        printf("%s - \"%s\" ", enumToString[token.type], token.value.ident_val);
+        printf("\033[1;94m%s - \"%s\" \033[0m", enumToString[token.type], token.value.ident_val);
+        break;
+    case ERROR:
+        printf("\033[1;31m%s - Row: %d, Column: %d\033[0m", enumToString[token.type], token.value.error_val.row, token.value.error_val.col);
+        fflush(stdout); // Ensure it gets printed properly
         break;
     default:
-        printf("%s ", enumToString[token.type]);
-
+        printf("\033[94m%s \033[0m", enumToString[token.type]);
     }
 }
 
 //prints all tokens in a lexer array
 void printTokenArray(Lexer *lexer){
     getTokenList(lexer);
-    printf("\n");
+    printf("\n\033[1;4;32mTokens:\033[0m");
     for (int i = 0; i < lexer->token_id+1; i++){
-        printf("\n---------------------\n");
+        printf("\n\033[30m---------------------\033[0m\n");
         printTokenType(lexer->tokens[i]);
     }
-    printf("\n=-=-=-=-=-=-=-=-=-=-=");
-    printf("\ntokens %d\ntoken capacity %d\nfinal row: %d, final collumn: %d", lexer->token_id, lexer->token_capacity, lexer->lexme->row, lexer->lexme->col);
-    printf("\n=-=-=-=-=-=-=-=-=-=-=\n");
+    printf("\n\033[33m=-=-=-=-=-=-=-=-=-=-=\033[0m");
+    printf("\n\033[33mtokens %d\ntoken capacity %d\nfinal row: %d, final collumn: %d\033[0m", lexer->token_id, lexer->token_capacity, lexer->lexme->row, lexer->lexme->col);
+    printf("\n\033[33m=-=-=-=-=-=-=-=-=-=-=\033[0m\n");
 }
 
 //returns 1 if a char has been found in a string and 0 otherwise
@@ -142,6 +147,6 @@ void handle_next_line(Token *token, Lexme *lexme){
 }
 
 void handle_error(Token *token, Lexme *lexme){
-    token->value.error_val.col = lexme->col;
+    token->value.error_val.col = lexme->col+1;
     token->value.error_val.row = lexme->row;
 }

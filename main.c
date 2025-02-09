@@ -11,7 +11,6 @@ int main() {
         return 1;
     }
     printTokenArray(lexer);
-    printf("\ntokens %d\ntoken capacity %d", lexer->token_id, lexer->token_capacity);
     freeLexer(lexer);
     return 0;
 }

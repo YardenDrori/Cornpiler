@@ -109,6 +109,8 @@ Lexer *initLexer(const char *filename){
     lexer->states[77].type = SKIP;
     lexer->states[72].type = SKIP;
     lexer->states[78].type = NEXT_LINE;
+    lexer->states[79].type = ERROR;
+
 
 
 
@@ -123,6 +125,9 @@ Lexer *initLexer(const char *filename){
             lexer->transition_table[i][j] = -1;
         }
     }
+    for (int i = 0; i < 256; i++){
+        lexer->transition_table[0][i] = 79;
+    }
     for (int i = 'A'; i <= 'Z'; i++){// A-Z
         lexer->transition_table[0][i] = 1;
         lexer->transition_table[1][i] = 1;
@@ -130,6 +135,7 @@ Lexer *initLexer(const char *filename){
         lexer->transition_table[3][i] = 1;
         lexer->transition_table[4][i] = 1;
         lexer->transition_table[5][i] = 6;
+        lexer->transition_table[79][i] = 79;
         for (int j = 8; j <= 46; j++){
             lexer->transition_table[j][i] = 1;
         }
@@ -142,6 +148,7 @@ Lexer *initLexer(const char *filename){
         lexer->transition_table[3][i] = 1;
         lexer->transition_table[4][i] = 1;
         lexer->transition_table[5][i] = 6;
+        lexer->transition_table[79][i] = 79;
         for (int j = 8; j <= 46; j++){
             lexer->transition_table[j][i] = 1;
         }
@@ -153,6 +160,7 @@ Lexer *initLexer(const char *filename){
         lexer->transition_table[3][i] = 4;
         lexer->transition_table[4][i] = 4;
         lexer->transition_table[5][i] = 6;
+        lexer->transition_table[79][i] = 79;
         for (int j = 8; j <= 46; j++){
             lexer->transition_table[j][i] = 1;
         }
@@ -160,12 +168,13 @@ Lexer *initLexer(const char *filename){
     //symbols
     for(int i = '!'; i <= '/'; i++){
         if (!isCharInArray(i, reservedSymbols)){
-            lexer->transition_table[0][i] = -1;
+            //lexer->transition_table[0][i] = -1;
             lexer->transition_table[1][i] = 1;
             lexer->transition_table[2][i] = 1;
             lexer->transition_table[3][i] = 1;
             lexer->transition_table[4][i] = 1;
             lexer->transition_table[5][i] = 6;
+            lexer->transition_table[79][i] = 79;
             for (int j = 8; j <= 46; j++){
                 lexer->transition_table[j][i] = 1;
             }
@@ -173,12 +182,13 @@ Lexer *initLexer(const char *filename){
     }
     for(int i = ':'; i <= '@'; i++){
         if (!isCharInArray(i, reservedSymbols)){
-            lexer->transition_table[0][i] = -1;
+            //lexer->transition_table[0][i] = -1;
             lexer->transition_table[1][i] = 1;
             lexer->transition_table[2][i] = 1;
             lexer->transition_table[3][i] = 1;
             lexer->transition_table[4][i] = 1;
             lexer->transition_table[5][i] = 6;
+            lexer->transition_table[79][i] = 79;
             for (int j = 8; j <= 46; j++){
                 lexer->transition_table[j][i] = 1;
             }
@@ -186,12 +196,13 @@ Lexer *initLexer(const char *filename){
     }
     for(int i = '['; i <= '`'; i++){
         if (!isCharInArray(i, reservedSymbols)){
-            lexer->transition_table[0][i] = -1;
+            //lexer->transition_table[0][i] = -1;
             lexer->transition_table[1][i] = 1;
             lexer->transition_table[2][i] = 1;
             lexer->transition_table[3][i] = 1;
             lexer->transition_table[4][i] = 1;
             lexer->transition_table[5][i] = 6;
+            lexer->transition_table[79][i] = 79;
             for (int j = 8; j <= 46; j++){
                 lexer->transition_table[j][i] = 1;
             }
@@ -199,12 +210,13 @@ Lexer *initLexer(const char *filename){
     }
     for(int i = '{'; i <= '~'; i++){
         if(!isCharInArray(i, reservedSymbols)){
-            lexer->transition_table[0][i] = -1;
+            //lexer->transition_table[0][i] = -1;
             lexer->transition_table[1][i] = 1;
             lexer->transition_table[2][i] = 1;
             lexer->transition_table[3][i] = 1;
             lexer->transition_table[4][i] = 1;
             lexer->transition_table[5][i] = 6;
+            lexer->transition_table[79][i] = 79;
             for (int j = 8; j <= 46; j++){
                 lexer->transition_table[j][i] = 1;
             }
