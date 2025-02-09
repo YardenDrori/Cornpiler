@@ -1,1 +1,4 @@
-'\n'
+int num = 13-1
+for num = 0 num <= 15 num++ {
+    char fuckthisshitimout = 'cool' '\n'
+}

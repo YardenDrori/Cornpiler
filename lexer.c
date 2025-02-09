@@ -22,7 +22,7 @@
 //initializes values and other stuff for a new lexer struct
 Lexer *initLexer(const char *filename){  
     printf("Initializing lexer\n");
-    char reservedSymbols[] = {"=><!+=&|*/%{}()"};
+    char reservedSymbols[] = {"=><!+-=&|*/\\%{}()"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
     if (!lexer) {
         fprintf(stderr, "Memory allocation failed for Lexer.\n");
