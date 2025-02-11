@@ -370,8 +370,6 @@ Token nextToken(Lexer *lexer){
     tokenValueAssignerArray[NEXT_LINE] = handle_next_line;
     tokenValueAssignerArray[ERROR] = handle_error;
 
-
-    
     Token returnToken; //the token we return currently empty
     int currentInputSize = 4; //self explanetory
     lexer->lexme->input = malloc(sizeof(char) * currentInputSize); // the actuall input incase it is literal
