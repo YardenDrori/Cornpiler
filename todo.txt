@@ -1,3 +1,0 @@
-find what error types there are and make them occur
-make all error states occur for example when opening a char and not closing or writing more
-then one charecter '323243' / '2
