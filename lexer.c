@@ -22,7 +22,7 @@
 //initializes values and other stuff for a new lexer struct
 Lexer *initLexer(const char *filename){
     printf("Initializing lexer\n");
-    char reservedSymbols[] = {"=><!+-=&|*/\\%{}()"};
+    char reservedSymbols[] = {"=><!+-=&|*/\\%{}();"};
     char escapeCharecters[] = {"\\\'\"ntrbfv0"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
     if (!lexer) {
@@ -74,7 +74,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[38].type = WHILE;
     lexer->states[39].type = IF;
     lexer->states[43].type = ELSE;
-    lexer->states[46].type = THEN; //deprecated
+    //lexer->states[46].type = THEN; DEPRECATED
     lexer->states[47].type = EQUAL;
     lexer->states[48].type = IS_EQUAL;
     lexer->states[49].type = GREATER_THAN;
@@ -105,7 +105,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[77].type = SKIP;
     lexer->states[72].type = SKIP;
     lexer->states[78].type = NEXT_LINE;
-    
+    lexer->states[81].type = SEMICOLON;
 
 
 
@@ -212,6 +212,7 @@ Lexer *initLexer(const char *filename){
 
 
     //manual labor starts here :(
+    lexer->transition_table[0][';'] = 81;
     lexer->transition_table[0]['.'] = 3;
     lexer->transition_table[0][' '] = 77;
     lexer->transition_table[0]['\n'] = 78;
@@ -245,6 +246,7 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[80]['v'] = 6;
     lexer->transition_table[80]['0'] = 6;
 
+    
     lexer->transition_table[6]['\''] = 7;
     lexer->transition_table[0]['b'] = 8;
     lexer->transition_table[8]['o'] = 9;

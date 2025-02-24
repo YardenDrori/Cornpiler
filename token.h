@@ -61,9 +61,10 @@ typedef enum {
     END_OF_FILE,            //41
     SKIP,                   //42
     NEXT_LINE,              //43
-    ERROR                   //44
+    ERROR,                  //44
+    SEMICOLON               //45
 } TokenType;
-#define TOTAL_TOKENS 45
+#define TOTAL_TOKENS 46
 
 typedef struct
 {

@@ -20,7 +20,6 @@ const char escape_map[16] = {
     ['0' & 0xF] = '\0'
 };
 
-
 // Define the array here
 const char enumToString[][30] = {
     "EQUAL_LESSER",   
@@ -67,8 +66,10 @@ const char enumToString[][30] = {
     "END_OF_FILE",
     "SKIP",
     "NEXT_LINE",
-    "ERROR"
+    "ERROR",
+    "SEMICOLON"
 };
+
 //prints a single token
 void printTokenType(Token token){
     switch (token.type)
