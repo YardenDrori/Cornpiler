@@ -105,7 +105,7 @@ Lexer *initLexer(const char *filename){
     lexer->states[77].type = SKIP;
     lexer->states[72].type = SKIP;
     lexer->states[78].type = NEXT_LINE;
-    lexer->states[81].type = SEMICOLON;
+    lexer->states[82].type = SEMICOLON;
 
 
 
@@ -213,6 +213,7 @@ Lexer *initLexer(const char *filename){
 
     //manual labor starts here :(
     lexer->transition_table[0][';'] = 81;
+    lexer->transition_table[81][')'] = 82;
     lexer->transition_table[0]['.'] = 3;
     lexer->transition_table[0][' '] = 77;
     lexer->transition_table[0]['\n'] = 78;
