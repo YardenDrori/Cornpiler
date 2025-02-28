@@ -6,7 +6,7 @@
 #include "LRTable.h"
 #define TOTAL_STATES 44
 #define TOTAL_ACTIONS 11
-#define TOTAL_GRAMMER_RULES 14
+#define TOTAL_GRAMMER_RULES 15
 
 /* FOR NOW ONLY THESE WILL BE USED
 Program -> S
@@ -27,7 +27,7 @@ Factor -> inc id
 */
 typedef enum {
     PROGRAM,
-    S,
+    Start,
     Expr,
     Term,
     Factor,

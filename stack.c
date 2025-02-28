@@ -66,3 +66,11 @@ void freeStack(Stack* stack) {
     }
     free(stack);
 }
+
+//pop count values and returns the last one popped
+StackValue popStackCount(Stack* stack, int count){
+    for (int i = 0; i < count-1; i++){
+        popStack(stack);
+    }
+    return popStack(stack);
+}
