@@ -405,6 +405,8 @@ Token nextToken(Lexer *lexer){
     if (tokenValueAssignerArray[returnToken.type] != 0){
         tokenValueAssignerArray[returnToken.type](&returnToken, lexer->lexme);
     }
+    returnToken.row = lexer->lexme->row;
+    returnToken.col = lexer->lexme->col;
     return returnToken;
 }
 

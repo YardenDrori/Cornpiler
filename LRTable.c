@@ -3,20 +3,87 @@
 #include "stack.h"
 #include "parser.h"
 
-
+// LRTable functions
+//=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
 void Shift(Parser* parser, int actionParam){
     pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
     pushInt(parser->stack, actionParam);
 }
 
 void Reduce(Parser* parser, int actionParam){
-
+    parser->ReduceFunctionTable[actionParam](parser);
 }
 
 void GOTO(Parser* parser, int actionParam){
-    
+    /*
+    ASK MICHAEL IF THIS IS BETTER OF MODIFYING
+    THE STACK TO STORE THE VALUE BEFORE THE LAST
+    */
+    int gotoResult;
+    int tempNum; //contains the number represented by the temp1 enum
+    StackValue temp1; //contains the GRAMMER SYMBOL
+    StackValue temp2; //contains the NUMBER
+    temp1 = popStack(parser->stack);
+    temp2 = popStack(parser->stack);
+    tempNum = temp1.data.symbolValue;
+    tempNum += TOTAL_ACTIONS;
+    gotoResult = parser->LRTable[tempNum][temp2.data.intValue];
+    pushSymbol(parser->stack, temp1.data.symbolValue);
+    pushInt(parser->stack, temp2.data.intValue);
+    pushInt(parser->stack, gotoResult);
 }
 
 void LRTableError(Parser* parser, int actionParam){
+    /*
+    ask michael if error handler should be made
+    by saving the pos of each token in token struct
+    or if there is a better implementation im unaware of
+    */
+   
+}
 
+//reduce functions
+//=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
+
+void Reduce1(Parser* parser){
+
+}
+void Reduce2(Parser* parser){
+    
+}
+void Reduce3(Parser* parser){
+    
+}
+void Reduce4(Parser* parser){
+    
+}
+void Reduce5(Parser* parser){
+    
+}
+void Reduce6(Parser* parser){
+    
+}
+void Reduce7(Parser* parser){
+    
+}
+void Reduce8(Parser* parser){
+    
+}
+void Reduce9(Parser* parser){
+    
+}
+void Reduce10(Parser* parser){
+    
+}
+void Reduce11(Parser* parser){
+    
+}
+void Reduce12(Parser* parser){
+    
+}
+void Reduce13(Parser* parser){
+    
+}
+void Reduce14(Parser* parser){
+    
 }

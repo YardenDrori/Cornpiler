@@ -86,6 +86,8 @@ typedef struct
 { 
     TokenType type;
     TokenValue value;
+    int row;
+    int col;
 } Token;
 
 
