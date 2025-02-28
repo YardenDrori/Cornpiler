@@ -13,13 +13,16 @@ VARTYPE -> float
 VARTYPE -> char
 VARTYPE -> bool
 
-Expr -> E + T
-Expr -> E - T
-Expr -> T
-Term -> T * F
-Term -> T / F
-Term -> F
-Factor -> ( E )
+//for now this grammer only will be used
+// | 
+// V
+Expr -> Expr + Term
+Expr -> Expr - Term
+Expr -> Term
+Term -> Term * Factor
+Term -> Term / Factor
+Term -> Factor
+Factor -> ( Expr )
 Factor -> id
 Factor -> intlit
 Factor -> id inc
