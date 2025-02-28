@@ -426,7 +426,7 @@ void freeLexer(Lexer *lexer){
 void getTokenList(Lexer *lexer){
     lexer->lexme->row = 1;
     lexer->lexme->col = -1;
-    lexer->token_id = 0;
+    lexer->token_id = -1;
     Token token = nextToken(lexer);
     if (token.type != SKIP && token.type != NEXT_LINE){
         lexer->tokens[lexer->token_id] = token;

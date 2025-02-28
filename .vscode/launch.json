@@ -5,14 +5,14 @@
             "name": "Debug C Program",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/output",
+            "program": "${workspaceFolder}/cornpiler",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "build"
+            "preLaunchTask": "Build"
         }
     ]
 }

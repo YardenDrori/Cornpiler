@@ -12,12 +12,25 @@ void testLexer(){
     if (!lexer) {
         fprintf(stderr, "Failed to initialize lexer.\n");
     }
+    getTokenList(lexer);
     printTokenArray(lexer);
     freeLexer(lexer);
+}
+Lexer* initTokenList(){
+    Lexer *lexer = initLexer(FILENAME);
+    if (!lexer) {
+        fprintf(stderr, "Failed to initialize lexer.\n");
+    }
+    getTokenList(lexer);
+    return lexer;
 }
 
 
 int main() {
+    printf("cool test\n");
+    //testLexer();
+    Lexer* lexer = initTokenList();
+    printTokenArray(lexer);
     Stack* stack = stack_init();
     return 0;
 }

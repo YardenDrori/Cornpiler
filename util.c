@@ -120,7 +120,6 @@ void printTokenType(Token token){
 
 //prints all tokens in a lexer array
 void printTokenArray(Lexer *lexer){
-    getTokenList(lexer);
     printf("\n\033[1;4;32mTokens:\033[0m");
     for (int i = 0; i < lexer->token_id+1; i++){
         printf("\n\033[30m---------------------\033[0m\n");
