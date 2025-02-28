@@ -3,14 +3,19 @@
 #include "util.h"
 #include <stdio.h>
 #define FILENAME "ExampleScript.txt"
-int main() {
-      
+
+void testLexer(){
     Lexer *lexer = initLexer(FILENAME);
     if (!lexer) {
         fprintf(stderr, "Failed to initialize lexer.\n");
-        return 1;
     }
     printTokenArray(lexer);
     freeLexer(lexer);
+}
+
+int main() {
+    testLexer();
+
+
     return 0;
 }

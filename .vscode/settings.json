@@ -2,6 +2,10 @@
     "files.associations": {
         "stdlib.h": "c",
         "token.h": "c",
-        "lexer.h": "c"
+        "lexer.h": "c",
+        "stdbool.h": "c",
+        "parser.h": "c",
+        "stack.h": "c",
+        "stdio.h": "c"
     }
 }
