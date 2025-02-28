@@ -7,8 +7,9 @@
 #define FILENAME "ExampleScript.txt"
 
 //lookyp table for special charecters
+//FUTURE ME PROBLEM
 const char escape_map[16] = {
-    ['\\' & 0xF] = '\\',
+    /*['\\' & 0xF] = '\\',
     ['\'' & 0xF] = '\'',
     ['\"' & 0xF] = '\"',
     ['n' & 0xF] = '\n',
@@ -17,7 +18,7 @@ const char escape_map[16] = {
     ['b' & 0xF] = '\b',
     ['f' & 0xF] = '\f',
     ['v' & 0xF] = '\v',
-    ['0' & 0xF] = '\0'
+    ['0' & 0xF] = '\0'*/
 };
 
 // Define the array here
@@ -80,7 +81,9 @@ void printTokenType(Token token){
     case CHAR_LITERAL:
         printf("\033[1;94m%s - '", enumToString[token.type]);
         switch (token.value.char_val) {
-            case '\n': printf("\\n"); break;
+            //FUTURE ME PROBLEM
+            
+            /*case '\n': printf("\\n"); break;
             case '\t': printf("\\t"); break;
             case '\r': printf("\\r"); break;
             case '\b': printf("\\b"); break;
@@ -88,7 +91,7 @@ void printTokenType(Token token){
             case '\v': printf("\\v"); break;
             case '\\': printf("\\\\"); break;
             case '\'': printf("\\'"); break;
-            case '\"': printf("\\\""); break;
+            case '\"': printf("\\\""); break;*/
             default: printf("%c", token.value.char_val); break;
         }
         printf("'\033[0m");
@@ -185,3 +188,5 @@ void handle_error(Token *token, Lexme *lexme){
     token->value.error_val.col = lexme->col+1;
     token->value.error_val.row = lexme->row;
 }
+
+

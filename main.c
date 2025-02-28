@@ -1,7 +1,10 @@
 #include "lexer.h"
 #include "token.h"
 #include "util.h"
+#include "stack.h"
 #include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
 #define FILENAME "ExampleScript.txt"
 
 void testLexer(){
@@ -13,9 +16,9 @@ void testLexer(){
     freeLexer(lexer);
 }
 
+
 int main() {
-    testLexer();
-
-
+    Stack* stack = stack_init();
+    
     return 0;
 }
