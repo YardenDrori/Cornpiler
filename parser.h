@@ -44,7 +44,7 @@ typedef struct parser
     int tokenId;
     Lexer* lexer;
     Stack* stack;
-    void (*LRTable[TOTAL_ACTIONS][TOTAL_STATES])(Stack* stack, /*temp name*/int num/*temp name*/);
+    void (*LRTable[TOTAL_ACTIONS][TOTAL_STATES+GRAMMER_SYMBOL_COUNT])(Stack* stack, /*temp name*/int num/*temp name*/);
 } Parser;
 
 void freeParser(Parser* parser);
