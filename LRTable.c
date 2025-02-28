@@ -39,7 +39,8 @@ void LRTableError(Parser* parser, int actionParam){
     by saving the pos of each token in token struct
     or if there is a better implementation im unaware of
     */
-   
+   printf("\033[1;31mParsing error found in Row: %d, Column: %d\033[0m\n", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
+   exit(1);
 }
 
 //reduce functions
