@@ -34,12 +34,13 @@ typedef struct {
 } Stack;
 
 // Function prototypes
-Stack* stack_init();
-void stack_push_int(Stack *stack, int value);
-void stack_push_token(Stack *stack, Token token);
-void stack_push_symbol(Stack *stack, grammarSymbol symbol);
-StackValue stack_pop(Stack *stack);
-int stack_is_empty(Stack *stack);
-void stack_free(Stack *stack);
+Stack* initStack();
+void stackPush(Stack* stack, StackValue value, StackType type);
+void pushInt(Stack *stack, int value);
+void pushToken(Stack *stack, Token token);
+void pushSymbol(Stack *stack, grammarSymbol symbol);
+StackValue popStack(Stack *stack);
+int stackIsEmpty(Stack *stack);
+void freeStack(Stack *stack);
 
 #endif

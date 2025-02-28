@@ -27,8 +27,6 @@ Lexer* initTokenList(){
 
 
 int main() {
-    printf("cool test\n");
-    //testLexer();
     Lexer* lexer = initTokenList();
     printTokenArray(lexer);
     Stack* stack = stack_init();

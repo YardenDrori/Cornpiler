@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Stack* stack_init() {
+Stack* initStack() {
     Stack *stack = (Stack*)malloc(sizeof(Stack));
     if (!stack) {
         fprintf(stderr, "Error allocating memory for stack in stack_init\n");
@@ -14,7 +14,7 @@ Stack* stack_init() {
     return stack;
 }
 
-void stack_push(Stack* stack, StackValue value, StackType type) {
+void stackPush(Stack* stack, StackValue value, StackType type) {
     StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
     if (!newNode) {
         fprintf(stderr, "Stack overflow!\n");
@@ -26,25 +26,25 @@ void stack_push(Stack* stack, StackValue value, StackType type) {
     stack->top = newNode;
 }
 
-void stack_push_int(Stack* stack, int value) {
+void pushInt(Stack* stack, int value) {
     StackValue v;
     v.data.intValue = value;
     stack_push(stack, v, STACK_INT);
 }
 
-void stack_push_token(Stack* stack, Token token) {
+void pushToken(Stack* stack, Token token) {
     StackValue v;
     v.data.tokenValue = token;  // Just store the Token as-is, no extra memory allocation
     stack_push(stack, v, STACK_TOKEN);
 }
 
-void stack_push_symbol(Stack* stack, grammarSymbol symbol) {
+void pushSymbol(Stack* stack, grammarSymbol symbol) {
     StackValue v;
     v.data.symbolValue = symbol;
     stack_push(stack, v, STACK_SYMBOL);
 }
 
-StackValue stack_pop(Stack* stack) {
+StackValue popStack(Stack* stack) {
     if (stack->top == NULL) {
         fprintf(stderr, "Stack underflow!\n");
         exit(1);
@@ -56,11 +56,11 @@ StackValue stack_pop(Stack* stack) {
     return value;
 }
 
-int stack_is_empty(Stack* stack) {
+int stackIsEmpty(Stack* stack) {
     return stack->top == NULL;
 }
 
-void stack_free(Stack* stack) {
+void freeStack(Stack* stack) {
     while (!stack_is_empty(stack)) {
         stack_pop(stack);
     }
