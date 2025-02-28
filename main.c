@@ -19,6 +19,5 @@ void testLexer(){
 
 int main() {
     Stack* stack = stack_init();
-    
     return 0;
 }
