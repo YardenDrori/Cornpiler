@@ -16,8 +16,10 @@ Parser* initParser(Lexer* lexer){
         printf("Failed to allocate memory for parser in parserInit\n");
         exit(1);
     }
+    parser->tokenId = 0;
     parser->lexer = lexer;
     parser->stack = stack_init();
+    pushInt(parser->stack, 0);
     //LR(1) table initialization below
     for (int i = 0; i < TOTAL_ACTIONS; i++){
         for (int j = 0; j < TOTAL_STATES; j++){

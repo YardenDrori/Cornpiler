@@ -41,6 +41,7 @@ typedef enum {
 
 typedef struct parser
 {
+    int tokenId;
     Lexer* lexer;
     Stack* stack;
     void (*LRTable[TOTAL_ACTIONS][TOTAL_STATES])(Stack* stack, /*temp name*/int num/*temp name*/);

@@ -4,18 +4,19 @@
 #include "parser.h"
 
 
-void Shift(Parser* parser, int num/*TEMP NAME*/){
+void Shift(Parser* parser, int actionParam){
+    pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
+    pushInt(parser->stack, actionParam);
+}
+
+void Reduce(Parser* parser, int actionParam){
 
 }
 
-void Reduce(Parser* parser, int num/*TEMP NAME*/){
-
-}
-
-void GOTO(Parser* parser, int num/*TEMP NAME*/){
+void GOTO(Parser* parser, int actionParam){
     
 }
 
-void LRTableError(Parser* parser, int num/*TEMP NAME*/){
+void LRTableError(Parser* parser, int actionParam){
 
 }
