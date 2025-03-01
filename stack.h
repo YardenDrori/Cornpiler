@@ -42,6 +42,5 @@ void pushSymbol(Stack *stack, grammarSymbol symbol);
 StackValue popStack(Stack *stack);
 int stackIsEmpty(Stack *stack);
 void freeStack(Stack *stack);
-StackValue popStackCount(Stack* stack, int count);
 
 #endif

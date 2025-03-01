@@ -43,70 +43,49 @@ void LRE(Parser* parser, int actionParam){
    printf("\033[1;31mParsing error found in Row: %d, Column: %d\033[0m\n", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
    exit(1);
 }
-//accept
-void LRA(Parser* parser, int actionParam){
-    //TODO
-}
 
 //reduce functions
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
-void Reduce0(Parser* parser){
-    popStackCount(parser->stack, 2);
-    pushSymbol(parser->stack, PROGRAM);
-}
+
 void Reduce1(Parser* parser){
-    popStackCount(parser->stack, 2);
-    pushSymbol(parser->stack, Start);
+
 }
 void Reduce2(Parser* parser){
-    popStackCount(parser->stack, 6);    
-    pushSymbol(parser->stack, Expr);
+    
 }
 void Reduce3(Parser* parser){
-    popStackCount(parser->stack, 6);    
-    pushSymbol(parser->stack, Expr);
+    
 }
 void Reduce4(Parser* parser){
-    popStackCount(parser->stack, 2);
-    pushSymbol(parser->stack, Term);    
+    
 }
 void Reduce5(Parser* parser){
-    popStackCount(parser->stack, 6);    
-    pushSymbol(parser->stack, Term);
+    
 }
 void Reduce6(Parser* parser){
-    popStackCount(parser->stack, 6);    
-    pushSymbol(parser->stack, Term);
+    
 }
 void Reduce7(Parser* parser){
-    popStackCount(parser->stack, 2);    
-    pushSymbol(parser->stack, Term);
+    
 }
 void Reduce8(Parser* parser){
-    popStackCount(parser->stack, 6);    
-    pushSymbol(parser->stack, Factor);
+    
 }
 void Reduce9(Parser* parser){
-    popStackCount(parser->stack, 2);    
-    pushSymbol(parser->stack, Factor);
+    
 }
 void Reduce10(Parser* parser){
-    popStackCount(parser->stack, 2);    
-    pushSymbol(parser->stack, Factor);
+    
 }
 void Reduce11(Parser* parser){
-    popStackCount(parser->stack, 4);    
-    pushSymbol(parser->stack, Factor);
+    
 }
 void Reduce12(Parser* parser){
-    popStackCount(parser->stack, 4);    
-    pushSymbol(parser->stack, Factor);
+    
 }
 void Reduce13(Parser* parser){
-    popStackCount(parser->stack, 4);    
-    pushSymbol(parser->stack, Factor);
+    
 }
 void Reduce14(Parser* parser){
-    popStackCount(parser->stack, 4);    
-    pushSymbol(parser->stack, Factor);
+    
 }

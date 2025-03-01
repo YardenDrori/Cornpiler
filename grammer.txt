@@ -29,21 +29,3 @@ Factor -> id inc
 Factor -> id dec
 Factor -> dec id
 Factor -> inc id
-
-
-//current ver:
-PROGRAM -> Start
-Start -> Expr
-Expr -> Expr PLUS Term
-Expr -> Expr MINUS Term
-Expr -> Term
-Term -> Term MULTIPLY Factor
-Term -> Term DIVIDE Factor
-Term -> Factor
-Factor -> OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-Factor -> IDENT
-Factor -> INT_LITERAL
-Factor -> IDENT INC
-Factor -> IDENT DEC
-Factor -> DEC IDENT
-Factor -> INC IDENT
