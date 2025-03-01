@@ -21,20 +21,14 @@ Parser* initParser(Lexer* lexer){
     parser->stack = stack_init();
     pushInt(parser->stack, 0);
     //LR(1) table initialization below
-
+    for (int i = 0; i < TOTAL_ACTIONS; i++){
+        for (int j = 0; j < TOTAL_STATES; j++){
+            parser->lrTable[i][j].LRTableFuncP = LRE;
+            parser->lrTable[i][j].actionParam = -1;
+        }
+    }
+    //filling the lrTable with relevent data
     
-    
-	
-
-
-
-
-
-
-
-
-
-
     
     return parser;
 }
