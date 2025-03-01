@@ -6,6 +6,7 @@
         "stdbool.h": "c",
         "parser.h": "c",
         "stack.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "lrtable.h": "c"
     }
 }

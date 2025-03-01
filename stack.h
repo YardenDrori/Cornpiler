@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include "token.h"
-#include "parser.h"
+#include "parser_types.h"
 
 // Stack element type
 typedef enum {
@@ -29,7 +29,7 @@ typedef struct StackNode {
 } StackNode;
 
 // Stack structure
-typedef struct {
+typedef struct Stack{
     StackNode *top;
 } Stack;
 

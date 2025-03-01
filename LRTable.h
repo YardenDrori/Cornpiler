@@ -3,10 +3,15 @@
 #include <stdlib.h>
 #include "lexer.h"
 #include "stack.h"
-#include "parser.h"
 
-void Shift(Parser* parser, int actionParam);
-void Reduce(Parser* parser, int actionParam);
-void GOTO(Parser* parser, int actionParam);
-void LRTableError(Parser* parser, int actionParam);
+// Forward declare struct Parser
+struct Parser;
+
+void LRShift(struct Parser* parser, int actionParam);
+void LRReduce(struct Parser* parser, int actionParam);
+void LRGOTO(struct Parser* parser, int actionParam);
+void LRError(struct Parser* parser, int actionParam);
+void LRAccept(struct Parser* parser, int actionParam);
+
+
 #endif

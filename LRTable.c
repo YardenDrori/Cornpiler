@@ -1,20 +1,22 @@
 #include <stdlib.h>
-#include "lexer.h"
+#include "lexer.h"   
 #include "stack.h"
+#include "LRTable.h"
+#include "lexer.h"
 #include "parser.h"
 
 // LRTable functions
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
-void Shift(Parser* parser, int actionParam){
+void LRShift(Parser* parser, int actionParam){
     pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
     pushInt(parser->stack, actionParam);
 }
 
-void Reduce(Parser* parser, int actionParam){
+void LRReduce(Parser* parser, int actionParam){
     parser->ReduceFunctionTable[actionParam](parser);
 }
 
-void GOTO(Parser* parser, int actionParam){
+void LRGOTO(Parser* parser, int actionParam){
     /*
     ASK MICHAEL IF THIS IS BETTER OF MODIFYING
     THE STACK TO STORE THE VALUE BEFORE THE LAST
@@ -33,7 +35,7 @@ void GOTO(Parser* parser, int actionParam){
     pushInt(parser->stack, gotoResult);
 }
 
-void LRTableError(Parser* parser, int actionParam){
+void LRError(Parser* parser, int actionParam){
     /*
     ask michael if error handler should be made
     by saving the pos of each token in token struct
@@ -43,7 +45,7 @@ void LRTableError(Parser* parser, int actionParam){
    exit(1);
 }
 
-void LRTableAccept(Parser* parser, int actionParam){
+void LRAccept(Parser* parser, int actionParam){
     //TODO
 }
 

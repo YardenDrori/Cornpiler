@@ -4,7 +4,6 @@
 #include "util.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define FILENAME "ExampleScript.txt"
 
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 //INSTRUCTIONS FOR ADDING NEW TOKENS IN CASE I FORGOR💀

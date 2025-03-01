@@ -1,12 +1,11 @@
 #ifndef PARSER_H
 #define PARSER_H
 #include <stdlib.h>
-#include "lexer.h"
 #include "stack.h"
+#include "lexer.h"
 #include "LRTable.h"
-#define TOTAL_STATES 44
-#define TOTAL_ACTIONS 11
-#define TOTAL_GRAMMER_RULES 15
+#include "parser_types.h"
+
 
 /* FOR NOW ONLY THESE WILL BE USED
 Program -> S
@@ -25,14 +24,7 @@ Factor -> id dec
 Factor -> dec id
 Factor -> inc id
 */
-typedef enum {
-    PROGRAM,
-    Start,
-    Expr,
-    Term,
-    Factor,
-    GRAMMER_SYMBOL_COUNT
-} grammarSymbol;
+
 
 typedef enum {
     ACTION_SHIFT,
@@ -48,13 +40,13 @@ typedef struct LRTable
 } LRTable;
 
 
-typedef struct parser
+typedef struct Parser
 {
     int tokenId;
-    Lexer* lexer;
-    Stack* stack;
+    struct Lexer* lexer;
+    struct Stack* stack;
     LRTable lrTable[TOTAL_ACTIONS+GRAMMER_SYMBOL_COUNT][TOTAL_STATES];
-    void (*ReduceFunctionTable[TOTAL_GRAMMER_RULES])(Stack* stack);
+    void (*ReduceFunctionTable[TOTAL_GRAMMER_RULES])(struct Parser* parser);
 } Parser;
 
 void freeParser(Parser* parser);

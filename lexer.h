@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include "token.h"
 #include "state.h"
+#define FILENAME "ExampleScript.txt"
+
 
 #define BUFFER_SIZE 4096 //4kb
 #define INITIAL_TOKEN_CAPACITY 64
@@ -17,7 +19,7 @@ typedef struct
     int input_len;
 } Lexme;
 
-typedef struct
+typedef struct Lexer
 {
     FILE *file; //the file containing cce code
     char buffer[BUFFER_SIZE]; //4kb buffer to to read the file
@@ -32,7 +34,7 @@ typedef struct
     Lexme *lexme;
 } Lexer;
 
-Lexer *initLexer(const char *filename);
+Lexer* initLexer(const char *filename);
 void loadBuffer(Lexer *lexer);
 char nextChar(Lexer *lexer);
 Token nextToken(Lexer *lexer);
