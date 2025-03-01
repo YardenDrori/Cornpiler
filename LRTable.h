@@ -5,9 +5,10 @@
 #include "stack.h"
 #include "parser.h"
 
-void LRS(Parser* parser, int actionParam);
-void LRR(Parser* parser, int actionParam);
-void LRG(Parser* parser, int actionParam);
-void LRE(Parser* parser, int actionParam);
+void LRShift(Parser* parser, int actionParam);
+void LRReduce(Parser* parser, int actionParam);
+void LRGoto(Parser* parser, int actionParam);
+void LRError(Parser* parser, int actionParam);
+void LRAccept(Parser* parser, int actionParam);
 
 #endif

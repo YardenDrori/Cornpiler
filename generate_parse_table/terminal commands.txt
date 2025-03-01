@@ -1,4 +1,0 @@
-cd generate_parse_table
-bison -d --report=all parser.y
-
-NOW RUN THE C FILE "generate_parse_table"

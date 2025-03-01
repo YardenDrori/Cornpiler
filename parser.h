@@ -4,7 +4,7 @@
 #include "lexer.h"
 #include "stack.h"
 #include "LRTable.h"
-#define TOTAL_STATES 45
+#define TOTAL_STATES 47
 #define TOTAL_ACTIONS 11
 #define TOTAL_GRAMMER_RULES 15
 
