@@ -29,19 +29,19 @@ void stackPush(Stack* stack, StackValue value, StackType type) {
 void pushInt(Stack* stack, int value) {
     StackValue v;
     v.data.intValue = value;
-    stack_push(stack, v, STACK_INT);
+    stackPush(stack, v, STACK_INT);
 }
 
 void pushToken(Stack* stack, Token token) {
     StackValue v;
     v.data.tokenValue = token;  // Just store the Token as-is, no extra memory allocation
-    stack_push(stack, v, STACK_TOKEN);
+    stackPush(stack, v, STACK_TOKEN);
 }
 
 void pushSymbol(Stack* stack, grammarSymbol symbol) {
     StackValue v;
     v.data.symbolValue = symbol;
-    stack_push(stack, v, STACK_SYMBOL);
+    stackPush(stack, v, STACK_SYMBOL);
 }
 
 StackValue popStack(Stack* stack) {
@@ -61,8 +61,8 @@ int stackIsEmpty(Stack* stack) {
 }
 
 void freeStack(Stack* stack) {
-    while (!stack_is_empty(stack)) {
-        stack_pop(stack);
+    while (!stackIsEmpty(stack)) {
+        popStack(stack);
     }
     free(stack);
 }
