@@ -5,16 +5,17 @@
 
 // LRTable functions
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
-void Shift(Parser* parser, int actionParam){
+//shift
+void LRS(Parser* parser, int actionParam){
     pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
     pushInt(parser->stack, actionParam);
 }
-
-void Reduce(Parser* parser, int actionParam){
+//reduce
+void LRR(Parser* parser, int actionParam){
     parser->ReduceFunctionTable[actionParam](parser);
 }
-
-void GOTO(Parser* parser, int actionParam){
+//goto table
+void LRG(Parser* parser, int actionParam){
     /*
     ASK MICHAEL IF THIS IS BETTER OF MODIFYING
     THE STACK TO STORE THE VALUE BEFORE THE LAST
@@ -27,13 +28,13 @@ void GOTO(Parser* parser, int actionParam){
     temp2 = popStack(parser->stack);
     tempNum = temp1.data.symbolValue;
     tempNum += TOTAL_ACTIONS;
-    gotoResult = parser->LRTable[tempNum][temp2.data.intValue];
+    gotoResult = parser->lrTable[tempNum][temp2.data.intValue].LRTableFuncP;
     pushSymbol(parser->stack, temp1.data.symbolValue);
     pushInt(parser->stack, temp2.data.intValue);
     pushInt(parser->stack, gotoResult);
 }
-
-void LRTableError(Parser* parser, int actionParam){
+//error
+void LRE(Parser* parser, int actionParam){
     /*
     ask michael if error handler should be made
     by saving the pos of each token in token struct
@@ -42,8 +43,8 @@ void LRTableError(Parser* parser, int actionParam){
    printf("\033[1;31mParsing error found in Row: %d, Column: %d\033[0m\n", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
    exit(1);
 }
-
-void LRTableAccept(Parser* parser, int actionParam){
+//accept
+void LRA(Parser* parser, int actionParam){
     //TODO
 }
 

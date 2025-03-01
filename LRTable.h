@@ -5,8 +5,9 @@
 #include "stack.h"
 #include "parser.h"
 
-void Shift(Parser* parser, int actionParam);
-void Reduce(Parser* parser, int actionParam);
-void GOTO(Parser* parser, int actionParam);
-void LRTableError(Parser* parser, int actionParam);
+void LRS(Parser* parser, int actionParam);
+void LRR(Parser* parser, int actionParam);
+void LRG(Parser* parser, int actionParam);
+void LRE(Parser* parser, int actionParam);
+
 #endif

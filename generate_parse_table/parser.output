@@ -1,0 +1,377 @@
+Grammar
+
+    0 $accept: PROGRAM $end
+
+    1 PROGRAM: Start
+
+    2 Start: Expr
+
+    3 Expr: Expr PLUS Term
+    4     | Expr MINUS Term
+    5     | Term
+
+    6 Term: Term MULTIPLY Factor
+    7     | Term DIVIDE Factor
+    8     | Factor
+
+    9 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   10       | IDENT
+   11       | INT_LITERAL
+   12       | IDENT INC
+   13       | IDENT DEC
+   14       | DEC IDENT
+   15       | INC IDENT
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    PLUS (258) 3
+    MINUS (259) 4
+    MULTIPLY (260) 6
+    DIVIDE (261) 7
+    OPEN_PARENTHESIS (262) 9
+    CLOSE_PARENTHESIS (263) 9
+    IDENT (264) 10 12 13 14 15
+    INT_LITERAL (265) 11
+    INC (266) 12 15
+    DEC (267) 13 14
+
+
+Nonterminals, with rules where they appear
+
+    $accept (13)
+        on left: 0
+    PROGRAM (14)
+        on left: 1
+        on right: 0
+    Start (15)
+        on left: 2
+        on right: 1
+    Expr (16)
+        on left: 3 4 5
+        on right: 2 3 4 9
+    Term (17)
+        on left: 6 7 8
+        on right: 3 4 5 6 7
+    Factor (18)
+        on left: 9 10 11 12 13 14 15
+        on right: 6 7 8
+
+
+State 0
+
+    0 $accept: • PROGRAM $end
+    1 PROGRAM: • Start
+    2 Start: • Expr
+    3 Expr: • Expr PLUS Term
+    4     | • Expr MINUS Term
+    5     | • Term
+    6 Term: • Term MULTIPLY Factor
+    7     | • Term DIVIDE Factor
+    8     | • Factor
+    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   10       | • IDENT
+   11       | • INT_LITERAL
+   12       | • IDENT INC
+   13       | • IDENT DEC
+   14       | • DEC IDENT
+   15       | • INC IDENT
+
+    OPEN_PARENTHESIS  shift, and go to state 1
+    IDENT             shift, and go to state 2
+    INT_LITERAL       shift, and go to state 3
+    INC               shift, and go to state 4
+    DEC               shift, and go to state 5
+
+    PROGRAM  go to state 6
+    Start    go to state 7
+    Expr     go to state 8
+    Term     go to state 9
+    Factor   go to state 10
+
+
+State 1
+
+    3 Expr: • Expr PLUS Term
+    4     | • Expr MINUS Term
+    5     | • Term
+    6 Term: • Term MULTIPLY Factor
+    7     | • Term DIVIDE Factor
+    8     | • Factor
+    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+    9       | OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
+   10       | • IDENT
+   11       | • INT_LITERAL
+   12       | • IDENT INC
+   13       | • IDENT DEC
+   14       | • DEC IDENT
+   15       | • INC IDENT
+
+    OPEN_PARENTHESIS  shift, and go to state 1
+    IDENT             shift, and go to state 2
+    INT_LITERAL       shift, and go to state 3
+    INC               shift, and go to state 4
+    DEC               shift, and go to state 5
+
+    Expr    go to state 11
+    Term    go to state 9
+    Factor  go to state 10
+
+
+State 2
+
+   10 Factor: IDENT •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+   12       | IDENT • INC
+   13       | IDENT • DEC
+
+    INC  shift, and go to state 12
+    DEC  shift, and go to state 13
+
+    $default  reduce using rule 10 (Factor)
+
+
+State 3
+
+   11 Factor: INT_LITERAL •
+
+    $default  reduce using rule 11 (Factor)
+
+
+State 4
+
+   15 Factor: INC • IDENT
+
+    IDENT  shift, and go to state 14
+
+
+State 5
+
+   14 Factor: DEC • IDENT
+
+    IDENT  shift, and go to state 15
+
+
+State 6
+
+    0 $accept: PROGRAM • $end
+
+    $end  shift, and go to state 16
+
+
+State 7
+
+    1 PROGRAM: Start •
+
+    $default  reduce using rule 1 (PROGRAM)
+
+
+State 8
+
+    2 Start: Expr •  [$end]
+    3 Expr: Expr • PLUS Term
+    4     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 17
+    MINUS  shift, and go to state 18
+
+    $default  reduce using rule 2 (Start)
+
+
+State 9
+
+    5 Expr: Term •  [$end, PLUS, MINUS, CLOSE_PARENTHESIS]
+    6 Term: Term • MULTIPLY Factor
+    7     | Term • DIVIDE Factor
+
+    MULTIPLY  shift, and go to state 19
+    DIVIDE    shift, and go to state 20
+
+    $default  reduce using rule 5 (Expr)
+
+
+State 10
+
+    8 Term: Factor •
+
+    $default  reduce using rule 8 (Term)
+
+
+State 11
+
+    3 Expr: Expr • PLUS Term
+    4     | Expr • MINUS Term
+    9 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
+
+    PLUS               shift, and go to state 17
+    MINUS              shift, and go to state 18
+    CLOSE_PARENTHESIS  shift, and go to state 21
+
+
+State 12
+
+   12 Factor: IDENT INC •
+
+    $default  reduce using rule 12 (Factor)
+
+
+State 13
+
+   13 Factor: IDENT DEC •
+
+    $default  reduce using rule 13 (Factor)
+
+
+State 14
+
+   15 Factor: INC IDENT •
+
+    $default  reduce using rule 15 (Factor)
+
+
+State 15
+
+   14 Factor: DEC IDENT •
+
+    $default  reduce using rule 14 (Factor)
+
+
+State 16
+
+    0 $accept: PROGRAM $end •
+
+    $default  accept
+
+
+State 17
+
+    3 Expr: Expr PLUS • Term
+    6 Term: • Term MULTIPLY Factor
+    7     | • Term DIVIDE Factor
+    8     | • Factor
+    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   10       | • IDENT
+   11       | • INT_LITERAL
+   12       | • IDENT INC
+   13       | • IDENT DEC
+   14       | • DEC IDENT
+   15       | • INC IDENT
+
+    OPEN_PARENTHESIS  shift, and go to state 1
+    IDENT             shift, and go to state 2
+    INT_LITERAL       shift, and go to state 3
+    INC               shift, and go to state 4
+    DEC               shift, and go to state 5
+
+    Term    go to state 22
+    Factor  go to state 10
+
+
+State 18
+
+    4 Expr: Expr MINUS • Term
+    6 Term: • Term MULTIPLY Factor
+    7     | • Term DIVIDE Factor
+    8     | • Factor
+    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   10       | • IDENT
+   11       | • INT_LITERAL
+   12       | • IDENT INC
+   13       | • IDENT DEC
+   14       | • DEC IDENT
+   15       | • INC IDENT
+
+    OPEN_PARENTHESIS  shift, and go to state 1
+    IDENT             shift, and go to state 2
+    INT_LITERAL       shift, and go to state 3
+    INC               shift, and go to state 4
+    DEC               shift, and go to state 5
+
+    Term    go to state 23
+    Factor  go to state 10
+
+
+State 19
+
+    6 Term: Term MULTIPLY • Factor
+    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   10       | • IDENT
+   11       | • INT_LITERAL
+   12       | • IDENT INC
+   13       | • IDENT DEC
+   14       | • DEC IDENT
+   15       | • INC IDENT
+
+    OPEN_PARENTHESIS  shift, and go to state 1
+    IDENT             shift, and go to state 2
+    INT_LITERAL       shift, and go to state 3
+    INC               shift, and go to state 4
+    DEC               shift, and go to state 5
+
+    Factor  go to state 24
+
+
+State 20
+
+    7 Term: Term DIVIDE • Factor
+    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   10       | • IDENT
+   11       | • INT_LITERAL
+   12       | • IDENT INC
+   13       | • IDENT DEC
+   14       | • DEC IDENT
+   15       | • INC IDENT
+
+    OPEN_PARENTHESIS  shift, and go to state 1
+    IDENT             shift, and go to state 2
+    INT_LITERAL       shift, and go to state 3
+    INC               shift, and go to state 4
+    DEC               shift, and go to state 5
+
+    Factor  go to state 25
+
+
+State 21
+
+    9 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS •
+
+    $default  reduce using rule 9 (Factor)
+
+
+State 22
+
+    3 Expr: Expr PLUS Term •  [$end, PLUS, MINUS, CLOSE_PARENTHESIS]
+    6 Term: Term • MULTIPLY Factor
+    7     | Term • DIVIDE Factor
+
+    MULTIPLY  shift, and go to state 19
+    DIVIDE    shift, and go to state 20
+
+    $default  reduce using rule 3 (Expr)
+
+
+State 23
+
+    4 Expr: Expr MINUS Term •  [$end, PLUS, MINUS, CLOSE_PARENTHESIS]
+    6 Term: Term • MULTIPLY Factor
+    7     | Term • DIVIDE Factor
+
+    MULTIPLY  shift, and go to state 19
+    DIVIDE    shift, and go to state 20
+
+    $default  reduce using rule 4 (Expr)
+
+
+State 24
+
+    6 Term: Term MULTIPLY Factor •
+
+    $default  reduce using rule 6 (Term)
+
+
+State 25
+
+    7 Term: Term DIVIDE Factor •
+
+    $default  reduce using rule 7 (Term)

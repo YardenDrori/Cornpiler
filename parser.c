@@ -23,10 +23,13 @@ Parser* initParser(Lexer* lexer){
     //LR(1) table initialization below
     for (int i = 0; i < TOTAL_ACTIONS; i++){
         for (int j = 0; j < TOTAL_STATES; j++){
-            parser->LRTable[i][j] = LRTableError;
+            parser->lrTable[i][j].LRTableFuncP = LRE;
+            parser->lrTable[i][j].actionParam = -1;
         }
     }
-
+    //filling the lrTable with relevent data
+    
+    
     return parser;
 }
 
