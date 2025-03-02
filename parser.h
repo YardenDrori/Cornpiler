@@ -5,6 +5,7 @@
 #include "lexer.h"
 #include "LRTable.h"
 #include "parser_types.h"
+#include "parseTree.h"
 
 
 /* FOR NOW ONLY THESE WILL BE USED
@@ -45,8 +46,10 @@ typedef struct Parser
     int tokenId;
     struct Lexer* lexer;
     struct Stack* stack;
+    struct TreeStack* treeStack;
     LRTable lrTable[TOTAL_ACTIONS+GRAMMER_SYMBOL_COUNT][TOTAL_STATES];
     void (*ReduceFunctionTable[TOTAL_GRAMMER_RULES])(struct Parser* parser);
+    parseTreeNode* treeHead;
 } Parser;
 
 void freeParser(Parser* parser);

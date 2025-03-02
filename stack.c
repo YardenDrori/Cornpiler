@@ -34,7 +34,7 @@ void pushInt(Stack* stack, int value) {
 
 void pushToken(Stack* stack, Token token) {
     StackValue v;
-    v.data.tokenValue = token;  // Just store the Token as-is, no extra memory allocation
+    v.data.tokenValue = token;
     stackPush(stack, v, STACK_TOKEN);
 }
 
@@ -71,6 +71,52 @@ void freeStack(Stack* stack) {
 StackValue popStackCount(Stack* stack, int count){
     for (int i = 0; i < count-1; i++){
         popStack(stack);
+        
     }
     return popStack(stack);
+}
+
+
+
+
+
+TreeStack* treeStackInit(){
+    TreeStack *stack = (TreeStack*)malloc(sizeof(TreeStack));
+    if (!stack) {
+        fprintf(stderr, "Error allocating memory for stack in stack_init\n");
+        exit(1);
+    }
+    stack->top = NULL;
+    return stack;
+}
+void treeStackPush(TreeStack* stack, parseTreeNode* data){
+    TreeStackNode* newNode = (TreeStackNode*)malloc(sizeof(TreeStackNode));
+    if (!newNode) {
+        fprintf(stderr, "Stack overflow!\n");
+        exit(1);
+    }
+    newNode->data = data;
+    newNode->next = stack->top;
+    stack->top = newNode;
+}
+parseTreeNode* treePopStack(TreeStack *stack){
+    if (stack->top == NULL) {
+        fprintf(stderr, "Stack underflow!\n");
+        exit(1);
+    }
+    TreeStackNode* temp = stack->top;
+    parseTreeNode* value = temp->data;
+    stack->top = temp->next;
+    free(temp);
+    free(value);
+    return value;
+}
+int treeStackIsEmpty(TreeStackNode *stack){
+    return stack->top == NULL;
+}
+void treeFreeStack(TreeStackNode *stack){
+    while (!stackIsEmpty(stack)) {
+        free(treePopStack(stack));
+    }
+    free(stack);
 }

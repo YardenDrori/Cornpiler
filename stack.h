@@ -4,6 +4,33 @@
 #include <stdlib.h>
 #include "token.h"
 #include "parser_types.h"
+#include "parseTree.h"
+
+
+
+
+typedef struct TreeStackNode
+{
+    parseTreeNode* data;
+    TreeStackNode* next;
+    TreeStackNode* top;
+} TreeStackNode;
+
+typedef struct TreeStack
+{
+    TreeStackNode* top;
+} TreeStack;
+
+TreeStack* treeStackInit();
+void treeStackPush(TreeStack* stack, parseTreeNode* data);
+parseTreeNode* treePopStack(TreeStack *stack);
+int treeStackIsEmpty(TreeStack *stack);
+void treeFreeStack(TreeStack *stack);
+
+
+
+
+
 
 // Stack element type
 typedef enum {
