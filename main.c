@@ -2,6 +2,7 @@
 #include "token.h"
 #include "util.h"
 #include "stack.h"
+#include "parser.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
@@ -26,7 +27,17 @@ Lexer* initTokenList(){
 }
 
 
+
+
+
+
+
 int main() {
-    testLexer();
+    Lexer* lexer = initLexer(FILENAME);
+    Parser* parser = initParser(lexer);
+
+
+    printf("\n");
+
     return 0;
 }

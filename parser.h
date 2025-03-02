@@ -36,7 +36,7 @@ typedef enum {
 typedef struct LRTable
 {
     int actionParam;
-    void (*LRTableFuncP[5])(Stack* stack, int actionParam);
+    void (*LRTableFuncP)(struct Parser* parser, int actionParam);
 } LRTable;
 
 

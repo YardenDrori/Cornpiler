@@ -16,7 +16,7 @@ void LRReduce(Parser* parser, int actionParam){
     parser->ReduceFunctionTable[actionParam](parser);
 }
 
-void LRGOTO(Parser* parser, int actionParam){
+void LRGoto(Parser* parser, int actionParam){
     /*
     ASK MICHAEL IF THIS IS BETTER OF MODIFYING
     THE STACK TO STORE THE VALUE BEFORE THE LAST

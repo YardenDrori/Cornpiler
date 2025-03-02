@@ -5,7 +5,7 @@
             "name": "Debug C Program",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/cornpiler",
+            "program": "${workspaceFolder}/output",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

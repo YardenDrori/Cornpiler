@@ -9,7 +9,7 @@ struct Parser;
 
 void LRShift(struct Parser* parser, int actionParam);
 void LRReduce(struct Parser* parser, int actionParam);
-void LRGOTO(struct Parser* parser, int actionParam);
+void LRGoto(struct Parser* parser, int actionParam);
 void LRError(struct Parser* parser, int actionParam);
 void LRAccept(struct Parser* parser, int actionParam);
 

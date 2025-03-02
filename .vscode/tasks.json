@@ -7,10 +7,7 @@
             "command": "clang",
             "args": [
                 "-g",
-                "main.c",
-                "lexer.c",
-                "util.c",
-                "stack.c",
+                "main.c", "parser.c", "lexer.c", "stack.c", "LRTable.c", "util.c",
                 "-o", "cornpiler"
             ],
             "group": {
