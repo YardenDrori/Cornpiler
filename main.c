@@ -35,7 +35,6 @@ Lexer* initTokenList(){
 int main() {
     Lexer* lexer = initLexer(FILENAME);
     Parser* parser = initParser(lexer);
-    
     /*
     ( - 1
     ) - 2
@@ -53,7 +52,6 @@ int main() {
     Expr - 14
     Term - 15
     Factor - 16
-    */
 
     char funcP;
     int i = 3;
@@ -73,7 +71,9 @@ int main() {
     }
     printf("%c %d\n", funcP, parser->lrTable[i][j].actionParam);
 
-    printf("\n");
+    printf("\n");*/
 
+
+    
     return 0;
 }
