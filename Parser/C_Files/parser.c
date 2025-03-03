@@ -19,7 +19,7 @@ Parser* initParser(Lexer* lexer){
         exit(1);
     }
     parser->tokenId = 0;
-    parser->lexer = initLexer(FILENAME);
+    parser->lexer = lexer;
 	getTokenList(parser->lexer);
     parser->stack = initStack();
     pushInt(parser->stack, 0); 
@@ -513,18 +513,18 @@ Parser* initParser(Lexer* lexer){
     return parser;
 }
 
-parseTreeNode* generateTree(Parser* parser){
+void* generateTree(Parser* parser){
 	StackValue val1;
 	int val2;
 	while (parser->tokenId < parser->lexer->token_capacity){
 		val1 = getStackValue(parser->stack);
 		if (val1.dataType == GRAMMER_SYMBOL_DATA_TYPE){
 			LRGoto(parser, -1);
-		}else if (val1.dataType = TOKEN_DATA_TYPE){
+		}else if (val1.dataType == TOKEN_DATA_TYPE){
 			LRGoto(parser, -1);
 		}else{
 			val2 = parser->lexer->tokens[parser->tokenId].type;
-			parser->lrTable[val2][val1.data.intValue].LRTableFuncP(parser, val1.data.intValue);
+			parser->lrTable[val2][val1.data.intValue].LRTableFuncP(parser, parser->lrTable[val2][val1.data.intValue].actionParam);
 		}
 	}
 }

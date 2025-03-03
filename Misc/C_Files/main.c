@@ -33,7 +33,7 @@ Lexer* initTokenList(){
 int main() {
     Lexer* lexer = initLexer(FILENAME);
     Parser* parser = initParser(lexer);
-    printTree(generateTree(parser));
+    generateTree(parser);
 
     return 0;
 }

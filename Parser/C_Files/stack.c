@@ -78,6 +78,8 @@ StackValue getStackValue(Stack* stack) {
     }
     StackValue value;
     value.data = stack->top->value.data;
+    value.dataType = stack->top->value.dataType;
+
     return value;
 }
 

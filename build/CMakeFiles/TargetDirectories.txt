@@ -1,4 +1,3 @@
 /Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles/output.dir
-/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles/run.dir
 /Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles/edit_cache.dir
 /Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles/rebuild_cache.dir
