@@ -12,12 +12,11 @@ typedef enum NodeType{
     NODE_NONTERMINAL
 } NodeType;
 
-
-typedef struct parseTreeNode;
+struct parseTreeNode;
 typedef struct treeList
 {
-    parseTreeNode* treeNode;
-    treeList* next;
+    struct parseTreeNode* treeNode;
+    struct treeList* next;
     int treeListSize;
 } treeList;
 
@@ -29,11 +28,12 @@ typedef union treeData
 
 typedef struct parseTreeNode{
     treeList *children;
-    parseTreeNode* parent;
+    struct parseTreeNode* parent;
     treeData data;
 } parseTreeNode;
 
 parseTreeNode* generateTreeNode(treeData data);
-
-
+parseTreeNode* generateTreeNodeAncestor(treeList* childrenList, treeData ancestorData);
+treeList* listAssistantGenerator(struct Parser* parser, int size, treeList* list);
+treeList* generateList(struct Parser *parser, int size);
 #endif

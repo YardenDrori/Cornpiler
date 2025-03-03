@@ -6,23 +6,53 @@
 #include "parser.h"
 
 
+//reduce functions
+//=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
+grammarSymbol Reduce3(Parser* parser){
+    parseTreeNode* treeNode1;
+    parseTreeNode* treeNode2;
+    parseTreeNode* treeNode3;
+    treeList *list;
+    treeData data;
+    treeNode1 = popStackCount(parser->stack, 2).data.treeNode;
+    data.token = parser->lexer->tokens[parser->tokenId++];
+    treeNode2 = generateTreeNode(data);
+    treeNode3 = popStackCount(parser->stack, 2).data.treeNode;
+    list->treeListSize = 3;
+    list->treeNode = treeNode1;
+    list = listAssistantGenerator(list, treeNode2, 3);
+    list->next = listAssistantGenerator(list->next, treeNode3, 3);
+    data.symbol = Expr;
+    pushTreeNode(parser->stack, generateTreeNodeAncestor(list, data));
+    return(Expr);
+}
+
+
 
 
 
 // LRTable functions
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
 void LRShift(Parser* parser, int actionParam){
-    pushToken(parser->stack, parser->lexer->tokens[parser->tokenId]);
+    //manage LRTable stack
+    pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
     pushInt(parser->stack, actionParam);
 
-    treeData data;
-    data.token = parser->lexer->tokens[parser->tokenId++];
-    parseTreeNode *node = generateTreeNode(data);
-    
+
 }
 
 void LRReduce(Parser* parser, int actionParam){
-    parser->ReduceFunctionTable[actionParam](parser);
+    //manage LRTable stack
+    grammarSymbol symbol = parser->ReduceFunctionTable[actionParam](parser);
+    pushSymbol(parser->stack, symbol);
+
+
+
+    //manage treeStack
+    /*treeData data;
+    data.symbol = symbol;
+    parseTreeNode *node = generateTreeNode(data);
+    treeStackPush(parser->treeStack, node);*/
 }
 
 void LRGoto(Parser* parser, int actionParam){
@@ -36,10 +66,10 @@ void LRGoto(Parser* parser, int actionParam){
     StackValue temp2; //contains the NUMBER
     temp1 = popStack(parser->stack);
     temp2 = popStack(parser->stack);
-    tempNum = temp1.data.symbolValue;
+    tempNum = temp1.data.treeNode->data.symbol;
     tempNum += TOTAL_ACTIONS;
     gotoResult = parser->lrTable[tempNum][temp2.data.intValue].actionParam;
-    pushSymbol(parser->stack, temp1.data.symbolValue);
+    pushSymbol(parser->stack, temp1.data.treeNode->data.symbol);
     pushInt(parser->stack, temp2.data.intValue);
     pushInt(parser->stack, gotoResult);
 }
@@ -58,10 +88,6 @@ void LRAccept(Parser* parser, int actionParam){
     //TODO
 }
 
-//reduce functions
-//=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
 
-void Reduce3(Parser* parser){
-    popStackCount(parser->stack, 6);
-    pushSymbol(parser->stack, Expr);
-}
+
+

@@ -8,50 +8,15 @@
 
 
 
-
-typedef struct TreeStackNode
-{
-    parseTreeNode* data;
-    TreeStackNode* next;
-    TreeStackNode* top;
-} TreeStackNode;
-
-typedef struct TreeStack
-{
-    TreeStackNode* top;
-} TreeStack;
-
-TreeStack* treeStackInit();
-void treeStackPush(TreeStack* stack, parseTreeNode* data);
-parseTreeNode* treePopStack(TreeStack *stack);
-int treeStackIsEmpty(TreeStack *stack);
-void treeFreeStack(TreeStack *stack);
-
-
-
-
-
-
-// Stack element type
-typedef enum {
-    STACK_INT,
-    STACK_TOKEN,
-    STACK_SYMBOL
-} StackType;
-
 typedef struct {
-    StackType type;
     union {
         int intValue;
-        Token tokenValue;
-        grammarSymbol symbolValue;
+        parseTreeNode* treeNode;
     } data;
 } StackValue;
 
-// Stack node
 typedef struct StackNode {
     StackValue value;
-    StackType type;
     struct StackNode *next;
 } StackNode;
 
@@ -62,7 +27,7 @@ typedef struct Stack{
 
 // Function prototypes
 Stack* initStack();
-void stackPush(Stack* stack, StackValue value, StackType type);
+void stackPush(Stack* stack, StackValue value);
 void pushInt(Stack *stack, int value);
 void pushToken(Stack *stack, Token token);
 void pushSymbol(Stack *stack, grammarSymbol symbol);
@@ -70,5 +35,5 @@ StackValue popStack(Stack *stack);
 int stackIsEmpty(Stack *stack);
 void freeStack(Stack *stack);
 StackValue popStackCount(Stack* stack, int count);
-
+void pushTreeNode(Stack* stack, parseTreeNode *node);
 #endif

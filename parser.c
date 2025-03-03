@@ -19,7 +19,6 @@ Parser* initParser(Lexer* lexer){
     parser->tokenId = 0;
     parser->lexer = initLexer(FILENAME);
     parser->stack = initStack();
-	parser->treeStack = treeStackInit();
     pushInt(parser->stack, 0); 
 
 

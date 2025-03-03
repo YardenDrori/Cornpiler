@@ -14,14 +14,14 @@ Stack* initStack() {
     return stack;
 }
 
-void stackPush(Stack* stack, StackValue value, StackType type) {
+void stackPush(Stack* stack, StackValue value) {
     StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));
     if (!newNode) {
         fprintf(stderr, "Stack overflow!\n");
         exit(1);
     }
+    
     newNode->value = value;
-    newNode->type = type;
     newNode->next = stack->top;
     stack->top = newNode;
 }
@@ -29,19 +29,29 @@ void stackPush(Stack* stack, StackValue value, StackType type) {
 void pushInt(Stack* stack, int value) {
     StackValue v;
     v.data.intValue = value;
-    stackPush(stack, v, STACK_INT);
+    stackPush(stack, v);
 }
 
 void pushToken(Stack* stack, Token token) {
     StackValue v;
-    v.data.tokenValue = token;
-    stackPush(stack, v, STACK_TOKEN);
+    treeData data;
+    data.token = token;
+    v.data.treeNode = generateTreeNode(data);
+    stackPush(stack, v);
 }
 
 void pushSymbol(Stack* stack, grammarSymbol symbol) {
     StackValue v;
-    v.data.symbolValue = symbol;
-    stackPush(stack, v, STACK_SYMBOL);
+    treeData data;
+    data.symbol = symbol;
+    v.data.treeNode = generateTreeNode(data);
+    stackPush(stack, v);
+}
+
+void pushTreeNode(Stack* stack, parseTreeNode *node) {
+    StackValue v;
+    v.data.treeNode = node;
+    stackPush(stack, v);
 }
 
 StackValue popStack(Stack* stack) {
@@ -79,7 +89,7 @@ StackValue popStackCount(Stack* stack, int count){
 
 
 
-
+/*
 TreeStack* treeStackInit(){
     TreeStack *stack = (TreeStack*)malloc(sizeof(TreeStack));
     if (!stack) {
@@ -120,3 +130,4 @@ void treeFreeStack(TreeStackNode *stack){
     }
     free(stack);
 }
+    */
