@@ -1,6 +1,5 @@
 {
-    "code-runner.executorMapByFileExtension": {
-      ".c": "cd /Users/yardendrori/Documents/GitHub/Cornpiler/build && cmake --build . && ./output"
-    },
-    "code-runner.runInTerminal": true
+  "code-runner.executorMapByFileExtension": {
+    ".c": "cd /Users/yardendrori/Documents/GitHub/Cornpiler/build && clear && cmake --build . && ./output"
   }
+}

@@ -76,6 +76,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/output.dir/clean
+clean: CMakeFiles/run.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -109,6 +110,38 @@ CMakeFiles/output.dir/codegen:
 CMakeFiles/output.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/clean
 .PHONY : CMakeFiles/output.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run.dir
+
+# All Build rule for target.
+CMakeFiles/run.dir/all: CMakeFiles/output.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num= "Built target run"
+.PHONY : CMakeFiles/run.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles 0
+.PHONY : CMakeFiles/run.dir/rule
+
+# Convenience name for target.
+run: CMakeFiles/run.dir/rule
+.PHONY : run
+
+# codegen rule for target.
+CMakeFiles/run.dir/codegen: CMakeFiles/output.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num= "Finished codegen for target run"
+.PHONY : CMakeFiles/run.dir/codegen
+
+# clean rule for target.
+CMakeFiles/run.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/clean
+.PHONY : CMakeFiles/run.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

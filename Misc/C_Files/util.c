@@ -174,8 +174,7 @@ void handle_char_literal(Token *token, Lexme *lexme) {
         token->value.char_val = lexme->input[1];
     }else{
         char key = lexme->input[2] & 0xF;
-        token->value.char_val = (escape_map[key] ? escape_map[key] : lexme->input[2]);
-    }
+        token->value.char_val = (escape_map[(unsigned char) key] ? escape_map[(unsigned char) key] : lexme->input[2]);    }
 }
 
 void handle_ident(Token *token, Lexme *lexme) {
