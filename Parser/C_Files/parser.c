@@ -1,5 +1,6 @@
 #include "../H_Files/parser.h"
 #include "../H_Files/stack.h"
+#include "../H_Files/LRTable.h"
 #include "../../Lexer/H_Files/token.h"
 
 #include <stdio.h>
@@ -23,6 +24,24 @@ Parser* initParser(Lexer* lexer){
     parser->stack = initStack();
     pushInt(parser->stack, 0); 
 
+	//reduce function pointer assignment
+	parser->ReduceFunctionTable[0] = accept;
+	parser->ReduceFunctionTable[1] = Reduce1;
+	parser->ReduceFunctionTable[2] = Reduce2;
+	parser->ReduceFunctionTable[3] = Reduce3;
+	parser->ReduceFunctionTable[4] = Reduce4;
+	parser->ReduceFunctionTable[5] = Reduce5;
+	parser->ReduceFunctionTable[6] = Reduce6;
+	parser->ReduceFunctionTable[7] = Reduce7;
+	parser->ReduceFunctionTable[8] = Reduce8;
+	parser->ReduceFunctionTable[9] = Reduce9;
+	parser->ReduceFunctionTable[10] = Reduce10;
+	parser->ReduceFunctionTable[11] = Reduce11;
+	parser->ReduceFunctionTable[12] = Reduce12;
+	parser->ReduceFunctionTable[13] = Reduce13;
+	parser->ReduceFunctionTable[14] = Reduce14;
+	parser->ReduceFunctionTable[15] = Reduce15;
+ 
 
 
 
@@ -494,3 +513,18 @@ Parser* initParser(Lexer* lexer){
     return parser;
 }
 
+parseTreeNode* generateTree(Parser* parser){
+	StackValue val1;
+	int val2;
+	while (parser->tokenId < parser->lexer->token_capacity){
+		val1 = getStackValue(parser->stack);
+		if (val1.dataType == GRAMMER_SYMBOL_DATA_TYPE){
+			LRGoto(parser, -1);
+		}else if (val1.dataType = TOKEN_DATA_TYPE){
+			LRGoto(parser, -1);
+		}else{
+			val2 = parser->lexer->tokens[parser->tokenId].type;
+			parser->lrTable[val2][val1.data.intValue].LRTableFuncP(parser, val1.data.intValue);
+		}
+	}
+}

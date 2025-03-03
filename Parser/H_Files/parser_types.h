@@ -16,4 +16,10 @@ typedef enum {
     GRAMMER_SYMBOL_COUNT
 } grammarSymbol;
 
+typedef enum DataType{
+    GRAMMER_SYMBOL_DATA_TYPE,
+    TOKEN_DATA_TYPE,
+    NUMBER_DATA_TYPE
+} DataType;
+
 #endif

@@ -8,7 +8,9 @@
 
 
 
+
 typedef struct {
+    DataType dataType;
     union {
         int intValue;
         parseTreeNode* treeNode;
@@ -36,4 +38,5 @@ int stackIsEmpty(Stack *stack);
 void freeStack(Stack *stack);
 StackValue popStackCount(Stack* stack, int count);
 void pushTreeNode(Stack* stack, parseTreeNode *node);
+StackValue getStackValue(Stack* stack);
 #endif

@@ -20,14 +20,11 @@ typedef struct treeList
     int treeListSize;
 } treeList;
 
-typedef enum treeDataType{
-    GRAMMER_SYMBOL_TREE_DATA_TYPE,
-    TOKEN_TREE_DATA_TYPE
-} treeDataType;
+
 
 typedef struct treeData
 {
-    treeDataType dataType;
+    DataType dataType;
     union data
     {
         grammarSymbol symbol;

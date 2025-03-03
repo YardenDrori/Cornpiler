@@ -20,7 +20,6 @@ void stackPush(Stack* stack, StackValue value) {
         fprintf(stderr, "Stack overflow!\n");
         exit(1);
     }
-    
     newNode->value = value;
     newNode->next = stack->top;
     stack->top = newNode;
@@ -29,6 +28,7 @@ void stackPush(Stack* stack, StackValue value) {
 void pushInt(Stack* stack, int value) {
     StackValue v;
     v.data.intValue = value;
+    v.dataType = NUMBER_DATA_TYPE;
     stackPush(stack, v);
 }
 
@@ -36,8 +36,9 @@ void pushToken(Stack* stack, Token token) {
     StackValue v;
     treeData data;
     data.data.token = token;
-    data.dataType = TOKEN_TREE_DATA_TYPE;
+    data.dataType = TOKEN_DATA_TYPE;
     v.data.treeNode = generateTreeNode(data);
+    v.dataType = TOKEN_DATA_TYPE;
     stackPush(stack, v);
 }
 
@@ -45,14 +46,16 @@ void pushSymbol(Stack* stack, grammarSymbol symbol) {
     StackValue v;
     treeData data;
     data.data.symbol = symbol;
-    data.dataType = GRAMMER_SYMBOL_TREE_DATA_TYPE;
+    data.dataType = GRAMMER_SYMBOL_DATA_TYPE;
     v.data.treeNode = generateTreeNode(data);
+    v.dataType = GRAMMER_SYMBOL_DATA_TYPE;
     stackPush(stack, v);
 }
 
 void pushTreeNode(Stack* stack, parseTreeNode *node) {
     StackValue v;
     v.data.treeNode = node;
+    v.dataType = node->data.dataType;
     stackPush(stack, v);
 }
 
@@ -65,6 +68,16 @@ StackValue popStack(Stack* stack) {
     StackValue value = temp->value;
     stack->top = temp->next;
     free(temp);
+    return value;
+}
+
+StackValue getStackValue(Stack* stack) {
+    if (stack->top == NULL) {
+        fprintf(stderr, "Stack underflow!\n");
+        exit(1);
+    }
+    StackValue value;
+    value.data = stack->top->value.data;
     return value;
 }
 

@@ -202,7 +202,7 @@ void printTreeHelper(parseTreeNode* node, int depth) {
         printf("  ");
     }
 
-    if (node->data.dataType == TOKEN_TREE_DATA_TYPE) {
+    if (node->data.dataType == TOKEN_DATA_TYPE) {
         printf("[%s]\n", enumToString[node->data.data.token.type]);
     } else {
         printf("[%s]\n", grammerEnumToString[node->data.data.symbol]);

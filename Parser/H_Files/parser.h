@@ -53,7 +53,7 @@ typedef struct Parser
 
 void freeParser(Parser* parser);
 Parser* initParser(Lexer* lexer);
-
+parseTreeNode* generateTree(Parser* parser);
 
 #endif
 

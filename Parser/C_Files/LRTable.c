@@ -21,7 +21,7 @@ void Reduce(Parser* parser){
 void ReduceGeneric(Parser* parser, grammarSymbol symbol, int listSize){
     treeList* children = generateList(parser, listSize);
     treeData data;
-    data.dataType = GRAMMER_SYMBOL_TREE_DATA_TYPE;
+    data.dataType = GRAMMER_SYMBOL_DATA_TYPE;
     data.data.symbol = symbol;
     pushTreeNode(parser->stack ,generateTreeNodeAncestor(children, data));
 }
@@ -108,6 +108,7 @@ void LRGoto(Parser* parser, int actionParam){
     pushInt(parser->stack, temp2.data.intValue);
     pushInt(parser->stack, gotoResult);
 }
+
 
 void LRError(Parser* parser, int actionParam){
     /*
