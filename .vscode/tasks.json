@@ -1,19 +1,15 @@
 {
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "Build",
-            "type": "shell",
-            "command": "clang",
-            "args": [
-                "-g",
-                "main.c", "parser.c", "lexer.c", "stack.c", "LRTable.c", "util.c",
-                "-o", "cornpiler"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
+      {
+        "label": "Build and Run CMake",
+        "type": "shell",
+        "command": "cd /Users/yardendrori/Documents/GitHub/Cornpiler/build && cmake --build . && ./output",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"]
+      }
     ]
-}
+  }

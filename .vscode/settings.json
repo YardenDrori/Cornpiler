@@ -1,22 +1,6 @@
 {
-    "files.associations": {
-        "stdlib.h": "c",
-        "token.h": "c",
-        "lexer.h": "c",
-        "stdbool.h": "c",
-        "parser.h": "c",
-        "stack.h": "c",
-        "stdio.h": "c",
-        "lrtable.h": "c",
-        "__bit_reference": "c",
-        "__node_handle": "c",
-        "bitset": "c",
-        "deque": "c",
-        "limits": "c",
-        "locale": "c",
-        "optional": "c",
-        "ratio": "c",
-        "tuple": "c",
-        "vector": "c"
-    }
-}
+    "code-runner.executorMapByFileExtension": {
+      ".c": "cd /Users/yardendrori/Documents/GitHub/Cornpiler/build && cmake --build . && ./output"
+    },
+    "code-runner.runInTerminal": true
+  }
