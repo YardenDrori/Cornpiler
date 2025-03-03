@@ -7,8 +7,73 @@
 
 //reduce functions
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
+/* TEMPLATE
+void Reduce(Parser* parser){
+    treeList* children = generateList(parser, );
+    treeData data;
+    data.dataType = GRAMMER_SYMBOL_TREE_DATA_TYPE;
+    data.data.symbol = ;
+    pushTreeNode(parser->stack ,generateTreeNodeAncestor(children, data));
+}
+*/
 
 
+void ReduceGeneric(Parser* parser, grammarSymbol symbol, int listSize){
+    treeList* children = generateList(parser, listSize);
+    treeData data;
+    data.dataType = GRAMMER_SYMBOL_TREE_DATA_TYPE;
+    data.data.symbol = symbol;
+    pushTreeNode(parser->stack ,generateTreeNodeAncestor(children, data));
+}
+void accept(Parser* parser){
+    //TODO
+    printf("ACCEPT\n");
+}
+void Reduce1(Parser* parser){
+    ReduceGeneric(parser, PROGRAM, 1);
+}
+void Reduce2(Parser* parser){
+    ReduceGeneric(parser, Start, 1);
+}
+void Reduce3(Parser* parser){
+    ReduceGeneric(parser, Expr, 3);
+}
+void Reduce4(Parser* parser){
+    ReduceGeneric(parser, Expr, 3);
+}
+void Reduce5(Parser* parser){
+    ReduceGeneric(parser, Expr, 1);
+}
+void Reduce6(Parser* parser){
+    ReduceGeneric(parser, Term, 3);
+}
+void Reduce7(Parser* parser){
+    ReduceGeneric(parser, Term, 3);
+}
+void Reduce8(Parser* parser){
+    ReduceGeneric(parser, Term, 1);
+}
+void Reduce9(Parser* parser){
+    ReduceGeneric(parser, Factor, 3);
+}
+void Reduce10(Parser* parser){
+    ReduceGeneric(parser, Factor, 1);
+}
+void Reduce11(Parser* parser){
+    ReduceGeneric(parser, Factor, 1);
+}
+void Reduce12(Parser* parser){
+    ReduceGeneric(parser, Factor, 2);
+}
+void Reduce13(Parser* parser){
+    ReduceGeneric(parser, Factor, 2);
+}
+void Reduce14(Parser* parser){
+    ReduceGeneric(parser, Factor, 2);
+}
+void Reduce15(Parser* parser){
+    ReduceGeneric(parser, Factor, 2);
+}
 
 
 
@@ -19,22 +84,10 @@ void LRShift(Parser* parser, int actionParam){
     //manage LRTable stack
     pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
     pushInt(parser->stack, actionParam);
-
-
 }
 
 void LRReduce(Parser* parser, int actionParam){
-    //manage LRTable stack
-    grammarSymbol symbol = parser->ReduceFunctionTable[actionParam](parser);
-    pushSymbol(parser->stack, symbol);
-
-
-
-    //manage treeStack
-    /*treeData data;
-    data.symbol = symbol;
-    parseTreeNode *node = generateTreeNode(data);
-    treeStackPush(parser->treeStack, node);*/
+    parser->ReduceFunctionTable[actionParam](parser);
 }
 
 void LRGoto(Parser* parser, int actionParam){

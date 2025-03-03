@@ -86,6 +86,7 @@ CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/secure/_common.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Lexer/H_Files/state.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Lexer/H_Files/../../Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/stack.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/parser_types.h \

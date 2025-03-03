@@ -5,8 +5,7 @@
 #include <stdlib.h>
 #include "token.h"
 #include "state.h"
-#define FILENAME "ExampleScript.txt"
-
+#include "../../Misc/H_Files/global.h"
 
 #define BUFFER_SIZE 4096 //4kb
 #define INITIAL_TOKEN_CAPACITY 64

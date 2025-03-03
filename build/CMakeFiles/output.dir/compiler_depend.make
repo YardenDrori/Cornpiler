@@ -92,7 +92,9 @@ CMakeFiles/output.dir/Lexer/C_Files/lexer.c.o: /Users/yardendrori/Documents/GitH
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parseTree.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parser_types.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/util.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
@@ -195,6 +197,7 @@ CMakeFiles/output.dir/Misc/C_Files/main.c.o: /Users/yardendrori/Documents/GitHub
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_va_list.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
@@ -213,6 +216,7 @@ CMakeFiles/output.dir/Misc/C_Files/main.c.o: /Users/yardendrori/Documents/GitHub
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parseTree.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parser_types.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/util.h
 
 CMakeFiles/output.dir/Misc/C_Files/util.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/util.c \
@@ -299,6 +303,7 @@ CMakeFiles/output.dir/Misc/C_Files/util.c.o: /Users/yardendrori/Documents/GitHub
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
@@ -309,6 +314,7 @@ CMakeFiles/output.dir/Misc/C_Files/util.c.o: /Users/yardendrori/Documents/GitHub
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parseTree.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parser_types.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/util.h
 
 CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/LRTable.c \
@@ -395,6 +401,7 @@ CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o: /Users/yardendrori/Documents/G
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
@@ -492,6 +499,7 @@ CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o: /Users/yardendrori/Documents
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
@@ -587,6 +595,7 @@ CMakeFiles/output.dir/Parser/C_Files/parser.c.o: /Users/yardendrori/Documents/Gi
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
@@ -682,6 +691,7 @@ CMakeFiles/output.dir/Parser/C_Files/stack.c.o: /Users/yardendrori/Documents/Git
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h \
@@ -713,6 +723,10 @@ CMakeFiles/output.dir/Parser/C_Files/stack.c.o: /Users/yardendrori/Documents/Git
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_rsize_t.h:
 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_header_macro.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_errno_t.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/secure/_string.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/string.h:
@@ -726,6 +740,10 @@ CMakeFiles/output.dir/Parser/C_Files/stack.c.o: /Users/yardendrori/Documents/Git
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_strings.h:
 
 /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/main.c:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternalLegacy.h:
+
+/Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_sigaltstack.h:
 
@@ -798,10 +816,6 @@ CMakeFiles/output.dir/Parser/C_Files/stack.c.o: /Users/yardendrori/Documents/Git
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_string.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types.h:
-
-/Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_header_macro.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_errno_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_types/_uint8_t.h:
 
@@ -916,5 +930,3 @@ CMakeFiles/output.dir/Parser/C_Files/stack.c.o: /Users/yardendrori/Documents/Git
 /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg___va_copy.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/machine/_endian.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/AvailabilityInternalLegacy.h:

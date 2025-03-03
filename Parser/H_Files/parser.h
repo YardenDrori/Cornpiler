@@ -47,7 +47,7 @@ typedef struct Parser
     struct Lexer* lexer;
     struct Stack* stack;
     LRTable lrTable[TOTAL_ACTIONS+GRAMMER_SYMBOL_COUNT][TOTAL_STATES];
-    grammarSymbol (*ReduceFunctionTable[TOTAL_GRAMMER_RULES])(struct Parser* parser);
+    void (*ReduceFunctionTable[TOTAL_GRAMMER_RULES])(struct Parser* parser);
     parseTreeNode* treeHead;
 } Parser;
 

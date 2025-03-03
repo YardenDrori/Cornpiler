@@ -4,7 +4,6 @@
 #include "../H_Files/util.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define FILENAME "ExampleScript.txt"
 
 //lookyp table for special charecters
 //FUTURE ME PROBLEM

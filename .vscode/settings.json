@@ -1,5 +1,9 @@
 {
   "code-runner.executorMapByFileExtension": {
     ".c": "cd /Users/yardendrori/Documents/GitHub/Cornpiler/build && clear && cmake --build . && ./output"
+  },
+  "files.associations": {
+    "util.h": "c",
+    "global.h": "c"
   }
 }

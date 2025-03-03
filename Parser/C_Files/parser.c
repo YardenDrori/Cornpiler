@@ -28,7 +28,6 @@ Parser* initParser(Lexer* lexer){
 
 
 	
-	int rows = 0;
 	for (int i = 0; i < TOTAL_ACTIONS+GRAMMER_SYMBOL_COUNT; i++){
 		for (int j = 0; j < TOTAL_STATES; j++){
 			parser->lrTable[i][j].LRTableFuncP = LRError;

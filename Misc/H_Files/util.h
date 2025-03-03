@@ -5,9 +5,9 @@
 #include "../../Lexer/H_Files/token.h"
 #include "../../Lexer/H_Files/state.h"
 #include "../../Parser/H_Files/parseTree.h"
+#include "global.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define FILENAME "ExampleScript.txt"
 
 extern const char enumToString[][30];  // Declare as extern
 
