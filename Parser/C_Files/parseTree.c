@@ -15,27 +15,35 @@ parseTreeNode* generateTreeNode(treeData data){
 }
 
 parseTreeNode* generateTreeAncestor(Parser* parser, int childrenCount, treeData parentData){
-    parseTreeNode* temp;
-    parseTreeNode* parentNode = generateTreeNode(parentData);
-    parentNode->parent = NULL;
-    parentNode->firstChild = generateTreeSiblings(parser, childrenCount);
-    temp = parentNode->firstChild;
-    while (temp != NULL){
-        temp->parent = parentNode;
-        temp = temp->sibling;
+    parseTreeNode* parent = (parseTreeNode*)malloc(sizeof(parseTreeNode));
+    if (!parent){
+        printf("Error allocating memory for parent tree node");
+        exit(1);
     }
-    return parentNode;
+    parent->childrenCount = childrenCount;
+    parent->data = parentData;
+    parent->parent = NULL;
+    parent->children = generateTreeChildren(parser, childrenCount);
+    return parent;
 }
 
 
-parseTreeNode* generateTreeSiblings(Parser* parser, int familySize){
-    if (familySize == 0){
+parseTreeNode* generateTreeChildren(Parser* parser, int childrenCount){
+    if (childrenCount == 0){
         return NULL;
     }
-    StackValue value = popStackCount(parser->stack, 2);
-    parseTreeNode* treeNode = generateTreeNode(value.data.treeNode->data);  //data
-    treeNode->firstChild = value.data.treeNode->firstChild;                 //first child
-    treeNode->parent = value.data.treeNode->parent;                         //parent
-    treeNode->sibling = generateTreeSiblings(parser, familySize-1);         //sibling
-    return treeNode;
+    StackValue value;
+    parseTreeNode* node= (parseTreeNode*)malloc(sizeof(parseTreeNode)*childrenCount);
+    if (!node){
+        printf("Error allocating memory for tree node children");
+        exit(1);
+    }
+    for (int i = childrenCount-1; i >= 0; i--){
+        value = popStackCount(parser->stack, 2);
+        node[i].data = value.data.treeNode->data;
+        node[i].children = value.data.treeNode->children;
+        node[i].childrenCount = value.data.treeNode->childrenCount;
+        node[i].parent = NULL;
+    }
+    return node;    
 }

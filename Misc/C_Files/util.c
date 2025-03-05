@@ -196,39 +196,50 @@ void handle_error(Token *token, Lexme *lexme){
     token->value.error_val.row = lexme->row;
 }
 
-void printTreeHelper(parseTreeNode* node, int depth, int isLast) {
-    for (int i = 0; i < depth - 1; i++) {
-        printf("│   "); // Vertical connector
-    }
-    if (depth > 0) {
-        printf(isLast ? "└── " : "├── "); // Branching connectors
-    }
+#include <stdio.h>
+#include <string.h>
 
-    // Print node data
+void printTreeHelper(parseTreeNode* node, const char* prefix, int isLast) {
+    // Print the current prefix.
+    printf("%s", prefix);
+    // Print the branch: use └── for the last child and ├── for others.
+    if (isLast)
+        printf("└── ");
+    else
+        printf("├── ");
+    
+    // Print the node's data.
     if (node->data.dataType == TOKEN_DATA_TYPE) {
         printf("%s\n", enumToString[node->data.data.token.type]);
     } else {
         printf("%s\n", grammerEnumToString[node->data.data.symbol]);
     }
-
-    // Count children
-    parseTreeNode* child = node->firstChild;
-    int childCount = 0;
-    for (parseTreeNode* temp = child; temp; temp = temp->sibling) {
-        childCount++;
-    }
-
-    // Recursively print children
-    int index = 0;
-    for (parseTreeNode* temp = child; temp; temp = temp->sibling) {
-        printTreeHelper(temp, depth + 1, ++index == childCount);
+    
+    // Prepare the prefix for the children.
+    // If this node is the last child, add spaces; otherwise, add a vertical line.
+    char newPrefix[256];
+    snprintf(newPrefix, sizeof(newPrefix), "%s%s", prefix, isLast ? "    " : "│   ");
+    
+    // Recursively print each child.
+    for (int i = 0; i < node->childrenCount; i++) {
+        printTreeHelper(&(node->children[i]), newPrefix, i == node->childrenCount - 1);
     }
 }
 
 void printTree(parseTreeNode* head) {
     printf("\nParse Tree:\n");
-    if (head != NULL)
-        printTreeHelper(head, 0, 0);
+    if (head != NULL) {
+        // Print the root node without any branch lines.
+        if (head->data.dataType == TOKEN_DATA_TYPE)
+            printf("%s\n", enumToString[head->data.data.token.type]);
+        else
+            printf("%s\n", grammerEnumToString[head->data.data.symbol]);
+        
+        // Print each child of the root with the appropriate prefix.
+        for (int i = 0; i < head->childrenCount; i++) {
+            printTreeHelper(&(head->children[i]), "", i == head->childrenCount - 1);
+        }
+    }
 }
 
 void printStack(StackNode* stack){

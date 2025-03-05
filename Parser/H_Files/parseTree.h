@@ -25,14 +25,13 @@ typedef struct treeData
 typedef struct parseTreeNode{
     struct parseTreeNode* parent;
     treeData data;
-    struct parseTreeNode* firstChild;
-    struct parseTreeNode* sibling;
+    struct parseTreeNode* children;
+    int childrenCount;
 } parseTreeNode;
 
-parseTreeNode* generateTreeSiblings(struct Parser* parser, int familySize);
+parseTreeNode* generateTreeChildren(struct Parser* parser, int childrenCount);
 parseTreeNode* generateTreeNode(treeData data);
 parseTreeNode* generateTreeAncestor(struct Parser* parser, int childrenCount, treeData parentData);
-
 //parseTreeNode* generateTreeNodeAncestor(treeList* childrenList, treeData ancestorData);
 //treeList* listAssistantGenerator(struct Parser* parser, int size);
 //treeList* generateList(struct Parser* parser, int treeListSize);
