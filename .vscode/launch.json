@@ -2,17 +2,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug C Program",
+            "name": "Debug Cornpiler",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/output",
+            "program": "${workspaceFolder}/build/output",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/build",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "build"
+            "setupCommands": [
+                { "text": "-enable-pretty-printing", "description": "Enable pretty printing", "ignoreFailures": true }
+            ]
         }
     ]
 }
