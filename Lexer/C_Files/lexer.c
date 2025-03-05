@@ -94,8 +94,8 @@ Lexer *initLexer(const char *filename){
     lexer->states[66].type = MULTIPLY_EQUAL;
     lexer->states[67].type = DIVIDE;
     lexer->states[68].type = DIVIDE_EQUAL;
-    lexer->states[69].type = MODULU;
-    lexer->states[70].type = MODULU_EQUAL;
+    lexer->states[69].type = MODULO;
+    lexer->states[70].type = MODULO_EQUAL;
     lexer->states[71].type = END_OF_FILE;
     lexer->states[73].type = OPEN_PARENTHESIS;
     lexer->states[74].type = CLOSE_PARENTHESIS;

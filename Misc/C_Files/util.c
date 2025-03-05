@@ -223,7 +223,29 @@ void printTree(parseTreeNode* head) {
     printTreeHelper(head, 0);
 }
 
-
-printParsingStep(Parser* parser){
+void printStack(StackNode* stack){
+    if (stack->next != NULL){
+        printStack(stack->next);
+    }
     
+    if (stack->value.dataType == TOKEN_DATA_TYPE){
+        printf("%s ", enumToString[stack->value.data.treeNode->data.data.token.type]);
+    }else if (stack->value.dataType == GRAMMER_SYMBOL_DATA_TYPE){
+        printf("%s ", grammerEnumToString[stack->value.data.treeNode->data.data.symbol]);
+    }else {
+        printf("%d ", stack->value.data.intValue);
+    }
+    
+}
+
+
+void printParsingStep(Parser* parser){
+    int tokenID = parser->tokenId;
+    printf("\nSTACK: ");
+    printStack(parser->stack->top);
+    printf("\nINPUT: ");
+    while (tokenID < parser->lexer->token_capacity){
+        printf("%s ", enumToString[parser->lexer->tokens[tokenID++].type]);
+    }
+    printf("\n");
 }

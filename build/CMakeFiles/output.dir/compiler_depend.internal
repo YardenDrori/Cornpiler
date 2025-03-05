@@ -311,12 +311,17 @@ CMakeFiles/output.dir/Misc/C_Files/util.c.o
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/stack.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/LRTable.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parseTree.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parser.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parser_types.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/stack.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
- /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h
- /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parseTree.h
- /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parser_types.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/util.h
 
@@ -601,6 +606,12 @@ CMakeFiles/output.dir/Parser/C_Files/parser.c.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/wait.h
  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parseTree.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/util.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h

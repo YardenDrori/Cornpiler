@@ -24,8 +24,8 @@ typedef enum {
     DIVIDE_EQUAL,           //15
     MULTIPLY,               //16
     MULTIPLY_EQUAL,         //17
-    MODULU,                 //18
-    MODULU_EQUAL,           //19
+    MODULO,                 //18
+    MODULO_EQUAL,           //19
     OPEN_PARENTHESIS,       //20
     CLOSE_PARENTHESIS,      //21
     OPEN_CURLY_BRACKETS,    //22

@@ -25,10 +25,6 @@ void ReduceGeneric(Parser* parser, grammarSymbol symbol, int listSize){
     data.data.symbol = symbol;
     pushTreeNode(parser->stack ,generateTreeNodeAncestor(children, data));
 }
-void accept(Parser* parser){
-    //TODO
-    printf("ACCEPT\n");
-}
 void ReduceToProgram1(Parser* parser){
     ReduceGeneric(parser, PROGRAM, 1);
 }
@@ -71,10 +67,12 @@ void LRShift(Parser* parser, int actionParam){
     }
     printf("shift %d\n", actionParam);
     pushInt(parser->stack, actionParam);
+    parser->action = ACTION_SHIFT;
 }
 
 void LRReduce(Parser* parser, int actionParam){
     parser->ReduceFunctionTable[actionParam](parser);
+    parser->action = ACTION_REDUCE;
     printf("reduce %d\n", actionParam);
 }
 
@@ -95,7 +93,8 @@ void LRGoto(Parser* parser, int actionParam){
     pushInt(parser->stack, temp2.data.intValue);
     pushSymbol(parser->stack, temp1.data.treeNode->data.data.symbol);
     pushInt(parser->stack, gotoResult);
-    printf("GOTO %d %d pushed: %d\n", temp2.data.intValue, tempNum, gotoResult);
+    parser->action = ACTION_GOTO;
+    printf("GOTO %d\n",gotoResult);
 }
 
 
@@ -105,12 +104,15 @@ void LRError(Parser* parser, int actionParam){
     by saving the pos of each token in token struct
     or if there is a better implementation im unaware of
     */
+   parser->action = ACTION_ERROR;
    printf("\033[1;31mParsing error found in Row: %d, Column: %d\033[0m\n", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
    exit(1);
 }
 
 void LRAccept(Parser* parser, int actionParam){
-    printf("ACCEPT SECOND ONE\n");
+    parser->action = ACTION_ACCEPT;
+    parser->treeHead = popStackCount(parser->stack, 4).data.treeNode;
+    printf("ACCEPT\n");
     //TODO
 }
 

@@ -87,12 +87,17 @@ CMakeFiles/output.dir/Misc/C_Files/util.c.o: \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Lexer/H_Files/../../Misc/H_Files/global.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/parser.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/stack.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/../../Lexer/H_Files/token.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/parser_types.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/../../Lexer/H_Files/lexer.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/parseTree.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/LRTable.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../../Parser/H_Files/../H_Files/stack.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/util.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/../../Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/../../Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/../../Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/../../Parser/H_Files/parseTree.h \
-  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/../../Parser/H_Files/../../Lexer/H_Files/token.h \
-  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/../../Parser/H_Files/parser_types.h \
-  /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/../../Parser/H_Files/../../Lexer/H_Files/lexer.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/../H_Files/global.h

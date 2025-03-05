@@ -31,7 +31,8 @@ typedef enum {
     ACTION_SHIFT,
     ACTION_REDUCE,
     ACTION_ACCEPT,
-    ACTION_ERROR
+    ACTION_ERROR,
+    ACTION_GOTO
 } ActionType;
 
 typedef struct LRTable
@@ -49,6 +50,7 @@ typedef struct Parser
     LRTable lrTable[TOTAL_STATES+GRAMMER_SYMBOL_COUNT][TOTAL_STATES];
     void (*ReduceFunctionTable[TOTAL_GRAMMER_RULES])(struct Parser* parser);
     parseTreeNode* treeHead;
+    ActionType action;
 } Parser;
 
 void freeParser(Parser* parser);

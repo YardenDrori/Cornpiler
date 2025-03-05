@@ -2,10 +2,12 @@
 #include "../H_Files/stack.h"
 #include "../H_Files/LRTable.h"
 #include "../../Lexer/H_Files/token.h"
-
+#include "../../Misc/H_Files/util.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define PRINT_MATRIX 0
+
+
 void freeParser(Parser* parser){
     freeLexer(parser->lexer);
     freeStack(parser->stack);
@@ -48,6 +50,7 @@ Parser* initParser(Lexer* lexer){
 
 
 	
+
 
 
 
@@ -146,8 +149,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][4].LRTableFuncP = LRReduce;
 	parser->lrTable[14][4].actionParam = 11;
 	//reduce
-	parser->lrTable[-2][4].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][4].actionParam = 11;
+	parser->lrTable[18][4].LRTableFuncP = LRReduce;
+	parser->lrTable[18][4].actionParam = 11;
 	//reduce
 	parser->lrTable[41][5].LRTableFuncP = LRReduce;
 	parser->lrTable[41][5].actionParam = 12;
@@ -164,8 +167,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][5].LRTableFuncP = LRReduce;
 	parser->lrTable[14][5].actionParam = 12;
 	//reduce
-	parser->lrTable[-2][5].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][5].actionParam = 12;
+	parser->lrTable[18][5].LRTableFuncP = LRReduce;
+	parser->lrTable[18][5].actionParam = 12;
 	//reduce
 	parser->lrTable[41][6].LRTableFuncP = LRReduce;
 	parser->lrTable[41][6].actionParam = 13;
@@ -182,8 +185,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][6].LRTableFuncP = LRReduce;
 	parser->lrTable[14][6].actionParam = 13;
 	//reduce
-	parser->lrTable[-2][6].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][6].actionParam = 13;
+	parser->lrTable[18][6].LRTableFuncP = LRReduce;
+	parser->lrTable[18][6].actionParam = 13;
 	//shift
 	parser->lrTable[41][7].LRTableFuncP = LRShift;
 	parser->lrTable[41][7].actionParam = 17;
@@ -206,8 +209,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][10].LRTableFuncP = LRShift;
 	parser->lrTable[14][10].actionParam = 21;
 	//shift
-	parser->lrTable[-2][10].LRTableFuncP = LRShift;
-	parser->lrTable[-2][10].actionParam = 22;
+	parser->lrTable[18][10].LRTableFuncP = LRShift;
+	parser->lrTable[18][10].actionParam = 22;
 	//reduce
 	parser->lrTable[41][10].LRTableFuncP = LRReduce;
 	parser->lrTable[41][10].actionParam = 5;
@@ -233,8 +236,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][11].LRTableFuncP = LRReduce;
 	parser->lrTable[14][11].actionParam = 9;
 	//reduce
-	parser->lrTable[-2][11].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][11].actionParam = 9;
+	parser->lrTable[18][11].LRTableFuncP = LRReduce;
+	parser->lrTable[18][11].actionParam = 9;
 	//reduce
 	parser->lrTable[41][12].LRTableFuncP = LRReduce;
 	parser->lrTable[41][12].actionParam = 17;
@@ -251,8 +254,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][12].LRTableFuncP = LRReduce;
 	parser->lrTable[14][12].actionParam = 17;
 	//reduce
-	parser->lrTable[-2][12].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][12].actionParam = 17;
+	parser->lrTable[18][12].LRTableFuncP = LRReduce;
+	parser->lrTable[18][12].actionParam = 17;
 	//reduce
 	parser->lrTable[41][13].LRTableFuncP = LRReduce;
 	parser->lrTable[41][13].actionParam = 16;
@@ -269,8 +272,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][13].LRTableFuncP = LRReduce;
 	parser->lrTable[14][13].actionParam = 16;
 	//reduce
-	parser->lrTable[-2][13].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][13].actionParam = 16;
+	parser->lrTable[18][13].LRTableFuncP = LRReduce;
+	parser->lrTable[18][13].actionParam = 16;
 	//shift
 	parser->lrTable[8][14].LRTableFuncP = LRShift;
 	parser->lrTable[8][14].actionParam = 37;
@@ -296,8 +299,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][15].LRTableFuncP = LRReduce;
 	parser->lrTable[14][15].actionParam = 14;
 	//reduce
-	parser->lrTable[-2][15].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][15].actionParam = 14;
+	parser->lrTable[18][15].LRTableFuncP = LRReduce;
+	parser->lrTable[18][15].actionParam = 14;
 	//reduce
 	parser->lrTable[41][16].LRTableFuncP = LRReduce;
 	parser->lrTable[41][16].actionParam = 15;
@@ -314,11 +317,11 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][16].LRTableFuncP = LRReduce;
 	parser->lrTable[14][16].actionParam = 15;
 	//reduce
-	parser->lrTable[-2][16].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][16].actionParam = 15;
+	parser->lrTable[18][16].LRTableFuncP = LRReduce;
+	parser->lrTable[18][16].actionParam = 15;
 	//accept
-	parser->lrTable[-2][17].LRTableFuncP = LRAccept;
-	parser->lrTable[-2][17].actionParam = -1;
+	parser->lrTable[END_OF_FILE][17].LRTableFuncP = LRAccept;
+	parser->lrTable[END_OF_FILE][17].actionParam = -1;
 	//shift
 	parser->lrTable[9][18].LRTableFuncP = LRShift;
 	parser->lrTable[9][18].actionParam = 1;
@@ -446,8 +449,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][23].LRTableFuncP = LRReduce;
 	parser->lrTable[14][23].actionParam = 10;
 	//reduce
-	parser->lrTable[-2][23].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][23].actionParam = 10;
+	parser->lrTable[18][23].LRTableFuncP = LRReduce;
+	parser->lrTable[18][23].actionParam = 10;
 	//shift
 	parser->lrTable[16][24].LRTableFuncP = LRShift;
 	parser->lrTable[16][24].actionParam = 20;
@@ -455,8 +458,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][24].LRTableFuncP = LRShift;
 	parser->lrTable[14][24].actionParam = 21;
 	//shift
-	parser->lrTable[-2][24].LRTableFuncP = LRShift;
-	parser->lrTable[-2][24].actionParam = 22;
+	parser->lrTable[18][24].LRTableFuncP = LRShift;
+	parser->lrTable[18][24].actionParam = 22;
 	//reduce
 	parser->lrTable[41][24].LRTableFuncP = LRReduce;
 	parser->lrTable[41][24].actionParam = 3;
@@ -473,8 +476,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][25].LRTableFuncP = LRShift;
 	parser->lrTable[14][25].actionParam = 21;
 	//shift
-	parser->lrTable[-2][25].LRTableFuncP = LRShift;
-	parser->lrTable[-2][25].actionParam = 22;
+	parser->lrTable[18][25].LRTableFuncP = LRShift;
+	parser->lrTable[18][25].actionParam = 22;
 	//reduce
 	parser->lrTable[41][25].LRTableFuncP = LRReduce;
 	parser->lrTable[41][25].actionParam = 4;
@@ -500,8 +503,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][26].LRTableFuncP = LRReduce;
 	parser->lrTable[14][26].actionParam = 6;
 	//reduce
-	parser->lrTable[-2][26].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][26].actionParam = 6;
+	parser->lrTable[18][26].LRTableFuncP = LRReduce;
+	parser->lrTable[18][26].actionParam = 6;
 	//reduce
 	parser->lrTable[41][27].LRTableFuncP = LRReduce;
 	parser->lrTable[41][27].actionParam = 7;
@@ -518,8 +521,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][27].LRTableFuncP = LRReduce;
 	parser->lrTable[14][27].actionParam = 7;
 	//reduce
-	parser->lrTable[-2][27].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][27].actionParam = 7;
+	parser->lrTable[18][27].LRTableFuncP = LRReduce;
+	parser->lrTable[18][27].actionParam = 7;
 	//reduce
 	parser->lrTable[41][28].LRTableFuncP = LRReduce;
 	parser->lrTable[41][28].actionParam = 8;
@@ -536,8 +539,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][28].LRTableFuncP = LRReduce;
 	parser->lrTable[14][28].actionParam = 8;
 	//reduce
-	parser->lrTable[-2][28].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][28].actionParam = 8;
+	parser->lrTable[18][28].LRTableFuncP = LRReduce;
+	parser->lrTable[18][28].actionParam = 8;
 	//shift
 	parser->lrTable[40][29].LRTableFuncP = LRShift;
 	parser->lrTable[40][29].actionParam = 39;
@@ -590,8 +593,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][32].LRTableFuncP = LRReduce;
 	parser->lrTable[14][32].actionParam = 11;
 	//reduce
-	parser->lrTable[-2][32].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][32].actionParam = 11;
+	parser->lrTable[18][32].LRTableFuncP = LRReduce;
+	parser->lrTable[18][32].actionParam = 11;
 	//reduce
 	parser->lrTable[21][32].LRTableFuncP = LRReduce;
 	parser->lrTable[21][32].actionParam = 11;
@@ -608,8 +611,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][33].LRTableFuncP = LRReduce;
 	parser->lrTable[14][33].actionParam = 12;
 	//reduce
-	parser->lrTable[-2][33].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][33].actionParam = 12;
+	parser->lrTable[18][33].LRTableFuncP = LRReduce;
+	parser->lrTable[18][33].actionParam = 12;
 	//reduce
 	parser->lrTable[21][33].LRTableFuncP = LRReduce;
 	parser->lrTable[21][33].actionParam = 12;
@@ -626,8 +629,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][34].LRTableFuncP = LRReduce;
 	parser->lrTable[14][34].actionParam = 13;
 	//reduce
-	parser->lrTable[-2][34].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][34].actionParam = 13;
+	parser->lrTable[18][34].LRTableFuncP = LRReduce;
+	parser->lrTable[18][34].actionParam = 13;
 	//reduce
 	parser->lrTable[21][34].LRTableFuncP = LRReduce;
 	parser->lrTable[21][34].actionParam = 13;
@@ -638,8 +641,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][35].LRTableFuncP = LRShift;
 	parser->lrTable[14][35].actionParam = 45;
 	//shift
-	parser->lrTable[-2][35].LRTableFuncP = LRShift;
-	parser->lrTable[-2][35].actionParam = 46;
+	parser->lrTable[18][35].LRTableFuncP = LRShift;
+	parser->lrTable[18][35].actionParam = 46;
 	//reduce
 	parser->lrTable[8][35].LRTableFuncP = LRReduce;
 	parser->lrTable[8][35].actionParam = 5;
@@ -662,8 +665,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][36].LRTableFuncP = LRReduce;
 	parser->lrTable[14][36].actionParam = 9;
 	//reduce
-	parser->lrTable[-2][36].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][36].actionParam = 9;
+	parser->lrTable[18][36].LRTableFuncP = LRReduce;
+	parser->lrTable[18][36].actionParam = 9;
 	//reduce
 	parser->lrTable[21][36].LRTableFuncP = LRReduce;
 	parser->lrTable[21][36].actionParam = 9;
@@ -728,8 +731,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][39].LRTableFuncP = LRReduce;
 	parser->lrTable[14][39].actionParam = 17;
 	//reduce
-	parser->lrTable[-2][39].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][39].actionParam = 17;
+	parser->lrTable[18][39].LRTableFuncP = LRReduce;
+	parser->lrTable[18][39].actionParam = 17;
 	//reduce
 	parser->lrTable[21][39].LRTableFuncP = LRReduce;
 	parser->lrTable[21][39].actionParam = 17;
@@ -746,8 +749,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][40].LRTableFuncP = LRReduce;
 	parser->lrTable[14][40].actionParam = 16;
 	//reduce
-	parser->lrTable[-2][40].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][40].actionParam = 16;
+	parser->lrTable[18][40].LRTableFuncP = LRReduce;
+	parser->lrTable[18][40].actionParam = 16;
 	//reduce
 	parser->lrTable[21][40].LRTableFuncP = LRReduce;
 	parser->lrTable[21][40].actionParam = 16;
@@ -773,8 +776,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][42].LRTableFuncP = LRReduce;
 	parser->lrTable[14][42].actionParam = 14;
 	//reduce
-	parser->lrTable[-2][42].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][42].actionParam = 14;
+	parser->lrTable[18][42].LRTableFuncP = LRReduce;
+	parser->lrTable[18][42].actionParam = 14;
 	//reduce
 	parser->lrTable[21][42].LRTableFuncP = LRReduce;
 	parser->lrTable[21][42].actionParam = 14;
@@ -791,8 +794,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][43].LRTableFuncP = LRReduce;
 	parser->lrTable[14][43].actionParam = 15;
 	//reduce
-	parser->lrTable[-2][43].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][43].actionParam = 15;
+	parser->lrTable[18][43].LRTableFuncP = LRReduce;
+	parser->lrTable[18][43].actionParam = 15;
 	//reduce
 	parser->lrTable[21][43].LRTableFuncP = LRReduce;
 	parser->lrTable[21][43].actionParam = 15;
@@ -866,8 +869,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][47].LRTableFuncP = LRShift;
 	parser->lrTable[14][47].actionParam = 45;
 	//shift
-	parser->lrTable[-2][47].LRTableFuncP = LRShift;
-	parser->lrTable[-2][47].actionParam = 46;
+	parser->lrTable[18][47].LRTableFuncP = LRShift;
+	parser->lrTable[18][47].actionParam = 46;
 	//reduce
 	parser->lrTable[8][47].LRTableFuncP = LRReduce;
 	parser->lrTable[8][47].actionParam = 3;
@@ -884,8 +887,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][48].LRTableFuncP = LRShift;
 	parser->lrTable[14][48].actionParam = 45;
 	//shift
-	parser->lrTable[-2][48].LRTableFuncP = LRShift;
-	parser->lrTable[-2][48].actionParam = 46;
+	parser->lrTable[18][48].LRTableFuncP = LRShift;
+	parser->lrTable[18][48].actionParam = 46;
 	//reduce
 	parser->lrTable[8][48].LRTableFuncP = LRReduce;
 	parser->lrTable[8][48].actionParam = 4;
@@ -908,8 +911,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][49].LRTableFuncP = LRReduce;
 	parser->lrTable[14][49].actionParam = 10;
 	//reduce
-	parser->lrTable[-2][49].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][49].actionParam = 10;
+	parser->lrTable[18][49].LRTableFuncP = LRReduce;
+	parser->lrTable[18][49].actionParam = 10;
 	//reduce
 	parser->lrTable[21][49].LRTableFuncP = LRReduce;
 	parser->lrTable[21][49].actionParam = 10;
@@ -926,8 +929,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][50].LRTableFuncP = LRReduce;
 	parser->lrTable[14][50].actionParam = 6;
 	//reduce
-	parser->lrTable[-2][50].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][50].actionParam = 6;
+	parser->lrTable[18][50].LRTableFuncP = LRReduce;
+	parser->lrTable[18][50].actionParam = 6;
 	//reduce
 	parser->lrTable[21][50].LRTableFuncP = LRReduce;
 	parser->lrTable[21][50].actionParam = 6;
@@ -944,8 +947,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][51].LRTableFuncP = LRReduce;
 	parser->lrTable[14][51].actionParam = 7;
 	//reduce
-	parser->lrTable[-2][51].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][51].actionParam = 7;
+	parser->lrTable[18][51].LRTableFuncP = LRReduce;
+	parser->lrTable[18][51].actionParam = 7;
 	//reduce
 	parser->lrTable[21][51].LRTableFuncP = LRReduce;
 	parser->lrTable[21][51].actionParam = 7;
@@ -962,11 +965,16 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[14][52].LRTableFuncP = LRReduce;
 	parser->lrTable[14][52].actionParam = 8;
 	//reduce
-	parser->lrTable[-2][52].LRTableFuncP = LRReduce;
-	parser->lrTable[-2][52].actionParam = 8;
+	parser->lrTable[18][52].LRTableFuncP = LRReduce;
+	parser->lrTable[18][52].actionParam = 8;
 	//reduce
 	parser->lrTable[21][52].LRTableFuncP = LRReduce;
 	parser->lrTable[21][52].actionParam = 8;
+
+
+
+	//parser->lrTable[END_OF_FILE][17].LRTableFuncP = LRAccept;
+	//parser->lrTable[END_OF_FILE][17].actionParam = 0;
 
 
 
@@ -984,7 +992,7 @@ void generateTree(Parser* parser){
 	printf("\n\n\n");
 	StackValue val1;
 	int val2;
-	while (parser->tokenId < parser->lexer->token_capacity){
+	while (parser->action != ACTION_ACCEPT){
 		printParsingStep(parser);
 		val1 = getStackValue(parser->stack);
 		if (val1.dataType == GRAMMER_SYMBOL_DATA_TYPE){
@@ -996,4 +1004,6 @@ void generateTree(Parser* parser){
 			parser->lrTable[val2][val1.data.intValue].LRTableFuncP(parser, parser->lrTable[val2][val1.data.intValue].actionParam);
 		}
 	}
+	printf("\n\n\n\n\n\n\n\n\n\n");
+	printTree(parser->treeHead);
 }
