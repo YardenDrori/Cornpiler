@@ -22,7 +22,10 @@ Parser* initParser(Lexer* lexer){
     }
     parser->tokenId = 0;
     parser->lexer = lexer;
-	getTokenList(parser->lexer);
+	int isLexingError = getTokenList(parser->lexer);
+	if (isLexingError){
+		return NULL;
+	}
     parser->stack = initStack();
     pushInt(parser->stack, 0); 
 

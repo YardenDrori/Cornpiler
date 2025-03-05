@@ -16,13 +16,13 @@ typedef struct
     int col;
     char *input;
     int input_len;
+    int pos; //current position in the buffer
 } Lexme;
 
 typedef struct Lexer
 {
     FILE *file; //the file containing cce code
     char buffer[BUFFER_SIZE]; //4kb buffer to to read the file
-    int pos; //current position in the buffer
     int buffer_length; //how many bytes were read into the buffer so that we can continue reading the file from the end of that point
     int current_state; //the current state of the dfa
     int transition_table[MAX_STATES][256]; //the table for the dfa
@@ -35,8 +35,8 @@ typedef struct Lexer
 
 Lexer* initLexer(const char *filename);
 void loadBuffer(Lexer *lexer);
-char nextChar(Lexer *lexer);
+char nextChar(Lexer *lexer, Lexme* lexme);
 Token nextToken(Lexer *lexer);
 void freeLexer(Lexer *lexer);    
-void getTokenList(Lexer *Lexer);
+int getTokenList(Lexer *Lexer);
 #endif 

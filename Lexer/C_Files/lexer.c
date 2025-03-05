@@ -28,7 +28,7 @@ Lexer *initLexer(const char *filename){
         fprintf(stderr, "Memory allocation failed for Lexer.\n");
         return NULL;
     }
-    lexer->file = fopen(FILENAME, "r");
+    lexer->file = fopen(filename, "r");
     if(!lexer->file){
         printf("Error opening specified file %s\n", FILENAME);
         free(lexer);
@@ -39,7 +39,7 @@ Lexer *initLexer(const char *filename){
     lexer->lexme->row = 0;
     lexer->lexme->col = -1;
     lexer->lexme->input_len = 0;
-    lexer->pos = 0;
+    lexme->pos = 0;
     lexer->buffer_length = 0;
     lexer->current_state = 0;
     lexer->token_capacity = INITIAL_TOKEN_CAPACITY;
@@ -333,7 +333,7 @@ void loadBuffer(Lexer *lexer){
     size_t bytes_read = fread(lexer->buffer, 1, BUFFER_SIZE, lexer->file);
     lexer->buffer_length = (int)bytes_read;
     //printf("%d",lexer->buffer_length);
-    lexer->pos = 0;
+    lexer->lexme->pos = 0;
     if(bytes_read < BUFFER_SIZE){
         lexer->buffer[bytes_read] = '\0';
     }
@@ -348,15 +348,15 @@ void loadBuffer(Lexer *lexer){
 }
 
 //reads a charecter from the buffer and reloads it if reached it's end
-char nextChar(Lexer *lexer){ // c=1
+char nextChar(Lexer *lexer, Lexme* lexme){ // c=1
     
-    if (lexer->pos >= lexer->buffer_length-1){
+    if (lexme->pos >= lexer->buffer_length-1){
         loadBuffer(lexer);
-        lexer->pos = 0;
+        lexme->pos = 0;
     }else{
-        lexer->pos++;
+        lexme->pos++;
     }
-    return lexer->buffer[lexer->pos];
+    return lexer->buffer[lexme->pos];
 }
 
 //returns next read token from the buffer
@@ -379,7 +379,7 @@ Token nextToken(Lexer *lexer){
         printf("Error initializing array input");
     }
     lexer->lexme->input_len = 0; //remembers the size of the current input incase the array isn't big enough, somehow
-    char currentChar = lexer->buffer[lexer->pos];// the current charecter read from the buffer
+    char currentChar = lexer->buffer[lexer->lexme->pos];// the current charecter read from the buffer
     int lastState = 0; //the previous state read so that when the automaton finishes we can remember what it was on
     lexer->current_state = 0; // reset current state from last operation
 
@@ -389,7 +389,7 @@ Token nextToken(Lexer *lexer){
         lexer->lexme->input[lexer->lexme->input_len] = currentChar;
         lexer->lexme->input_len++;
         lastState = lexer->current_state;
-        currentChar = nextChar(lexer);
+        currentChar = nextChar(lexer, lexer->lexme);
         if (lexer->lexme->input_len >= currentInputSize-1){
             currentInputSize *= 2;
             lexer->lexme->input = realloc(lexer->lexme->input, currentInputSize * sizeof(char));
@@ -423,8 +423,15 @@ void freeLexer(Lexer *lexer){
     free(lexer);
 }
 
+void handle_lexing_error(Token token){
+    printf("\033[1;31mLexing error found in line: %d, at column: %d\033[0m\n",token.value.error_val.row, token.value.error_val.col);
+}
+
+
+
 //fills the lexer's tokens array with the appropiate tokens
-void getTokenList(Lexer *lexer){
+int getTokenList(Lexer *lexer){
+    int isError = 0;
     lexer->lexme->row = 1;
     lexer->lexme->col = -1;
     lexer->token_id = 0;
@@ -439,10 +446,13 @@ void getTokenList(Lexer *lexer){
             lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
             if (!lexer->tokens){
                 printf("error reallocating the tokens array");
-                return;
+                return 1;
             }
         }
-        
+        if (token.type == ERROR){
+            handle_lexing_error(token);
+            isError = 1;
+        }
         //insert token to array
         token = nextToken(lexer);
         if (token.type !=SKIP && token.type != NEXT_LINE){
@@ -457,7 +467,11 @@ void getTokenList(Lexer *lexer){
         lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
         if (!lexer->tokens){
             printf("error reallocating the tokens array");
-            return;
+            return 1;
         }
     }
+    if (!isError){
+        printf("Token list retrieved\n");
+    }
+    return isError;
 }

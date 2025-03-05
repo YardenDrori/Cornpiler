@@ -6,21 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//lookyp table for special charecters
-//FUTURE ME PROBLEM
-const char escape_map[16] = {
-    /*['\\' & 0xF] = '\\',
-    ['\'' & 0xF] = '\'',
-    ['\"' & 0xF] = '\"',
-    ['n' & 0xF] = '\n',
-    ['t' & 0xF] = '\t',
-    ['r' & 0xF] = '\r',
-    ['b' & 0xF] = '\b',
-    ['f' & 0xF] = '\f',
-    ['v' & 0xF] = '\v',
-    ['0' & 0xF] = '\0'*/
-};
-
 // Define the array here
 const char enumToString[][30] = {
     "EQUAL_LESSER",   
@@ -89,10 +74,8 @@ void printTokenType(Token token){
         break;
     case CHAR_LITERAL:
         printf("\033[1;94m%s - '", enumToString[token.type]);
-        switch (token.value.char_val) {
-            //FUTURE ME PROBLEM
-            
-            /*case '\n': printf("\\n"); break;
+        switch (token.value.char_val) {            
+            case '\n': printf("\\n"); break;
             case '\t': printf("\\t"); break;
             case '\r': printf("\\r"); break;
             case '\b': printf("\\b"); break;
@@ -100,7 +83,7 @@ void printTokenType(Token token){
             case '\v': printf("\\v"); break;
             case '\\': printf("\\\\"); break;
             case '\'': printf("\\'"); break;
-            case '\"': printf("\\\""); break;*/
+            case '\"': printf("\\\""); break;
             default: printf("%c", token.value.char_val); break;
         }
         printf("'\033[0m");
@@ -157,11 +140,11 @@ int isCharInArray(char target, char array[]){
 void handle_int_literal(Token *token, Lexme *lexme) {
     token->value.int_val = atoi(lexme->input);
 }
-void handle_false(Token *token, Lexme *lexme) {
+void handle_false(Token *token,__unused Lexme *lexme) {
     token->value.bool_val = 0;
 }
 
-void handle_true(Token *token, Lexme *lexme) {
+void handle_true(Token *token,__unused Lexme *lexme) {
     token->value.bool_val = 1;
 }
 
@@ -170,11 +153,23 @@ void handle_float_literal(Token *token, Lexme *lexme) {
 }
 
 void handle_char_literal(Token *token, Lexme *lexme) {
-    if (lexme->input[1] != '\\'){
-        token->value.char_val = lexme->input[1];
-    }else{
-        char key = lexme->input[2] & 0xF;
-        token->value.char_val = (escape_map[(unsigned char) key] ? escape_map[(unsigned char) key] : lexme->input[2]);    }
+    if (lexme->input[0] == '\\') { // Check if it's an escape sequence
+        switch (lexme->input[1]) {
+            case 'n': token->value.char_val = '\n'; break;
+            case 't': token->value.char_val = '\t'; break;
+            case 'r': token->value.char_val = '\r'; break;
+            case 'b': token->value.char_val = '\b'; break;
+            case 'f': token->value.char_val = '\f'; break;
+            case 'v': token->value.char_val = '\v'; break;
+            case '\\': token->value.char_val = '\\'; break;
+            case '\'': token->value.char_val = '\''; break;
+            case '\"': token->value.char_val = '\"'; break;
+            default: 
+                token->value.char_val = lexme->input[1]; // Fallback to normal character
+        }
+    } else {
+        token->value.char_val = lexme->input[0]; // Store as-is if not an escape sequence
+    }
 }
 
 void handle_ident(Token *token, Lexme *lexme) {
@@ -186,7 +181,7 @@ void handle_ident(Token *token, Lexme *lexme) {
     token->value.ident_val = lexme->input;
 }
 
-void handle_next_line(Token *token, Lexme *lexme){
+void handle_next_line(__unused Token *token, Lexme *lexme){
     lexme->row++;
     lexme->col = -1;
 }
@@ -194,6 +189,7 @@ void handle_next_line(Token *token, Lexme *lexme){
 void handle_error(Token *token, Lexme *lexme){
     token->value.error_val.col = lexme->col+1;
     token->value.error_val.row = lexme->row;
+    lexme->pos++;
 }
 
 #include <stdio.h>

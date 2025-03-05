@@ -92,7 +92,7 @@ void LRError(Parser* parser, int __unused actionParam){
    parser->action = ACTION_ERROR;
    printTree(parser->treeHead);
    printParsingStep(parser);
-   printf("\n\033[1;31mParsing error found in Row: %d, Column: %d\033[0m\n", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
+   printf("\n\033[1;31mParsing error found in line: %d, at column: %d\033[0m\n", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
    exit(1);
 }
 
