@@ -47,14 +47,6 @@ Parser* initParser(Lexer* lexer){
 	parser->ReduceFunctionTable[temp++] = ReduceToFactor2;
  
 
-
-	
-
-
-
-
-
-
 	for (int i = 0; i < TOTAL_TOKENS+GRAMMER_SYMBOL_COUNT; i++){
 		for (int j = 0; j < TOTAL_STATES; j++){
 			parser->lrTable[i][j].LRTableFuncP = LRError;
@@ -80,20 +72,20 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][0].LRTableFuncP = LRShift;
 	parser->lrTable[24][0].actionParam = 6;
 	//goto
-	parser->lrTable[PROGRAM+TOTAL_VALID_ACTIONS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[PROGRAM+TOTAL_VALID_ACTIONS][0].actionParam = 7;
+	parser->lrTable[PROGRAM+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[PROGRAM+TOTAL_TOKENS][0].actionParam = 7;
 	//goto
-	parser->lrTable[Start+TOTAL_VALID_ACTIONS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Start+TOTAL_VALID_ACTIONS][0].actionParam = 8;
+	parser->lrTable[Start+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[Start+TOTAL_TOKENS][0].actionParam = 8;
 	//goto
-	parser->lrTable[Expr+TOTAL_VALID_ACTIONS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_VALID_ACTIONS][0].actionParam = 9;
+	parser->lrTable[Expr+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[Expr+TOTAL_TOKENS][0].actionParam = 9;
 	//goto
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][0].actionParam = 10;
+	parser->lrTable[Term+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[Term+TOTAL_TOKENS][0].actionParam = 10;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][0].actionParam = 11;
+	parser->lrTable[Factor+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][0].actionParam = 11;
 	//shift
 	parser->lrTable[40][1].LRTableFuncP = LRShift;
 	parser->lrTable[40][1].actionParam = 12;
@@ -119,14 +111,14 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][3].LRTableFuncP = LRShift;
 	parser->lrTable[24][3].actionParam = 34;
 	//goto
-	parser->lrTable[Expr+TOTAL_VALID_ACTIONS][3].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_VALID_ACTIONS][3].actionParam = 14;
+	parser->lrTable[Expr+TOTAL_TOKENS][3].LRTableFuncP = LRGoto;
+	parser->lrTable[Expr+TOTAL_TOKENS][3].actionParam = 14;
 	//goto
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][3].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][3].actionParam = 35;
+	parser->lrTable[Term+TOTAL_TOKENS][3].LRTableFuncP = LRGoto;
+	parser->lrTable[Term+TOTAL_TOKENS][3].actionParam = 35;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][3].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][3].actionParam = 36;
+	parser->lrTable[Factor+TOTAL_TOKENS][3].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][3].actionParam = 36;
 	//shift
 	parser->lrTable[9][4].LRTableFuncP = LRShift;
 	parser->lrTable[9][4].actionParam = 15;
@@ -341,11 +333,11 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][18].LRTableFuncP = LRShift;
 	parser->lrTable[24][18].actionParam = 6;
 	//goto
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][18].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][18].actionParam = 24;
+	parser->lrTable[Term+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[Term+TOTAL_TOKENS][18].actionParam = 24;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][18].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][18].actionParam = 11;
+	parser->lrTable[Factor+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][18].actionParam = 11;
 	//shift
 	parser->lrTable[9][19].LRTableFuncP = LRShift;
 	parser->lrTable[9][19].actionParam = 1;
@@ -365,11 +357,11 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][19].LRTableFuncP = LRShift;
 	parser->lrTable[24][19].actionParam = 6;
 	//goto
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][19].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][19].actionParam = 25;
+	parser->lrTable[Term+TOTAL_TOKENS][19].LRTableFuncP = LRGoto;
+	parser->lrTable[Term+TOTAL_TOKENS][19].actionParam = 25;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][19].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][19].actionParam = 11;
+	parser->lrTable[Factor+TOTAL_TOKENS][19].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][19].actionParam = 11;
 	//shift
 	parser->lrTable[9][20].LRTableFuncP = LRShift;
 	parser->lrTable[9][20].actionParam = 1;
@@ -389,8 +381,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][20].LRTableFuncP = LRShift;
 	parser->lrTable[24][20].actionParam = 6;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][20].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][20].actionParam = 26;
+	parser->lrTable[Factor+TOTAL_TOKENS][20].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][20].actionParam = 26;
 	//shift
 	parser->lrTable[9][21].LRTableFuncP = LRShift;
 	parser->lrTable[9][21].actionParam = 1;
@@ -410,8 +402,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][21].LRTableFuncP = LRShift;
 	parser->lrTable[24][21].actionParam = 6;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][21].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][21].actionParam = 27;
+	parser->lrTable[Factor+TOTAL_TOKENS][21].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][21].actionParam = 27;
 	//shift
 	parser->lrTable[9][22].LRTableFuncP = LRShift;
 	parser->lrTable[9][22].actionParam = 1;
@@ -431,8 +423,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][22].LRTableFuncP = LRShift;
 	parser->lrTable[24][22].actionParam = 6;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][22].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][22].actionParam = 28;
+	parser->lrTable[Factor+TOTAL_TOKENS][22].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][22].actionParam = 28;
 	//reduce
 	parser->lrTable[41][23].LRTableFuncP = LRReduce;
 	parser->lrTable[41][23].actionParam = 10;
@@ -566,14 +558,14 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][31].LRTableFuncP = LRShift;
 	parser->lrTable[24][31].actionParam = 34;
 	//goto
-	parser->lrTable[Expr+TOTAL_VALID_ACTIONS][31].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_VALID_ACTIONS][31].actionParam = 41;
+	parser->lrTable[Expr+TOTAL_TOKENS][31].LRTableFuncP = LRGoto;
+	parser->lrTable[Expr+TOTAL_TOKENS][31].actionParam = 41;
 	//goto
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][31].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][31].actionParam = 35;
+	parser->lrTable[Term+TOTAL_TOKENS][31].LRTableFuncP = LRGoto;
+	parser->lrTable[Term+TOTAL_TOKENS][31].actionParam = 35;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][31].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][31].actionParam = 36;
+	parser->lrTable[Factor+TOTAL_TOKENS][31].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][31].actionParam = 36;
 	//shift
 	parser->lrTable[9][32].LRTableFuncP = LRShift;
 	parser->lrTable[9][32].actionParam = 42;
@@ -689,11 +681,11 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][37].LRTableFuncP = LRShift;
 	parser->lrTable[24][37].actionParam = 34;
 	//goto
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][37].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][37].actionParam = 47;
+	parser->lrTable[Term+TOTAL_TOKENS][37].LRTableFuncP = LRGoto;
+	parser->lrTable[Term+TOTAL_TOKENS][37].actionParam = 47;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][37].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][37].actionParam = 36;
+	parser->lrTable[Factor+TOTAL_TOKENS][37].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][37].actionParam = 36;
 	//shift
 	parser->lrTable[9][38].LRTableFuncP = LRShift;
 	parser->lrTable[9][38].actionParam = 29;
@@ -713,11 +705,11 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][38].LRTableFuncP = LRShift;
 	parser->lrTable[24][38].actionParam = 34;
 	//goto
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][38].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_VALID_ACTIONS][38].actionParam = 48;
+	parser->lrTable[Term+TOTAL_TOKENS][38].LRTableFuncP = LRGoto;
+	parser->lrTable[Term+TOTAL_TOKENS][38].actionParam = 48;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][38].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][38].actionParam = 36;
+	parser->lrTable[Factor+TOTAL_TOKENS][38].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][38].actionParam = 36;
 	//reduce
 	parser->lrTable[8][39].LRTableFuncP = LRReduce;
 	parser->lrTable[8][39].actionParam = 17;
@@ -818,8 +810,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][44].LRTableFuncP = LRShift;
 	parser->lrTable[24][44].actionParam = 34;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][44].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][44].actionParam = 50;
+	parser->lrTable[Factor+TOTAL_TOKENS][44].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][44].actionParam = 50;
 	//shift
 	parser->lrTable[9][45].LRTableFuncP = LRShift;
 	parser->lrTable[9][45].actionParam = 29;
@@ -839,8 +831,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][45].LRTableFuncP = LRShift;
 	parser->lrTable[24][45].actionParam = 34;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][45].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][45].actionParam = 51;
+	parser->lrTable[Factor+TOTAL_TOKENS][45].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][45].actionParam = 51;
 	//shift
 	parser->lrTable[9][46].LRTableFuncP = LRShift;
 	parser->lrTable[9][46].actionParam = 29;
@@ -860,8 +852,8 @@ Parser* initParser(Lexer* lexer){
 	parser->lrTable[24][46].LRTableFuncP = LRShift;
 	parser->lrTable[24][46].actionParam = 34;
 	//goto
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][46].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_VALID_ACTIONS][46].actionParam = 52;
+	parser->lrTable[Factor+TOTAL_TOKENS][46].LRTableFuncP = LRGoto;
+	parser->lrTable[Factor+TOTAL_TOKENS][46].actionParam = 52;
 	//shift
 	parser->lrTable[16][47].LRTableFuncP = LRShift;
 	parser->lrTable[16][47].actionParam = 44;

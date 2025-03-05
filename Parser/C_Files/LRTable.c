@@ -75,11 +75,9 @@ void LRGoto(Parser* parser, __unused int actionParam){
     StackValue temp1; //contains the GRAMMER SYMBOL
     StackValue temp2; //contains the NUMBER
     temp1 = popStack(parser->stack);
-    if (temp1.dataType != GRAMMER_SYMBOL_DATA_TYPE)
-        LRError(parser, -1);
     temp2 = popStack(parser->stack);
     tempNum = temp1.data.treeNode->data.data.symbol;
-    tempNum += TOTAL_VALID_ACTIONS;
+    tempNum += TOTAL_TOKENS;
     gotoResult = parser->lrTable[tempNum][temp2.data.intValue].actionParam;
     pushInt(parser->stack, temp2.data.intValue);
     pushTreeNode(parser->stack, temp1.data.treeNode);
