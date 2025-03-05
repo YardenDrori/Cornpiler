@@ -8,6 +8,7 @@
 #include "global.h"
 #include <stdio.h>
 #include <stdlib.h>
+struct Parser;
 
 extern const char enumToString[][30];  // Declare as extern
 
@@ -24,5 +25,5 @@ void handle_ident(Token *token, Lexme *lexme);
 void handle_next_line(Token *token, Lexme *lexme);
 void handle_error(Token *token, Lexme *lexme);
 void printTree(parseTreeNode* head);
-
+void printParsingStep(struct Parser* parser);
 #endif

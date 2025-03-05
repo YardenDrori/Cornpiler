@@ -1,6 +1,7 @@
 #include "../../Lexer/H_Files/lexer.h"
 #include "../../Lexer/H_Files/token.h"
 #include "../../Lexer/H_Files/state.h"
+#include "../../Parser/H_Files/parser.h"
 #include "../H_Files/util.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -220,4 +221,9 @@ void printTreeHelper(parseTreeNode* node, int depth) {
 void printTree(parseTreeNode* head) {
     printf("\nParse Tree:\n");
     printTreeHelper(head, 0);
+}
+
+
+printParsingStep(Parser* parser){
+    
 }

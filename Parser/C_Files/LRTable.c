@@ -29,49 +29,31 @@ void accept(Parser* parser){
     //TODO
     printf("ACCEPT\n");
 }
-void Reduce1(Parser* parser){
+void ReduceToProgram1(Parser* parser){
     ReduceGeneric(parser, PROGRAM, 1);
 }
-void Reduce2(Parser* parser){
+void ReduceToStart1(Parser* parser){
     ReduceGeneric(parser, Start, 1);
 }
-void Reduce3(Parser* parser){
+void ReduceToExpr3(Parser* parser){
     ReduceGeneric(parser, Expr, 3);
 }
-void Reduce4(Parser* parser){
-    ReduceGeneric(parser, Expr, 3);
-}
-void Reduce5(Parser* parser){
+void ReduceToExpr1(Parser* parser){
     ReduceGeneric(parser, Expr, 1);
 }
-void Reduce6(Parser* parser){
+void ReduceToTerm3(Parser* parser){
     ReduceGeneric(parser, Term, 3);
 }
-void Reduce7(Parser* parser){
-    ReduceGeneric(parser, Term, 3);
-}
-void Reduce8(Parser* parser){
+void ReduceToTerm1(Parser* parser){
     ReduceGeneric(parser, Term, 1);
 }
-void Reduce9(Parser* parser){
+void ReduceToFactor3(Parser* parser){
     ReduceGeneric(parser, Factor, 3);
 }
-void Reduce10(Parser* parser){
+void ReduceToFactor1(Parser* parser){
     ReduceGeneric(parser, Factor, 1);
 }
-void Reduce11(Parser* parser){
-    ReduceGeneric(parser, Factor, 1);
-}
-void Reduce12(Parser* parser){
-    ReduceGeneric(parser, Factor, 2);
-}
-void Reduce13(Parser* parser){
-    ReduceGeneric(parser, Factor, 2);
-}
-void Reduce14(Parser* parser){
-    ReduceGeneric(parser, Factor, 2);
-}
-void Reduce15(Parser* parser){
+void ReduceToFactor2(Parser* parser){
     ReduceGeneric(parser, Factor, 2);
 }
 
@@ -82,12 +64,18 @@ void Reduce15(Parser* parser){
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
 void LRShift(Parser* parser, int actionParam){
     //manage LRTable stack
-    pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
+    if (parser->lexer->tokens[parser->tokenId].type == END_OF_FILE){
+        pushToken(parser->stack, parser->lexer->tokens[parser->tokenId]);
+    }else{
+        pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
+    }
+    printf("shift %d\n", actionParam);
     pushInt(parser->stack, actionParam);
 }
 
 void LRReduce(Parser* parser, int actionParam){
     parser->ReduceFunctionTable[actionParam](parser);
+    printf("reduce %d\n", actionParam);
 }
 
 void LRGoto(Parser* parser, int actionParam){
@@ -102,11 +90,12 @@ void LRGoto(Parser* parser, int actionParam){
     temp1 = popStack(parser->stack);
     temp2 = popStack(parser->stack);
     tempNum = temp1.data.treeNode->data.data.symbol;
-    tempNum += TOTAL_ACTIONS;
+    tempNum += TOTAL_VALID_ACTIONS;
     gotoResult = parser->lrTable[tempNum][temp2.data.intValue].actionParam;
-    pushSymbol(parser->stack, temp1.data.treeNode->data.data.symbol);
     pushInt(parser->stack, temp2.data.intValue);
+    pushSymbol(parser->stack, temp1.data.treeNode->data.data.symbol);
     pushInt(parser->stack, gotoResult);
+    printf("GOTO %d %d pushed: %d\n", temp2.data.intValue, tempNum, gotoResult);
 }
 
 
@@ -121,6 +110,7 @@ void LRError(Parser* parser, int actionParam){
 }
 
 void LRAccept(Parser* parser, int actionParam){
+    printf("ACCEPT SECOND ONE\n");
     //TODO
 }
 

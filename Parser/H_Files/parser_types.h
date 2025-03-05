@@ -3,9 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../../Lexer/H_Files/lexer.h"
-#define TOTAL_STATES 47
-#define TOTAL_ACTIONS 16
-#define TOTAL_GRAMMER_RULES 16
+#include "../../Lexer/H_Files/token.h"
+
+#define TOTAL_STATES 53
+//#define TOTAL_ACTIONS 18
+#define TOTAL_GRAMMER_RULES 18
 
 typedef enum {
     PROGRAM,
@@ -21,5 +23,4 @@ typedef enum DataType{
     TOKEN_DATA_TYPE,
     NUMBER_DATA_TYPE
 } DataType;
-
 #endif

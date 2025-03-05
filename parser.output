@@ -1,4 +1,4 @@
-\Grammar
+Grammar
 
     0 $accept: PROGRAM $end
 
@@ -12,710 +12,724 @@
 
     6 Term: Term MULTIPLY Factor
     7     | Term DIVIDE Factor
-    8     | Factor
+    8     | Term MODULO Factor
+    9     | Factor
 
-    9 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | IDENT
-   11       | INT_LITERAL
-   12       | IDENT INC
-   13       | IDENT DEC
-   14       | DEC IDENT
-   15       | INC IDENT
+   10 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   11       | IDENT
+   12       | INT_LITERAL
+   13       | FLOAT_LITERAL
+   14       | IDENT INC
+   15       | IDENT DEC
+   16       | DEC IDENT
+   17       | INC IDENT
 
 
 Terminals, with rules where they appear
 
     $end (0) 0
     error (256)
-    IDENT (258) 10 12 13 14 15
-    INT_LITERAL (259) 11
-    PLUS (260) 3
-    MINUS (261) 4
-    MULTIPLY (262) 6
-    DIVIDE (263) 7
-    INC (264) 12 15
-    DEC (265) 13 14
-    OPEN_PARENTHESIS (266) 9
-    CLOSE_PARENTHESIS (267) 9
+    PLUS (258) 3
+    MINUS (259) 4
+    MULTIPLY (260) 6
+    DIVIDE (261) 7
+    MODULO (262) 8
+    INC (263) 14 17
+    DEC (264) 15 16
+    OPEN_PARENTHESIS (265) 10
+    CLOSE_PARENTHESIS (266) 10
+    IDENT (267) 11 14 15 16 17
+    INT_LITERAL (268) 12
+    FLOAT_LITERAL (269) 13
 
 
 Nonterminals, with rules where they appear
 
-    $accept (13)
+    $accept (15)
         on left: 0
-    PROGRAM (14)
+    PROGRAM (16)
         on left: 1
         on right: 0
-    Start (15)
+    Start (17)
         on left: 2
         on right: 1
-    Expr (16)
+    Expr (18)
         on left: 3 4 5
-        on right: 2 3 4 9
-    Term (17)
-        on left: 6 7 8
-        on right: 3 4 5 6 7
-    Factor (18)
-        on left: 9 10 11 12 13 14 15
-        on right: 6 7 8
+        on right: 2 3 4 10
+    Term (19)
+        on left: 6 7 8 9
+        on right: 3 4 5 6 7 8
+    Factor (20)
+        on left: 10 11 12 13 14 15 16 17
+        on right: 6 7 8 9
 
 
 State 0
 
     0 $accept: • PROGRAM $end
-    1 PROGRAM: • Start
-    2 Start: • Expr
-    3 Expr: • Expr PLUS Term
-    4     | • Expr MINUS Term
-    5     | • Term
-    6 Term: • Term MULTIPLY Factor
-    7     | • Term DIVIDE Factor
-    8     | • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
 
-    IDENT             shift, and go to state 1
-    INT_LITERAL       shift, and go to state 2
-    INC               shift, and go to state 3
-    DEC               shift, and go to state 4
-    OPEN_PARENTHESIS  shift, and go to state 5
+    INC               shift, and go to state 1
+    DEC               shift, and go to state 2
+    OPEN_PARENTHESIS  shift, and go to state 3
+    IDENT             shift, and go to state 4
+    INT_LITERAL       shift, and go to state 5
+    FLOAT_LITERAL     shift, and go to state 6
 
-    PROGRAM  go to state 6
-    Start    go to state 7
-    Expr     go to state 8
-    Term     go to state 9
-    Factor   go to state 10
+    PROGRAM  go to state 7
+    Start    go to state 8
+    Expr     go to state 9
+    Term     go to state 10
+    Factor   go to state 11
 
 
 State 1
 
-   10 Factor: IDENT •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
-   12       | IDENT • INC
-   13       | IDENT • DEC
+   17 Factor: INC • IDENT
 
-    INC  shift, and go to state 11
-    DEC  shift, and go to state 12
-
-    $end      reduce using rule 10 (Factor)
-    PLUS      reduce using rule 10 (Factor)
-    MINUS     reduce using rule 10 (Factor)
-    MULTIPLY  reduce using rule 10 (Factor)
-    DIVIDE    reduce using rule 10 (Factor)
+    IDENT  shift, and go to state 12
 
 
 State 2
 
-   11 Factor: INT_LITERAL •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+   16 Factor: DEC • IDENT
+
+    IDENT  shift, and go to state 13
+
+
+State 3
+
+   10 Factor: OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
+
+    INC               shift, and go to state 29
+    DEC               shift, and go to state 30
+    OPEN_PARENTHESIS  shift, and go to state 31
+    IDENT             shift, and go to state 32
+    INT_LITERAL       shift, and go to state 33
+    FLOAT_LITERAL     shift, and go to state 34
+
+    Expr    go to state 14
+    Term    go to state 35
+    Factor  go to state 36
+
+
+State 4
+
+   11 Factor: IDENT •
+   14       | IDENT • INC
+   15       | IDENT • DEC
+
+    INC  shift, and go to state 15
+    DEC  shift, and go to state 16
 
     $end      reduce using rule 11 (Factor)
     PLUS      reduce using rule 11 (Factor)
     MINUS     reduce using rule 11 (Factor)
     MULTIPLY  reduce using rule 11 (Factor)
     DIVIDE    reduce using rule 11 (Factor)
-
-
-State 3
-
-   15 Factor: INC • IDENT
-
-    IDENT  shift, and go to state 13
-
-
-State 4
-
-   14 Factor: DEC • IDENT
-
-    IDENT  shift, and go to state 14
+    MODULO    reduce using rule 11 (Factor)
 
 
 State 5
 
-    3 Expr: • Expr PLUS Term
-    4     | • Expr MINUS Term
-    5     | • Term
-    6 Term: • Term MULTIPLY Factor
-    7     | • Term DIVIDE Factor
-    8     | • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-    9       | OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
-
-    IDENT             shift, and go to state 26
-    INT_LITERAL       shift, and go to state 27
-    INC               shift, and go to state 28
-    DEC               shift, and go to state 29
-    OPEN_PARENTHESIS  shift, and go to state 30
-
-    Expr    go to state 15
-    Term    go to state 31
-    Factor  go to state 32
-
-
-State 6
-
-    0 $accept: PROGRAM • $end
-
-    $end  shift, and go to state 16
-
-
-State 7
-
-    1 PROGRAM: Start •  [$end]
-
-    $end  reduce using rule 1 (PROGRAM)
-
-
-State 8
-
-    2 Start: Expr •  [$end]
-    3 Expr: Expr • PLUS Term
-    4     | Expr • MINUS Term
-
-    PLUS   shift, and go to state 17
-    MINUS  shift, and go to state 18
-
-    $end  reduce using rule 2 (Start)
-
-
-State 9
-
-    5 Expr: Term •  [$end, PLUS, MINUS]
-    6 Term: Term • MULTIPLY Factor
-    7     | Term • DIVIDE Factor
-
-    MULTIPLY  shift, and go to state 19
-    DIVIDE    shift, and go to state 20
-
-    $end   reduce using rule 5 (Expr)
-    PLUS   reduce using rule 5 (Expr)
-    MINUS  reduce using rule 5 (Expr)
-
-
-State 10
-
-    8 Term: Factor •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
-
-    $end      reduce using rule 8 (Term)
-    PLUS      reduce using rule 8 (Term)
-    MINUS     reduce using rule 8 (Term)
-    MULTIPLY  reduce using rule 8 (Term)
-    DIVIDE    reduce using rule 8 (Term)
-
-
-State 11
-
-   12 Factor: IDENT INC •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+   12 Factor: INT_LITERAL •
 
     $end      reduce using rule 12 (Factor)
     PLUS      reduce using rule 12 (Factor)
     MINUS     reduce using rule 12 (Factor)
     MULTIPLY  reduce using rule 12 (Factor)
     DIVIDE    reduce using rule 12 (Factor)
+    MODULO    reduce using rule 12 (Factor)
 
 
-State 12
+State 6
 
-   13 Factor: IDENT DEC •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+   13 Factor: FLOAT_LITERAL •
 
     $end      reduce using rule 13 (Factor)
     PLUS      reduce using rule 13 (Factor)
     MINUS     reduce using rule 13 (Factor)
     MULTIPLY  reduce using rule 13 (Factor)
     DIVIDE    reduce using rule 13 (Factor)
+    MODULO    reduce using rule 13 (Factor)
+
+
+State 7
+
+    0 $accept: PROGRAM • $end
+
+    $end  shift, and go to state 17
+
+
+State 8
+
+    1 PROGRAM: Start •
+
+    $end  reduce using rule 1 (PROGRAM)
+
+
+State 9
+
+    2 Start: Expr •
+    3 Expr: Expr • PLUS Term
+    4     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 18
+    MINUS  shift, and go to state 19
+
+    $end  reduce using rule 2 (Start)
+
+
+State 10
+
+    5 Expr: Term •
+    6 Term: Term • MULTIPLY Factor
+    7     | Term • DIVIDE Factor
+    8     | Term • MODULO Factor
+
+    MULTIPLY  shift, and go to state 20
+    DIVIDE    shift, and go to state 21
+    MODULO    shift, and go to state 22
+
+    $end   reduce using rule 5 (Expr)
+    PLUS   reduce using rule 5 (Expr)
+    MINUS  reduce using rule 5 (Expr)
+
+
+State 11
+
+    9 Term: Factor •
+
+    $end      reduce using rule 9 (Term)
+    PLUS      reduce using rule 9 (Term)
+    MINUS     reduce using rule 9 (Term)
+    MULTIPLY  reduce using rule 9 (Term)
+    DIVIDE    reduce using rule 9 (Term)
+    MODULO    reduce using rule 9 (Term)
+
+
+State 12
+
+   17 Factor: INC IDENT •
+
+    $end      reduce using rule 17 (Factor)
+    PLUS      reduce using rule 17 (Factor)
+    MINUS     reduce using rule 17 (Factor)
+    MULTIPLY  reduce using rule 17 (Factor)
+    DIVIDE    reduce using rule 17 (Factor)
+    MODULO    reduce using rule 17 (Factor)
 
 
 State 13
 
-   15 Factor: INC IDENT •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+   16 Factor: DEC IDENT •
 
-    $end      reduce using rule 15 (Factor)
-    PLUS      reduce using rule 15 (Factor)
-    MINUS     reduce using rule 15 (Factor)
-    MULTIPLY  reduce using rule 15 (Factor)
-    DIVIDE    reduce using rule 15 (Factor)
+    $end      reduce using rule 16 (Factor)
+    PLUS      reduce using rule 16 (Factor)
+    MINUS     reduce using rule 16 (Factor)
+    MULTIPLY  reduce using rule 16 (Factor)
+    DIVIDE    reduce using rule 16 (Factor)
+    MODULO    reduce using rule 16 (Factor)
 
 
 State 14
 
-   14 Factor: DEC IDENT •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+    3 Expr: Expr • PLUS Term
+    4     | Expr • MINUS Term
+   10 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
+
+    PLUS               shift, and go to state 37
+    MINUS              shift, and go to state 38
+    CLOSE_PARENTHESIS  shift, and go to state 23
+
+
+State 15
+
+   14 Factor: IDENT INC •
 
     $end      reduce using rule 14 (Factor)
     PLUS      reduce using rule 14 (Factor)
     MINUS     reduce using rule 14 (Factor)
     MULTIPLY  reduce using rule 14 (Factor)
     DIVIDE    reduce using rule 14 (Factor)
-
-
-State 15
-
-    3 Expr: Expr • PLUS Term
-    4     | Expr • MINUS Term
-    9 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
-
-    PLUS               shift, and go to state 33
-    MINUS              shift, and go to state 34
-    CLOSE_PARENTHESIS  shift, and go to state 21
+    MODULO    reduce using rule 14 (Factor)
 
 
 State 16
+
+   15 Factor: IDENT DEC •
+
+    $end      reduce using rule 15 (Factor)
+    PLUS      reduce using rule 15 (Factor)
+    MINUS     reduce using rule 15 (Factor)
+    MULTIPLY  reduce using rule 15 (Factor)
+    DIVIDE    reduce using rule 15 (Factor)
+    MODULO    reduce using rule 15 (Factor)
+
+
+State 17
 
     0 $accept: PROGRAM $end •
 
     $default  accept
 
 
-State 17
-
-    3 Expr: Expr PLUS • Term
-    6 Term: • Term MULTIPLY Factor
-    7     | • Term DIVIDE Factor
-    8     | • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
-
-    IDENT             shift, and go to state 1
-    INT_LITERAL       shift, and go to state 2
-    INC               shift, and go to state 3
-    DEC               shift, and go to state 4
-    OPEN_PARENTHESIS  shift, and go to state 5
-
-    Term    go to state 22
-    Factor  go to state 10
-
-
 State 18
 
-    4 Expr: Expr MINUS • Term
-    6 Term: • Term MULTIPLY Factor
-    7     | • Term DIVIDE Factor
-    8     | • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
+    3 Expr: Expr PLUS • Term
 
-    IDENT             shift, and go to state 1
-    INT_LITERAL       shift, and go to state 2
-    INC               shift, and go to state 3
-    DEC               shift, and go to state 4
-    OPEN_PARENTHESIS  shift, and go to state 5
+    INC               shift, and go to state 1
+    DEC               shift, and go to state 2
+    OPEN_PARENTHESIS  shift, and go to state 3
+    IDENT             shift, and go to state 4
+    INT_LITERAL       shift, and go to state 5
+    FLOAT_LITERAL     shift, and go to state 6
 
-    Term    go to state 23
-    Factor  go to state 10
+    Term    go to state 24
+    Factor  go to state 11
 
 
 State 19
 
-    6 Term: Term MULTIPLY • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
+    4 Expr: Expr MINUS • Term
 
-    IDENT             shift, and go to state 1
-    INT_LITERAL       shift, and go to state 2
-    INC               shift, and go to state 3
-    DEC               shift, and go to state 4
-    OPEN_PARENTHESIS  shift, and go to state 5
+    INC               shift, and go to state 1
+    DEC               shift, and go to state 2
+    OPEN_PARENTHESIS  shift, and go to state 3
+    IDENT             shift, and go to state 4
+    INT_LITERAL       shift, and go to state 5
+    FLOAT_LITERAL     shift, and go to state 6
 
-    Factor  go to state 24
+    Term    go to state 25
+    Factor  go to state 11
 
 
 State 20
 
-    7 Term: Term DIVIDE • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
+    6 Term: Term MULTIPLY • Factor
 
-    IDENT             shift, and go to state 1
-    INT_LITERAL       shift, and go to state 2
-    INC               shift, and go to state 3
-    DEC               shift, and go to state 4
-    OPEN_PARENTHESIS  shift, and go to state 5
+    INC               shift, and go to state 1
+    DEC               shift, and go to state 2
+    OPEN_PARENTHESIS  shift, and go to state 3
+    IDENT             shift, and go to state 4
+    INT_LITERAL       shift, and go to state 5
+    FLOAT_LITERAL     shift, and go to state 6
 
-    Factor  go to state 25
+    Factor  go to state 26
 
 
 State 21
 
-    9 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+    7 Term: Term DIVIDE • Factor
 
-    $end      reduce using rule 9 (Factor)
-    PLUS      reduce using rule 9 (Factor)
-    MINUS     reduce using rule 9 (Factor)
-    MULTIPLY  reduce using rule 9 (Factor)
-    DIVIDE    reduce using rule 9 (Factor)
+    INC               shift, and go to state 1
+    DEC               shift, and go to state 2
+    OPEN_PARENTHESIS  shift, and go to state 3
+    IDENT             shift, and go to state 4
+    INT_LITERAL       shift, and go to state 5
+    FLOAT_LITERAL     shift, and go to state 6
+
+    Factor  go to state 27
 
 
 State 22
 
-    3 Expr: Expr PLUS Term •  [$end, PLUS, MINUS]
+    8 Term: Term MODULO • Factor
+
+    INC               shift, and go to state 1
+    DEC               shift, and go to state 2
+    OPEN_PARENTHESIS  shift, and go to state 3
+    IDENT             shift, and go to state 4
+    INT_LITERAL       shift, and go to state 5
+    FLOAT_LITERAL     shift, and go to state 6
+
+    Factor  go to state 28
+
+
+State 23
+
+   10 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS •
+
+    $end      reduce using rule 10 (Factor)
+    PLUS      reduce using rule 10 (Factor)
+    MINUS     reduce using rule 10 (Factor)
+    MULTIPLY  reduce using rule 10 (Factor)
+    DIVIDE    reduce using rule 10 (Factor)
+    MODULO    reduce using rule 10 (Factor)
+
+
+State 24
+
+    3 Expr: Expr PLUS Term •
     6 Term: Term • MULTIPLY Factor
     7     | Term • DIVIDE Factor
+    8     | Term • MODULO Factor
 
-    MULTIPLY  shift, and go to state 19
-    DIVIDE    shift, and go to state 20
+    MULTIPLY  shift, and go to state 20
+    DIVIDE    shift, and go to state 21
+    MODULO    shift, and go to state 22
 
     $end   reduce using rule 3 (Expr)
     PLUS   reduce using rule 3 (Expr)
     MINUS  reduce using rule 3 (Expr)
 
 
-State 23
+State 25
 
-    4 Expr: Expr MINUS Term •  [$end, PLUS, MINUS]
+    4 Expr: Expr MINUS Term •
     6 Term: Term • MULTIPLY Factor
     7     | Term • DIVIDE Factor
+    8     | Term • MODULO Factor
 
-    MULTIPLY  shift, and go to state 19
-    DIVIDE    shift, and go to state 20
+    MULTIPLY  shift, and go to state 20
+    DIVIDE    shift, and go to state 21
+    MODULO    shift, and go to state 22
 
     $end   reduce using rule 4 (Expr)
     PLUS   reduce using rule 4 (Expr)
     MINUS  reduce using rule 4 (Expr)
 
 
-State 24
+State 26
 
-    6 Term: Term MULTIPLY Factor •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+    6 Term: Term MULTIPLY Factor •
 
     $end      reduce using rule 6 (Term)
     PLUS      reduce using rule 6 (Term)
     MINUS     reduce using rule 6 (Term)
     MULTIPLY  reduce using rule 6 (Term)
     DIVIDE    reduce using rule 6 (Term)
+    MODULO    reduce using rule 6 (Term)
 
 
-State 25
+State 27
 
-    7 Term: Term DIVIDE Factor •  [$end, PLUS, MINUS, MULTIPLY, DIVIDE]
+    7 Term: Term DIVIDE Factor •
 
     $end      reduce using rule 7 (Term)
     PLUS      reduce using rule 7 (Term)
     MINUS     reduce using rule 7 (Term)
     MULTIPLY  reduce using rule 7 (Term)
     DIVIDE    reduce using rule 7 (Term)
+    MODULO    reduce using rule 7 (Term)
 
 
-State 26
+State 28
 
-   10 Factor: IDENT •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
-   12       | IDENT • INC
-   13       | IDENT • DEC
+    8 Term: Term MODULO Factor •
 
-    INC  shift, and go to state 35
-    DEC  shift, and go to state 36
-
-    PLUS               reduce using rule 10 (Factor)
-    MINUS              reduce using rule 10 (Factor)
-    MULTIPLY           reduce using rule 10 (Factor)
-    DIVIDE             reduce using rule 10 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 10 (Factor)
+    $end      reduce using rule 8 (Term)
+    PLUS      reduce using rule 8 (Term)
+    MINUS     reduce using rule 8 (Term)
+    MULTIPLY  reduce using rule 8 (Term)
+    DIVIDE    reduce using rule 8 (Term)
+    MODULO    reduce using rule 8 (Term)
 
 
-State 27
+State 29
 
-   11 Factor: INT_LITERAL •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+   17 Factor: INC • IDENT
+
+    IDENT  shift, and go to state 39
+
+
+State 30
+
+   16 Factor: DEC • IDENT
+
+    IDENT  shift, and go to state 40
+
+
+State 31
+
+   10 Factor: OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
+
+    INC               shift, and go to state 29
+    DEC               shift, and go to state 30
+    OPEN_PARENTHESIS  shift, and go to state 31
+    IDENT             shift, and go to state 32
+    INT_LITERAL       shift, and go to state 33
+    FLOAT_LITERAL     shift, and go to state 34
+
+    Expr    go to state 41
+    Term    go to state 35
+    Factor  go to state 36
+
+
+State 32
+
+   11 Factor: IDENT •
+   14       | IDENT • INC
+   15       | IDENT • DEC
+
+    INC  shift, and go to state 42
+    DEC  shift, and go to state 43
 
     PLUS               reduce using rule 11 (Factor)
     MINUS              reduce using rule 11 (Factor)
     MULTIPLY           reduce using rule 11 (Factor)
     DIVIDE             reduce using rule 11 (Factor)
+    MODULO             reduce using rule 11 (Factor)
     CLOSE_PARENTHESIS  reduce using rule 11 (Factor)
 
 
-State 28
+State 33
 
-   15 Factor: INC • IDENT
+   12 Factor: INT_LITERAL •
 
-    IDENT  shift, and go to state 37
-
-
-State 29
-
-   14 Factor: DEC • IDENT
-
-    IDENT  shift, and go to state 38
+    PLUS               reduce using rule 12 (Factor)
+    MINUS              reduce using rule 12 (Factor)
+    MULTIPLY           reduce using rule 12 (Factor)
+    DIVIDE             reduce using rule 12 (Factor)
+    MODULO             reduce using rule 12 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 12 (Factor)
 
 
-State 30
+State 34
 
-    3 Expr: • Expr PLUS Term
-    4     | • Expr MINUS Term
-    5     | • Term
-    6 Term: • Term MULTIPLY Factor
-    7     | • Term DIVIDE Factor
-    8     | • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-    9       | OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
+   13 Factor: FLOAT_LITERAL •
 
-    IDENT             shift, and go to state 26
-    INT_LITERAL       shift, and go to state 27
-    INC               shift, and go to state 28
-    DEC               shift, and go to state 29
-    OPEN_PARENTHESIS  shift, and go to state 30
-
-    Expr    go to state 39
-    Term    go to state 31
-    Factor  go to state 32
+    PLUS               reduce using rule 13 (Factor)
+    MINUS              reduce using rule 13 (Factor)
+    MULTIPLY           reduce using rule 13 (Factor)
+    DIVIDE             reduce using rule 13 (Factor)
+    MODULO             reduce using rule 13 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 13 (Factor)
 
 
-State 31
+State 35
 
-    5 Expr: Term •  [PLUS, MINUS, CLOSE_PARENTHESIS]
+    5 Expr: Term •
     6 Term: Term • MULTIPLY Factor
     7     | Term • DIVIDE Factor
+    8     | Term • MODULO Factor
 
-    MULTIPLY  shift, and go to state 40
-    DIVIDE    shift, and go to state 41
+    MULTIPLY  shift, and go to state 44
+    DIVIDE    shift, and go to state 45
+    MODULO    shift, and go to state 46
 
     PLUS               reduce using rule 5 (Expr)
     MINUS              reduce using rule 5 (Expr)
     CLOSE_PARENTHESIS  reduce using rule 5 (Expr)
 
 
-State 32
-
-    8 Term: Factor •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
-
-    PLUS               reduce using rule 8 (Term)
-    MINUS              reduce using rule 8 (Term)
-    MULTIPLY           reduce using rule 8 (Term)
-    DIVIDE             reduce using rule 8 (Term)
-    CLOSE_PARENTHESIS  reduce using rule 8 (Term)
-
-
-State 33
-
-    3 Expr: Expr PLUS • Term
-    6 Term: • Term MULTIPLY Factor
-    7     | • Term DIVIDE Factor
-    8     | • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
-
-    IDENT             shift, and go to state 26
-    INT_LITERAL       shift, and go to state 27
-    INC               shift, and go to state 28
-    DEC               shift, and go to state 29
-    OPEN_PARENTHESIS  shift, and go to state 30
-
-    Term    go to state 42
-    Factor  go to state 32
-
-
-State 34
-
-    4 Expr: Expr MINUS • Term
-    6 Term: • Term MULTIPLY Factor
-    7     | • Term DIVIDE Factor
-    8     | • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
-
-    IDENT             shift, and go to state 26
-    INT_LITERAL       shift, and go to state 27
-    INC               shift, and go to state 28
-    DEC               shift, and go to state 29
-    OPEN_PARENTHESIS  shift, and go to state 30
-
-    Term    go to state 43
-    Factor  go to state 32
-
-
-State 35
-
-   12 Factor: IDENT INC •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
-
-    PLUS               reduce using rule 12 (Factor)
-    MINUS              reduce using rule 12 (Factor)
-    MULTIPLY           reduce using rule 12 (Factor)
-    DIVIDE             reduce using rule 12 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 12 (Factor)
-
-
 State 36
 
-   13 Factor: IDENT DEC •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+    9 Term: Factor •
 
-    PLUS               reduce using rule 13 (Factor)
-    MINUS              reduce using rule 13 (Factor)
-    MULTIPLY           reduce using rule 13 (Factor)
-    DIVIDE             reduce using rule 13 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 13 (Factor)
+    PLUS               reduce using rule 9 (Term)
+    MINUS              reduce using rule 9 (Term)
+    MULTIPLY           reduce using rule 9 (Term)
+    DIVIDE             reduce using rule 9 (Term)
+    MODULO             reduce using rule 9 (Term)
+    CLOSE_PARENTHESIS  reduce using rule 9 (Term)
 
 
 State 37
 
-   15 Factor: INC IDENT •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+    3 Expr: Expr PLUS • Term
 
-    PLUS               reduce using rule 15 (Factor)
-    MINUS              reduce using rule 15 (Factor)
-    MULTIPLY           reduce using rule 15 (Factor)
-    DIVIDE             reduce using rule 15 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 15 (Factor)
+    INC               shift, and go to state 29
+    DEC               shift, and go to state 30
+    OPEN_PARENTHESIS  shift, and go to state 31
+    IDENT             shift, and go to state 32
+    INT_LITERAL       shift, and go to state 33
+    FLOAT_LITERAL     shift, and go to state 34
+
+    Term    go to state 47
+    Factor  go to state 36
 
 
 State 38
 
-   14 Factor: DEC IDENT •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+    4 Expr: Expr MINUS • Term
+
+    INC               shift, and go to state 29
+    DEC               shift, and go to state 30
+    OPEN_PARENTHESIS  shift, and go to state 31
+    IDENT             shift, and go to state 32
+    INT_LITERAL       shift, and go to state 33
+    FLOAT_LITERAL     shift, and go to state 34
+
+    Term    go to state 48
+    Factor  go to state 36
+
+
+State 39
+
+   17 Factor: INC IDENT •
+
+    PLUS               reduce using rule 17 (Factor)
+    MINUS              reduce using rule 17 (Factor)
+    MULTIPLY           reduce using rule 17 (Factor)
+    DIVIDE             reduce using rule 17 (Factor)
+    MODULO             reduce using rule 17 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 17 (Factor)
+
+
+State 40
+
+   16 Factor: DEC IDENT •
+
+    PLUS               reduce using rule 16 (Factor)
+    MINUS              reduce using rule 16 (Factor)
+    MULTIPLY           reduce using rule 16 (Factor)
+    DIVIDE             reduce using rule 16 (Factor)
+    MODULO             reduce using rule 16 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 16 (Factor)
+
+
+State 41
+
+    3 Expr: Expr • PLUS Term
+    4     | Expr • MINUS Term
+   10 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
+
+    PLUS               shift, and go to state 37
+    MINUS              shift, and go to state 38
+    CLOSE_PARENTHESIS  shift, and go to state 49
+
+
+State 42
+
+   14 Factor: IDENT INC •
 
     PLUS               reduce using rule 14 (Factor)
     MINUS              reduce using rule 14 (Factor)
     MULTIPLY           reduce using rule 14 (Factor)
     DIVIDE             reduce using rule 14 (Factor)
+    MODULO             reduce using rule 14 (Factor)
     CLOSE_PARENTHESIS  reduce using rule 14 (Factor)
 
 
-State 39
+State 43
 
-    3 Expr: Expr • PLUS Term
-    4     | Expr • MINUS Term
-    9 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
+   15 Factor: IDENT DEC •
 
-    PLUS               shift, and go to state 33
-    MINUS              shift, and go to state 34
-    CLOSE_PARENTHESIS  shift, and go to state 44
+    PLUS               reduce using rule 15 (Factor)
+    MINUS              reduce using rule 15 (Factor)
+    MULTIPLY           reduce using rule 15 (Factor)
+    DIVIDE             reduce using rule 15 (Factor)
+    MODULO             reduce using rule 15 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 15 (Factor)
 
 
-State 40
+State 44
 
     6 Term: Term MULTIPLY • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
 
-    IDENT             shift, and go to state 26
-    INT_LITERAL       shift, and go to state 27
-    INC               shift, and go to state 28
-    DEC               shift, and go to state 29
-    OPEN_PARENTHESIS  shift, and go to state 30
+    INC               shift, and go to state 29
+    DEC               shift, and go to state 30
+    OPEN_PARENTHESIS  shift, and go to state 31
+    IDENT             shift, and go to state 32
+    INT_LITERAL       shift, and go to state 33
+    FLOAT_LITERAL     shift, and go to state 34
 
-    Factor  go to state 45
+    Factor  go to state 50
 
 
-State 41
+State 45
 
     7 Term: Term DIVIDE • Factor
-    9 Factor: • OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   10       | • IDENT
-   11       | • INT_LITERAL
-   12       | • IDENT INC
-   13       | • IDENT DEC
-   14       | • DEC IDENT
-   15       | • INC IDENT
 
-    IDENT             shift, and go to state 26
-    INT_LITERAL       shift, and go to state 27
-    INC               shift, and go to state 28
-    DEC               shift, and go to state 29
-    OPEN_PARENTHESIS  shift, and go to state 30
+    INC               shift, and go to state 29
+    DEC               shift, and go to state 30
+    OPEN_PARENTHESIS  shift, and go to state 31
+    IDENT             shift, and go to state 32
+    INT_LITERAL       shift, and go to state 33
+    FLOAT_LITERAL     shift, and go to state 34
 
-    Factor  go to state 46
+    Factor  go to state 51
 
 
-State 42
+State 46
 
-    3 Expr: Expr PLUS Term •  [PLUS, MINUS, CLOSE_PARENTHESIS]
+    8 Term: Term MODULO • Factor
+
+    INC               shift, and go to state 29
+    DEC               shift, and go to state 30
+    OPEN_PARENTHESIS  shift, and go to state 31
+    IDENT             shift, and go to state 32
+    INT_LITERAL       shift, and go to state 33
+    FLOAT_LITERAL     shift, and go to state 34
+
+    Factor  go to state 52
+
+
+State 47
+
+    3 Expr: Expr PLUS Term •
     6 Term: Term • MULTIPLY Factor
     7     | Term • DIVIDE Factor
+    8     | Term • MODULO Factor
 
-    MULTIPLY  shift, and go to state 40
-    DIVIDE    shift, and go to state 41
+    MULTIPLY  shift, and go to state 44
+    DIVIDE    shift, and go to state 45
+    MODULO    shift, and go to state 46
 
     PLUS               reduce using rule 3 (Expr)
     MINUS              reduce using rule 3 (Expr)
     CLOSE_PARENTHESIS  reduce using rule 3 (Expr)
 
 
-State 43
+State 48
 
-    4 Expr: Expr MINUS Term •  [PLUS, MINUS, CLOSE_PARENTHESIS]
+    4 Expr: Expr MINUS Term •
     6 Term: Term • MULTIPLY Factor
     7     | Term • DIVIDE Factor
+    8     | Term • MODULO Factor
 
-    MULTIPLY  shift, and go to state 40
-    DIVIDE    shift, and go to state 41
+    MULTIPLY  shift, and go to state 44
+    DIVIDE    shift, and go to state 45
+    MODULO    shift, and go to state 46
 
     PLUS               reduce using rule 4 (Expr)
     MINUS              reduce using rule 4 (Expr)
     CLOSE_PARENTHESIS  reduce using rule 4 (Expr)
 
 
-State 44
+State 49
 
-    9 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+   10 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS •
 
-    PLUS               reduce using rule 9 (Factor)
-    MINUS              reduce using rule 9 (Factor)
-    MULTIPLY           reduce using rule 9 (Factor)
-    DIVIDE             reduce using rule 9 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 9 (Factor)
+    PLUS               reduce using rule 10 (Factor)
+    MINUS              reduce using rule 10 (Factor)
+    MULTIPLY           reduce using rule 10 (Factor)
+    DIVIDE             reduce using rule 10 (Factor)
+    MODULO             reduce using rule 10 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 10 (Factor)
 
 
-State 45
+State 50
 
-    6 Term: Term MULTIPLY Factor •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+    6 Term: Term MULTIPLY Factor •
 
     PLUS               reduce using rule 6 (Term)
     MINUS              reduce using rule 6 (Term)
     MULTIPLY           reduce using rule 6 (Term)
     DIVIDE             reduce using rule 6 (Term)
+    MODULO             reduce using rule 6 (Term)
     CLOSE_PARENTHESIS  reduce using rule 6 (Term)
 
 
-State 46
+State 51
 
-    7 Term: Term DIVIDE Factor •  [PLUS, MINUS, MULTIPLY, DIVIDE, CLOSE_PARENTHESIS]
+    7 Term: Term DIVIDE Factor •
 
     PLUS               reduce using rule 7 (Term)
     MINUS              reduce using rule 7 (Term)
     MULTIPLY           reduce using rule 7 (Term)
     DIVIDE             reduce using rule 7 (Term)
+    MODULO             reduce using rule 7 (Term)
     CLOSE_PARENTHESIS  reduce using rule 7 (Term)
+
+
+State 52
+
+    8 Term: Term MODULO Factor •
+
+    PLUS               reduce using rule 8 (Term)
+    MINUS              reduce using rule 8 (Term)
+    MULTIPLY           reduce using rule 8 (Term)
+    DIVIDE             reduce using rule 8 (Term)
+    MODULO             reduce using rule 8 (Term)
+    CLOSE_PARENTHESIS  reduce using rule 8 (Term)

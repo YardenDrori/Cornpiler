@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 typedef enum {
     //Opearators
     EQUAL_LESSER,           //0
@@ -64,7 +63,6 @@ typedef enum {
     ERROR,                  //44
     SEMICOLON               //45
 } TokenType;
-#define TOTAL_TOKENS 46
 
 typedef struct
 {

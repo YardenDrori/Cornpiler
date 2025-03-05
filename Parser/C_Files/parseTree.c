@@ -4,9 +4,6 @@
 #include "../H_Files/parser.h"
 #include "../H_Files/parseTree.h"
 
-
-
-
 parseTreeNode* generateTreeNode(treeData data){
     parseTreeNode* treeNode = (parseTreeNode*)malloc(sizeof(parseTreeNode));
     if (!treeNode){
@@ -44,7 +41,6 @@ treeList* listAssistantGenerator(Parser* parser, int size, treeList* list){
         printf("Error allocating memory for TreeList");
         exit(1);
     }
-    
     list->next = list2;
     StackValue stackValue;
     parseTreeNode* treeNode;
@@ -63,5 +59,5 @@ treeList* generateList(Parser* parser, int treeListSize) {
     list->treeNode = NULL;
     list->next = NULL;
     list->treeListSize = treeListSize;
-    return list;
+    return listAssistantGenerator(parser, treeListSize, list);
 }
