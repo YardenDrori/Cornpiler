@@ -10,6 +10,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/yardendrori/Documents/GitHub/Cornpiler/CMakeLists.txt"
   "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeSystem.cmake"
+<<<<<<< HEAD
   "/opt/homebrew/share/cmake/Modules/CMakeCCompiler.cmake.in"
   "/opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c"
   "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
@@ -84,6 +85,21 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/FeatureTesting.cmake"
+=======
+  "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
+  "/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
+  "/opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake"
+  "/opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake"
+  "/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake"
+  "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
+  "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake"
+  "/opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
+  "/opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake"
+  "/opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
+  "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+>>>>>>> 4d3735a (fuck you)
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake"
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake"
@@ -104,9 +120,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+<<<<<<< HEAD
   "CMakeFiles/3.31.6/CMakeSystem.cmake"
   "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
+=======
+>>>>>>> 4d3735a (fuck you)
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
