@@ -6,8 +6,7 @@
 #include "LRTable.h"
 #include "parser_types.h"
 #include "parseTree.h"
-#define PRINT_PARSER_DEBUG 1
-#define PRINT_DETAILED_PARSER_DEBUG 1
+#define PRINT_PARSER_DEBUG 0
 
 /* FOR NOW ONLY THESE WILL BE USED
 Program -> S

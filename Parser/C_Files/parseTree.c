@@ -26,7 +26,6 @@ parseTreeNode* generateTreeAncestor(Parser* parser, int childrenCount, treeData 
     parent->children = generateTreeChildren(parser, childrenCount);
     return parent;
 }
-//f4
 
 parseTreeNode* generateTreeChildren(Parser* parser, int childrenCount){
     if (childrenCount == 0){

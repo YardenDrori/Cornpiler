@@ -54,6 +54,7 @@ Parser* initParser(Lexer* lexer){
 
 
 
+
 	for (int i = 0; i < TOTAL_TOKENS+GRAMMER_SYMBOL_COUNT; i++){
 		for (int j = 0; j < TOTAL_STATES; j++){
 			parser->lrTable[i][j].LRTableFuncP = LRError;
@@ -972,6 +973,7 @@ Parser* initParser(Lexer* lexer){
 
 
 
+
 	//parser->lrTable[END_OF_FILE][17].LRTableFuncP = LRAccept;
 	//parser->lrTable[END_OF_FILE][17].actionParam = 0;
 
@@ -988,7 +990,7 @@ Parser* initParser(Lexer* lexer){
 }
 
 void generateTree(Parser* parser){
-	printf("\n\n\n");
+	printf("\n");
 	StackValue val1;
 	int val2;
 	while (parser->action != ACTION_ACCEPT){
@@ -998,15 +1000,11 @@ void generateTree(Parser* parser){
 			printTree(parser->treeHead);
 		}
 		val1 = getStackValue(parser->stack);
-		if (val1.dataType == GRAMMER_SYMBOL_DATA_TYPE){
-			LRGoto(parser, -1);
-		}else if (val1.dataType == TOKEN_DATA_TYPE){
-			LRGoto(parser, -1);
-		}else{
+		if (val1.dataType == NUMBER_DATA_TYPE){
 			val2 = parser->lexer->tokens[parser->tokenId].type;
 			parser->lrTable[val2][val1.data.intValue].LRTableFuncP(parser, parser->lrTable[val2][val1.data.intValue].actionParam);
+		}else{
+			LRGoto(parser, -1);
 		}
 	}
-	printf("\n\n\n\n\n\n\n\n\n\n");
-	printTree(parser->treeHead);
 }
