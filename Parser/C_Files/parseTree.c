@@ -27,13 +27,12 @@ parseTreeNode* generateTreeAncestor(Parser* parser, int childrenCount, treeData 
     return parent;
 }
 
-
 parseTreeNode* generateTreeChildren(Parser* parser, int childrenCount){
     if (childrenCount == 0){
         return NULL;
     }
     StackValue value;
-    parseTreeNode* node= (parseTreeNode*)malloc(sizeof(parseTreeNode)*childrenCount);
+    parseTreeNode* node = (parseTreeNode*)malloc(sizeof(parseTreeNode)*childrenCount);
     if (!node){
         printf("Error allocating memory for tree node children");
         exit(1);
