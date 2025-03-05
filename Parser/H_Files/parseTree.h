@@ -12,16 +12,6 @@ typedef enum NodeType{
     NODE_NONTERMINAL
 } NodeType;
 
-struct parseTreeNode;
-typedef struct treeList
-{
-    struct parseTreeNode* treeNode;
-    struct treeList* next;
-    int treeListSize;
-} treeList;
-
-
-
 typedef struct treeData
 {
     DataType dataType;
@@ -33,13 +23,17 @@ typedef struct treeData
 } treeData;
 
 typedef struct parseTreeNode{
-    treeList *children;
     struct parseTreeNode* parent;
     treeData data;
+    struct parseTreeNode* firstChild;
+    struct parseTreeNode* sibling;
 } parseTreeNode;
 
+parseTreeNode* generateTreeSiblings(struct Parser* parser, int familySize);
 parseTreeNode* generateTreeNode(treeData data);
-parseTreeNode* generateTreeNodeAncestor(treeList* childrenList, treeData ancestorData);
-treeList* listAssistantGenerator(struct Parser* parser, int size, treeList* list);
-treeList* generateList(struct Parser *parser, int size);
+parseTreeNode* generateTreeAncestor(struct Parser* parser, int childrenCount, treeData parentData);
+
+//parseTreeNode* generateTreeNodeAncestor(treeList* childrenList, treeData ancestorData);
+//treeList* listAssistantGenerator(struct Parser* parser, int size);
+//treeList* generateList(struct Parser* parser, int treeListSize);
 #endif

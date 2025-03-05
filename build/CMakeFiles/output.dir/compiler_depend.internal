@@ -415,6 +415,12 @@ CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/state.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/parseTree.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/global.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files/util.h
+ /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/lexer.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files/token.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/stack.h
  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files/LRTable.h

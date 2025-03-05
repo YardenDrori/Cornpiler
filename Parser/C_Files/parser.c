@@ -26,9 +26,8 @@ Parser* initParser(Lexer* lexer){
     parser->stack = initStack();
     pushInt(parser->stack, 0); 
 
-	int temp = 0;
+	int temp = 1;
 	//reduce function pointer assignment
-	parser->ReduceFunctionTable[temp++] = accept;
 	parser->ReduceFunctionTable[temp++] = ReduceToProgram1;
 	parser->ReduceFunctionTable[temp++] = ReduceToStart1;
 	parser->ReduceFunctionTable[temp++] = ReduceToExpr3;
@@ -993,7 +992,11 @@ void generateTree(Parser* parser){
 	StackValue val1;
 	int val2;
 	while (parser->action != ACTION_ACCEPT){
-		printParsingStep(parser);
+		if (PRINT_PARSER_DEBUG){
+			printf("\n\n\n");
+			printParsingStep(parser);
+			printTree(parser->treeHead);
+		}
 		val1 = getStackValue(parser->stack);
 		if (val1.dataType == GRAMMER_SYMBOL_DATA_TYPE){
 			LRGoto(parser, -1);

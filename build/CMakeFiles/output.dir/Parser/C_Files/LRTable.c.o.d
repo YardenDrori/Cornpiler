@@ -94,4 +94,10 @@ CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o: \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/parseTree.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/LRTable.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../H_Files/stack.h \
-  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/parser.h
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/parser.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/util.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/../../Lexer/H_Files/lexer.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/../../Lexer/H_Files/token.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/../../Lexer/H_Files/state.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/../../Parser/H_Files/parseTree.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/global.h

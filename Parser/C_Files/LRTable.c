@@ -3,7 +3,7 @@
 #include "../H_Files/stack.h"
 #include "../H_Files/LRTable.h"
 #include "../H_Files/parser.h"
-
+#include "../../Misc/H_Files/util.h"
 
 //reduce functions
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
@@ -18,12 +18,13 @@ void Reduce(Parser* parser){
 */
 
 
-void ReduceGeneric(Parser* parser, grammarSymbol symbol, int listSize){
-    treeList* children = generateList(parser, listSize);
+void ReduceGeneric(Parser* parser, grammarSymbol symbol, int reduceBy){
     treeData data;
     data.dataType = GRAMMER_SYMBOL_DATA_TYPE;
     data.data.symbol = symbol;
-    pushTreeNode(parser->stack ,generateTreeNodeAncestor(children, data));
+    parseTreeNode* ancestor = generateTreeAncestor(parser, reduceBy, data);
+    parser->treeHead = ancestor;
+    pushTreeNode(parser->stack, ancestor);
 }
 void ReduceToProgram1(Parser* parser){
     ReduceGeneric(parser, PROGRAM, 1);
@@ -65,7 +66,8 @@ void LRShift(Parser* parser, int actionParam){
     }else{
         pushToken(parser->stack, parser->lexer->tokens[parser->tokenId++]);
     }
-    printf("shift %d\n", actionParam);
+    if (PRINT_PARSER_DEBUG)
+        printf("shift %d\n", actionParam);
     pushInt(parser->stack, actionParam);
     parser->action = ACTION_SHIFT;
 }
@@ -73,7 +75,8 @@ void LRShift(Parser* parser, int actionParam){
 void LRReduce(Parser* parser, int actionParam){
     parser->ReduceFunctionTable[actionParam](parser);
     parser->action = ACTION_REDUCE;
-    printf("reduce %d\n", actionParam);
+    if (PRINT_PARSER_DEBUG)
+        printf("reduce %d\n", actionParam);
 }
 
 void LRGoto(Parser* parser, int actionParam){
@@ -91,10 +94,11 @@ void LRGoto(Parser* parser, int actionParam){
     tempNum += TOTAL_VALID_ACTIONS;
     gotoResult = parser->lrTable[tempNum][temp2.data.intValue].actionParam;
     pushInt(parser->stack, temp2.data.intValue);
-    pushSymbol(parser->stack, temp1.data.treeNode->data.data.symbol);
+    pushTreeNode(parser->stack, temp1.data.treeNode);
     pushInt(parser->stack, gotoResult);
     parser->action = ACTION_GOTO;
-    printf("GOTO %d\n",gotoResult);
+    if (PRINT_PARSER_DEBUG)
+        printf("GOTO %d\n",gotoResult);
 }
 
 

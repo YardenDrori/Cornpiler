@@ -195,32 +195,40 @@ void handle_error(Token *token, Lexme *lexme){
     token->value.error_val.col = lexme->col+1;
     token->value.error_val.row = lexme->row;
 }
-void printTreeHelper(parseTreeNode* node, int depth) {
-    if (!node) return;
 
-    // Print indent based on depth.
-    for (int i = 0; i < depth; i++) {
-        printf("  ");
+void printTreeHelper(parseTreeNode* node, int depth, int isLast) {
+    for (int i = 0; i < depth - 1; i++) {
+        printf("│   "); // Vertical connector
+    }
+    if (depth > 0) {
+        printf(isLast ? "└── " : "├── "); // Branching connectors
     }
 
+    // Print node data
     if (node->data.dataType == TOKEN_DATA_TYPE) {
-        printf("[%s]\n", enumToString[node->data.data.token.type]);
+        printf("%s\n", enumToString[node->data.data.token.type]);
     } else {
-        printf("[%s]\n", grammerEnumToString[node->data.data.symbol]);
+        printf("%s\n", grammerEnumToString[node->data.data.symbol]);
     }
 
-    treeList* child = node->children;
-    while (child != NULL) {
-        printTreeHelper(child->treeNode, depth + 1);
-        child = child->next;
+    // Count children
+    parseTreeNode* child = node->firstChild;
+    int childCount = 0;
+    for (parseTreeNode* temp = child; temp; temp = temp->sibling) {
+        childCount++;
+    }
+
+    // Recursively print children
+    int index = 0;
+    for (parseTreeNode* temp = child; temp; temp = temp->sibling) {
+        printTreeHelper(temp, depth + 1, ++index == childCount);
     }
 }
 
-
-
 void printTree(parseTreeNode* head) {
     printf("\nParse Tree:\n");
-    printTreeHelper(head, 0);
+    if (head != NULL)
+        printTreeHelper(head, 0, 0);
 }
 
 void printStack(StackNode* stack){
@@ -247,5 +255,4 @@ void printParsingStep(Parser* parser){
     while (tokenID < parser->lexer->token_capacity){
         printf("%s ", enumToString[parser->lexer->tokens[tokenID++].type]);
     }
-    printf("\n");
 }
