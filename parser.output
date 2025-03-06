@@ -9,112 +9,116 @@ Grammar
     3 StmtList: Stmt StmtList
     4         | ε
 
-    5 Stmt: Decl SEMICOLON
+    5 Stmt: Decl
     6     | Assi SEMICOLON
     7     | IfStmt
     8     | LoopStmt
 
-    9 Decl: INT IDENT
-   10     | FLOAT IDENT
-   11     | BOOLEAN IDENT
-   12     | CHAR IDENT
+    9 Decl: INT IDENT SEMICOLON
+   10     | INT IDENT EQUAL Expr SEMICOLON
+   11     | FLOAT IDENT SEMICOLON
+   12     | FLOAT IDENT EQUAL Expr SEMICOLON
+   13     | BOOLEAN IDENT SEMICOLON
+   14     | BOOLEAN IDENT EQUAL Expr SEMICOLON
+   15     | CHAR IDENT SEMICOLON
+   16     | CHAR IDENT EQUAL Expr SEMICOLON
 
-   13 Assi: IDENT EQUAL Expr
-   14     | IDENT INC
-   15     | IDENT DEC
-   16     | IDENT PLUS_EQUAL Expr
-   17     | IDENT MINUS_EQUAL Expr
-   18     | IDENT MULTIPLY_EQUAL Expr
-   19     | IDENT DIVIDE_EQUAL Expr
-   20     | IDENT MODULO_EQUAL Expr
+   17 Assi: IDENT EQUAL Expr
+   18     | IDENT INC
+   19     | IDENT DEC
+   20     | IDENT PLUS_EQUAL Expr
+   21     | IDENT MINUS_EQUAL Expr
+   22     | IDENT MULTIPLY_EQUAL Expr
+   23     | IDENT DIVIDE_EQUAL Expr
+   24     | IDENT MODULO_EQUAL Expr
 
-   21 Expr: Expr PLUS Term
-   22     | Expr MINUS Term
-   23     | Term
+   25 Expr: Expr PLUS Term
+   26     | Expr MINUS Term
+   27     | Term
 
-   24 Term: Term MULTIPLY Factor
-   25     | Term DIVIDE Factor
-   26     | Term MODULO Factor
-   27     | Factor
+   28 Term: Term MULTIPLY Factor
+   29     | Term DIVIDE Factor
+   30     | Term MODULO Factor
+   31     | Factor
 
-   28 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
-   29       | IDENT
-   30       | INT_LITERAL
-   31       | FLOAT_LITERAL
-   32       | CHAR_LITERAL
-   33       | TRUE
-   34       | FALSE
-   35       | IDENT INC
-   36       | IDENT DEC
-   37       | INC IDENT
-   38       | DEC IDENT
+   32 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+   33       | IDENT
+   34       | INT_LITERAL
+   35       | FLOAT_LITERAL
+   36       | CHAR_LITERAL
+   37       | TRUE
+   38       | FALSE
+   39       | IDENT INC
+   40       | IDENT DEC
+   41       | INC IDENT
+   42       | DEC IDENT
 
-   39 CondExpr: Expr RelOp Expr
-   40         | NOT Expr
-   41         | Expr AND Expr
-   42         | Expr OR Expr
-   43         | OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS
+   43 CondExpr: Expr RelOp Expr
+   44         | NOT Expr
+   45         | Expr AND Expr
+   46         | Expr OR Expr
+   47         | OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS
 
-   44 RelOp: EQUAL
-   45      | IS_EQUAL
-   46      | NOT_EQUAL
-   47      | GREATER_THAN
-   48      | LESSER_THAN
-   49      | EQUAL_GREATER
-   50      | EQUAL_LESSER
+   48 RelOp: EQUAL
+   49      | IS_EQUAL
+   50      | NOT_EQUAL
+   51      | GREATER_THAN
+   52      | LESSER_THAN
+   53      | EQUAL_GREATER
+   54      | EQUAL_LESSER
 
-   51 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-   52       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   55 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   56       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-   54         | WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   58         | WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
 
 Terminals, with rules where they appear
 
     $end (0) 0
     error (256)
-    EQUAL_LESSER (258) 50
-    GREATER_THAN (259) 47
-    LESSER_THAN (260) 48
-    EQUAL (261) 13 44
-    IS_EQUAL (262) 45
-    NOT (263) 40
-    NOT_EQUAL (264) 46
-    EQUAL_GREATER (265) 49
-    PLUS (266) 21
-    INC (267) 14 35 37
-    PLUS_EQUAL (268) 16
-    MINUS (269) 22
-    DEC (270) 15 36 38
-    MINUS_EQUAL (271) 17
-    DIVIDE (272) 25
-    DIVIDE_EQUAL (273) 19
-    MULTIPLY (274) 24
-    MULTIPLY_EQUAL (275) 18
-    MODULO (276) 26
-    MODULO_EQUAL (277) 20
-    OPEN_PARENTHESIS (278) 28 43 51 52 53 54
-    CLOSE_PARENTHESIS (279) 28 43 51 52 53 54
-    OPEN_CURLY_BRACKETS (280) 51 52 53 54
-    CLOSE_CURLY_BRACKETS (281) 51 52 53 54
-    FLOAT_LITERAL (282) 31
-    TRUE (283) 33
-    FALSE (284) 34
-    INT_LITERAL (285) 30
-    CHAR_LITERAL (286) 32
-    FLOAT (287) 10
-    INT (288) 9
-    CHAR (289) 12
-    BOOLEAN (290) 11
-    IF (291) 51 52
-    ELSE (292) 52
-    AND (293) 41
-    OR (294) 42
-    FOR (295) 53
-    WHILE (296) 54
-    IDENT (297) 9 10 11 12 13 14 15 16 17 18 19 20 29 35 36 37 38
-    SEMICOLON (298) 5 6 53
+    EQUAL_LESSER (258) 54
+    GREATER_THAN (259) 51
+    LESSER_THAN (260) 52
+    EQUAL (261) 10 12 14 16 17 48
+    IS_EQUAL (262) 49
+    NOT (263) 44
+    NOT_EQUAL (264) 50
+    EQUAL_GREATER (265) 53
+    PLUS (266) 25
+    INC (267) 18 39 41
+    PLUS_EQUAL (268) 20
+    MINUS (269) 26
+    DEC (270) 19 40 42
+    MINUS_EQUAL (271) 21
+    DIVIDE (272) 29
+    DIVIDE_EQUAL (273) 23
+    MULTIPLY (274) 28
+    MULTIPLY_EQUAL (275) 22
+    MODULO (276) 30
+    MODULO_EQUAL (277) 24
+    OPEN_PARENTHESIS (278) 32 47 55 56 57 58
+    CLOSE_PARENTHESIS (279) 32 47 55 56 57 58
+    OPEN_CURLY_BRACKETS (280) 55 56 57 58
+    CLOSE_CURLY_BRACKETS (281) 55 56 57 58
+    FLOAT_LITERAL (282) 35
+    TRUE (283) 37
+    FALSE (284) 38
+    INT_LITERAL (285) 34
+    CHAR_LITERAL (286) 36
+    FLOAT (287) 11 12
+    INT (288) 9 10
+    CHAR (289) 15 16
+    BOOLEAN (290) 13 14
+    IF (291) 55 56
+    ELSE (292) 56
+    AND (293) 45
+    OR (294) 46
+    FOR (295) 57
+    WHILE (296) 58
+    IDENT (297) 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 33 39 40 41 42
+    SEMICOLON (298) 6 9 10 11 12 13 14 15 16 57
 
 
 Nonterminals, with rules where they appear
@@ -129,36 +133,36 @@ Nonterminals, with rules where they appear
         on right: 1
     StmtList (47)
         on left: 3 4
-        on right: 2 3 51 52 53 54
+        on right: 2 3 55 56 57 58
     Stmt (48)
         on left: 5 6 7 8
         on right: 3
     Decl (49)
-        on left: 9 10 11 12
+        on left: 9 10 11 12 13 14 15 16
         on right: 5
     Assi (50)
-        on left: 13 14 15 16 17 18 19 20
-        on right: 6 53
+        on left: 17 18 19 20 21 22 23 24
+        on right: 6 57
     Expr (51)
-        on left: 21 22 23
-        on right: 13 16 17 18 19 20 21 22 28 39 40 41 42
+        on left: 25 26 27
+        on right: 10 12 14 16 17 20 21 22 23 24 25 26 32 43 44 45 46
     Term (52)
-        on left: 24 25 26 27
-        on right: 21 22 23 24 25 26
+        on left: 28 29 30 31
+        on right: 25 26 27 28 29 30
     Factor (53)
-        on left: 28 29 30 31 32 33 34 35 36 37 38
-        on right: 24 25 26 27
+        on left: 32 33 34 35 36 37 38 39 40 41 42
+        on right: 28 29 30 31
     CondExpr (54)
-        on left: 39 40 41 42 43
-        on right: 43 51 52 53 54
+        on left: 43 44 45 46 47
+        on right: 47 55 56 57 58
     RelOp (55)
-        on left: 44 45 46 47 48 49 50
-        on right: 39
+        on left: 48 49 50 51 52 53 54
+        on right: 43
     IfStmt (56)
-        on left: 51 52
+        on left: 55 56
         on right: 7
     LoopStmt (57)
-        on left: 53 54
+        on left: 57 58
         on right: 8
 
 
@@ -189,64 +193,68 @@ State 0
 
 State 1
 
-   10 Decl: FLOAT • IDENT
+   11 Decl: FLOAT • IDENT SEMICOLON
+   12     | FLOAT • IDENT EQUAL Expr SEMICOLON
 
     IDENT  shift, and go to state 17
 
 
 State 2
 
-    9 Decl: INT • IDENT
+    9 Decl: INT • IDENT SEMICOLON
+   10     | INT • IDENT EQUAL Expr SEMICOLON
 
     IDENT  shift, and go to state 18
 
 
 State 3
 
-   12 Decl: CHAR • IDENT
+   15 Decl: CHAR • IDENT SEMICOLON
+   16     | CHAR • IDENT EQUAL Expr SEMICOLON
 
     IDENT  shift, and go to state 19
 
 
 State 4
 
-   11 Decl: BOOLEAN • IDENT
+   13 Decl: BOOLEAN • IDENT SEMICOLON
+   14     | BOOLEAN • IDENT EQUAL Expr SEMICOLON
 
     IDENT  shift, and go to state 20
 
 
 State 5
 
-   51 IfStmt: IF • OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-   52       | IF • OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   55 IfStmt: IF • OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   56       | IF • OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
     OPEN_PARENTHESIS  shift, and go to state 21
 
 
 State 6
 
-   53 LoopStmt: FOR • OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   57 LoopStmt: FOR • OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
     OPEN_PARENTHESIS  shift, and go to state 22
 
 
 State 7
 
-   54 LoopStmt: WHILE • OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   58 LoopStmt: WHILE • OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
     OPEN_PARENTHESIS  shift, and go to state 23
 
 
 State 8
 
-   13 Assi: IDENT • EQUAL Expr
-   14     | IDENT • INC
-   15     | IDENT • DEC
-   16     | IDENT • PLUS_EQUAL Expr
-   17     | IDENT • MINUS_EQUAL Expr
-   18     | IDENT • MULTIPLY_EQUAL Expr
-   19     | IDENT • DIVIDE_EQUAL Expr
-   20     | IDENT • MODULO_EQUAL Expr
+   17 Assi: IDENT • EQUAL Expr
+   18     | IDENT • INC
+   19     | IDENT • DEC
+   20     | IDENT • PLUS_EQUAL Expr
+   21     | IDENT • MINUS_EQUAL Expr
+   22     | IDENT • MULTIPLY_EQUAL Expr
+   23     | IDENT • DIVIDE_EQUAL Expr
+   24     | IDENT • MODULO_EQUAL Expr
 
     EQUAL           shift, and go to state 24
     INC             shift, and go to state 25
@@ -305,16 +313,25 @@ State 12
 
 State 13
 
-    5 Stmt: Decl • SEMICOLON
+    5 Stmt: Decl •
 
-    SEMICOLON  shift, and go to state 34
+    $end                  reduce using rule 5 (Stmt)
+    CLOSE_CURLY_BRACKETS  reduce using rule 5 (Stmt)
+    FLOAT                 reduce using rule 5 (Stmt)
+    INT                   reduce using rule 5 (Stmt)
+    CHAR                  reduce using rule 5 (Stmt)
+    BOOLEAN               reduce using rule 5 (Stmt)
+    IF                    reduce using rule 5 (Stmt)
+    FOR                   reduce using rule 5 (Stmt)
+    WHILE                 reduce using rule 5 (Stmt)
+    IDENT                 reduce using rule 5 (Stmt)
 
 
 State 14
 
     6 Stmt: Assi • SEMICOLON
 
-    SEMICOLON  shift, and go to state 35
+    SEMICOLON  shift, and go to state 34
 
 
 State 15
@@ -351,212 +368,220 @@ State 16
 
 State 17
 
-   10 Decl: FLOAT IDENT •
+   11 Decl: FLOAT IDENT • SEMICOLON
+   12     | FLOAT IDENT • EQUAL Expr SEMICOLON
 
-    SEMICOLON  reduce using rule 10 (Decl)
+    EQUAL      shift, and go to state 35
+    SEMICOLON  shift, and go to state 36
 
 
 State 18
 
-    9 Decl: INT IDENT •
+    9 Decl: INT IDENT • SEMICOLON
+   10     | INT IDENT • EQUAL Expr SEMICOLON
 
-    SEMICOLON  reduce using rule 9 (Decl)
+    EQUAL      shift, and go to state 37
+    SEMICOLON  shift, and go to state 38
 
 
 State 19
 
-   12 Decl: CHAR IDENT •
+   15 Decl: CHAR IDENT • SEMICOLON
+   16     | CHAR IDENT • EQUAL Expr SEMICOLON
 
-    SEMICOLON  reduce using rule 12 (Decl)
+    EQUAL      shift, and go to state 39
+    SEMICOLON  shift, and go to state 40
 
 
 State 20
 
-   11 Decl: BOOLEAN IDENT •
+   13 Decl: BOOLEAN IDENT • SEMICOLON
+   14     | BOOLEAN IDENT • EQUAL Expr SEMICOLON
 
-    SEMICOLON  reduce using rule 11 (Decl)
+    EQUAL      shift, and go to state 41
+    SEMICOLON  shift, and go to state 42
 
 
 State 21
 
-   51 IfStmt: IF OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-   52       | IF OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   55 IfStmt: IF OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   56       | IF OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
-    NOT               shift, and go to state 36
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 39
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    NOT               shift, and go to state 43
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 46
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr      go to state 46
-    Term      go to state 47
-    Factor    go to state 48
-    CondExpr  go to state 49
+    Expr      go to state 53
+    Term      go to state 54
+    Factor    go to state 55
+    CondExpr  go to state 56
 
 
 State 22
 
-   53 LoopStmt: FOR OPEN_PARENTHESIS • Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   57 LoopStmt: FOR OPEN_PARENTHESIS • Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
     IDENT  shift, and go to state 8
 
-    Assi  go to state 50
+    Assi  go to state 57
 
 
 State 23
 
-   54 LoopStmt: WHILE OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   58 LoopStmt: WHILE OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
-    NOT               shift, and go to state 36
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 39
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    NOT               shift, and go to state 43
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 46
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr      go to state 46
-    Term      go to state 47
-    Factor    go to state 48
-    CondExpr  go to state 51
+    Expr      go to state 53
+    Term      go to state 54
+    Factor    go to state 55
+    CondExpr  go to state 58
 
 
 State 24
 
-   13 Assi: IDENT EQUAL • Expr
+   17 Assi: IDENT EQUAL • Expr
 
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr    go to state 53
-    Term    go to state 47
-    Factor  go to state 48
+    Expr    go to state 60
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 25
 
-   14 Assi: IDENT INC •
+   18 Assi: IDENT INC •
 
-    CLOSE_PARENTHESIS  reduce using rule 14 (Assi)
-    SEMICOLON          reduce using rule 14 (Assi)
+    CLOSE_PARENTHESIS  reduce using rule 18 (Assi)
+    SEMICOLON          reduce using rule 18 (Assi)
 
 
 State 26
 
-   16 Assi: IDENT PLUS_EQUAL • Expr
+   20 Assi: IDENT PLUS_EQUAL • Expr
 
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr    go to state 54
-    Term    go to state 47
-    Factor  go to state 48
+    Expr    go to state 61
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 27
 
-   15 Assi: IDENT DEC •
+   19 Assi: IDENT DEC •
 
-    CLOSE_PARENTHESIS  reduce using rule 15 (Assi)
-    SEMICOLON          reduce using rule 15 (Assi)
+    CLOSE_PARENTHESIS  reduce using rule 19 (Assi)
+    SEMICOLON          reduce using rule 19 (Assi)
 
 
 State 28
 
-   17 Assi: IDENT MINUS_EQUAL • Expr
+   21 Assi: IDENT MINUS_EQUAL • Expr
 
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr    go to state 55
-    Term    go to state 47
-    Factor  go to state 48
+    Expr    go to state 62
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 29
 
-   19 Assi: IDENT DIVIDE_EQUAL • Expr
+   23 Assi: IDENT DIVIDE_EQUAL • Expr
 
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr    go to state 56
-    Term    go to state 47
-    Factor  go to state 48
+    Expr    go to state 63
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 30
 
-   18 Assi: IDENT MULTIPLY_EQUAL • Expr
+   22 Assi: IDENT MULTIPLY_EQUAL • Expr
 
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr    go to state 57
-    Term    go to state 47
-    Factor  go to state 48
+    Expr    go to state 64
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 31
 
-   20 Assi: IDENT MODULO_EQUAL • Expr
+   24 Assi: IDENT MODULO_EQUAL • Expr
 
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr    go to state 58
-    Term    go to state 47
-    Factor  go to state 48
+    Expr    go to state 65
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 32
@@ -576,22 +601,6 @@ State 33
 
 State 34
 
-    5 Stmt: Decl SEMICOLON •
-
-    $end                  reduce using rule 5 (Stmt)
-    CLOSE_CURLY_BRACKETS  reduce using rule 5 (Stmt)
-    FLOAT                 reduce using rule 5 (Stmt)
-    INT                   reduce using rule 5 (Stmt)
-    CHAR                  reduce using rule 5 (Stmt)
-    BOOLEAN               reduce using rule 5 (Stmt)
-    IF                    reduce using rule 5 (Stmt)
-    FOR                   reduce using rule 5 (Stmt)
-    WHILE                 reduce using rule 5 (Stmt)
-    IDENT                 reduce using rule 5 (Stmt)
-
-
-State 35
-
     6 Stmt: Assi SEMICOLON •
 
     $end                  reduce using rule 6 (Stmt)
@@ -606,480 +615,204 @@ State 35
     IDENT                 reduce using rule 6 (Stmt)
 
 
+State 35
+
+   12 Decl: FLOAT IDENT EQUAL • Expr SEMICOLON
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 66
+    Term    go to state 54
+    Factor  go to state 55
+
+
 State 36
 
-   40 CondExpr: NOT • Expr
+   11 Decl: FLOAT IDENT SEMICOLON •
 
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Expr    go to state 59
-    Term    go to state 47
-    Factor  go to state 48
+    $end                  reduce using rule 11 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 11 (Decl)
+    FLOAT                 reduce using rule 11 (Decl)
+    INT                   reduce using rule 11 (Decl)
+    CHAR                  reduce using rule 11 (Decl)
+    BOOLEAN               reduce using rule 11 (Decl)
+    IF                    reduce using rule 11 (Decl)
+    FOR                   reduce using rule 11 (Decl)
+    WHILE                 reduce using rule 11 (Decl)
+    IDENT                 reduce using rule 11 (Decl)
 
 
 State 37
 
-   37 Factor: INC • IDENT
+   10 Decl: INT IDENT EQUAL • Expr SEMICOLON
 
-    IDENT  shift, and go to state 60
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 67
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 38
 
-   38 Factor: DEC • IDENT
+    9 Decl: INT IDENT SEMICOLON •
 
-    IDENT  shift, and go to state 61
+    $end                  reduce using rule 9 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 9 (Decl)
+    FLOAT                 reduce using rule 9 (Decl)
+    INT                   reduce using rule 9 (Decl)
+    CHAR                  reduce using rule 9 (Decl)
+    BOOLEAN               reduce using rule 9 (Decl)
+    IF                    reduce using rule 9 (Decl)
+    FOR                   reduce using rule 9 (Decl)
+    WHILE                 reduce using rule 9 (Decl)
+    IDENT                 reduce using rule 9 (Decl)
 
 
 State 39
 
-   28 Factor: OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
-   43 CondExpr: OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS
+   16 Decl: CHAR IDENT EQUAL • Expr SEMICOLON
 
-    NOT               shift, and go to state 36
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 39
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    Expr      go to state 62
-    Term      go to state 47
-    Factor    go to state 48
-    CondExpr  go to state 63
+    Expr    go to state 68
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 40
 
-   31 Factor: FLOAT_LITERAL •
+   15 Decl: CHAR IDENT SEMICOLON •
 
-    EQUAL_LESSER       reduce using rule 31 (Factor)
-    GREATER_THAN       reduce using rule 31 (Factor)
-    LESSER_THAN        reduce using rule 31 (Factor)
-    EQUAL              reduce using rule 31 (Factor)
-    IS_EQUAL           reduce using rule 31 (Factor)
-    NOT_EQUAL          reduce using rule 31 (Factor)
-    EQUAL_GREATER      reduce using rule 31 (Factor)
-    PLUS               reduce using rule 31 (Factor)
-    MINUS              reduce using rule 31 (Factor)
-    DIVIDE             reduce using rule 31 (Factor)
-    MULTIPLY           reduce using rule 31 (Factor)
-    MODULO             reduce using rule 31 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 31 (Factor)
-    AND                reduce using rule 31 (Factor)
-    OR                 reduce using rule 31 (Factor)
-    SEMICOLON          reduce using rule 31 (Factor)
+    $end                  reduce using rule 15 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 15 (Decl)
+    FLOAT                 reduce using rule 15 (Decl)
+    INT                   reduce using rule 15 (Decl)
+    CHAR                  reduce using rule 15 (Decl)
+    BOOLEAN               reduce using rule 15 (Decl)
+    IF                    reduce using rule 15 (Decl)
+    FOR                   reduce using rule 15 (Decl)
+    WHILE                 reduce using rule 15 (Decl)
+    IDENT                 reduce using rule 15 (Decl)
 
 
 State 41
 
-   33 Factor: TRUE •
+   14 Decl: BOOLEAN IDENT EQUAL • Expr SEMICOLON
 
-    EQUAL_LESSER       reduce using rule 33 (Factor)
-    GREATER_THAN       reduce using rule 33 (Factor)
-    LESSER_THAN        reduce using rule 33 (Factor)
-    EQUAL              reduce using rule 33 (Factor)
-    IS_EQUAL           reduce using rule 33 (Factor)
-    NOT_EQUAL          reduce using rule 33 (Factor)
-    EQUAL_GREATER      reduce using rule 33 (Factor)
-    PLUS               reduce using rule 33 (Factor)
-    MINUS              reduce using rule 33 (Factor)
-    DIVIDE             reduce using rule 33 (Factor)
-    MULTIPLY           reduce using rule 33 (Factor)
-    MODULO             reduce using rule 33 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 33 (Factor)
-    AND                reduce using rule 33 (Factor)
-    OR                 reduce using rule 33 (Factor)
-    SEMICOLON          reduce using rule 33 (Factor)
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 69
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 42
 
-   34 Factor: FALSE •
+   13 Decl: BOOLEAN IDENT SEMICOLON •
 
-    EQUAL_LESSER       reduce using rule 34 (Factor)
-    GREATER_THAN       reduce using rule 34 (Factor)
-    LESSER_THAN        reduce using rule 34 (Factor)
-    EQUAL              reduce using rule 34 (Factor)
-    IS_EQUAL           reduce using rule 34 (Factor)
-    NOT_EQUAL          reduce using rule 34 (Factor)
-    EQUAL_GREATER      reduce using rule 34 (Factor)
-    PLUS               reduce using rule 34 (Factor)
-    MINUS              reduce using rule 34 (Factor)
-    DIVIDE             reduce using rule 34 (Factor)
-    MULTIPLY           reduce using rule 34 (Factor)
-    MODULO             reduce using rule 34 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 34 (Factor)
-    AND                reduce using rule 34 (Factor)
-    OR                 reduce using rule 34 (Factor)
-    SEMICOLON          reduce using rule 34 (Factor)
+    $end                  reduce using rule 13 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 13 (Decl)
+    FLOAT                 reduce using rule 13 (Decl)
+    INT                   reduce using rule 13 (Decl)
+    CHAR                  reduce using rule 13 (Decl)
+    BOOLEAN               reduce using rule 13 (Decl)
+    IF                    reduce using rule 13 (Decl)
+    FOR                   reduce using rule 13 (Decl)
+    WHILE                 reduce using rule 13 (Decl)
+    IDENT                 reduce using rule 13 (Decl)
 
 
 State 43
 
-   30 Factor: INT_LITERAL •
+   44 CondExpr: NOT • Expr
 
-    EQUAL_LESSER       reduce using rule 30 (Factor)
-    GREATER_THAN       reduce using rule 30 (Factor)
-    LESSER_THAN        reduce using rule 30 (Factor)
-    EQUAL              reduce using rule 30 (Factor)
-    IS_EQUAL           reduce using rule 30 (Factor)
-    NOT_EQUAL          reduce using rule 30 (Factor)
-    EQUAL_GREATER      reduce using rule 30 (Factor)
-    PLUS               reduce using rule 30 (Factor)
-    MINUS              reduce using rule 30 (Factor)
-    DIVIDE             reduce using rule 30 (Factor)
-    MULTIPLY           reduce using rule 30 (Factor)
-    MODULO             reduce using rule 30 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 30 (Factor)
-    AND                reduce using rule 30 (Factor)
-    OR                 reduce using rule 30 (Factor)
-    SEMICOLON          reduce using rule 30 (Factor)
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 70
+    Term    go to state 54
+    Factor  go to state 55
 
 
 State 44
 
-   32 Factor: CHAR_LITERAL •
+   41 Factor: INC • IDENT
 
-    EQUAL_LESSER       reduce using rule 32 (Factor)
-    GREATER_THAN       reduce using rule 32 (Factor)
-    LESSER_THAN        reduce using rule 32 (Factor)
-    EQUAL              reduce using rule 32 (Factor)
-    IS_EQUAL           reduce using rule 32 (Factor)
-    NOT_EQUAL          reduce using rule 32 (Factor)
-    EQUAL_GREATER      reduce using rule 32 (Factor)
-    PLUS               reduce using rule 32 (Factor)
-    MINUS              reduce using rule 32 (Factor)
-    DIVIDE             reduce using rule 32 (Factor)
-    MULTIPLY           reduce using rule 32 (Factor)
-    MODULO             reduce using rule 32 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 32 (Factor)
-    AND                reduce using rule 32 (Factor)
-    OR                 reduce using rule 32 (Factor)
-    SEMICOLON          reduce using rule 32 (Factor)
+    IDENT  shift, and go to state 71
 
 
 State 45
 
-   29 Factor: IDENT •
-   35       | IDENT • INC
-   36       | IDENT • DEC
+   42 Factor: DEC • IDENT
 
-    INC  shift, and go to state 64
-    DEC  shift, and go to state 65
-
-    EQUAL_LESSER       reduce using rule 29 (Factor)
-    GREATER_THAN       reduce using rule 29 (Factor)
-    LESSER_THAN        reduce using rule 29 (Factor)
-    EQUAL              reduce using rule 29 (Factor)
-    IS_EQUAL           reduce using rule 29 (Factor)
-    NOT_EQUAL          reduce using rule 29 (Factor)
-    EQUAL_GREATER      reduce using rule 29 (Factor)
-    PLUS               reduce using rule 29 (Factor)
-    MINUS              reduce using rule 29 (Factor)
-    DIVIDE             reduce using rule 29 (Factor)
-    MULTIPLY           reduce using rule 29 (Factor)
-    MODULO             reduce using rule 29 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 29 (Factor)
-    AND                reduce using rule 29 (Factor)
-    OR                 reduce using rule 29 (Factor)
-    SEMICOLON          reduce using rule 29 (Factor)
+    IDENT  shift, and go to state 72
 
 
 State 46
 
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-   39 CondExpr: Expr • RelOp Expr
-   41         | Expr • AND Expr
-   42         | Expr • OR Expr
+   32 Factor: OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
+   47 CondExpr: OPEN_PARENTHESIS • CondExpr CLOSE_PARENTHESIS
 
-    EQUAL_LESSER   shift, and go to state 66
-    GREATER_THAN   shift, and go to state 67
-    LESSER_THAN    shift, and go to state 68
-    EQUAL          shift, and go to state 69
-    IS_EQUAL       shift, and go to state 70
-    NOT_EQUAL      shift, and go to state 71
-    EQUAL_GREATER  shift, and go to state 72
-    PLUS           shift, and go to state 73
-    MINUS          shift, and go to state 74
-    AND            shift, and go to state 75
-    OR             shift, and go to state 76
+    NOT               shift, and go to state 43
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 46
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
 
-    RelOp  go to state 77
+    Expr      go to state 73
+    Term      go to state 54
+    Factor    go to state 55
+    CondExpr  go to state 74
 
 
 State 47
 
-   23 Expr: Term •
-   24 Term: Term • MULTIPLY Factor
-   25     | Term • DIVIDE Factor
-   26     | Term • MODULO Factor
-
-    DIVIDE    shift, and go to state 78
-    MULTIPLY  shift, and go to state 79
-    MODULO    shift, and go to state 80
-
-    EQUAL_LESSER       reduce using rule 23 (Expr)
-    GREATER_THAN       reduce using rule 23 (Expr)
-    LESSER_THAN        reduce using rule 23 (Expr)
-    EQUAL              reduce using rule 23 (Expr)
-    IS_EQUAL           reduce using rule 23 (Expr)
-    NOT_EQUAL          reduce using rule 23 (Expr)
-    EQUAL_GREATER      reduce using rule 23 (Expr)
-    PLUS               reduce using rule 23 (Expr)
-    MINUS              reduce using rule 23 (Expr)
-    CLOSE_PARENTHESIS  reduce using rule 23 (Expr)
-    AND                reduce using rule 23 (Expr)
-    OR                 reduce using rule 23 (Expr)
-    SEMICOLON          reduce using rule 23 (Expr)
-
-
-State 48
-
-   27 Term: Factor •
-
-    EQUAL_LESSER       reduce using rule 27 (Term)
-    GREATER_THAN       reduce using rule 27 (Term)
-    LESSER_THAN        reduce using rule 27 (Term)
-    EQUAL              reduce using rule 27 (Term)
-    IS_EQUAL           reduce using rule 27 (Term)
-    NOT_EQUAL          reduce using rule 27 (Term)
-    EQUAL_GREATER      reduce using rule 27 (Term)
-    PLUS               reduce using rule 27 (Term)
-    MINUS              reduce using rule 27 (Term)
-    DIVIDE             reduce using rule 27 (Term)
-    MULTIPLY           reduce using rule 27 (Term)
-    MODULO             reduce using rule 27 (Term)
-    CLOSE_PARENTHESIS  reduce using rule 27 (Term)
-    AND                reduce using rule 27 (Term)
-    OR                 reduce using rule 27 (Term)
-    SEMICOLON          reduce using rule 27 (Term)
-
-
-State 49
-
-   51 IfStmt: IF OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-   52       | IF OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    CLOSE_PARENTHESIS  shift, and go to state 81
-
-
-State 50
-
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi • SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    SEMICOLON  shift, and go to state 82
-
-
-State 51
-
-   54 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    CLOSE_PARENTHESIS  shift, and go to state 83
-
-
-State 52
-
-   28 Factor: OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Expr    go to state 84
-    Term    go to state 47
-    Factor  go to state 48
-
-
-State 53
-
-   13 Assi: IDENT EQUAL Expr •
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 13 (Assi)
-    SEMICOLON          reduce using rule 13 (Assi)
-
-
-State 54
-
-   16 Assi: IDENT PLUS_EQUAL Expr •
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 16 (Assi)
-    SEMICOLON          reduce using rule 16 (Assi)
-
-
-State 55
-
-   17 Assi: IDENT MINUS_EQUAL Expr •
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 17 (Assi)
-    SEMICOLON          reduce using rule 17 (Assi)
-
-
-State 56
-
-   19 Assi: IDENT DIVIDE_EQUAL Expr •
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 19 (Assi)
-    SEMICOLON          reduce using rule 19 (Assi)
-
-
-State 57
-
-   18 Assi: IDENT MULTIPLY_EQUAL Expr •
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 18 (Assi)
-    SEMICOLON          reduce using rule 18 (Assi)
-
-
-State 58
-
-   20 Assi: IDENT MODULO_EQUAL Expr •
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 20 (Assi)
-    SEMICOLON          reduce using rule 20 (Assi)
-
-
-State 59
-
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-   40 CondExpr: NOT Expr •
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 40 (CondExpr)
-    SEMICOLON          reduce using rule 40 (CondExpr)
-
-
-State 60
-
-   37 Factor: INC IDENT •
-
-    EQUAL_LESSER       reduce using rule 37 (Factor)
-    GREATER_THAN       reduce using rule 37 (Factor)
-    LESSER_THAN        reduce using rule 37 (Factor)
-    EQUAL              reduce using rule 37 (Factor)
-    IS_EQUAL           reduce using rule 37 (Factor)
-    NOT_EQUAL          reduce using rule 37 (Factor)
-    EQUAL_GREATER      reduce using rule 37 (Factor)
-    PLUS               reduce using rule 37 (Factor)
-    MINUS              reduce using rule 37 (Factor)
-    DIVIDE             reduce using rule 37 (Factor)
-    MULTIPLY           reduce using rule 37 (Factor)
-    MODULO             reduce using rule 37 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 37 (Factor)
-    AND                reduce using rule 37 (Factor)
-    OR                 reduce using rule 37 (Factor)
-    SEMICOLON          reduce using rule 37 (Factor)
-
-
-State 61
-
-   38 Factor: DEC IDENT •
-
-    EQUAL_LESSER       reduce using rule 38 (Factor)
-    GREATER_THAN       reduce using rule 38 (Factor)
-    LESSER_THAN        reduce using rule 38 (Factor)
-    EQUAL              reduce using rule 38 (Factor)
-    IS_EQUAL           reduce using rule 38 (Factor)
-    NOT_EQUAL          reduce using rule 38 (Factor)
-    EQUAL_GREATER      reduce using rule 38 (Factor)
-    PLUS               reduce using rule 38 (Factor)
-    MINUS              reduce using rule 38 (Factor)
-    DIVIDE             reduce using rule 38 (Factor)
-    MULTIPLY           reduce using rule 38 (Factor)
-    MODULO             reduce using rule 38 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 38 (Factor)
-    AND                reduce using rule 38 (Factor)
-    OR                 reduce using rule 38 (Factor)
-    SEMICOLON          reduce using rule 38 (Factor)
-
-
-State 62
-
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-   28 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
-   39 CondExpr: Expr • RelOp Expr
-   41         | Expr • AND Expr
-   42         | Expr • OR Expr
-
-    EQUAL_LESSER       shift, and go to state 66
-    GREATER_THAN       shift, and go to state 67
-    LESSER_THAN        shift, and go to state 68
-    EQUAL              shift, and go to state 69
-    IS_EQUAL           shift, and go to state 70
-    NOT_EQUAL          shift, and go to state 71
-    EQUAL_GREATER      shift, and go to state 72
-    PLUS               shift, and go to state 73
-    MINUS              shift, and go to state 74
-    CLOSE_PARENTHESIS  shift, and go to state 85
-    AND                shift, and go to state 75
-    OR                 shift, and go to state 76
-
-    RelOp  go to state 77
-
-
-State 63
-
-   43 CondExpr: OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS
-
-    CLOSE_PARENTHESIS  shift, and go to state 86
-
-
-State 64
-
-   35 Factor: IDENT INC •
+   35 Factor: FLOAT_LITERAL •
 
     EQUAL_LESSER       reduce using rule 35 (Factor)
     GREATER_THAN       reduce using rule 35 (Factor)
@@ -1099,9 +832,75 @@ State 64
     SEMICOLON          reduce using rule 35 (Factor)
 
 
-State 65
+State 48
 
-   36 Factor: IDENT DEC •
+   37 Factor: TRUE •
+
+    EQUAL_LESSER       reduce using rule 37 (Factor)
+    GREATER_THAN       reduce using rule 37 (Factor)
+    LESSER_THAN        reduce using rule 37 (Factor)
+    EQUAL              reduce using rule 37 (Factor)
+    IS_EQUAL           reduce using rule 37 (Factor)
+    NOT_EQUAL          reduce using rule 37 (Factor)
+    EQUAL_GREATER      reduce using rule 37 (Factor)
+    PLUS               reduce using rule 37 (Factor)
+    MINUS              reduce using rule 37 (Factor)
+    DIVIDE             reduce using rule 37 (Factor)
+    MULTIPLY           reduce using rule 37 (Factor)
+    MODULO             reduce using rule 37 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 37 (Factor)
+    AND                reduce using rule 37 (Factor)
+    OR                 reduce using rule 37 (Factor)
+    SEMICOLON          reduce using rule 37 (Factor)
+
+
+State 49
+
+   38 Factor: FALSE •
+
+    EQUAL_LESSER       reduce using rule 38 (Factor)
+    GREATER_THAN       reduce using rule 38 (Factor)
+    LESSER_THAN        reduce using rule 38 (Factor)
+    EQUAL              reduce using rule 38 (Factor)
+    IS_EQUAL           reduce using rule 38 (Factor)
+    NOT_EQUAL          reduce using rule 38 (Factor)
+    EQUAL_GREATER      reduce using rule 38 (Factor)
+    PLUS               reduce using rule 38 (Factor)
+    MINUS              reduce using rule 38 (Factor)
+    DIVIDE             reduce using rule 38 (Factor)
+    MULTIPLY           reduce using rule 38 (Factor)
+    MODULO             reduce using rule 38 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 38 (Factor)
+    AND                reduce using rule 38 (Factor)
+    OR                 reduce using rule 38 (Factor)
+    SEMICOLON          reduce using rule 38 (Factor)
+
+
+State 50
+
+   34 Factor: INT_LITERAL •
+
+    EQUAL_LESSER       reduce using rule 34 (Factor)
+    GREATER_THAN       reduce using rule 34 (Factor)
+    LESSER_THAN        reduce using rule 34 (Factor)
+    EQUAL              reduce using rule 34 (Factor)
+    IS_EQUAL           reduce using rule 34 (Factor)
+    NOT_EQUAL          reduce using rule 34 (Factor)
+    EQUAL_GREATER      reduce using rule 34 (Factor)
+    PLUS               reduce using rule 34 (Factor)
+    MINUS              reduce using rule 34 (Factor)
+    DIVIDE             reduce using rule 34 (Factor)
+    MULTIPLY           reduce using rule 34 (Factor)
+    MODULO             reduce using rule 34 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 34 (Factor)
+    AND                reduce using rule 34 (Factor)
+    OR                 reduce using rule 34 (Factor)
+    SEMICOLON          reduce using rule 34 (Factor)
+
+
+State 51
+
+   36 Factor: CHAR_LITERAL •
 
     EQUAL_LESSER       reduce using rule 36 (Factor)
     GREATER_THAN       reduce using rule 36 (Factor)
@@ -1121,39 +920,448 @@ State 65
     SEMICOLON          reduce using rule 36 (Factor)
 
 
+State 52
+
+   33 Factor: IDENT •
+   39       | IDENT • INC
+   40       | IDENT • DEC
+
+    INC  shift, and go to state 75
+    DEC  shift, and go to state 76
+
+    EQUAL_LESSER       reduce using rule 33 (Factor)
+    GREATER_THAN       reduce using rule 33 (Factor)
+    LESSER_THAN        reduce using rule 33 (Factor)
+    EQUAL              reduce using rule 33 (Factor)
+    IS_EQUAL           reduce using rule 33 (Factor)
+    NOT_EQUAL          reduce using rule 33 (Factor)
+    EQUAL_GREATER      reduce using rule 33 (Factor)
+    PLUS               reduce using rule 33 (Factor)
+    MINUS              reduce using rule 33 (Factor)
+    DIVIDE             reduce using rule 33 (Factor)
+    MULTIPLY           reduce using rule 33 (Factor)
+    MODULO             reduce using rule 33 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 33 (Factor)
+    AND                reduce using rule 33 (Factor)
+    OR                 reduce using rule 33 (Factor)
+    SEMICOLON          reduce using rule 33 (Factor)
+
+
+State 53
+
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+   43 CondExpr: Expr • RelOp Expr
+   45         | Expr • AND Expr
+   46         | Expr • OR Expr
+
+    EQUAL_LESSER   shift, and go to state 77
+    GREATER_THAN   shift, and go to state 78
+    LESSER_THAN    shift, and go to state 79
+    EQUAL          shift, and go to state 80
+    IS_EQUAL       shift, and go to state 81
+    NOT_EQUAL      shift, and go to state 82
+    EQUAL_GREATER  shift, and go to state 83
+    PLUS           shift, and go to state 84
+    MINUS          shift, and go to state 85
+    AND            shift, and go to state 86
+    OR             shift, and go to state 87
+
+    RelOp  go to state 88
+
+
+State 54
+
+   27 Expr: Term •
+   28 Term: Term • MULTIPLY Factor
+   29     | Term • DIVIDE Factor
+   30     | Term • MODULO Factor
+
+    DIVIDE    shift, and go to state 89
+    MULTIPLY  shift, and go to state 90
+    MODULO    shift, and go to state 91
+
+    EQUAL_LESSER       reduce using rule 27 (Expr)
+    GREATER_THAN       reduce using rule 27 (Expr)
+    LESSER_THAN        reduce using rule 27 (Expr)
+    EQUAL              reduce using rule 27 (Expr)
+    IS_EQUAL           reduce using rule 27 (Expr)
+    NOT_EQUAL          reduce using rule 27 (Expr)
+    EQUAL_GREATER      reduce using rule 27 (Expr)
+    PLUS               reduce using rule 27 (Expr)
+    MINUS              reduce using rule 27 (Expr)
+    CLOSE_PARENTHESIS  reduce using rule 27 (Expr)
+    AND                reduce using rule 27 (Expr)
+    OR                 reduce using rule 27 (Expr)
+    SEMICOLON          reduce using rule 27 (Expr)
+
+
+State 55
+
+   31 Term: Factor •
+
+    EQUAL_LESSER       reduce using rule 31 (Term)
+    GREATER_THAN       reduce using rule 31 (Term)
+    LESSER_THAN        reduce using rule 31 (Term)
+    EQUAL              reduce using rule 31 (Term)
+    IS_EQUAL           reduce using rule 31 (Term)
+    NOT_EQUAL          reduce using rule 31 (Term)
+    EQUAL_GREATER      reduce using rule 31 (Term)
+    PLUS               reduce using rule 31 (Term)
+    MINUS              reduce using rule 31 (Term)
+    DIVIDE             reduce using rule 31 (Term)
+    MULTIPLY           reduce using rule 31 (Term)
+    MODULO             reduce using rule 31 (Term)
+    CLOSE_PARENTHESIS  reduce using rule 31 (Term)
+    AND                reduce using rule 31 (Term)
+    OR                 reduce using rule 31 (Term)
+    SEMICOLON          reduce using rule 31 (Term)
+
+
+State 56
+
+   55 IfStmt: IF OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   56       | IF OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    CLOSE_PARENTHESIS  shift, and go to state 92
+
+
+State 57
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi • SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    SEMICOLON  shift, and go to state 93
+
+
+State 58
+
+   58 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    CLOSE_PARENTHESIS  shift, and go to state 94
+
+
+State 59
+
+   32 Factor: OPEN_PARENTHESIS • Expr CLOSE_PARENTHESIS
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 95
+    Term    go to state 54
+    Factor  go to state 55
+
+
+State 60
+
+   17 Assi: IDENT EQUAL Expr •
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 17 (Assi)
+    SEMICOLON          reduce using rule 17 (Assi)
+
+
+State 61
+
+   20 Assi: IDENT PLUS_EQUAL Expr •
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 20 (Assi)
+    SEMICOLON          reduce using rule 20 (Assi)
+
+
+State 62
+
+   21 Assi: IDENT MINUS_EQUAL Expr •
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 21 (Assi)
+    SEMICOLON          reduce using rule 21 (Assi)
+
+
+State 63
+
+   23 Assi: IDENT DIVIDE_EQUAL Expr •
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 23 (Assi)
+    SEMICOLON          reduce using rule 23 (Assi)
+
+
+State 64
+
+   22 Assi: IDENT MULTIPLY_EQUAL Expr •
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 22 (Assi)
+    SEMICOLON          reduce using rule 22 (Assi)
+
+
+State 65
+
+   24 Assi: IDENT MODULO_EQUAL Expr •
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 24 (Assi)
+    SEMICOLON          reduce using rule 24 (Assi)
+
+
 State 66
 
-   50 RelOp: EQUAL_LESSER •
+   12 Decl: FLOAT IDENT EQUAL Expr • SEMICOLON
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
 
-    INC               reduce using rule 50 (RelOp)
-    DEC               reduce using rule 50 (RelOp)
-    OPEN_PARENTHESIS  reduce using rule 50 (RelOp)
-    FLOAT_LITERAL     reduce using rule 50 (RelOp)
-    TRUE              reduce using rule 50 (RelOp)
-    FALSE             reduce using rule 50 (RelOp)
-    INT_LITERAL       reduce using rule 50 (RelOp)
-    CHAR_LITERAL      reduce using rule 50 (RelOp)
-    IDENT             reduce using rule 50 (RelOp)
+    PLUS       shift, and go to state 84
+    MINUS      shift, and go to state 85
+    SEMICOLON  shift, and go to state 96
 
 
 State 67
 
-   47 RelOp: GREATER_THAN •
+   10 Decl: INT IDENT EQUAL Expr • SEMICOLON
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
 
-    INC               reduce using rule 47 (RelOp)
-    DEC               reduce using rule 47 (RelOp)
-    OPEN_PARENTHESIS  reduce using rule 47 (RelOp)
-    FLOAT_LITERAL     reduce using rule 47 (RelOp)
-    TRUE              reduce using rule 47 (RelOp)
-    FALSE             reduce using rule 47 (RelOp)
-    INT_LITERAL       reduce using rule 47 (RelOp)
-    CHAR_LITERAL      reduce using rule 47 (RelOp)
-    IDENT             reduce using rule 47 (RelOp)
+    PLUS       shift, and go to state 84
+    MINUS      shift, and go to state 85
+    SEMICOLON  shift, and go to state 97
 
 
 State 68
 
-   48 RelOp: LESSER_THAN •
+   16 Decl: CHAR IDENT EQUAL Expr • SEMICOLON
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS       shift, and go to state 84
+    MINUS      shift, and go to state 85
+    SEMICOLON  shift, and go to state 98
+
+
+State 69
+
+   14 Decl: BOOLEAN IDENT EQUAL Expr • SEMICOLON
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+
+    PLUS       shift, and go to state 84
+    MINUS      shift, and go to state 85
+    SEMICOLON  shift, and go to state 99
+
+
+State 70
+
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+   44 CondExpr: NOT Expr •
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 44 (CondExpr)
+    SEMICOLON          reduce using rule 44 (CondExpr)
+
+
+State 71
+
+   41 Factor: INC IDENT •
+
+    EQUAL_LESSER       reduce using rule 41 (Factor)
+    GREATER_THAN       reduce using rule 41 (Factor)
+    LESSER_THAN        reduce using rule 41 (Factor)
+    EQUAL              reduce using rule 41 (Factor)
+    IS_EQUAL           reduce using rule 41 (Factor)
+    NOT_EQUAL          reduce using rule 41 (Factor)
+    EQUAL_GREATER      reduce using rule 41 (Factor)
+    PLUS               reduce using rule 41 (Factor)
+    MINUS              reduce using rule 41 (Factor)
+    DIVIDE             reduce using rule 41 (Factor)
+    MULTIPLY           reduce using rule 41 (Factor)
+    MODULO             reduce using rule 41 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 41 (Factor)
+    AND                reduce using rule 41 (Factor)
+    OR                 reduce using rule 41 (Factor)
+    SEMICOLON          reduce using rule 41 (Factor)
+
+
+State 72
+
+   42 Factor: DEC IDENT •
+
+    EQUAL_LESSER       reduce using rule 42 (Factor)
+    GREATER_THAN       reduce using rule 42 (Factor)
+    LESSER_THAN        reduce using rule 42 (Factor)
+    EQUAL              reduce using rule 42 (Factor)
+    IS_EQUAL           reduce using rule 42 (Factor)
+    NOT_EQUAL          reduce using rule 42 (Factor)
+    EQUAL_GREATER      reduce using rule 42 (Factor)
+    PLUS               reduce using rule 42 (Factor)
+    MINUS              reduce using rule 42 (Factor)
+    DIVIDE             reduce using rule 42 (Factor)
+    MULTIPLY           reduce using rule 42 (Factor)
+    MODULO             reduce using rule 42 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 42 (Factor)
+    AND                reduce using rule 42 (Factor)
+    OR                 reduce using rule 42 (Factor)
+    SEMICOLON          reduce using rule 42 (Factor)
+
+
+State 73
+
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+   32 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
+   43 CondExpr: Expr • RelOp Expr
+   45         | Expr • AND Expr
+   46         | Expr • OR Expr
+
+    EQUAL_LESSER       shift, and go to state 77
+    GREATER_THAN       shift, and go to state 78
+    LESSER_THAN        shift, and go to state 79
+    EQUAL              shift, and go to state 80
+    IS_EQUAL           shift, and go to state 81
+    NOT_EQUAL          shift, and go to state 82
+    EQUAL_GREATER      shift, and go to state 83
+    PLUS               shift, and go to state 84
+    MINUS              shift, and go to state 85
+    CLOSE_PARENTHESIS  shift, and go to state 100
+    AND                shift, and go to state 86
+    OR                 shift, and go to state 87
+
+    RelOp  go to state 88
+
+
+State 74
+
+   47 CondExpr: OPEN_PARENTHESIS CondExpr • CLOSE_PARENTHESIS
+
+    CLOSE_PARENTHESIS  shift, and go to state 101
+
+
+State 75
+
+   39 Factor: IDENT INC •
+
+    EQUAL_LESSER       reduce using rule 39 (Factor)
+    GREATER_THAN       reduce using rule 39 (Factor)
+    LESSER_THAN        reduce using rule 39 (Factor)
+    EQUAL              reduce using rule 39 (Factor)
+    IS_EQUAL           reduce using rule 39 (Factor)
+    NOT_EQUAL          reduce using rule 39 (Factor)
+    EQUAL_GREATER      reduce using rule 39 (Factor)
+    PLUS               reduce using rule 39 (Factor)
+    MINUS              reduce using rule 39 (Factor)
+    DIVIDE             reduce using rule 39 (Factor)
+    MULTIPLY           reduce using rule 39 (Factor)
+    MODULO             reduce using rule 39 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 39 (Factor)
+    AND                reduce using rule 39 (Factor)
+    OR                 reduce using rule 39 (Factor)
+    SEMICOLON          reduce using rule 39 (Factor)
+
+
+State 76
+
+   40 Factor: IDENT DEC •
+
+    EQUAL_LESSER       reduce using rule 40 (Factor)
+    GREATER_THAN       reduce using rule 40 (Factor)
+    LESSER_THAN        reduce using rule 40 (Factor)
+    EQUAL              reduce using rule 40 (Factor)
+    IS_EQUAL           reduce using rule 40 (Factor)
+    NOT_EQUAL          reduce using rule 40 (Factor)
+    EQUAL_GREATER      reduce using rule 40 (Factor)
+    PLUS               reduce using rule 40 (Factor)
+    MINUS              reduce using rule 40 (Factor)
+    DIVIDE             reduce using rule 40 (Factor)
+    MULTIPLY           reduce using rule 40 (Factor)
+    MODULO             reduce using rule 40 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 40 (Factor)
+    AND                reduce using rule 40 (Factor)
+    OR                 reduce using rule 40 (Factor)
+    SEMICOLON          reduce using rule 40 (Factor)
+
+
+State 77
+
+   54 RelOp: EQUAL_LESSER •
+
+    INC               reduce using rule 54 (RelOp)
+    DEC               reduce using rule 54 (RelOp)
+    OPEN_PARENTHESIS  reduce using rule 54 (RelOp)
+    FLOAT_LITERAL     reduce using rule 54 (RelOp)
+    TRUE              reduce using rule 54 (RelOp)
+    FALSE             reduce using rule 54 (RelOp)
+    INT_LITERAL       reduce using rule 54 (RelOp)
+    CHAR_LITERAL      reduce using rule 54 (RelOp)
+    IDENT             reduce using rule 54 (RelOp)
+
+
+State 78
+
+   51 RelOp: GREATER_THAN •
+
+    INC               reduce using rule 51 (RelOp)
+    DEC               reduce using rule 51 (RelOp)
+    OPEN_PARENTHESIS  reduce using rule 51 (RelOp)
+    FLOAT_LITERAL     reduce using rule 51 (RelOp)
+    TRUE              reduce using rule 51 (RelOp)
+    FALSE             reduce using rule 51 (RelOp)
+    INT_LITERAL       reduce using rule 51 (RelOp)
+    CHAR_LITERAL      reduce using rule 51 (RelOp)
+    IDENT             reduce using rule 51 (RelOp)
+
+
+State 79
+
+   52 RelOp: LESSER_THAN •
+
+    INC               reduce using rule 52 (RelOp)
+    DEC               reduce using rule 52 (RelOp)
+    OPEN_PARENTHESIS  reduce using rule 52 (RelOp)
+    FLOAT_LITERAL     reduce using rule 52 (RelOp)
+    TRUE              reduce using rule 52 (RelOp)
+    FALSE             reduce using rule 52 (RelOp)
+    INT_LITERAL       reduce using rule 52 (RelOp)
+    CHAR_LITERAL      reduce using rule 52 (RelOp)
+    IDENT             reduce using rule 52 (RelOp)
+
+
+State 80
+
+   48 RelOp: EQUAL •
 
     INC               reduce using rule 48 (RelOp)
     DEC               reduce using rule 48 (RelOp)
@@ -1166,54 +1374,9 @@ State 68
     IDENT             reduce using rule 48 (RelOp)
 
 
-State 69
+State 81
 
-   44 RelOp: EQUAL •
-
-    INC               reduce using rule 44 (RelOp)
-    DEC               reduce using rule 44 (RelOp)
-    OPEN_PARENTHESIS  reduce using rule 44 (RelOp)
-    FLOAT_LITERAL     reduce using rule 44 (RelOp)
-    TRUE              reduce using rule 44 (RelOp)
-    FALSE             reduce using rule 44 (RelOp)
-    INT_LITERAL       reduce using rule 44 (RelOp)
-    CHAR_LITERAL      reduce using rule 44 (RelOp)
-    IDENT             reduce using rule 44 (RelOp)
-
-
-State 70
-
-   45 RelOp: IS_EQUAL •
-
-    INC               reduce using rule 45 (RelOp)
-    DEC               reduce using rule 45 (RelOp)
-    OPEN_PARENTHESIS  reduce using rule 45 (RelOp)
-    FLOAT_LITERAL     reduce using rule 45 (RelOp)
-    TRUE              reduce using rule 45 (RelOp)
-    FALSE             reduce using rule 45 (RelOp)
-    INT_LITERAL       reduce using rule 45 (RelOp)
-    CHAR_LITERAL      reduce using rule 45 (RelOp)
-    IDENT             reduce using rule 45 (RelOp)
-
-
-State 71
-
-   46 RelOp: NOT_EQUAL •
-
-    INC               reduce using rule 46 (RelOp)
-    DEC               reduce using rule 46 (RelOp)
-    OPEN_PARENTHESIS  reduce using rule 46 (RelOp)
-    FLOAT_LITERAL     reduce using rule 46 (RelOp)
-    TRUE              reduce using rule 46 (RelOp)
-    FALSE             reduce using rule 46 (RelOp)
-    INT_LITERAL       reduce using rule 46 (RelOp)
-    CHAR_LITERAL      reduce using rule 46 (RelOp)
-    IDENT             reduce using rule 46 (RelOp)
-
-
-State 72
-
-   49 RelOp: EQUAL_GREATER •
+   49 RelOp: IS_EQUAL •
 
     INC               reduce using rule 49 (RelOp)
     DEC               reduce using rule 49 (RelOp)
@@ -1226,605 +1389,699 @@ State 72
     IDENT             reduce using rule 49 (RelOp)
 
 
-State 73
-
-   21 Expr: Expr PLUS • Term
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Term    go to state 87
-    Factor  go to state 48
-
-
-State 74
-
-   22 Expr: Expr MINUS • Term
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Term    go to state 88
-    Factor  go to state 48
-
-
-State 75
-
-   41 CondExpr: Expr AND • Expr
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Expr    go to state 89
-    Term    go to state 47
-    Factor  go to state 48
-
-
-State 76
-
-   42 CondExpr: Expr OR • Expr
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Expr    go to state 90
-    Term    go to state 47
-    Factor  go to state 48
-
-
-State 77
-
-   39 CondExpr: Expr RelOp • Expr
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Expr    go to state 91
-    Term    go to state 47
-    Factor  go to state 48
-
-
-State 78
-
-   25 Term: Term DIVIDE • Factor
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Factor  go to state 92
-
-
-State 79
-
-   24 Term: Term MULTIPLY • Factor
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Factor  go to state 93
-
-
-State 80
-
-   26 Term: Term MODULO • Factor
-
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 52
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Factor  go to state 94
-
-
-State 81
-
-   51 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-   52       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    OPEN_CURLY_BRACKETS  shift, and go to state 95
-
-
 State 82
 
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON • CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   50 RelOp: NOT_EQUAL •
 
-    NOT               shift, and go to state 36
-    INC               shift, and go to state 37
-    DEC               shift, and go to state 38
-    OPEN_PARENTHESIS  shift, and go to state 39
-    FLOAT_LITERAL     shift, and go to state 40
-    TRUE              shift, and go to state 41
-    FALSE             shift, and go to state 42
-    INT_LITERAL       shift, and go to state 43
-    CHAR_LITERAL      shift, and go to state 44
-    IDENT             shift, and go to state 45
-
-    Expr      go to state 46
-    Term      go to state 47
-    Factor    go to state 48
-    CondExpr  go to state 96
+    INC               reduce using rule 50 (RelOp)
+    DEC               reduce using rule 50 (RelOp)
+    OPEN_PARENTHESIS  reduce using rule 50 (RelOp)
+    FLOAT_LITERAL     reduce using rule 50 (RelOp)
+    TRUE              reduce using rule 50 (RelOp)
+    FALSE             reduce using rule 50 (RelOp)
+    INT_LITERAL       reduce using rule 50 (RelOp)
+    CHAR_LITERAL      reduce using rule 50 (RelOp)
+    IDENT             reduce using rule 50 (RelOp)
 
 
 State 83
 
-   54 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   53 RelOp: EQUAL_GREATER •
 
-    OPEN_CURLY_BRACKETS  shift, and go to state 97
+    INC               reduce using rule 53 (RelOp)
+    DEC               reduce using rule 53 (RelOp)
+    OPEN_PARENTHESIS  reduce using rule 53 (RelOp)
+    FLOAT_LITERAL     reduce using rule 53 (RelOp)
+    TRUE              reduce using rule 53 (RelOp)
+    FALSE             reduce using rule 53 (RelOp)
+    INT_LITERAL       reduce using rule 53 (RelOp)
+    CHAR_LITERAL      reduce using rule 53 (RelOp)
+    IDENT             reduce using rule 53 (RelOp)
 
 
 State 84
 
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-   28 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
+   25 Expr: Expr PLUS • Term
 
-    PLUS               shift, and go to state 73
-    MINUS              shift, and go to state 74
-    CLOSE_PARENTHESIS  shift, and go to state 85
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Term    go to state 102
+    Factor  go to state 55
 
 
 State 85
 
-   28 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS •
+   26 Expr: Expr MINUS • Term
 
-    EQUAL_LESSER       reduce using rule 28 (Factor)
-    GREATER_THAN       reduce using rule 28 (Factor)
-    LESSER_THAN        reduce using rule 28 (Factor)
-    EQUAL              reduce using rule 28 (Factor)
-    IS_EQUAL           reduce using rule 28 (Factor)
-    NOT_EQUAL          reduce using rule 28 (Factor)
-    EQUAL_GREATER      reduce using rule 28 (Factor)
-    PLUS               reduce using rule 28 (Factor)
-    MINUS              reduce using rule 28 (Factor)
-    DIVIDE             reduce using rule 28 (Factor)
-    MULTIPLY           reduce using rule 28 (Factor)
-    MODULO             reduce using rule 28 (Factor)
-    CLOSE_PARENTHESIS  reduce using rule 28 (Factor)
-    AND                reduce using rule 28 (Factor)
-    OR                 reduce using rule 28 (Factor)
-    SEMICOLON          reduce using rule 28 (Factor)
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Term    go to state 103
+    Factor  go to state 55
 
 
 State 86
 
-   43 CondExpr: OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS •
+   45 CondExpr: Expr AND • Expr
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 104
+    Term    go to state 54
+    Factor  go to state 55
+
+
+State 87
+
+   46 CondExpr: Expr OR • Expr
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 105
+    Term    go to state 54
+    Factor  go to state 55
+
+
+State 88
+
+   43 CondExpr: Expr RelOp • Expr
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr    go to state 106
+    Term    go to state 54
+    Factor  go to state 55
+
+
+State 89
+
+   29 Term: Term DIVIDE • Factor
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Factor  go to state 107
+
+
+State 90
+
+   28 Term: Term MULTIPLY • Factor
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Factor  go to state 108
+
+
+State 91
+
+   30 Term: Term MODULO • Factor
+
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 59
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Factor  go to state 109
+
+
+State 92
+
+   55 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+   56       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    OPEN_CURLY_BRACKETS  shift, and go to state 110
+
+
+State 93
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON • CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    NOT               shift, and go to state 43
+    INC               shift, and go to state 44
+    DEC               shift, and go to state 45
+    OPEN_PARENTHESIS  shift, and go to state 46
+    FLOAT_LITERAL     shift, and go to state 47
+    TRUE              shift, and go to state 48
+    FALSE             shift, and go to state 49
+    INT_LITERAL       shift, and go to state 50
+    CHAR_LITERAL      shift, and go to state 51
+    IDENT             shift, and go to state 52
+
+    Expr      go to state 53
+    Term      go to state 54
+    Factor    go to state 55
+    CondExpr  go to state 111
+
+
+State 94
+
+   58 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    OPEN_CURLY_BRACKETS  shift, and go to state 112
+
+
+State 95
+
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+   32 Factor: OPEN_PARENTHESIS Expr • CLOSE_PARENTHESIS
+
+    PLUS               shift, and go to state 84
+    MINUS              shift, and go to state 85
+    CLOSE_PARENTHESIS  shift, and go to state 100
+
+
+State 96
+
+   12 Decl: FLOAT IDENT EQUAL Expr SEMICOLON •
+
+    $end                  reduce using rule 12 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 12 (Decl)
+    FLOAT                 reduce using rule 12 (Decl)
+    INT                   reduce using rule 12 (Decl)
+    CHAR                  reduce using rule 12 (Decl)
+    BOOLEAN               reduce using rule 12 (Decl)
+    IF                    reduce using rule 12 (Decl)
+    FOR                   reduce using rule 12 (Decl)
+    WHILE                 reduce using rule 12 (Decl)
+    IDENT                 reduce using rule 12 (Decl)
+
+
+State 97
+
+   10 Decl: INT IDENT EQUAL Expr SEMICOLON •
+
+    $end                  reduce using rule 10 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 10 (Decl)
+    FLOAT                 reduce using rule 10 (Decl)
+    INT                   reduce using rule 10 (Decl)
+    CHAR                  reduce using rule 10 (Decl)
+    BOOLEAN               reduce using rule 10 (Decl)
+    IF                    reduce using rule 10 (Decl)
+    FOR                   reduce using rule 10 (Decl)
+    WHILE                 reduce using rule 10 (Decl)
+    IDENT                 reduce using rule 10 (Decl)
+
+
+State 98
+
+   16 Decl: CHAR IDENT EQUAL Expr SEMICOLON •
+
+    $end                  reduce using rule 16 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 16 (Decl)
+    FLOAT                 reduce using rule 16 (Decl)
+    INT                   reduce using rule 16 (Decl)
+    CHAR                  reduce using rule 16 (Decl)
+    BOOLEAN               reduce using rule 16 (Decl)
+    IF                    reduce using rule 16 (Decl)
+    FOR                   reduce using rule 16 (Decl)
+    WHILE                 reduce using rule 16 (Decl)
+    IDENT                 reduce using rule 16 (Decl)
+
+
+State 99
+
+   14 Decl: BOOLEAN IDENT EQUAL Expr SEMICOLON •
+
+    $end                  reduce using rule 14 (Decl)
+    CLOSE_CURLY_BRACKETS  reduce using rule 14 (Decl)
+    FLOAT                 reduce using rule 14 (Decl)
+    INT                   reduce using rule 14 (Decl)
+    CHAR                  reduce using rule 14 (Decl)
+    BOOLEAN               reduce using rule 14 (Decl)
+    IF                    reduce using rule 14 (Decl)
+    FOR                   reduce using rule 14 (Decl)
+    WHILE                 reduce using rule 14 (Decl)
+    IDENT                 reduce using rule 14 (Decl)
+
+
+State 100
+
+   32 Factor: OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS •
+
+    EQUAL_LESSER       reduce using rule 32 (Factor)
+    GREATER_THAN       reduce using rule 32 (Factor)
+    LESSER_THAN        reduce using rule 32 (Factor)
+    EQUAL              reduce using rule 32 (Factor)
+    IS_EQUAL           reduce using rule 32 (Factor)
+    NOT_EQUAL          reduce using rule 32 (Factor)
+    EQUAL_GREATER      reduce using rule 32 (Factor)
+    PLUS               reduce using rule 32 (Factor)
+    MINUS              reduce using rule 32 (Factor)
+    DIVIDE             reduce using rule 32 (Factor)
+    MULTIPLY           reduce using rule 32 (Factor)
+    MODULO             reduce using rule 32 (Factor)
+    CLOSE_PARENTHESIS  reduce using rule 32 (Factor)
+    AND                reduce using rule 32 (Factor)
+    OR                 reduce using rule 32 (Factor)
+    SEMICOLON          reduce using rule 32 (Factor)
+
+
+State 101
+
+   47 CondExpr: OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS •
+
+    CLOSE_PARENTHESIS  reduce using rule 47 (CondExpr)
+    SEMICOLON          reduce using rule 47 (CondExpr)
+
+
+State 102
+
+   25 Expr: Expr PLUS Term •
+   28 Term: Term • MULTIPLY Factor
+   29     | Term • DIVIDE Factor
+   30     | Term • MODULO Factor
+
+    DIVIDE    shift, and go to state 89
+    MULTIPLY  shift, and go to state 90
+    MODULO    shift, and go to state 91
+
+    EQUAL_LESSER       reduce using rule 25 (Expr)
+    GREATER_THAN       reduce using rule 25 (Expr)
+    LESSER_THAN        reduce using rule 25 (Expr)
+    EQUAL              reduce using rule 25 (Expr)
+    IS_EQUAL           reduce using rule 25 (Expr)
+    NOT_EQUAL          reduce using rule 25 (Expr)
+    EQUAL_GREATER      reduce using rule 25 (Expr)
+    PLUS               reduce using rule 25 (Expr)
+    MINUS              reduce using rule 25 (Expr)
+    CLOSE_PARENTHESIS  reduce using rule 25 (Expr)
+    AND                reduce using rule 25 (Expr)
+    OR                 reduce using rule 25 (Expr)
+    SEMICOLON          reduce using rule 25 (Expr)
+
+
+State 103
+
+   26 Expr: Expr MINUS Term •
+   28 Term: Term • MULTIPLY Factor
+   29     | Term • DIVIDE Factor
+   30     | Term • MODULO Factor
+
+    DIVIDE    shift, and go to state 89
+    MULTIPLY  shift, and go to state 90
+    MODULO    shift, and go to state 91
+
+    EQUAL_LESSER       reduce using rule 26 (Expr)
+    GREATER_THAN       reduce using rule 26 (Expr)
+    LESSER_THAN        reduce using rule 26 (Expr)
+    EQUAL              reduce using rule 26 (Expr)
+    IS_EQUAL           reduce using rule 26 (Expr)
+    NOT_EQUAL          reduce using rule 26 (Expr)
+    EQUAL_GREATER      reduce using rule 26 (Expr)
+    PLUS               reduce using rule 26 (Expr)
+    MINUS              reduce using rule 26 (Expr)
+    CLOSE_PARENTHESIS  reduce using rule 26 (Expr)
+    AND                reduce using rule 26 (Expr)
+    OR                 reduce using rule 26 (Expr)
+    SEMICOLON          reduce using rule 26 (Expr)
+
+
+State 104
+
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+   45 CondExpr: Expr AND Expr •
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 45 (CondExpr)
+    SEMICOLON          reduce using rule 45 (CondExpr)
+
+
+State 105
+
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+   46 CondExpr: Expr OR Expr •
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
+
+    CLOSE_PARENTHESIS  reduce using rule 46 (CondExpr)
+    SEMICOLON          reduce using rule 46 (CondExpr)
+
+
+State 106
+
+   25 Expr: Expr • PLUS Term
+   26     | Expr • MINUS Term
+   43 CondExpr: Expr RelOp Expr •
+
+    PLUS   shift, and go to state 84
+    MINUS  shift, and go to state 85
 
     CLOSE_PARENTHESIS  reduce using rule 43 (CondExpr)
     SEMICOLON          reduce using rule 43 (CondExpr)
 
 
-State 87
-
-   21 Expr: Expr PLUS Term •
-   24 Term: Term • MULTIPLY Factor
-   25     | Term • DIVIDE Factor
-   26     | Term • MODULO Factor
-
-    DIVIDE    shift, and go to state 78
-    MULTIPLY  shift, and go to state 79
-    MODULO    shift, and go to state 80
-
-    EQUAL_LESSER       reduce using rule 21 (Expr)
-    GREATER_THAN       reduce using rule 21 (Expr)
-    LESSER_THAN        reduce using rule 21 (Expr)
-    EQUAL              reduce using rule 21 (Expr)
-    IS_EQUAL           reduce using rule 21 (Expr)
-    NOT_EQUAL          reduce using rule 21 (Expr)
-    EQUAL_GREATER      reduce using rule 21 (Expr)
-    PLUS               reduce using rule 21 (Expr)
-    MINUS              reduce using rule 21 (Expr)
-    CLOSE_PARENTHESIS  reduce using rule 21 (Expr)
-    AND                reduce using rule 21 (Expr)
-    OR                 reduce using rule 21 (Expr)
-    SEMICOLON          reduce using rule 21 (Expr)
-
-
-State 88
-
-   22 Expr: Expr MINUS Term •
-   24 Term: Term • MULTIPLY Factor
-   25     | Term • DIVIDE Factor
-   26     | Term • MODULO Factor
-
-    DIVIDE    shift, and go to state 78
-    MULTIPLY  shift, and go to state 79
-    MODULO    shift, and go to state 80
-
-    EQUAL_LESSER       reduce using rule 22 (Expr)
-    GREATER_THAN       reduce using rule 22 (Expr)
-    LESSER_THAN        reduce using rule 22 (Expr)
-    EQUAL              reduce using rule 22 (Expr)
-    IS_EQUAL           reduce using rule 22 (Expr)
-    NOT_EQUAL          reduce using rule 22 (Expr)
-    EQUAL_GREATER      reduce using rule 22 (Expr)
-    PLUS               reduce using rule 22 (Expr)
-    MINUS              reduce using rule 22 (Expr)
-    CLOSE_PARENTHESIS  reduce using rule 22 (Expr)
-    AND                reduce using rule 22 (Expr)
-    OR                 reduce using rule 22 (Expr)
-    SEMICOLON          reduce using rule 22 (Expr)
-
-
-State 89
-
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-   41 CondExpr: Expr AND Expr •
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 41 (CondExpr)
-    SEMICOLON          reduce using rule 41 (CondExpr)
-
-
-State 90
-
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-   42 CondExpr: Expr OR Expr •
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 42 (CondExpr)
-    SEMICOLON          reduce using rule 42 (CondExpr)
-
-
-State 91
-
-   21 Expr: Expr • PLUS Term
-   22     | Expr • MINUS Term
-   39 CondExpr: Expr RelOp Expr •
-
-    PLUS   shift, and go to state 73
-    MINUS  shift, and go to state 74
-
-    CLOSE_PARENTHESIS  reduce using rule 39 (CondExpr)
-    SEMICOLON          reduce using rule 39 (CondExpr)
-
-
-State 92
-
-   25 Term: Term DIVIDE Factor •
-
-    EQUAL_LESSER       reduce using rule 25 (Term)
-    GREATER_THAN       reduce using rule 25 (Term)
-    LESSER_THAN        reduce using rule 25 (Term)
-    EQUAL              reduce using rule 25 (Term)
-    IS_EQUAL           reduce using rule 25 (Term)
-    NOT_EQUAL          reduce using rule 25 (Term)
-    EQUAL_GREATER      reduce using rule 25 (Term)
-    PLUS               reduce using rule 25 (Term)
-    MINUS              reduce using rule 25 (Term)
-    DIVIDE             reduce using rule 25 (Term)
-    MULTIPLY           reduce using rule 25 (Term)
-    MODULO             reduce using rule 25 (Term)
-    CLOSE_PARENTHESIS  reduce using rule 25 (Term)
-    AND                reduce using rule 25 (Term)
-    OR                 reduce using rule 25 (Term)
-    SEMICOLON          reduce using rule 25 (Term)
-
-
-State 93
-
-   24 Term: Term MULTIPLY Factor •
-
-    EQUAL_LESSER       reduce using rule 24 (Term)
-    GREATER_THAN       reduce using rule 24 (Term)
-    LESSER_THAN        reduce using rule 24 (Term)
-    EQUAL              reduce using rule 24 (Term)
-    IS_EQUAL           reduce using rule 24 (Term)
-    NOT_EQUAL          reduce using rule 24 (Term)
-    EQUAL_GREATER      reduce using rule 24 (Term)
-    PLUS               reduce using rule 24 (Term)
-    MINUS              reduce using rule 24 (Term)
-    DIVIDE             reduce using rule 24 (Term)
-    MULTIPLY           reduce using rule 24 (Term)
-    MODULO             reduce using rule 24 (Term)
-    CLOSE_PARENTHESIS  reduce using rule 24 (Term)
-    AND                reduce using rule 24 (Term)
-    OR                 reduce using rule 24 (Term)
-    SEMICOLON          reduce using rule 24 (Term)
-
-
-State 94
-
-   26 Term: Term MODULO Factor •
-
-    EQUAL_LESSER       reduce using rule 26 (Term)
-    GREATER_THAN       reduce using rule 26 (Term)
-    LESSER_THAN        reduce using rule 26 (Term)
-    EQUAL              reduce using rule 26 (Term)
-    IS_EQUAL           reduce using rule 26 (Term)
-    NOT_EQUAL          reduce using rule 26 (Term)
-    EQUAL_GREATER      reduce using rule 26 (Term)
-    PLUS               reduce using rule 26 (Term)
-    MINUS              reduce using rule 26 (Term)
-    DIVIDE             reduce using rule 26 (Term)
-    MULTIPLY           reduce using rule 26 (Term)
-    MODULO             reduce using rule 26 (Term)
-    CLOSE_PARENTHESIS  reduce using rule 26 (Term)
-    AND                reduce using rule 26 (Term)
-    OR                 reduce using rule 26 (Term)
-    SEMICOLON          reduce using rule 26 (Term)
-
-
-State 95
-
-   51 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
-   52       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    FLOAT    shift, and go to state 1
-    INT      shift, and go to state 2
-    CHAR     shift, and go to state 3
-    BOOLEAN  shift, and go to state 4
-    IF       shift, and go to state 5
-    FOR      shift, and go to state 6
-    WHILE    shift, and go to state 7
-    IDENT    shift, and go to state 8
-
-    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
-
-    StmtList  go to state 98
-    Stmt      go to state 12
-    Decl      go to state 13
-    Assi      go to state 14
-    IfStmt    go to state 15
-    LoopStmt  go to state 16
-
-
-State 96
-
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr • SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    SEMICOLON  shift, and go to state 99
-
-
-State 97
-
-   54 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
-
-    FLOAT    shift, and go to state 1
-    INT      shift, and go to state 2
-    CHAR     shift, and go to state 3
-    BOOLEAN  shift, and go to state 4
-    IF       shift, and go to state 5
-    FOR      shift, and go to state 6
-    WHILE    shift, and go to state 7
-    IDENT    shift, and go to state 8
-
-    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
-
-    StmtList  go to state 100
-    Stmt      go to state 12
-    Decl      go to state 13
-    Assi      go to state 14
-    IfStmt    go to state 15
-    LoopStmt  go to state 16
-
-
-State 98
-
-   51 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
-   52       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    CLOSE_CURLY_BRACKETS  shift, and go to state 101
-
-
-State 99
-
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON • Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    IDENT  shift, and go to state 8
-
-    Assi  go to state 102
-
-
-State 100
-
-   54 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
-
-    CLOSE_CURLY_BRACKETS  shift, and go to state 103
-
-
-State 101
-
-   51 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
-   52       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS • ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    ELSE  shift, and go to state 104
-
-    $end                  reduce using rule 51 (IfStmt)
-    CLOSE_CURLY_BRACKETS  reduce using rule 51 (IfStmt)
-    FLOAT                 reduce using rule 51 (IfStmt)
-    INT                   reduce using rule 51 (IfStmt)
-    CHAR                  reduce using rule 51 (IfStmt)
-    BOOLEAN               reduce using rule 51 (IfStmt)
-    IF                    reduce using rule 51 (IfStmt)
-    FOR                   reduce using rule 51 (IfStmt)
-    WHILE                 reduce using rule 51 (IfStmt)
-    IDENT                 reduce using rule 51 (IfStmt)
-
-
-State 102
-
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    CLOSE_PARENTHESIS  shift, and go to state 105
-
-
-State 103
-
-   54 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
-
-    $end                  reduce using rule 54 (LoopStmt)
-    CLOSE_CURLY_BRACKETS  reduce using rule 54 (LoopStmt)
-    FLOAT                 reduce using rule 54 (LoopStmt)
-    INT                   reduce using rule 54 (LoopStmt)
-    CHAR                  reduce using rule 54 (LoopStmt)
-    BOOLEAN               reduce using rule 54 (LoopStmt)
-    IF                    reduce using rule 54 (LoopStmt)
-    FOR                   reduce using rule 54 (LoopStmt)
-    WHILE                 reduce using rule 54 (LoopStmt)
-    IDENT                 reduce using rule 54 (LoopStmt)
-
-
-State 104
-
-   52 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    OPEN_CURLY_BRACKETS  shift, and go to state 106
-
-
-State 105
-
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
-
-    OPEN_CURLY_BRACKETS  shift, and go to state 107
-
-
-State 106
-
-   52 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
-
-    FLOAT    shift, and go to state 1
-    INT      shift, and go to state 2
-    CHAR     shift, and go to state 3
-    BOOLEAN  shift, and go to state 4
-    IF       shift, and go to state 5
-    FOR      shift, and go to state 6
-    WHILE    shift, and go to state 7
-    IDENT    shift, and go to state 8
-
-    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
-
-    StmtList  go to state 108
-    Stmt      go to state 12
-    Decl      go to state 13
-    Assi      go to state 14
-    IfStmt    go to state 15
-    LoopStmt  go to state 16
-
-
 State 107
 
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
+   29 Term: Term DIVIDE Factor •
 
-    FLOAT    shift, and go to state 1
-    INT      shift, and go to state 2
-    CHAR     shift, and go to state 3
-    BOOLEAN  shift, and go to state 4
-    IF       shift, and go to state 5
-    FOR      shift, and go to state 6
-    WHILE    shift, and go to state 7
-    IDENT    shift, and go to state 8
-
-    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
-
-    StmtList  go to state 109
-    Stmt      go to state 12
-    Decl      go to state 13
-    Assi      go to state 14
-    IfStmt    go to state 15
-    LoopStmt  go to state 16
+    EQUAL_LESSER       reduce using rule 29 (Term)
+    GREATER_THAN       reduce using rule 29 (Term)
+    LESSER_THAN        reduce using rule 29 (Term)
+    EQUAL              reduce using rule 29 (Term)
+    IS_EQUAL           reduce using rule 29 (Term)
+    NOT_EQUAL          reduce using rule 29 (Term)
+    EQUAL_GREATER      reduce using rule 29 (Term)
+    PLUS               reduce using rule 29 (Term)
+    MINUS              reduce using rule 29 (Term)
+    DIVIDE             reduce using rule 29 (Term)
+    MULTIPLY           reduce using rule 29 (Term)
+    MODULO             reduce using rule 29 (Term)
+    CLOSE_PARENTHESIS  reduce using rule 29 (Term)
+    AND                reduce using rule 29 (Term)
+    OR                 reduce using rule 29 (Term)
+    SEMICOLON          reduce using rule 29 (Term)
 
 
 State 108
 
-   52 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
+   28 Term: Term MULTIPLY Factor •
 
-    CLOSE_CURLY_BRACKETS  shift, and go to state 110
+    EQUAL_LESSER       reduce using rule 28 (Term)
+    GREATER_THAN       reduce using rule 28 (Term)
+    LESSER_THAN        reduce using rule 28 (Term)
+    EQUAL              reduce using rule 28 (Term)
+    IS_EQUAL           reduce using rule 28 (Term)
+    NOT_EQUAL          reduce using rule 28 (Term)
+    EQUAL_GREATER      reduce using rule 28 (Term)
+    PLUS               reduce using rule 28 (Term)
+    MINUS              reduce using rule 28 (Term)
+    DIVIDE             reduce using rule 28 (Term)
+    MULTIPLY           reduce using rule 28 (Term)
+    MODULO             reduce using rule 28 (Term)
+    CLOSE_PARENTHESIS  reduce using rule 28 (Term)
+    AND                reduce using rule 28 (Term)
+    OR                 reduce using rule 28 (Term)
+    SEMICOLON          reduce using rule 28 (Term)
 
 
 State 109
 
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
+   30 Term: Term MODULO Factor •
 
-    CLOSE_CURLY_BRACKETS  shift, and go to state 111
+    EQUAL_LESSER       reduce using rule 30 (Term)
+    GREATER_THAN       reduce using rule 30 (Term)
+    LESSER_THAN        reduce using rule 30 (Term)
+    EQUAL              reduce using rule 30 (Term)
+    IS_EQUAL           reduce using rule 30 (Term)
+    NOT_EQUAL          reduce using rule 30 (Term)
+    EQUAL_GREATER      reduce using rule 30 (Term)
+    PLUS               reduce using rule 30 (Term)
+    MINUS              reduce using rule 30 (Term)
+    DIVIDE             reduce using rule 30 (Term)
+    MULTIPLY           reduce using rule 30 (Term)
+    MODULO             reduce using rule 30 (Term)
+    CLOSE_PARENTHESIS  reduce using rule 30 (Term)
+    AND                reduce using rule 30 (Term)
+    OR                 reduce using rule 30 (Term)
+    SEMICOLON          reduce using rule 30 (Term)
 
 
 State 110
 
-   52 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
+   55 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
+   56       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
-    $end                  reduce using rule 52 (IfStmt)
-    CLOSE_CURLY_BRACKETS  reduce using rule 52 (IfStmt)
-    FLOAT                 reduce using rule 52 (IfStmt)
-    INT                   reduce using rule 52 (IfStmt)
-    CHAR                  reduce using rule 52 (IfStmt)
-    BOOLEAN               reduce using rule 52 (IfStmt)
-    IF                    reduce using rule 52 (IfStmt)
-    FOR                   reduce using rule 52 (IfStmt)
-    WHILE                 reduce using rule 52 (IfStmt)
-    IDENT                 reduce using rule 52 (IfStmt)
+    FLOAT    shift, and go to state 1
+    INT      shift, and go to state 2
+    CHAR     shift, and go to state 3
+    BOOLEAN  shift, and go to state 4
+    IF       shift, and go to state 5
+    FOR      shift, and go to state 6
+    WHILE    shift, and go to state 7
+    IDENT    shift, and go to state 8
+
+    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
+
+    StmtList  go to state 113
+    Stmt      go to state 12
+    Decl      go to state 13
+    Assi      go to state 14
+    IfStmt    go to state 15
+    LoopStmt  go to state 16
 
 
 State 111
 
-   53 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr • SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
 
-    $end                  reduce using rule 53 (LoopStmt)
-    CLOSE_CURLY_BRACKETS  reduce using rule 53 (LoopStmt)
-    FLOAT                 reduce using rule 53 (LoopStmt)
-    INT                   reduce using rule 53 (LoopStmt)
-    CHAR                  reduce using rule 53 (LoopStmt)
-    BOOLEAN               reduce using rule 53 (LoopStmt)
-    IF                    reduce using rule 53 (LoopStmt)
-    FOR                   reduce using rule 53 (LoopStmt)
-    WHILE                 reduce using rule 53 (LoopStmt)
-    IDENT                 reduce using rule 53 (LoopStmt)
+    SEMICOLON  shift, and go to state 114
+
+
+State 112
+
+   58 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
+
+    FLOAT    shift, and go to state 1
+    INT      shift, and go to state 2
+    CHAR     shift, and go to state 3
+    BOOLEAN  shift, and go to state 4
+    IF       shift, and go to state 5
+    FOR      shift, and go to state 6
+    WHILE    shift, and go to state 7
+    IDENT    shift, and go to state 8
+
+    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
+
+    StmtList  go to state 115
+    Stmt      go to state 12
+    Decl      go to state 13
+    Assi      go to state 14
+    IfStmt    go to state 15
+    LoopStmt  go to state 16
+
+
+State 113
+
+   55 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
+   56       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    CLOSE_CURLY_BRACKETS  shift, and go to state 116
+
+
+State 114
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON • Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    IDENT  shift, and go to state 8
+
+    Assi  go to state 117
+
+
+State 115
+
+   58 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
+
+    CLOSE_CURLY_BRACKETS  shift, and go to state 118
+
+
+State 116
+
+   55 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
+   56       | IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS • ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    ELSE  shift, and go to state 119
+
+    $end                  reduce using rule 55 (IfStmt)
+    CLOSE_CURLY_BRACKETS  reduce using rule 55 (IfStmt)
+    FLOAT                 reduce using rule 55 (IfStmt)
+    INT                   reduce using rule 55 (IfStmt)
+    CHAR                  reduce using rule 55 (IfStmt)
+    BOOLEAN               reduce using rule 55 (IfStmt)
+    IF                    reduce using rule 55 (IfStmt)
+    FOR                   reduce using rule 55 (IfStmt)
+    WHILE                 reduce using rule 55 (IfStmt)
+    IDENT                 reduce using rule 55 (IfStmt)
+
+
+State 117
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi • CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    CLOSE_PARENTHESIS  shift, and go to state 120
+
+
+State 118
+
+   58 LoopStmt: WHILE OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
+
+    $end                  reduce using rule 58 (LoopStmt)
+    CLOSE_CURLY_BRACKETS  reduce using rule 58 (LoopStmt)
+    FLOAT                 reduce using rule 58 (LoopStmt)
+    INT                   reduce using rule 58 (LoopStmt)
+    CHAR                  reduce using rule 58 (LoopStmt)
+    BOOLEAN               reduce using rule 58 (LoopStmt)
+    IF                    reduce using rule 58 (LoopStmt)
+    FOR                   reduce using rule 58 (LoopStmt)
+    WHILE                 reduce using rule 58 (LoopStmt)
+    IDENT                 reduce using rule 58 (LoopStmt)
+
+
+State 119
+
+   56 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    OPEN_CURLY_BRACKETS  shift, and go to state 121
+
+
+State 120
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS • OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
+
+    OPEN_CURLY_BRACKETS  shift, and go to state 122
+
+
+State 121
+
+   56 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
+
+    FLOAT    shift, and go to state 1
+    INT      shift, and go to state 2
+    CHAR     shift, and go to state 3
+    BOOLEAN  shift, and go to state 4
+    IF       shift, and go to state 5
+    FOR      shift, and go to state 6
+    WHILE    shift, and go to state 7
+    IDENT    shift, and go to state 8
+
+    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
+
+    StmtList  go to state 123
+    Stmt      go to state 12
+    Decl      go to state 13
+    Assi      go to state 14
+    IfStmt    go to state 15
+    LoopStmt  go to state 16
+
+
+State 122
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS • StmtList CLOSE_CURLY_BRACKETS
+
+    FLOAT    shift, and go to state 1
+    INT      shift, and go to state 2
+    CHAR     shift, and go to state 3
+    BOOLEAN  shift, and go to state 4
+    IF       shift, and go to state 5
+    FOR      shift, and go to state 6
+    WHILE    shift, and go to state 7
+    IDENT    shift, and go to state 8
+
+    CLOSE_CURLY_BRACKETS  reduce using rule 4 (StmtList)
+
+    StmtList  go to state 124
+    Stmt      go to state 12
+    Decl      go to state 13
+    Assi      go to state 14
+    IfStmt    go to state 15
+    LoopStmt  go to state 16
+
+
+State 123
+
+   56 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
+
+    CLOSE_CURLY_BRACKETS  shift, and go to state 125
+
+
+State 124
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList • CLOSE_CURLY_BRACKETS
+
+    CLOSE_CURLY_BRACKETS  shift, and go to state 126
+
+
+State 125
+
+   56 IfStmt: IF OPEN_PARENTHESIS CondExpr CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS ELSE OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
+
+    $end                  reduce using rule 56 (IfStmt)
+    CLOSE_CURLY_BRACKETS  reduce using rule 56 (IfStmt)
+    FLOAT                 reduce using rule 56 (IfStmt)
+    INT                   reduce using rule 56 (IfStmt)
+    CHAR                  reduce using rule 56 (IfStmt)
+    BOOLEAN               reduce using rule 56 (IfStmt)
+    IF                    reduce using rule 56 (IfStmt)
+    FOR                   reduce using rule 56 (IfStmt)
+    WHILE                 reduce using rule 56 (IfStmt)
+    IDENT                 reduce using rule 56 (IfStmt)
+
+
+State 126
+
+   57 LoopStmt: FOR OPEN_PARENTHESIS Assi SEMICOLON CondExpr SEMICOLON Assi CLOSE_PARENTHESIS OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS •
+
+    $end                  reduce using rule 57 (LoopStmt)
+    CLOSE_CURLY_BRACKETS  reduce using rule 57 (LoopStmt)
+    FLOAT                 reduce using rule 57 (LoopStmt)
+    INT                   reduce using rule 57 (LoopStmt)
+    CHAR                  reduce using rule 57 (LoopStmt)
+    BOOLEAN               reduce using rule 57 (LoopStmt)
+    IF                    reduce using rule 57 (LoopStmt)
+    FOR                   reduce using rule 57 (LoopStmt)
+    WHILE                 reduce using rule 57 (LoopStmt)
+    IDENT                 reduce using rule 57 (LoopStmt)

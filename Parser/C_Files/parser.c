@@ -38,7 +38,7 @@ Parser* initParser(Lexer* lexer){
 		ReduceToStart,  // 1
 		ReduceToStmtList, ReduceToStmtList, //2
 		ReduceToStmt, ReduceToStmt, ReduceToStmt, ReduceToStmt, //4
-		ReduceToDecl, ReduceToDecl, ReduceToDecl, ReduceToDecl, // 4
+		ReduceToDecl, ReduceToDecl, ReduceToDecl, ReduceToDecl, ReduceToDecl, ReduceToDecl, ReduceToDecl, ReduceToDecl,// 8
 		ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, //8
 		ReduceToExpr, ReduceToExpr, ReduceToExpr,  //3
 		ReduceToTerm, ReduceToTerm, ReduceToTerm, ReduceToTerm, //4
@@ -47,13 +47,13 @@ Parser* initParser(Lexer* lexer){
 		ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, //7
 		ReduceToIfStmt, ReduceToIfStmt, //2
 		ReduceToLoopStmt, ReduceToLoopStmt}; //2
-	int tempRuleReduceBy[55] = {
+	int tempRuleReduceBy[TOTAL_GRAMMAR_RULES] = {
 		0, //1
 		1, //1
 		1, //1
 		2, 0, //2
-		2, 2, 1, 1,//4 
-		2, 2, 2, 2, //4
+		1, 2, 1, 1,//4 
+		3, 5, 3, 5, 3, 5, 3, 5, //4
 		3, 2, 2, 3, 3, 3, 3, 3, //8
 		3, 3, 1,  //3
 		3, 3, 3, 1, //4

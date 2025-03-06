@@ -15,6 +15,8 @@
 //add appropiate print in the util.c
 //add exceptions at manual labour section near the start should look like:
 //lexer->transition_table[1]['-'] = -1;
+//update define total_tokens both in global.h and helper file in parser table creation
+//add tokens to the array in parser table helper file
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 //self explanetory but for the dummies: 

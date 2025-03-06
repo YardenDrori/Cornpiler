@@ -1,7 +1,5 @@
-int x;)
-x = 15;)
-int y;)
-y = 0;)
-for (x = 0;) x < 5;) x++){
-    y++;)
+char x;)
+int i = 1;)
+for (i = 0;) i < 15;) i++){
+    x = 'c';)
 }
