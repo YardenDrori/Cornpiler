@@ -5,17 +5,25 @@
 #include "../../Lexer/H_Files/lexer.h"
 #include "../../Lexer/H_Files/token.h"
 
-#define TOTAL_STATES 53
-//#define TOTAL_ACTIONS 18
-#define TOTAL_GRAMMER_RULES 18
+
+
+
 
 typedef enum {
-    PROGRAM,
-    Start,
-    Expr,
-    Term,
-    Factor,
-    GRAMMER_SYMBOL_COUNT
+    PROGRAM, //0
+    Start, //1
+    StmtList, //2
+    Stmt,  //3
+    Decl,  //4
+    Assi, //5
+    Expr, //6
+    Term, //7
+    Factor, //8
+    CondExpr, //9
+    RelOp, //10
+    IfStmt, //11
+    LoopStmt, //12
+    GRAMMER_SYMBOL_COUNT //13
 } grammarSymbol;
 
 typedef enum DataType{
@@ -23,4 +31,5 @@ typedef enum DataType{
     TOKEN_DATA_TYPE,
     NUMBER_DATA_TYPE
 } DataType;
+
 #endif

@@ -15,14 +15,18 @@ void LRGoto(struct Parser* parser, int actionParam);
 void LRError(struct Parser* parser, int actionParam);
 void LRAccept(struct Parser* parser, int actionParam);
 void ReduceGeneric(struct Parser* parser, grammarSymbol symbol, int reduceBy);
-void ReduceToProgram1(struct Parser* parser);
-void ReduceToStart1(struct Parser* parser);
-void ReduceToExpr3(struct Parser* parser);
-void ReduceToExpr1(struct Parser* parser);
-void ReduceToTerm3(struct Parser* parser);
-void ReduceToTerm1(struct Parser* parser);
-void ReduceToFactor3(struct Parser* parser);
-void ReduceToFactor1(struct Parser* parser);
-void ReduceToFactor2(struct Parser* parser);
-
+void ReduceToProgram(struct Parser* parser,int reduceBy);
+void ReduceToStart(struct Parser* parser,int reduceBy);
+void ReduceToStmtList(struct Parser* parser,int reduceBy);
+void ReduceToStmt(struct Parser* parser,int reduceBy);
+void ReduceToDecl(struct Parser* parser,int reduceBy);
+void ReduceToAssi(struct Parser* parser,int reduceBy);
+void ReduceToExpr(struct Parser* parser,int reduceBy);
+void ReduceToTerm(struct Parser* parser,int reduceBy);
+void ReduceToFactor(struct Parser* parser,int reduceBy);
+void ReduceToCondExpr(struct Parser* parser,int reduceBy);
+void ReduceToRelOp(struct Parser* parser,int reduceBy);
+void ReduceToIfStmt(struct Parser* parser,int reduceBy);
+void ReduceToLoopStmt(struct Parser* parser,int reduceBy);
+void initParserLRTable(struct Parser* parser);
 #endif

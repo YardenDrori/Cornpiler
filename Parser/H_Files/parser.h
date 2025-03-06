@@ -6,7 +6,7 @@
 #include "LRTable.h"
 #include "parser_types.h"
 #include "parseTree.h"
-#define PRINT_PARSER_DEBUG 0
+#define PRINT_PARSER_DEBUG 1
 
 /* FOR NOW ONLY THESE WILL BE USED
 Program -> S
@@ -42,15 +42,17 @@ typedef struct LRTable
 } LRTable;
 
 
+
 typedef struct Parser
 {
     int tokenId;
     struct Lexer* lexer;
     struct Stack* stack;
     LRTable lrTable[TOTAL_STATES+GRAMMER_SYMBOL_COUNT][TOTAL_STATES];
-    void (*ReduceFunctionTable[TOTAL_GRAMMER_RULES])(struct Parser* parser);
     parseTreeNode* treeHead;
     ActionType action;
+    void (*ReduceGrammerRule[TOTAL_GRAMMAR_RULES])(struct Parser*, int);
+    int reduceGrammerBy[TOTAL_GRAMMAR_RULES];
 } Parser;
 
 void freeParser(Parser* parser);

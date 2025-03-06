@@ -59,9 +59,17 @@ const char enumToString[][30] = {
 const char grammerEnumToString[][30] = {
     "PROGRAM",
     "Start",
+    "StmtList",
+    "Stmt",
+    "Decl",
+    "Assi",
     "Expr",
     "Term",
     "Factor",
+    "CondExpr",
+    "RelOp",
+    "IfStmt",
+    "LoopStmt",
     "GRAMMER_SYMBOL_COUNT"
 };
 

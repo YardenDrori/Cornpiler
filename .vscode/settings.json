@@ -4,6 +4,11 @@
   },
   "files.associations": {
     "util.h": "c",
-    "global.h": "c"
+    "global.h": "c",
+    "parser.h": "c",
+    "parser_types.h": "c",
+    "token.h": "c",
+    "lexer.h": "c",
+    "stdlib.h": "c"
   }
 }

@@ -99,4 +99,11 @@ CMakeFiles/output.dir/Parser/C_Files/parser.c.o: \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/../../Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/../../Lexer/H_Files/state.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/../../Parser/H_Files/parseTree.h \
-  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/global.h
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Misc/H_Files/global.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_rsize_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_errno_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_strings.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/secure/_strings.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/secure/_string.h
