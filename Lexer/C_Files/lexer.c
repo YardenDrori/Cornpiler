@@ -424,7 +424,7 @@ void freeLexer(Lexer *lexer){
 }
 
 void handle_lexing_error(Token token){
-    printf("\033[1;31mLexing error found in line: %d, at column: %d\033[0m\n",token.value.error_val.row, token.value.error_val.col);
+    printf("\033[1;31mLexing error found in line: %d, at column: %d\033[0m\n",token.row, token.col);
 }
 
 

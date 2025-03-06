@@ -102,7 +102,7 @@ void printTokenType(Token token){
         printf("\033[1;94m%s - \"%s\" \033[0m", enumToString[token.type], token.value.ident_val);
         break;
     case ERROR:
-        printf("\033[1;31m%s - Row: %d, Column: %d\033[0m", enumToString[token.type], token.value.error_val.row, token.value.error_val.col);
+        printf("\033[1;31m%s - Row: %d, Column: %d\033[0m", enumToString[token.type], token.row, token.col);
         fflush(stdout); // Ensure it gets printed properly
         break;
     default:
@@ -186,9 +186,7 @@ void handle_next_line(__unused Token *token, Lexme *lexme){
     lexme->col = -1;
 }
 
-void handle_error(Token *token, Lexme *lexme){
-    token->value.error_val.col = lexme->col+1;
-    token->value.error_val.row = lexme->row;
+void handle_error(__unused Token *token, Lexme *lexme){
     lexme->pos++;
 }
 

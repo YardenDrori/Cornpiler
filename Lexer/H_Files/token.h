@@ -46,7 +46,7 @@ typedef enum {
     
     //conditions
     IF,                     //33
-    THEN,                   //34
+    THEN,                   //34 deprecated do not use
     ELSE,                   //35
     AND,                    //36
     OR,                     //37
@@ -64,12 +64,6 @@ typedef enum {
     SEMICOLON               //45
 } TokenType;
 
-typedef struct
-{
-    int row;
-    int col;
-} Error;
-
 typedef union
 {
     int int_val;
@@ -77,7 +71,6 @@ typedef union
     int bool_val; //1 or zero
     char char_val;
     char *ident_val;
-    Error error_val;
 } TokenValue;
 
 typedef struct

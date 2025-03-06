@@ -1,3 +1,3 @@
-fix warnings in lexer util.c
 fix lexer error handler printing error via error token struct to make it print from the regular token struct and maybe delete error struct we'll see i guess
-handle $end
+add pointers
+add arrays
