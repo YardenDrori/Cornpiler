@@ -1,5 +1,3 @@
-char x;)
-int i = 1;)
-for (i = 0;) i < 15;) i++){
-    x = 'c';)
+for ( i = 0;) i<10;) i++){
+    okay = 'a';)
 }

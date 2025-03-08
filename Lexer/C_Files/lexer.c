@@ -24,7 +24,6 @@
 Lexer *initLexer(const char *filename){
     printf("Initializing lexer\n");
     char reservedSymbols[] = {"=><!+-=&|*/\\%{}();"};
-    char escapeCharecters[] = {"\\\'\"ntrbfv0"};
     Lexer *lexer = (Lexer *)malloc(sizeof(Lexer));
     if (!lexer) {
         fprintf(stderr, "Memory allocation failed for Lexer.\n");
@@ -385,7 +384,7 @@ Token nextToken(Lexer *lexer){
     int lastState = 0; //the previous state read so that when the automaton finishes we can remember what it was on
     lexer->current_state = 0; // reset current state from last operation
 
-    lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
+    lexer->current_state = lexer->transition_table[lexer->current_state][(unsigned char)currentChar];
         while (lexer->current_state != -1){
         lexer->lexme->col++;
         lexer->lexme->input[lexer->lexme->input_len] = currentChar;
@@ -399,7 +398,7 @@ Token nextToken(Lexer *lexer){
                 printf("Error reallocating memory for input");
             }
         }
-        lexer->current_state = lexer->transition_table[lexer->current_state][currentChar];
+        lexer->current_state = lexer->transition_table[lexer->current_state][(unsigned char)currentChar];
     }
     returnToken.type = lexer->states[lastState].type;
 

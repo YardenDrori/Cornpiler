@@ -32,6 +32,8 @@ Parser* initParser(Lexer* lexer){
     pushInt(parser->stack, 0);
 	initParserLRTable(parser);
 
+
+	
 	void (*tempRules[TOTAL_GRAMMAR_RULES])(struct Parser*, int) = {
 		LRAccept, //1
 		ReduceToProgram, //1 
@@ -42,7 +44,7 @@ Parser* initParser(Lexer* lexer){
 		ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, ReduceToAssi, //8
 		ReduceToExpr, ReduceToExpr, ReduceToExpr,  //3
 		ReduceToTerm, ReduceToTerm, ReduceToTerm, ReduceToTerm, //4
-		ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, //11
+		ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, ReduceToFactor, //12
 		ReduceToCondExpr, ReduceToCondExpr, ReduceToCondExpr, ReduceToCondExpr, ReduceToCondExpr, //5
 		ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, ReduceToRelOp, //7
 		ReduceToIfStmt, ReduceToIfStmt, //2
@@ -57,11 +59,15 @@ Parser* initParser(Lexer* lexer){
 		3, 2, 2, 3, 3, 3, 3, 3, //8
 		3, 3, 1,  //3
 		3, 3, 3, 1, //4
-		3, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, //11
+		3, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, //12
 		3, 2, 3, 3, 3,  //5
 		1, 1, 1, 1, 1, 1, 1, //7 
 		7, 11, //2
 		11, 7}; //2
+
+
+
+
 	memcpy(parser->reduceGrammerBy, tempRuleReduceBy, sizeof(tempRuleReduceBy));
 	memcpy(parser->ReduceGrammerRule, tempRules, sizeof(tempRules));
 
