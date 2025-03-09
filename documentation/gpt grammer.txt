@@ -1,0 +1,77 @@
+PROGRAM -> Start
+Start -> DeclList StmtList
+
+// Declarations (Variable Declarations)
+DeclList -> Decl DeclList
+DeclList -> ε
+Decl -> Type IDENT SEMICOLON
+Decl -> Type IDENT EQUAL Expr SEMICOLON
+Type -> INT | FLOAT | CHAR | BOOLEAN
+
+// Statements (Executable Code)
+StmtList -> Stmt StmtList
+StmtList -> ε
+Stmt -> Assi
+Stmt -> Expr SEMICOLON
+Stmt -> Block
+Stmt -> IfStmt
+Stmt -> WhileStmt
+Stmt -> ForStmt
+
+// Assignments
+Assi -> IDENT EQUAL Expr SEMICOLON
+Assi -> IDENT PLUS_EQUAL Expr SEMICOLON
+Assi -> IDENT MINUS_EQUAL Expr SEMICOLON
+Assi -> IDENT MULTIPLY_EQUAL Expr SEMICOLON
+Assi -> IDENT DIVIDE_EQUAL Expr SEMICOLON
+Assi -> IDENT MODULO_EQUAL Expr SEMICOLON
+Assi -> IDENT INC SEMICOLON
+Assi -> IDENT DEC SEMICOLON
+
+// Expressions
+Expr -> Expr PLUS Term
+Expr -> Expr MINUS Term
+Expr -> Term
+Term -> Term MULTIPLY Factor
+Term -> Term DIVIDE Factor
+Term -> Term MODULO Factor
+Term -> Factor
+
+// Factor (smallest expression unit)
+Factor -> OPEN_PARENTHESIS Expr CLOSE_PARENTHESIS
+Factor -> IDENT
+Factor -> INT_LITERAL
+Factor -> FLOAT_LITERAL
+Factor -> CHAR_LITERAL
+Factor -> TRUE
+Factor -> FALSE
+Factor -> Postfix
+Factor -> Prefix
+
+// Increment/Decrement Operators
+Postfix -> IDENT INC
+Postfix -> IDENT DEC
+Prefix -> INC IDENT
+Prefix -> DEC IDENT
+
+// Comparisons
+CompExpr -> Expr CompOp Expr
+CompOp -> EQUAL_LESSER | GREATER_THAN | LESSER_THAN | IS_EQUAL | NOT_EQUAL | EQUAL_GREATER
+
+// Boolean Expressions
+BoolExpr -> BoolExpr OR AndExpr
+BoolExpr -> AndExpr
+AndExpr -> AndExpr AND CompExpr
+AndExpr -> CompExpr
+AndExpr -> NOT BoolExpr
+
+// Conditional Statements
+IfStmt -> IF OPEN_PARENTHESIS BoolExpr CLOSE_PARENTHESIS Block
+IfStmt -> IF OPEN_PARENTHESIS BoolExpr CLOSE_PARENTHESIS Block ELSE Block
+
+// Loops
+WhileStmt -> WHILE OPEN_PARENTHESIS BoolExpr CLOSE_PARENTHESIS Block
+ForStmt -> FOR OPEN_PARENTHESIS Assi BoolExpr SEMICOLON Assi CLOSE_PARENTHESIS Block
+
+// Blocks (Curly Braces)
+Block -> OPEN_CURLY_BRACKETS StmtList CLOSE_CURLY_BRACKETS
