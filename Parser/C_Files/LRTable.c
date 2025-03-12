@@ -81,14 +81,6 @@ void LRReduce(Parser* parser, int actionParam){
 	parser->action = ACTION_REDUCE;
     if (PRINT_PARSER_DEBUG)
         printf("reduce %d\n", actionParam);
-	return;
-	return;
-	return;
-	return;
-	return;
-	return;
-	return;
-	return;
 }
 
 void LRGoto(Parser* parser, __unused int actionParam){

@@ -1,8 +1,15 @@
 //higher up higher priority
 
+add function comments
+error handler seperatley a seperate .h file
+panic mode
+symbol table must
+handle multiple parsing errors
+
 add parsing support for negative numbers
 automate make parser table further further info is in that project
 
 add pointers
 add arrays
 add option to initialize variables in for loop
+

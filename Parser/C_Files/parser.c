@@ -64,10 +64,6 @@ Parser* initParser(Lexer* lexer){
 		1, 1, 1, 1, 1, 1, 1, //7 
 		7, 11, //2
 		11, 7}; //2
-
-
-
-
 	memcpy(parser->reduceGrammerBy, tempRuleReduceBy, sizeof(tempRuleReduceBy));
 	memcpy(parser->ReduceGrammerRule, tempRules, sizeof(tempRules));
 
