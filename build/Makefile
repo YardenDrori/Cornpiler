@@ -153,6 +153,30 @@ Lexer/C_Files/lexer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/Lexer/C_Files/lexer.c.s
 .PHONY : Lexer/C_Files/lexer.c.s
 
+Misc/C_Files/errorHandler.o: Misc/C_Files/errorHandler.c.o
+.PHONY : Misc/C_Files/errorHandler.o
+
+# target to build an object file
+Misc/C_Files/errorHandler.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o
+.PHONY : Misc/C_Files/errorHandler.c.o
+
+Misc/C_Files/errorHandler.i: Misc/C_Files/errorHandler.c.i
+.PHONY : Misc/C_Files/errorHandler.i
+
+# target to preprocess a source file
+Misc/C_Files/errorHandler.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.i
+.PHONY : Misc/C_Files/errorHandler.c.i
+
+Misc/C_Files/errorHandler.s: Misc/C_Files/errorHandler.c.s
+.PHONY : Misc/C_Files/errorHandler.s
+
+# target to generate assembly for a file
+Misc/C_Files/errorHandler.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.s
+.PHONY : Misc/C_Files/errorHandler.c.s
+
 Misc/C_Files/main.o: Misc/C_Files/main.c.o
 .PHONY : Misc/C_Files/main.o
 
@@ -309,6 +333,9 @@ help:
 	@echo "... Lexer/C_Files/lexer.o"
 	@echo "... Lexer/C_Files/lexer.i"
 	@echo "... Lexer/C_Files/lexer.s"
+	@echo "... Misc/C_Files/errorHandler.o"
+	@echo "... Misc/C_Files/errorHandler.i"
+	@echo "... Misc/C_Files/errorHandler.s"
 	@echo "... Misc/C_Files/main.o"
 	@echo "... Misc/C_Files/main.i"
 	@echo "... Misc/C_Files/main.s"

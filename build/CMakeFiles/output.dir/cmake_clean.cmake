@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/output.dir/Lexer/C_Files/lexer.c.o"
   "CMakeFiles/output.dir/Lexer/C_Files/lexer.c.o.d"
+  "CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o"
+  "CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o.d"
   "CMakeFiles/output.dir/Misc/C_Files/main.c.o"
   "CMakeFiles/output.dir/Misc/C_Files/main.c.o.d"
   "CMakeFiles/output.dir/Misc/C_Files/util.c.o"

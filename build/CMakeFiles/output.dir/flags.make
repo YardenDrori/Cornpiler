@@ -6,7 +6,7 @@ C_DEFINES =
 
 C_INCLUDES = -I/Users/yardendrori/Documents/GitHub/Cornpiler/Misc/H_Files -I/Users/yardendrori/Documents/GitHub/Cornpiler/Parser/H_Files -I/Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/H_Files
 
-C_FLAGSarm64 = -Wall -Wextra -g -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
+C_FLAGSarm64 = -Wall -Wextra -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
 
-C_FLAGS = -Wall -Wextra -g -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
+C_FLAGS = -Wall -Wextra -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
 

@@ -2,6 +2,7 @@
 #include "../H_Files/token.h"
 #include "../H_Files/state.h"
 #include "../../Misc/H_Files/util.h"
+#include "../../Misc/H_Files/errorHandler.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -396,6 +397,7 @@ Token nextToken(Lexer *lexer){
             lexer->lexme->input = realloc(lexer->lexme->input, currentInputSize * sizeof(char));
             if (!lexer->lexme->input){
                 printf("Error reallocating memory for input");
+                exit(1);
             }
         }
         lexer->current_state = lexer->transition_table[lexer->current_state][(unsigned char)currentChar];
@@ -424,9 +426,7 @@ void freeLexer(Lexer *lexer){
     free(lexer);
 }
 
-void handle_lexing_error(Token token){
-    printf("\033[1;31mLexing error found in line: %d, at column: %d\033[0m\n",token.row, token.col);
-}
+
 
 
 
@@ -447,11 +447,11 @@ int getTokenList(Lexer *lexer){
             lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
             if (!lexer->tokens){
                 printf("error reallocating the tokens array");
-                return 1;
+                exit(1);
             }
         }
         if (token.type == ERROR){
-            handle_lexing_error(token);
+            handleLexingError(token);
             isError = 1;
         }
         //insert token to array
@@ -468,7 +468,7 @@ int getTokenList(Lexer *lexer){
         lexer->tokens = realloc(lexer->tokens, lexer->token_capacity * sizeof(Token));
         if (!lexer->tokens){
             printf("error reallocating the tokens array");
-            return 1;
+            exit(1);
         }
     }
     if (!isError){

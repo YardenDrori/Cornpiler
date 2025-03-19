@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/C_Files/lexer.c" "CMakeFiles/output.dir/Lexer/C_Files/lexer.c.o" "gcc" "CMakeFiles/output.dir/Lexer/C_Files/lexer.c.o.d"
+  "/Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/errorHandler.c" "CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o" "gcc" "CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o.d"
   "/Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/main.c" "CMakeFiles/output.dir/Misc/C_Files/main.c.o" "gcc" "CMakeFiles/output.dir/Misc/C_Files/main.c.o.d"
   "/Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/util.c" "CMakeFiles/output.dir/Misc/C_Files/util.c.o" "gcc" "CMakeFiles/output.dir/Misc/C_Files/util.c.o.d"
   "/Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/LRTable.c" "CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o" "gcc" "CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o.d"

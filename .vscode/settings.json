@@ -9,6 +9,7 @@
     "parser_types.h": "c",
     "token.h": "c",
     "lexer.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "stdarg.h": "c"
   }
 }

@@ -102,13 +102,13 @@ void LRGoto(Parser* parser, __unused int actionParam){
 }
 
 
-void LRError(Parser* parser, int __unused actionParam){
+/*void LRError(Parser* parser, int __unused actionParam){
    parser->action = ACTION_ERROR;
    printTree(parser->treeHead);
    printParsingStep(parser);
    printf("\n\033[1;31mParsing error found in line: %d, at column: %d\033[0m\n", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
    exit(1);
-}
+}*/
 
 void LRAccept(Parser* parser, __unused int actionParam){
     parser->action = ACTION_ACCEPT;
@@ -125,7 +125,7 @@ void LRAccept(Parser* parser, __unused int actionParam){
 void initParserLRTable(Parser* parser){
 		for (int i = 0; i < TOTAL_TOKENS+GRAMMER_SYMBOL_COUNT; i++){
 			for (int j = 0; j < TOTAL_STATES; j++){
-				parser->lrTable[i][j].LRTableFuncP = LRError;
+				parser->lrTable[i][j].LRTableFuncP = handleParsingError;
 				parser->lrTable[i][j].actionParam = -1;
 			}
 		}

@@ -1,4 +1,4 @@
 for ( i = 0;) i<10;) i++){
-    int x;
-    int y;
+    int x;)
+    int y;)
 }

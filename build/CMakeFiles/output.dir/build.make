@@ -86,10 +86,24 @@ CMakeFiles/output.dir/Lexer/C_Files/lexer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/output.dir/Lexer/C_Files/lexer.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yardendrori/Documents/GitHub/Cornpiler/Lexer/C_Files/lexer.c -o CMakeFiles/output.dir/Lexer/C_Files/lexer.c.s
 
+CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o: CMakeFiles/output.dir/flags.make
+CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/errorHandler.c
+CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o: CMakeFiles/output.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o -MF CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o.d -o CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o -c /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/errorHandler.c
+
+CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/errorHandler.c > CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.i
+
+CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/errorHandler.c -o CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.s
+
 CMakeFiles/output.dir/Misc/C_Files/main.c.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/Misc/C_Files/main.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/main.c
 CMakeFiles/output.dir/Misc/C_Files/main.c.o: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/output.dir/Misc/C_Files/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/output.dir/Misc/C_Files/main.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/output.dir/Misc/C_Files/main.c.o -MF CMakeFiles/output.dir/Misc/C_Files/main.c.o.d -o CMakeFiles/output.dir/Misc/C_Files/main.c.o -c /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/main.c
 
 CMakeFiles/output.dir/Misc/C_Files/main.c.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/output.dir/Misc/C_Files/main.c.s: cmake_force
 CMakeFiles/output.dir/Misc/C_Files/util.c.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/Misc/C_Files/util.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/util.c
 CMakeFiles/output.dir/Misc/C_Files/util.c.o: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/output.dir/Misc/C_Files/util.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/output.dir/Misc/C_Files/util.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/output.dir/Misc/C_Files/util.c.o -MF CMakeFiles/output.dir/Misc/C_Files/util.c.o.d -o CMakeFiles/output.dir/Misc/C_Files/util.c.o -c /Users/yardendrori/Documents/GitHub/Cornpiler/Misc/C_Files/util.c
 
 CMakeFiles/output.dir/Misc/C_Files/util.c.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/output.dir/Misc/C_Files/util.c.s: cmake_force
 CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/LRTable.c
 CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o -MF CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o.d -o CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o -c /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/LRTable.c
 
 CMakeFiles/output.dir/Parser/C_Files/LRTable.c.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/output.dir/Parser/C_Files/LRTable.c.s: cmake_force
 CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/parseTree.c
 CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o -MF CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o.d -o CMakeFiles/output.dir/Parser/C_Files/parseTree.c.o -c /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/parseTree.c
 
 CMakeFiles/output.dir/Parser/C_Files/parseTree.c.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/output.dir/Parser/C_Files/parseTree.c.s: cmake_force
 CMakeFiles/output.dir/Parser/C_Files/parser.c.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/Parser/C_Files/parser.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/parser.c
 CMakeFiles/output.dir/Parser/C_Files/parser.c.o: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/output.dir/Parser/C_Files/parser.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/output.dir/Parser/C_Files/parser.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/output.dir/Parser/C_Files/parser.c.o -MF CMakeFiles/output.dir/Parser/C_Files/parser.c.o.d -o CMakeFiles/output.dir/Parser/C_Files/parser.c.o -c /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/parser.c
 
 CMakeFiles/output.dir/Parser/C_Files/parser.c.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/output.dir/Parser/C_Files/parser.c.s: cmake_force
 CMakeFiles/output.dir/Parser/C_Files/stack.c.o: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/Parser/C_Files/stack.c.o: /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/stack.c
 CMakeFiles/output.dir/Parser/C_Files/stack.c.o: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/output.dir/Parser/C_Files/stack.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/output.dir/Parser/C_Files/stack.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/output.dir/Parser/C_Files/stack.c.o -MF CMakeFiles/output.dir/Parser/C_Files/stack.c.o.d -o CMakeFiles/output.dir/Parser/C_Files/stack.c.o -c /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/stack.c
 
 CMakeFiles/output.dir/Parser/C_Files/stack.c.i: cmake_force
@@ -173,6 +187,7 @@ CMakeFiles/output.dir/Parser/C_Files/stack.c.s: cmake_force
 # Object files for target output
 output_OBJECTS = \
 "CMakeFiles/output.dir/Lexer/C_Files/lexer.c.o" \
+"CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o" \
 "CMakeFiles/output.dir/Misc/C_Files/main.c.o" \
 "CMakeFiles/output.dir/Misc/C_Files/util.c.o" \
 "CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o" \
@@ -184,6 +199,7 @@ output_OBJECTS = \
 output_EXTERNAL_OBJECTS =
 
 output: CMakeFiles/output.dir/Lexer/C_Files/lexer.c.o
+output: CMakeFiles/output.dir/Misc/C_Files/errorHandler.c.o
 output: CMakeFiles/output.dir/Misc/C_Files/main.c.o
 output: CMakeFiles/output.dir/Misc/C_Files/util.c.o
 output: CMakeFiles/output.dir/Parser/C_Files/LRTable.c.o
@@ -192,7 +208,7 @@ output: CMakeFiles/output.dir/Parser/C_Files/parser.c.o
 output: CMakeFiles/output.dir/Parser/C_Files/stack.c.o
 output: CMakeFiles/output.dir/build.make
 output: CMakeFiles/output.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable output"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yardendrori/Documents/GitHub/Cornpiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable output"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/output.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

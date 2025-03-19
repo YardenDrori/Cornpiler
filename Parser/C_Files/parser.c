@@ -27,6 +27,7 @@ Parser* initParser(Lexer* lexer){
 	int isLexingError = getTokenList(parser->lexer);
 	if (isLexingError){
 		return NULL;
+		printf("Parser not initialized, detected lexing errors\n");
 	}
     parser->stack = initStack();
     pushInt(parser->stack, 0);

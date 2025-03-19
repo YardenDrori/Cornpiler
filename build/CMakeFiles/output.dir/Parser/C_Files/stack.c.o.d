@@ -93,4 +93,23 @@ CMakeFiles/output.dir/Parser/C_Files/stack.c.o: \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../../Lexer/H_Files/token.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/parser.h \
   /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/LRTable.h \
-  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../H_Files/stack.h
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../H_Files/stack.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/errorHandler.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../../Lexer/H_Files/lexer.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../../Lexer/H_Files/token.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../H_Files/util.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../H_Files/../../Lexer/H_Files/lexer.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../H_Files/../../Lexer/H_Files/token.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../H_Files/../../Lexer/H_Files/state.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../H_Files/../../Parser/H_Files/parseTree.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../H_Files/global.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../../Parser/H_Files/stack.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../../Parser/H_Files/parser.h \
+  /Users/yardendrori/Documents/GitHub/Cornpiler/Parser/C_Files/../H_Files/../../Misc/H_Files/../../Parser/H_Files/parser_types.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdarg.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_header_macro.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg___gnuc_va_list.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_va_list.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_va_arg.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg___va_copy.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_va_copy.h
