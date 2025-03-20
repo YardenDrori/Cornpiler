@@ -20,4 +20,5 @@ void handleParsingError(struct Parser* parser,__unused int actionParam){
     printf("\n\033[1;31mParsing error found in line: %d, at column: %d\033[0m", parser->lexer->tokens[parser->tokenId].row, parser->lexer->tokens[parser->tokenId].col);
     //exit(1);
     parser->tokenId++;
+    parser->isError = 1;
  }

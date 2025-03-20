@@ -2,8 +2,8 @@
 #define GLOBAL_H
 
 #define FILENAME "../ExampleScript.txt"
-#define TOTAL_STATES 129
-#define TOTAL_VALID_ACTIONS 43
-#define TOTAL_GRAMMAR_RULES 60
-#define TOTAL_TOKENS 46
+#define TOTAL_LEXER_STATES 96
+#define TOTAL_PARSE_STATES 169
+#define TOTAL_GRAMMAR_RULES 110
+#define TOTAL_TOKENS 61
 #endif

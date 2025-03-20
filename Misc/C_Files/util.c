@@ -8,52 +8,75 @@
 
 // Define the array here
 const char enumToString[][30] = {
-    "EQUAL_LESSER",   
-    "GREATER_THAN",     
-    "LESSER_THAN",      
-    "EQUAL",           
-    "IS_EQUAL",          
-    "NOT",               
-    "NOT_EQUAL",         
-    "EQUAL_GREATER",    
-    "PLUS",              
-    "INC",              
-    "PLUS_EQUAL",        
-    "MINUS",             
-    "DEC",               
-    "MINUS_EQUAL",       
-    "DIVIDE",            
-    "DIVIDE_EQUAL",      
-    "MULTIPLY",          
-    "MULTIPLY_EQUAL",    
-    "MODULU",            
-    "MODULU_EQUAL",      
-    "OPEN_PARENTHESIS",   
-    "CLOSE_PARENTHESIS",
-    "OPEN_CURLY_BRACKETS",
-    "CLOSE_CURLY_BRACKETS",
-    "FLOAT_LITERAL",
-    "TRUE",             
-    "FALSE",           
-    "INT_LITERAL",    
-    "CHAR_LITERAL",  
-    "FLOAT",        
-    "INT",               
-    "CHAR",              
-    "BOOLEAN",         
-    "IF",              
-    "THEN",          
-    "ELSE",        
-    "AND",            
-    "OR",                
-    "FOR",        
-    "WHILE",          
-    "IDENT",     
-    "END_OF_FILE",
-    "SKIP",
-    "NEXT_LINE",
-    "ERROR",
-    "SEMICOLON"
+    "EQUAL_LESSER",           //0
+    "GREATER_THAN",           //1
+    "LESSER_THAN",            //2
+    "EQUAL",                  //3
+    "IS_EQUAL",               //4
+    "NOT",                    //5
+    "NOT_EQUAL",              //6
+    "EQUAL_GREATER",          //7
+    "PLUS",                   //8
+    "INC",                    //9
+    "PLUS_EQUAL",             //10
+    "MINUS",                  //11
+    "DEC",                    //12
+    "MINUS_EQUAL",            //13
+    "DIVIDE",                 //14
+    "DIVIDE_EQUAL",           //15
+    "MULTIPLY",               //16
+    "MULTIPLY_EQUAL",         //17
+    "MODULO",                 //18
+    "MODULO_EQUAL",           //19
+    "APMERCENT",              //20
+    "BITWISE_AND_EQUAL",      //21
+    "BITWISE_OR",             //22
+    "BITWISE_OR_EQUAL",       //23
+    "BITWISE_XOR",            //24
+    "BITWISE_XOR_EQUAL",      //25
+    "BITWISE_NOT",            //26
+    "BITWISE_NOT_EQUAL",      //27
+    "LEFT_SHIFT",             //28
+    "RIGHT_SHIFT",            //29
+    "OPEN_PARENTHESIS",       //30
+    "CLOSE_PARENTHESIS",      //31
+    "OPEN_CURLY_BRACKETS",    //32
+    "CLOSE_CURLY_BRACKETS",   //33
+    "OPEN_BRACKETS",          //34
+    "CLOSE_BRACKETS",         //35
+    
+
+    //literals
+    "FLOAT_LITERAL",          //36
+    "TRUE",                   //37
+    "FALSE",                  //38
+    "INT_LITERAL",            //39
+    "CHAR_LITERAL",           //40
+    
+    //variables
+    "FLOAT",                  //41
+    "INT",                    //42
+    "CHAR",                   //43
+    "BOOLEAN",                //44
+
+    //conditions
+    "IF",                     //45
+    "THEN",                   //46 deprecated do not use
+    "ELSE",                   //47
+    "LOGIC_AND",              //48
+    "LOGIC_OR",               //49
+
+    //loops
+    "FOR",                    //50
+    "WHILE",                  //51
+    
+    //misc
+    "IDENT",                  //52
+    "END_OF_FILE",            //53
+    "SKIP",                   //54
+    "NEXT_LINE",              //55
+    "ERROR",                  //56
+    "SEMICOLON"               //57
 };
 
 const char grammerEnumToString[][30] = {

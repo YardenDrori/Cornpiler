@@ -1,4 +1,12 @@
 for ( i = 0;) i<10;) i++){
     int x;)
-    int y;)
+    int y
+    if (x == 1){
+        x =2;)
+    }
 }
+
+
+int c = 3;)
+
+int ident(c) = int_literal(3);)

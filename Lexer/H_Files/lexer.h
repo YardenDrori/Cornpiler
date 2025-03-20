@@ -9,7 +9,6 @@
 
 #define BUFFER_SIZE 4096 //4kb
 #define INITIAL_TOKEN_CAPACITY 64
-#define MAX_STATES 83
 typedef struct
 {
     int row;
@@ -25,9 +24,9 @@ typedef struct Lexer
     char buffer[BUFFER_SIZE]; //4kb buffer to to read the file
     int buffer_length; //how many bytes were read into the buffer so that we can continue reading the file from the end of that point
     int current_state; //the current state of the dfa
-    int transition_table[MAX_STATES][256]; //the table for the dfa
+    int transition_table[TOTAL_LEXER_STATES][256]; //the table for the dfa
     Token *tokens; //dynamic array
-    State states[MAX_STATES];
+    State states[TOTAL_LEXER_STATES];
     int token_id; //amount of tokens saved so far
     int token_capacity; //current max capacity of the dynamic array
     Lexme *lexme;

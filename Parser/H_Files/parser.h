@@ -48,11 +48,12 @@ typedef struct Parser
     int tokenId;
     struct Lexer* lexer;
     struct Stack* stack;
-    LRTable lrTable[TOTAL_STATES+GRAMMER_SYMBOL_COUNT][TOTAL_STATES];
+    LRTable lrTable[TOTAL_PARSE_STATES+GRAMMER_SYMBOL_COUNT][TOTAL_PARSE_STATES];
     parseTreeNode* treeHead;
     ActionType action;
     void (*ReduceGrammerRule[TOTAL_GRAMMAR_RULES])(struct Parser*, int);
     int reduceGrammerBy[TOTAL_GRAMMAR_RULES];
+    int isError;
 } Parser;
 
 void freeParser(Parser* parser);

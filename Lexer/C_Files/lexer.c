@@ -20,7 +20,6 @@
 //add tokens to the array in parser table helper file
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-//self explanetory but for the dummies: 
 //initializes values and other stuff for a new lexer struct
 Lexer *initLexer(const char *filename){
     printf("Initializing lexer\n");
@@ -55,7 +54,7 @@ Lexer *initLexer(const char *filename){
     }
     printf("memory allocation complete\nfilling state array\n");
     //initialize state array========================
-    for (int i = 0; i < MAX_STATES; i++){
+    for (int i = 0; i < TOTAL_LEXER_STATES; i++){
         lexer->states[i].type = ERROR;
     }
     for (int i = 8; i < 46; i++){
@@ -90,8 +89,8 @@ Lexer *initLexer(const char *filename){
     lexer->states[58].type = MINUS;
     lexer->states[59].type = MINUS_EQUAL;
     lexer->states[60].type = DEC;
-    lexer->states[62].type = AND;
-    lexer->states[64].type = OR;
+    lexer->states[62].type = LOGIC_AND;
+    lexer->states[64].type = LOGIC_OR;
     lexer->states[65].type = MULTIPLY;
     lexer->states[66].type = MULTIPLY_EQUAL;
     lexer->states[67].type = DIVIDE;
@@ -107,6 +106,33 @@ Lexer *initLexer(const char *filename){
     lexer->states[72].type = SKIP;
     lexer->states[78].type = NEXT_LINE;
     lexer->states[82].type = SEMICOLON;
+    lexer->states[83].type = BITWISE_XOR;
+    lexer->states[84].type = BITWISE_XOR_EQUAL;
+    lexer->states[85].type = BITWISE_NOT;
+    lexer->states[86].type = BITWISE_NOT_EQUAL;
+    lexer->states[87].type = RIGHT_SHIFT;
+    lexer->states[88].type = LEFT_SHIFT;
+    lexer->states[89].type = OPEN_BRACKETS;
+    lexer->states[90].type = CLOSE_BRACKETS;
+    lexer->states[91].type = BITWISE_AND_EQUAL;
+    lexer->states[92].type = BITWISE_OR_EQUAL;
+    lexer->states[61].type = AMPERCENT; //both adress for pointer use and bitwise and
+    lexer->states[63].type = BITWISE_OR; //both adress for pointer use and bitwise and
+    lexer->states[93].type = COMMA; //both adress for pointer use and bitwise and
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -117,7 +143,7 @@ Lexer *initLexer(const char *filename){
     //=============================================
     printf("Completed state array\ninitializing state matrix\n");
     //initiallize state matrix=====================
-    for (int i = 0; i < MAX_STATES; i++){
+    for (int i = 0; i < TOTAL_LEXER_STATES; i++){
         for (int j = 0; j < 256; j++){
             lexer->transition_table[i][j] = -1;
         }
@@ -213,6 +239,11 @@ Lexer *initLexer(const char *filename){
 
 
     //manual labor starts here :(
+    lexer->transition_table[0]['^'] = 83;
+    lexer->transition_table[83]['='] = 84;
+    lexer->transition_table[0]['~'] = 85;
+    lexer->transition_table[85]['='] = 86;
+
     lexer->transition_table[0][';'] = 81;
     lexer->transition_table[81][')'] = 82;
     lexer->transition_table[0]['.'] = 3;
@@ -248,6 +279,7 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[80]['v'] = 6;
     lexer->transition_table[80]['0'] = 6;
 
+    
     
     lexer->transition_table[6]['\''] = 7;
     lexer->transition_table[0]['b'] = 8;
@@ -292,8 +324,10 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[0]['='] = 47;
     lexer->transition_table[47]['='] = 48;
     lexer->transition_table[0]['>'] = 49;
+    lexer->transition_table[49]['>'] = 87;
     lexer->transition_table[49]['='] = 50;
     lexer->transition_table[0]['<'] = 51;
+    lexer->transition_table[51]['<'] = 88;
     lexer->transition_table[51]['='] = 52;
     lexer->transition_table[0]['!'] = 53;
     lexer->transition_table[53]['='] = 54;
@@ -304,8 +338,10 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[58]['='] = 59;
     lexer->transition_table[58]['-'] = 60;
     lexer->transition_table[0]['&'] = 61;
+    lexer->transition_table[61]['='] = 91;
     lexer->transition_table[61]['&'] = 62;
     lexer->transition_table[0]['|'] = 63;
+    lexer->transition_table[63]['='] = 92;
     lexer->transition_table[63]['|'] = 64;
     lexer->transition_table[0]['*'] = 65;
     lexer->transition_table[65]['='] = 66;
@@ -321,6 +357,14 @@ Lexer *initLexer(const char *filename){
     lexer->transition_table[0][')'] = 74;
     lexer->transition_table[0]['{'] = 75;
     lexer->transition_table[0]['}'] = 76;
+    lexer->transition_table[0]['['] = 89;
+    lexer->transition_table[0][']'] = 90;
+    lexer->transition_table[0][','] = 93;
+    lexer->transition_table[0]['?'] = 94;
+    lexer->transition_table[0][':'] = 95;
+
+
+    
 
 
 //=================================================
@@ -438,7 +482,7 @@ int getTokenList(Lexer *lexer){
     lexer->token_id = 0;
     Token token = nextToken(lexer);
     if (token.type != SKIP && token.type != NEXT_LINE){
-        lexer->tokens[lexer->token_id] = token;
+        lexer->tokens[lexer->token_id++] = token;
     }
     while (token.type != END_OF_FILE){
         //increase array size if full
@@ -457,11 +501,11 @@ int getTokenList(Lexer *lexer){
         //insert token to array
         token = nextToken(lexer);
         if (token.type !=SKIP && token.type != NEXT_LINE){
-            lexer->token_id++;
             lexer->tokens[lexer->token_id] = token;
+            lexer->token_id++;
         }
     }
-
+    lexer->token_id--;
     //decrease token array size to fit perfectly
     if (lexer->token_capacity-1 > lexer->token_id){
         lexer->token_capacity = lexer->token_id+1;

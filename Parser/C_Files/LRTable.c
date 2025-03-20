@@ -15,50 +15,128 @@ void ReduceGeneric(Parser* parser, grammarSymbol symbol, int reduceBy){
     pushTreeNode(parser->stack, ancestor);
 }
 void ReduceToProgram(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, PROGRAM, reduceBy);
+    ReduceGeneric(parser, program, reduceBy);
 }
-void ReduceToStart(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, Start, reduceBy);
+void ReduceToExternalDeclerationList(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, external_declaration_list, reduceBy);
 }
-void ReduceToStmtList(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, StmtList, reduceBy);
+void ReduceToExternalDecleration(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, external_declaration, reduceBy);
 }
-void ReduceToStmt(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, Stmt, reduceBy);
+void ReduceToDecleration(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, declaration, reduceBy);
 }
-void ReduceToDecl(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, Decl, reduceBy);
+void ReduceToInitDecleratorList(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, init_declarator_list, reduceBy);
 }
-void ReduceToAssi(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, Assi, reduceBy);
+void ReduceToInitDeclerator(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, init_declarator, reduceBy);
 }
-void ReduceToExpr(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, Expr, reduceBy);
+void ReduceToTypeSpecifier(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, type_specifier, reduceBy);
 }
-void ReduceToTerm(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, Term, reduceBy);
+void ReduceToFunctionDefintio(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, function_definition, reduceBy);
 }
-void ReduceToFactor(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, Factor, reduceBy);
+void ReduceToParamaterListOpt(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, parameter_list_opt, reduceBy);
 }
-void ReduceToCondExpr(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, CondExpr, reduceBy);
+void ReduceToParamaterList(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, parameter_list, reduceBy);
 }
-void ReduceToRelOp(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, RelOp, reduceBy);
+void ReduceToParamaterDecleration(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, parameter_declaration, reduceBy);
 }
-void ReduceToIfStmt(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, IfStmt, reduceBy);
+void ReduceToCompundStatement(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, compound_statement, reduceBy);
 }
-void ReduceToLoopStmt(Parser* parser,int reduceBy){
-    ReduceGeneric(parser, LoopStmt, reduceBy);
+void ReduceToDeclerationListOpt(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, declaration_list_opt, reduceBy);
 }
-
-
-
-
-
-
+void ReduceToDeclerationList(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, declaration_list, reduceBy);
+}
+void ReduceToStatementListOpt(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, statement_list_opt, reduceBy);
+}
+void ReduceToStatementList(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, statement_list, reduceBy);
+}
+void ReduceToStatement(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, statement, reduceBy);
+}
+void ReduceToExpressionStatement(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, expression_statement, reduceBy);
+}
+void ReduceToSelectionStatement(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, selection_statement, reduceBy);
+}
+void ReduceToIterationStatement(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, iteration_statement, reduceBy);
+}
+void ReduceToExpressionOpt(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, expression_opt, reduceBy);
+}
+void ReduceToExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, expression, reduceBy);
+}
+void ReduceToAssignmentExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, assignment_expression, reduceBy);
+}
+void ReduceToAssignmentOperator(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, assignment_operator, reduceBy);
+}
+void ReduceToConditionalExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, conditional_expression, reduceBy);
+}
+void ReduceToLogicalOrExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, logical_or_expression, reduceBy);
+}
+void ReduceToLogicalAndExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, logical_and_expression, reduceBy);
+}
+void ReduceToBitwiseOrExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, bitwise_or_expression, reduceBy);
+}
+void ReduceToBitwiseXorExpressions(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, bitwise_xor_expression, reduceBy);
+}
+void ReduceToBitwiseAndExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, bitwise_and_expression, reduceBy);
+}
+void ReduceToEqualityExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, equality_expression, reduceBy);
+}
+void ReduceToRelationalExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, relational_expression, reduceBy);
+}
+void ReduceToShiftExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, shift_expression, reduceBy);
+}
+void ReduceToAdditiveExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, additive_expression, reduceBy);
+}
+void ReduceToMultiplicativeExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, multiplicative_expression, reduceBy);
+}
+void ReduceToUnaryExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, unary_expression, reduceBy);
+}
+void ReduceToUnaryOperator(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, unary_operator, reduceBy);
+}
+void ReduceToPostfixExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, postfix_expression, reduceBy);
+}
+void ReduceToArgumentExpressionListOpt(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, argument_expression_list_opt, reduceBy);
+}
+void ReduceToArgumentExpressionList(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, argument_expression_list, reduceBy);
+}
+void ReduceToPrimaryExpression(Parser* parser,int reduceBy){
+    ReduceGeneric(parser, primary_expression, reduceBy);
+}
 
 // LRTable functions
 //=-=-=-=-=-=-=--=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-
@@ -113,3289 +191,8304 @@ void LRGoto(Parser* parser, __unused int actionParam){
 void LRAccept(Parser* parser, __unused int actionParam){
     parser->action = ACTION_ACCEPT;
     parser->treeHead = popStackCount(parser->stack, 4).data.treeNode;
-    printTree(parser->treeHead);
-    printf("\n\033[1;32mparser accepted!\033[0m\n\n");
-    //TODO
+	if (!parser->isError)
+    	printf("\033[1;32mparser accepted!\033[0m\n\n");
+	else{
+		printf("\n\n\033[1;31mPARSING ERRORS FOUND\033[0m\n\n");
+	}
 }
 
 
 
 
-//WARNING A MONSTER OF A FUNCTION BELOW OVER 2000 LINES OF CODE
+//WARNING A MONSTER OF A FUNCTION BELOW OVER 8000 LINES OF CODE
 void initParserLRTable(Parser* parser){
 		for (int i = 0; i < TOTAL_TOKENS+GRAMMER_SYMBOL_COUNT; i++){
-			for (int j = 0; j < TOTAL_STATES; j++){
+			for (int j = 0; j < TOTAL_PARSE_STATES; j++){
 				parser->lrTable[i][j].LRTableFuncP = handleParsingError;
 				parser->lrTable[i][j].actionParam = -1;
 			}
 		}
+	//reduce
+	parser->lrTable[52][0].LRTableFuncP = LRReduce;
+	parser->lrTable[52][0].actionParam = 2;
+	//reduce
+	parser->lrTable[40][0].LRTableFuncP = LRReduce;
+	parser->lrTable[40][0].actionParam = 2;
+	//reduce
+	parser->lrTable[41][0].LRTableFuncP = LRReduce;
+	parser->lrTable[41][0].actionParam = 2;
+	//reduce
+	parser->lrTable[42][0].LRTableFuncP = LRReduce;
+	parser->lrTable[42][0].actionParam = 2;
+	//reduce
+	parser->lrTable[43][0].LRTableFuncP = LRReduce;
+	parser->lrTable[43][0].actionParam = 2;
+	//goto
+	parser->lrTable[program+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[program+TOTAL_TOKENS][0].actionParam = 1;
+	//goto
+	parser->lrTable[external_declaration_list+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[external_declaration_list+TOTAL_TOKENS][0].actionParam = 2;
 	//shift
-	parser->lrTable[29][0].LRTableFuncP = LRShift;
-	parser->lrTable[29][0].actionParam = 1;
-	//shift
-	parser->lrTable[30][0].LRTableFuncP = LRShift;
-	parser->lrTable[30][0].actionParam = 2;
-	//shift
-	parser->lrTable[31][0].LRTableFuncP = LRShift;
-	parser->lrTable[31][0].actionParam = 3;
-	//shift
-	parser->lrTable[32][0].LRTableFuncP = LRShift;
-	parser->lrTable[32][0].actionParam = 4;
-	//shift
-	parser->lrTable[33][0].LRTableFuncP = LRShift;
-	parser->lrTable[33][0].actionParam = 5;
-	//shift
-	parser->lrTable[38][0].LRTableFuncP = LRShift;
-	parser->lrTable[38][0].actionParam = 6;
-	//shift
-	parser->lrTable[39][0].LRTableFuncP = LRShift;
-	parser->lrTable[39][0].actionParam = 7;
+	parser->lrTable[52][0].LRTableFuncP = LRShift;
+	parser->lrTable[52][0].actionParam = 3;
 	//shift
 	parser->lrTable[40][0].LRTableFuncP = LRShift;
-	parser->lrTable[40][0].actionParam = 8;
+	parser->lrTable[40][0].actionParam = 4;
+	//shift
+	parser->lrTable[41][0].LRTableFuncP = LRShift;
+	parser->lrTable[41][0].actionParam = 5;
+	//shift
+	parser->lrTable[42][0].LRTableFuncP = LRShift;
+	parser->lrTable[42][0].actionParam = 6;
+	//shift
+	parser->lrTable[43][0].LRTableFuncP = LRShift;
+	parser->lrTable[43][0].actionParam = 7;
+	//reduce
+	parser->lrTable[52][0].LRTableFuncP = LRReduce;
+	parser->lrTable[52][0].actionParam = 1;
+	//goto
+	parser->lrTable[external_declaration+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[external_declaration+TOTAL_TOKENS][0].actionParam = 8;
+	//goto
+	parser->lrTable[type_specifier+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[type_specifier+TOTAL_TOKENS][0].actionParam = 10;
+	//goto
+	parser->lrTable[function_definition+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[function_definition+TOTAL_TOKENS][0].actionParam = 11;
+	//accept
+	for (int i = 0; i < TOTAL_TOKENS+GRAMMER_SYMBOL_COUNT; i++){
+		parser->lrTable[i][0].LRTableFuncP = LRAccept;
+		parser->lrTable[i][0].actionParam = -1;
+	}
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 12;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 11;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 13;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 14;
+	//reduce
+	parser->lrTable[52][0].LRTableFuncP = LRReduce;
+	parser->lrTable[52][0].actionParam = 3;
+	//reduce
+	parser->lrTable[40][0].LRTableFuncP = LRReduce;
+	parser->lrTable[40][0].actionParam = 3;
+	//reduce
+	parser->lrTable[41][0].LRTableFuncP = LRReduce;
+	parser->lrTable[41][0].actionParam = 3;
+	//reduce
+	parser->lrTable[42][0].LRTableFuncP = LRReduce;
+	parser->lrTable[42][0].actionParam = 3;
+	//reduce
+	parser->lrTable[43][0].LRTableFuncP = LRReduce;
+	parser->lrTable[43][0].actionParam = 3;
+	//reduce
+	parser->lrTable[52][0].LRTableFuncP = LRReduce;
+	parser->lrTable[52][0].actionParam = 4;
+	//reduce
+	parser->lrTable[40][0].LRTableFuncP = LRReduce;
+	parser->lrTable[40][0].actionParam = 4;
 	//reduce
 	parser->lrTable[41][0].LRTableFuncP = LRReduce;
 	parser->lrTable[41][0].actionParam = 4;
-	//goto
-	parser->lrTable[PROGRAM+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[PROGRAM+TOTAL_TOKENS][0].actionParam = 9;
-	//goto
-	parser->lrTable[Start+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Start+TOTAL_TOKENS][0].actionParam = 10;
-	//goto
-	parser->lrTable[StmtList+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[StmtList+TOTAL_TOKENS][0].actionParam = 11;
-	//goto
-	parser->lrTable[Stmt+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Stmt+TOTAL_TOKENS][0].actionParam = 12;
-	//goto
-	parser->lrTable[Decl+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Decl+TOTAL_TOKENS][0].actionParam = 13;
-	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][0].actionParam = 14;
-	//goto
-	parser->lrTable[IfStmt+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[IfStmt+TOTAL_TOKENS][0].actionParam = 15;
-	//goto
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][0].actionParam = 16;
-	//shift
-	parser->lrTable[40][1].LRTableFuncP = LRShift;
-	parser->lrTable[40][1].actionParam = 17;
-	//shift
-	parser->lrTable[40][2].LRTableFuncP = LRShift;
-	parser->lrTable[40][2].actionParam = 18;
-	//shift
-	parser->lrTable[40][3].LRTableFuncP = LRShift;
-	parser->lrTable[40][3].actionParam = 19;
-	//shift
-	parser->lrTable[40][4].LRTableFuncP = LRShift;
-	parser->lrTable[40][4].actionParam = 20;
-	//shift
-	parser->lrTable[20][5].LRTableFuncP = LRShift;
-	parser->lrTable[20][5].actionParam = 21;
-	//shift
-	parser->lrTable[20][6].LRTableFuncP = LRShift;
-	parser->lrTable[20][6].actionParam = 22;
-	//shift
-	parser->lrTable[20][7].LRTableFuncP = LRShift;
-	parser->lrTable[20][7].actionParam = 23;
-	//shift
-	parser->lrTable[3][8].LRTableFuncP = LRShift;
-	parser->lrTable[3][8].actionParam = 24;
-	//shift
-	parser->lrTable[9][8].LRTableFuncP = LRShift;
-	parser->lrTable[9][8].actionParam = 25;
-	//shift
-	parser->lrTable[8][8].LRTableFuncP = LRShift;
-	parser->lrTable[8][8].actionParam = 26;
-	//shift
-	parser->lrTable[12][8].LRTableFuncP = LRShift;
-	parser->lrTable[12][8].actionParam = 27;
-	//shift
-	parser->lrTable[11][8].LRTableFuncP = LRShift;
-	parser->lrTable[11][8].actionParam = 28;
-	//shift
-	parser->lrTable[14][8].LRTableFuncP = LRShift;
-	parser->lrTable[14][8].actionParam = 29;
-	//shift
-	parser->lrTable[16][8].LRTableFuncP = LRShift;
-	parser->lrTable[16][8].actionParam = 30;
-	//shift
-	parser->lrTable[18][8].LRTableFuncP = LRShift;
-	parser->lrTable[18][8].actionParam = 31;
-	//shift
-	parser->lrTable[41][9].LRTableFuncP = LRShift;
-	parser->lrTable[41][9].actionParam = 32;
 	//reduce
-	parser->lrTable[41][10].LRTableFuncP = LRReduce;
-	parser->lrTable[41][10].actionParam = 1;
+	parser->lrTable[42][0].LRTableFuncP = LRReduce;
+	parser->lrTable[42][0].actionParam = 4;
 	//reduce
-	parser->lrTable[41][11].LRTableFuncP = LRReduce;
-	parser->lrTable[41][11].actionParam = 2;
+	parser->lrTable[43][0].LRTableFuncP = LRReduce;
+	parser->lrTable[43][0].actionParam = 4;
 	//shift
-	parser->lrTable[29][12].LRTableFuncP = LRShift;
-	parser->lrTable[29][12].actionParam = 1;
-	//shift
-	parser->lrTable[30][12].LRTableFuncP = LRShift;
-	parser->lrTable[30][12].actionParam = 2;
-	//shift
-	parser->lrTable[31][12].LRTableFuncP = LRShift;
-	parser->lrTable[31][12].actionParam = 3;
-	//shift
-	parser->lrTable[32][12].LRTableFuncP = LRShift;
-	parser->lrTable[32][12].actionParam = 4;
-	//shift
-	parser->lrTable[33][12].LRTableFuncP = LRShift;
-	parser->lrTable[33][12].actionParam = 5;
-	//shift
-	parser->lrTable[38][12].LRTableFuncP = LRShift;
-	parser->lrTable[38][12].actionParam = 6;
-	//shift
-	parser->lrTable[39][12].LRTableFuncP = LRShift;
-	parser->lrTable[39][12].actionParam = 7;
-	//shift
-	parser->lrTable[40][12].LRTableFuncP = LRShift;
-	parser->lrTable[40][12].actionParam = 8;
+	parser->lrTable[51][0].LRTableFuncP = LRShift;
+	parser->lrTable[51][0].actionParam = 12;
 	//reduce
-	parser->lrTable[41][12].LRTableFuncP = LRReduce;
-	parser->lrTable[41][12].actionParam = 4;
+	parser->lrTable[52][0].LRTableFuncP = LRReduce;
+	parser->lrTable[52][0].actionParam = 5;
+	//reduce
+	parser->lrTable[40][0].LRTableFuncP = LRReduce;
+	parser->lrTable[40][0].actionParam = 5;
+	//reduce
+	parser->lrTable[41][0].LRTableFuncP = LRReduce;
+	parser->lrTable[41][0].actionParam = 5;
+	//reduce
+	parser->lrTable[42][0].LRTableFuncP = LRReduce;
+	parser->lrTable[42][0].actionParam = 5;
+	//reduce
+	parser->lrTable[43][0].LRTableFuncP = LRReduce;
+	parser->lrTable[43][0].actionParam = 5;
+	//shift
+	parser->lrTable[2][0].LRTableFuncP = LRShift;
+	parser->lrTable[2][0].actionParam = 15;
+	//shift
+	parser->lrTable[29][0].LRTableFuncP = LRShift;
+	parser->lrTable[29][0].actionParam = 16;
+	//reduce
+	parser->lrTable[56][0].LRTableFuncP = LRReduce;
+	parser->lrTable[56][0].actionParam = 9;
+	//reduce
+	parser->lrTable[57][0].LRTableFuncP = LRReduce;
+	parser->lrTable[57][0].actionParam = 9;
+	//shift
+	parser->lrTable[56][0].LRTableFuncP = LRShift;
+	parser->lrTable[56][0].actionParam = 17;
+	//shift
+	parser->lrTable[57][0].LRTableFuncP = LRShift;
+	parser->lrTable[57][0].actionParam = 18;
+	//reduce
+	parser->lrTable[56][0].LRTableFuncP = LRReduce;
+	parser->lrTable[56][0].actionParam = 7;
+	//reduce
+	parser->lrTable[57][0].LRTableFuncP = LRReduce;
+	parser->lrTable[57][0].actionParam = 7;
+	//shift
+	parser->lrTable[4][0].LRTableFuncP = LRShift;
+	parser->lrTable[4][0].actionParam = 19;
+	//shift
+	parser->lrTable[7][0].LRTableFuncP = LRShift;
+	parser->lrTable[7][0].actionParam = 20;
+	//shift
+	parser->lrTable[8][0].LRTableFuncP = LRShift;
+	parser->lrTable[8][0].actionParam = 21;
+	//shift
+	parser->lrTable[10][0].LRTableFuncP = LRShift;
+	parser->lrTable[10][0].actionParam = 22;
+	//shift
+	parser->lrTable[11][0].LRTableFuncP = LRShift;
+	parser->lrTable[11][0].actionParam = 23;
+	//shift
+	parser->lrTable[25][0].LRTableFuncP = LRShift;
+	parser->lrTable[25][0].actionParam = 24;
+	//shift
+	parser->lrTable[29][0].LRTableFuncP = LRShift;
+	parser->lrTable[29][0].actionParam = 25;
+	//shift
+	parser->lrTable[35][0].LRTableFuncP = LRShift;
+	parser->lrTable[35][0].actionParam = 26;
+	//shift
+	parser->lrTable[36][0].LRTableFuncP = LRShift;
+	parser->lrTable[36][0].actionParam = 27;
+	//shift
+	parser->lrTable[37][0].LRTableFuncP = LRShift;
+	parser->lrTable[37][0].actionParam = 28;
+	//shift
+	parser->lrTable[38][0].LRTableFuncP = LRShift;
+	parser->lrTable[38][0].actionParam = 29;
+	//shift
+	parser->lrTable[39][0].LRTableFuncP = LRShift;
+	parser->lrTable[39][0].actionParam = 30;
+	//shift
+	parser->lrTable[51][0].LRTableFuncP = LRShift;
+	parser->lrTable[51][0].actionParam = 31;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][0].actionParam = 32;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][0].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][0].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][0].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][0].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][0].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][0].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][0].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][0].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][0].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][0].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][0].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].actionParam = 47;
+	//shift
+	parser->lrTable[40][0].LRTableFuncP = LRShift;
+	parser->lrTable[40][0].actionParam = 4;
+	//shift
+	parser->lrTable[41][0].LRTableFuncP = LRShift;
+	parser->lrTable[41][0].actionParam = 5;
+	//shift
+	parser->lrTable[42][0].LRTableFuncP = LRShift;
+	parser->lrTable[42][0].actionParam = 6;
+	//shift
+	parser->lrTable[43][0].LRTableFuncP = LRShift;
+	parser->lrTable[43][0].actionParam = 7;
+	//reduce
+	parser->lrTable[30][0].LRTableFuncP = LRReduce;
+	parser->lrTable[30][0].actionParam = 16;
+	//goto
+	parser->lrTable[type_specifier+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[type_specifier+TOTAL_TOKENS][0].actionParam = 49;
+	//goto
+	parser->lrTable[parameter_list_opt+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[parameter_list_opt+TOTAL_TOKENS][0].actionParam = 50;
+	//goto
+	parser->lrTable[parameter_list+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[parameter_list+TOTAL_TOKENS][0].actionParam = 51;
+	//reduce
+	parser->lrTable[52][0].LRTableFuncP = LRReduce;
+	parser->lrTable[52][0].actionParam = 6;
+	//reduce
+	parser->lrTable[4][0].LRTableFuncP = LRReduce;
+	parser->lrTable[4][0].actionParam = 6;
+	//reduce
+	parser->lrTable[7][0].LRTableFuncP = LRReduce;
+	parser->lrTable[7][0].actionParam = 6;
+	//reduce
+	parser->lrTable[8][0].LRTableFuncP = LRReduce;
+	parser->lrTable[8][0].actionParam = 6;
+	//reduce
+	parser->lrTable[10][0].LRTableFuncP = LRReduce;
+	parser->lrTable[10][0].actionParam = 6;
+	//reduce
+	parser->lrTable[11][0].LRTableFuncP = LRReduce;
+	parser->lrTable[11][0].actionParam = 6;
+	//reduce
+	parser->lrTable[25][0].LRTableFuncP = LRReduce;
+	parser->lrTable[25][0].actionParam = 6;
+	//reduce
+	parser->lrTable[29][0].LRTableFuncP = LRReduce;
+	parser->lrTable[29][0].actionParam = 6;
+	//reduce
+	parser->lrTable[31][0].LRTableFuncP = LRReduce;
+	parser->lrTable[31][0].actionParam = 6;
+	//reduce
+	parser->lrTable[32][0].LRTableFuncP = LRReduce;
+	parser->lrTable[32][0].actionParam = 6;
+	//reduce
+	parser->lrTable[35][0].LRTableFuncP = LRReduce;
+	parser->lrTable[35][0].actionParam = 6;
+	//reduce
+	parser->lrTable[36][0].LRTableFuncP = LRReduce;
+	parser->lrTable[36][0].actionParam = 6;
+	//reduce
+	parser->lrTable[37][0].LRTableFuncP = LRReduce;
+	parser->lrTable[37][0].actionParam = 6;
+	//reduce
+	parser->lrTable[38][0].LRTableFuncP = LRReduce;
+	parser->lrTable[38][0].actionParam = 6;
+	//reduce
+	parser->lrTable[39][0].LRTableFuncP = LRReduce;
+	parser->lrTable[39][0].actionParam = 6;
+	//reduce
+	parser->lrTable[40][0].LRTableFuncP = LRReduce;
+	parser->lrTable[40][0].actionParam = 6;
+	//reduce
+	parser->lrTable[41][0].LRTableFuncP = LRReduce;
+	parser->lrTable[41][0].actionParam = 6;
+	//reduce
+	parser->lrTable[42][0].LRTableFuncP = LRReduce;
+	parser->lrTable[42][0].actionParam = 6;
+	//reduce
+	parser->lrTable[43][0].LRTableFuncP = LRReduce;
+	parser->lrTable[43][0].actionParam = 6;
+	//reduce
+	parser->lrTable[44][0].LRTableFuncP = LRReduce;
+	parser->lrTable[44][0].actionParam = 6;
+	//reduce
+	parser->lrTable[49][0].LRTableFuncP = LRReduce;
+	parser->lrTable[49][0].actionParam = 6;
+	//reduce
+	parser->lrTable[50][0].LRTableFuncP = LRReduce;
+	parser->lrTable[50][0].actionParam = 6;
+	//reduce
+	parser->lrTable[56][0].LRTableFuncP = LRReduce;
+	parser->lrTable[56][0].actionParam = 6;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 6;
+	//shift
+	parser->lrTable[51][0].LRTableFuncP = LRShift;
+	parser->lrTable[51][0].actionParam = 53;
+	//reduce
+	parser->lrTable[4][0].LRTableFuncP = LRReduce;
+	parser->lrTable[4][0].actionParam = 91;
+	//reduce
+	parser->lrTable[7][0].LRTableFuncP = LRReduce;
+	parser->lrTable[7][0].actionParam = 91;
+	//reduce
+	parser->lrTable[8][0].LRTableFuncP = LRReduce;
+	parser->lrTable[8][0].actionParam = 91;
+	//reduce
+	parser->lrTable[10][0].LRTableFuncP = LRReduce;
+	parser->lrTable[10][0].actionParam = 91;
+	//reduce
+	parser->lrTable[11][0].LRTableFuncP = LRReduce;
+	parser->lrTable[11][0].actionParam = 91;
+	//reduce
+	parser->lrTable[25][0].LRTableFuncP = LRReduce;
+	parser->lrTable[25][0].actionParam = 91;
+	//reduce
+	parser->lrTable[29][0].LRTableFuncP = LRReduce;
+	parser->lrTable[29][0].actionParam = 91;
+	//reduce
+	parser->lrTable[35][0].LRTableFuncP = LRReduce;
+	parser->lrTable[35][0].actionParam = 91;
+	//reduce
+	parser->lrTable[36][0].LRTableFuncP = LRReduce;
+	parser->lrTable[36][0].actionParam = 91;
+	//reduce
+	parser->lrTable[37][0].LRTableFuncP = LRReduce;
+	parser->lrTable[37][0].actionParam = 91;
+	//reduce
+	parser->lrTable[38][0].LRTableFuncP = LRReduce;
+	parser->lrTable[38][0].actionParam = 91;
+	//reduce
+	parser->lrTable[39][0].LRTableFuncP = LRReduce;
+	parser->lrTable[39][0].actionParam = 91;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 91;
+	//reduce
+	parser->lrTable[4][0].LRTableFuncP = LRReduce;
+	parser->lrTable[4][0].actionParam = 89;
+	//reduce
+	parser->lrTable[7][0].LRTableFuncP = LRReduce;
+	parser->lrTable[7][0].actionParam = 89;
+	//reduce
+	parser->lrTable[8][0].LRTableFuncP = LRReduce;
+	parser->lrTable[8][0].actionParam = 89;
+	//reduce
+	parser->lrTable[10][0].LRTableFuncP = LRReduce;
+	parser->lrTable[10][0].actionParam = 89;
+	//reduce
+	parser->lrTable[11][0].LRTableFuncP = LRReduce;
+	parser->lrTable[11][0].actionParam = 89;
+	//reduce
+	parser->lrTable[25][0].LRTableFuncP = LRReduce;
+	parser->lrTable[25][0].actionParam = 89;
+	//reduce
+	parser->lrTable[29][0].LRTableFuncP = LRReduce;
+	parser->lrTable[29][0].actionParam = 89;
+	//reduce
+	parser->lrTable[35][0].LRTableFuncP = LRReduce;
+	parser->lrTable[35][0].actionParam = 89;
+	//reduce
+	parser->lrTable[36][0].LRTableFuncP = LRReduce;
+	parser->lrTable[36][0].actionParam = 89;
+	//reduce
+	parser->lrTable[37][0].LRTableFuncP = LRReduce;
+	parser->lrTable[37][0].actionParam = 89;
+	//reduce
+	parser->lrTable[38][0].LRTableFuncP = LRReduce;
+	parser->lrTable[38][0].actionParam = 89;
+	//reduce
+	parser->lrTable[39][0].LRTableFuncP = LRReduce;
+	parser->lrTable[39][0].actionParam = 89;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 89;
+	//shift
+	parser->lrTable[4][0].LRTableFuncP = LRShift;
+	parser->lrTable[4][0].actionParam = 19;
+	//shift
+	parser->lrTable[7][0].LRTableFuncP = LRShift;
+	parser->lrTable[7][0].actionParam = 20;
+	//shift
+	parser->lrTable[8][0].LRTableFuncP = LRShift;
+	parser->lrTable[8][0].actionParam = 21;
+	//shift
+	parser->lrTable[10][0].LRTableFuncP = LRShift;
+	parser->lrTable[10][0].actionParam = 22;
+	//shift
+	parser->lrTable[11][0].LRTableFuncP = LRShift;
+	parser->lrTable[11][0].actionParam = 23;
+	//shift
+	parser->lrTable[25][0].LRTableFuncP = LRShift;
+	parser->lrTable[25][0].actionParam = 24;
+	//shift
+	parser->lrTable[29][0].LRTableFuncP = LRShift;
+	parser->lrTable[29][0].actionParam = 25;
+	//shift
+	parser->lrTable[35][0].LRTableFuncP = LRShift;
+	parser->lrTable[35][0].actionParam = 26;
+	//shift
+	parser->lrTable[36][0].LRTableFuncP = LRShift;
+	parser->lrTable[36][0].actionParam = 27;
+	//shift
+	parser->lrTable[37][0].LRTableFuncP = LRShift;
+	parser->lrTable[37][0].actionParam = 28;
+	//shift
+	parser->lrTable[38][0].LRTableFuncP = LRShift;
+	parser->lrTable[38][0].actionParam = 29;
+	//shift
+	parser->lrTable[39][0].LRTableFuncP = LRShift;
+	parser->lrTable[39][0].actionParam = 30;
+	//shift
+	parser->lrTable[51][0].LRTableFuncP = LRShift;
+	parser->lrTable[51][0].actionParam = 31;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].actionParam = 55;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].actionParam = 47;
+	//reduce
+	parser->lrTable[4][0].LRTableFuncP = LRReduce;
+	parser->lrTable[4][0].actionParam = 90;
+	//reduce
+	parser->lrTable[7][0].LRTableFuncP = LRReduce;
+	parser->lrTable[7][0].actionParam = 90;
+	//reduce
+	parser->lrTable[8][0].LRTableFuncP = LRReduce;
+	parser->lrTable[8][0].actionParam = 90;
+	//reduce
+	parser->lrTable[10][0].LRTableFuncP = LRReduce;
+	parser->lrTable[10][0].actionParam = 90;
+	//reduce
+	parser->lrTable[11][0].LRTableFuncP = LRReduce;
+	parser->lrTable[11][0].actionParam = 90;
+	//reduce
+	parser->lrTable[25][0].LRTableFuncP = LRReduce;
+	parser->lrTable[25][0].actionParam = 90;
+	//reduce
+	parser->lrTable[29][0].LRTableFuncP = LRReduce;
+	parser->lrTable[29][0].actionParam = 90;
+	//reduce
+	parser->lrTable[35][0].LRTableFuncP = LRReduce;
+	parser->lrTable[35][0].actionParam = 90;
+	//reduce
+	parser->lrTable[36][0].LRTableFuncP = LRReduce;
+	parser->lrTable[36][0].actionParam = 90;
+	//reduce
+	parser->lrTable[37][0].LRTableFuncP = LRReduce;
+	parser->lrTable[37][0].actionParam = 90;
+	//reduce
+	parser->lrTable[38][0].LRTableFuncP = LRReduce;
+	parser->lrTable[38][0].actionParam = 90;
+	//reduce
+	parser->lrTable[39][0].LRTableFuncP = LRReduce;
+	parser->lrTable[39][0].actionParam = 90;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 90;
+	//shift
+	parser->lrTable[4][0].LRTableFuncP = LRShift;
+	parser->lrTable[4][0].actionParam = 19;
+	//shift
+	parser->lrTable[7][0].LRTableFuncP = LRShift;
+	parser->lrTable[7][0].actionParam = 20;
+	//shift
+	parser->lrTable[8][0].LRTableFuncP = LRShift;
+	parser->lrTable[8][0].actionParam = 21;
+	//shift
+	parser->lrTable[10][0].LRTableFuncP = LRShift;
+	parser->lrTable[10][0].actionParam = 22;
+	//shift
+	parser->lrTable[11][0].LRTableFuncP = LRShift;
+	parser->lrTable[11][0].actionParam = 23;
+	//shift
+	parser->lrTable[25][0].LRTableFuncP = LRShift;
+	parser->lrTable[25][0].actionParam = 24;
+	//shift
+	parser->lrTable[29][0].LRTableFuncP = LRShift;
+	parser->lrTable[29][0].actionParam = 25;
+	//shift
+	parser->lrTable[35][0].LRTableFuncP = LRShift;
+	parser->lrTable[35][0].actionParam = 26;
+	//shift
+	parser->lrTable[36][0].LRTableFuncP = LRShift;
+	parser->lrTable[36][0].actionParam = 27;
+	//shift
+	parser->lrTable[37][0].LRTableFuncP = LRShift;
+	parser->lrTable[37][0].actionParam = 28;
+	//shift
+	parser->lrTable[38][0].LRTableFuncP = LRShift;
+	parser->lrTable[38][0].actionParam = 29;
+	//shift
+	parser->lrTable[39][0].LRTableFuncP = LRShift;
+	parser->lrTable[39][0].actionParam = 30;
+	//shift
+	parser->lrTable[51][0].LRTableFuncP = LRShift;
+	parser->lrTable[51][0].actionParam = 31;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].actionParam = 56;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].actionParam = 47;
+	//reduce
+	parser->lrTable[4][0].LRTableFuncP = LRReduce;
+	parser->lrTable[4][0].actionParam = 92;
+	//reduce
+	parser->lrTable[7][0].LRTableFuncP = LRReduce;
+	parser->lrTable[7][0].actionParam = 92;
+	//reduce
+	parser->lrTable[8][0].LRTableFuncP = LRReduce;
+	parser->lrTable[8][0].actionParam = 92;
+	//reduce
+	parser->lrTable[10][0].LRTableFuncP = LRReduce;
+	parser->lrTable[10][0].actionParam = 92;
+	//reduce
+	parser->lrTable[11][0].LRTableFuncP = LRReduce;
+	parser->lrTable[11][0].actionParam = 92;
+	//reduce
+	parser->lrTable[25][0].LRTableFuncP = LRReduce;
+	parser->lrTable[25][0].actionParam = 92;
+	//reduce
+	parser->lrTable[29][0].LRTableFuncP = LRReduce;
+	parser->lrTable[29][0].actionParam = 92;
+	//reduce
+	parser->lrTable[35][0].LRTableFuncP = LRReduce;
+	parser->lrTable[35][0].actionParam = 92;
+	//reduce
+	parser->lrTable[36][0].LRTableFuncP = LRReduce;
+	parser->lrTable[36][0].actionParam = 92;
+	//reduce
+	parser->lrTable[37][0].LRTableFuncP = LRReduce;
+	parser->lrTable[37][0].actionParam = 92;
+	//reduce
+	parser->lrTable[38][0].LRTableFuncP = LRReduce;
+	parser->lrTable[38][0].actionParam = 92;
+	//reduce
+	parser->lrTable[39][0].LRTableFuncP = LRReduce;
+	parser->lrTable[39][0].actionParam = 92;
+	//reduce
+	parser->lrTable[51][0].LRTableFuncP = LRReduce;
+	parser->lrTable[51][0].actionParam = 92;
+	//shift
+	parser->lrTable[4][0].LRTableFuncP = LRShift;
+	parser->lrTable[4][0].actionParam = 19;
+	//shift
+	parser->lrTable[7][0].LRTableFuncP = LRShift;
+	parser->lrTable[7][0].actionParam = 20;
+	//shift
+	parser->lrTable[8][0].LRTableFuncP = LRShift;
+	parser->lrTable[8][0].actionParam = 21;
+	//shift
+	parser->lrTable[10][0].LRTableFuncP = LRShift;
+	parser->lrTable[10][0].actionParam = 22;
+	//shift
+	parser->lrTable[11][0].LRTableFuncP = LRShift;
+	parser->lrTable[11][0].actionParam = 23;
+	//shift
+	parser->lrTable[25][0].LRTableFuncP = LRShift;
+	parser->lrTable[25][0].actionParam = 24;
+	//shift
+	parser->lrTable[29][0].LRTableFuncP = LRShift;
+	parser->lrTable[29][0].actionParam = 25;
+	//shift
+	parser->lrTable[35][0].LRTableFuncP = LRShift;
+	parser->lrTable[35][0].actionParam = 26;
+	//shift
+	parser->lrTable[36][0].LRTableFuncP = LRShift;
+	parser->lrTable[36][0].actionParam = 27;
+	//shift
+	parser->lrTable[37][0].LRTableFuncP = LRShift;
+	parser->lrTable[37][0].actionParam = 28;
+	//shift
+	parser->lrTable[38][0].LRTableFuncP = LRShift;
+	parser->lrTable[38][0].actionParam = 29;
+	//shift
+	parser->lrTable[39][0].LRTableFuncP = LRShift;
+	parser->lrTable[39][0].actionParam = 30;
+	//shift
+	parser->lrTable[51][0].LRTableFuncP = LRShift;
+	parser->lrTable[51][0].actionParam = 31;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][0].actionParam = 57;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][0].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][0].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][0].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][0].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][0].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][0].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][0].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][0].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][0].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][0].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][0].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][0].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][0].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][0].actionParam = 47;
+	//reduce
+	parser->lrTable[0][1].LRTableFuncP = LRReduce;
+	parser->lrTable[0][1].actionParam = 104;
+	//reduce
+	parser->lrTable[1][1].LRTableFuncP = LRReduce;
+	parser->lrTable[1][1].actionParam = 104;
+	//reduce
+	parser->lrTable[2][1].LRTableFuncP = LRReduce;
+	parser->lrTable[2][1].actionParam = 104;
+	//reduce
+	parser->lrTable[3][1].LRTableFuncP = LRReduce;
+	parser->lrTable[3][1].actionParam = 104;
+	//reduce
+	parser->lrTable[4][1].LRTableFuncP = LRReduce;
+	parser->lrTable[4][1].actionParam = 104;
+	//reduce
+	parser->lrTable[2][1].LRTableFuncP = LRReduce;
+	parser->lrTable[2][1].actionParam = 104;
+	//reduce
+	parser->lrTable[7][1].LRTableFuncP = LRReduce;
+	parser->lrTable[7][1].actionParam = 104;
+	//reduce
+	parser->lrTable[8][1].LRTableFuncP = LRReduce;
+	parser->lrTable[8][1].actionParam = 104;
+	//reduce
+	parser->lrTable[7][1].LRTableFuncP = LRReduce;
+	parser->lrTable[7][1].actionParam = 104;
+	//reduce
+	parser->lrTable[10][1].LRTableFuncP = LRReduce;
+	parser->lrTable[10][1].actionParam = 104;
+	//reduce
+	parser->lrTable[11][1].LRTableFuncP = LRReduce;
+	parser->lrTable[11][1].actionParam = 104;
+	//reduce
+	parser->lrTable[10][1].LRTableFuncP = LRReduce;
+	parser->lrTable[10][1].actionParam = 104;
+	//reduce
+	parser->lrTable[13][1].LRTableFuncP = LRReduce;
+	parser->lrTable[13][1].actionParam = 104;
+	//reduce
+	parser->lrTable[13][1].LRTableFuncP = LRReduce;
+	parser->lrTable[13][1].actionParam = 104;
+	//reduce
+	parser->lrTable[15][1].LRTableFuncP = LRReduce;
+	parser->lrTable[15][1].actionParam = 104;
+	//reduce
+	parser->lrTable[15][1].LRTableFuncP = LRReduce;
+	parser->lrTable[15][1].actionParam = 104;
+	//reduce
+	parser->lrTable[17][1].LRTableFuncP = LRReduce;
+	parser->lrTable[17][1].actionParam = 104;
+	//reduce
+	parser->lrTable[17][1].LRTableFuncP = LRReduce;
+	parser->lrTable[17][1].actionParam = 104;
+	//reduce
+	parser->lrTable[19][1].LRTableFuncP = LRReduce;
+	parser->lrTable[19][1].actionParam = 104;
+	//reduce
+	parser->lrTable[20][1].LRTableFuncP = LRReduce;
+	parser->lrTable[20][1].actionParam = 104;
+	//reduce
+	parser->lrTable[21][1].LRTableFuncP = LRReduce;
+	parser->lrTable[21][1].actionParam = 104;
+	//reduce
+	parser->lrTable[21][1].LRTableFuncP = LRReduce;
+	parser->lrTable[21][1].actionParam = 104;
+	//reduce
+	parser->lrTable[23][1].LRTableFuncP = LRReduce;
+	parser->lrTable[23][1].actionParam = 104;
+	//reduce
+	parser->lrTable[23][1].LRTableFuncP = LRReduce;
+	parser->lrTable[23][1].actionParam = 104;
+	//reduce
+	parser->lrTable[27][1].LRTableFuncP = LRReduce;
+	parser->lrTable[27][1].actionParam = 104;
+	//reduce
+	parser->lrTable[28][1].LRTableFuncP = LRReduce;
+	parser->lrTable[28][1].actionParam = 104;
+	//reduce
+	parser->lrTable[29][1].LRTableFuncP = LRReduce;
+	parser->lrTable[29][1].actionParam = 104;
+	//reduce
+	parser->lrTable[30][1].LRTableFuncP = LRReduce;
+	parser->lrTable[30][1].actionParam = 104;
+	//reduce
+	parser->lrTable[33][1].LRTableFuncP = LRReduce;
+	parser->lrTable[33][1].actionParam = 104;
+	//reduce
+	parser->lrTable[34][1].LRTableFuncP = LRReduce;
+	parser->lrTable[34][1].actionParam = 104;
+	//reduce
+	parser->lrTable[47][1].LRTableFuncP = LRReduce;
+	parser->lrTable[47][1].actionParam = 104;
+	//reduce
+	parser->lrTable[48][1].LRTableFuncP = LRReduce;
+	parser->lrTable[48][1].actionParam = 104;
+	//reduce
+	parser->lrTable[56][1].LRTableFuncP = LRReduce;
+	parser->lrTable[56][1].actionParam = 104;
+	//reduce
+	parser->lrTable[57][1].LRTableFuncP = LRReduce;
+	parser->lrTable[57][1].actionParam = 104;
+	//reduce
+	parser->lrTable[58][1].LRTableFuncP = LRReduce;
+	parser->lrTable[58][1].actionParam = 104;
+	//reduce
+	parser->lrTable[59][1].LRTableFuncP = LRReduce;
+	parser->lrTable[59][1].actionParam = 104;
+	//reduce
+	parser->lrTable[0][2].LRTableFuncP = LRReduce;
+	parser->lrTable[0][2].actionParam = 106;
+	//reduce
+	parser->lrTable[1][2].LRTableFuncP = LRReduce;
+	parser->lrTable[1][2].actionParam = 106;
+	//reduce
+	parser->lrTable[2][2].LRTableFuncP = LRReduce;
+	parser->lrTable[2][2].actionParam = 106;
+	//reduce
+	parser->lrTable[3][2].LRTableFuncP = LRReduce;
+	parser->lrTable[3][2].actionParam = 106;
+	//reduce
+	parser->lrTable[4][2].LRTableFuncP = LRReduce;
+	parser->lrTable[4][2].actionParam = 106;
+	//reduce
+	parser->lrTable[2][2].LRTableFuncP = LRReduce;
+	parser->lrTable[2][2].actionParam = 106;
+	//reduce
+	parser->lrTable[7][2].LRTableFuncP = LRReduce;
+	parser->lrTable[7][2].actionParam = 106;
+	//reduce
+	parser->lrTable[8][2].LRTableFuncP = LRReduce;
+	parser->lrTable[8][2].actionParam = 106;
+	//reduce
+	parser->lrTable[7][2].LRTableFuncP = LRReduce;
+	parser->lrTable[7][2].actionParam = 106;
+	//reduce
+	parser->lrTable[10][2].LRTableFuncP = LRReduce;
+	parser->lrTable[10][2].actionParam = 106;
+	//reduce
+	parser->lrTable[11][2].LRTableFuncP = LRReduce;
+	parser->lrTable[11][2].actionParam = 106;
+	//reduce
+	parser->lrTable[10][2].LRTableFuncP = LRReduce;
+	parser->lrTable[10][2].actionParam = 106;
+	//reduce
+	parser->lrTable[13][2].LRTableFuncP = LRReduce;
+	parser->lrTable[13][2].actionParam = 106;
+	//reduce
+	parser->lrTable[13][2].LRTableFuncP = LRReduce;
+	parser->lrTable[13][2].actionParam = 106;
+	//reduce
+	parser->lrTable[15][2].LRTableFuncP = LRReduce;
+	parser->lrTable[15][2].actionParam = 106;
+	//reduce
+	parser->lrTable[15][2].LRTableFuncP = LRReduce;
+	parser->lrTable[15][2].actionParam = 106;
+	//reduce
+	parser->lrTable[17][2].LRTableFuncP = LRReduce;
+	parser->lrTable[17][2].actionParam = 106;
+	//reduce
+	parser->lrTable[17][2].LRTableFuncP = LRReduce;
+	parser->lrTable[17][2].actionParam = 106;
+	//reduce
+	parser->lrTable[19][2].LRTableFuncP = LRReduce;
+	parser->lrTable[19][2].actionParam = 106;
+	//reduce
+	parser->lrTable[20][2].LRTableFuncP = LRReduce;
+	parser->lrTable[20][2].actionParam = 106;
+	//reduce
+	parser->lrTable[21][2].LRTableFuncP = LRReduce;
+	parser->lrTable[21][2].actionParam = 106;
+	//reduce
+	parser->lrTable[21][2].LRTableFuncP = LRReduce;
+	parser->lrTable[21][2].actionParam = 106;
+	//reduce
+	parser->lrTable[23][2].LRTableFuncP = LRReduce;
+	parser->lrTable[23][2].actionParam = 106;
+	//reduce
+	parser->lrTable[23][2].LRTableFuncP = LRReduce;
+	parser->lrTable[23][2].actionParam = 106;
+	//reduce
+	parser->lrTable[27][2].LRTableFuncP = LRReduce;
+	parser->lrTable[27][2].actionParam = 106;
+	//reduce
+	parser->lrTable[28][2].LRTableFuncP = LRReduce;
+	parser->lrTable[28][2].actionParam = 106;
+	//reduce
+	parser->lrTable[29][2].LRTableFuncP = LRReduce;
+	parser->lrTable[29][2].actionParam = 106;
+	//reduce
+	parser->lrTable[30][2].LRTableFuncP = LRReduce;
+	parser->lrTable[30][2].actionParam = 106;
+	//reduce
+	parser->lrTable[33][2].LRTableFuncP = LRReduce;
+	parser->lrTable[33][2].actionParam = 106;
+	//reduce
+	parser->lrTable[34][2].LRTableFuncP = LRReduce;
+	parser->lrTable[34][2].actionParam = 106;
+	//reduce
+	parser->lrTable[47][2].LRTableFuncP = LRReduce;
+	parser->lrTable[47][2].actionParam = 106;
+	//reduce
+	parser->lrTable[48][2].LRTableFuncP = LRReduce;
+	parser->lrTable[48][2].actionParam = 106;
+	//reduce
+	parser->lrTable[56][2].LRTableFuncP = LRReduce;
+	parser->lrTable[56][2].actionParam = 106;
+	//reduce
+	parser->lrTable[57][2].LRTableFuncP = LRReduce;
+	parser->lrTable[57][2].actionParam = 106;
+	//reduce
+	parser->lrTable[58][2].LRTableFuncP = LRReduce;
+	parser->lrTable[58][2].actionParam = 106;
+	//reduce
+	parser->lrTable[59][2].LRTableFuncP = LRReduce;
+	parser->lrTable[59][2].actionParam = 106;
+	//reduce
+	parser->lrTable[0][3].LRTableFuncP = LRReduce;
+	parser->lrTable[0][3].actionParam = 107;
+	//reduce
+	parser->lrTable[1][3].LRTableFuncP = LRReduce;
+	parser->lrTable[1][3].actionParam = 107;
+	//reduce
+	parser->lrTable[2][3].LRTableFuncP = LRReduce;
+	parser->lrTable[2][3].actionParam = 107;
+	//reduce
+	parser->lrTable[3][3].LRTableFuncP = LRReduce;
+	parser->lrTable[3][3].actionParam = 107;
+	//reduce
+	parser->lrTable[4][3].LRTableFuncP = LRReduce;
+	parser->lrTable[4][3].actionParam = 107;
+	//reduce
+	parser->lrTable[2][3].LRTableFuncP = LRReduce;
+	parser->lrTable[2][3].actionParam = 107;
+	//reduce
+	parser->lrTable[7][3].LRTableFuncP = LRReduce;
+	parser->lrTable[7][3].actionParam = 107;
+	//reduce
+	parser->lrTable[8][3].LRTableFuncP = LRReduce;
+	parser->lrTable[8][3].actionParam = 107;
+	//reduce
+	parser->lrTable[7][3].LRTableFuncP = LRReduce;
+	parser->lrTable[7][3].actionParam = 107;
+	//reduce
+	parser->lrTable[10][3].LRTableFuncP = LRReduce;
+	parser->lrTable[10][3].actionParam = 107;
+	//reduce
+	parser->lrTable[11][3].LRTableFuncP = LRReduce;
+	parser->lrTable[11][3].actionParam = 107;
+	//reduce
+	parser->lrTable[10][3].LRTableFuncP = LRReduce;
+	parser->lrTable[10][3].actionParam = 107;
+	//reduce
+	parser->lrTable[13][3].LRTableFuncP = LRReduce;
+	parser->lrTable[13][3].actionParam = 107;
+	//reduce
+	parser->lrTable[13][3].LRTableFuncP = LRReduce;
+	parser->lrTable[13][3].actionParam = 107;
+	//reduce
+	parser->lrTable[15][3].LRTableFuncP = LRReduce;
+	parser->lrTable[15][3].actionParam = 107;
+	//reduce
+	parser->lrTable[15][3].LRTableFuncP = LRReduce;
+	parser->lrTable[15][3].actionParam = 107;
+	//reduce
+	parser->lrTable[17][3].LRTableFuncP = LRReduce;
+	parser->lrTable[17][3].actionParam = 107;
+	//reduce
+	parser->lrTable[17][3].LRTableFuncP = LRReduce;
+	parser->lrTable[17][3].actionParam = 107;
+	//reduce
+	parser->lrTable[19][3].LRTableFuncP = LRReduce;
+	parser->lrTable[19][3].actionParam = 107;
+	//reduce
+	parser->lrTable[20][3].LRTableFuncP = LRReduce;
+	parser->lrTable[20][3].actionParam = 107;
+	//reduce
+	parser->lrTable[21][3].LRTableFuncP = LRReduce;
+	parser->lrTable[21][3].actionParam = 107;
+	//reduce
+	parser->lrTable[21][3].LRTableFuncP = LRReduce;
+	parser->lrTable[21][3].actionParam = 107;
+	//reduce
+	parser->lrTable[23][3].LRTableFuncP = LRReduce;
+	parser->lrTable[23][3].actionParam = 107;
+	//reduce
+	parser->lrTable[23][3].LRTableFuncP = LRReduce;
+	parser->lrTable[23][3].actionParam = 107;
+	//reduce
+	parser->lrTable[27][3].LRTableFuncP = LRReduce;
+	parser->lrTable[27][3].actionParam = 107;
+	//reduce
+	parser->lrTable[28][3].LRTableFuncP = LRReduce;
+	parser->lrTable[28][3].actionParam = 107;
+	//reduce
+	parser->lrTable[29][3].LRTableFuncP = LRReduce;
+	parser->lrTable[29][3].actionParam = 107;
+	//reduce
+	parser->lrTable[30][3].LRTableFuncP = LRReduce;
+	parser->lrTable[30][3].actionParam = 107;
+	//reduce
+	parser->lrTable[33][3].LRTableFuncP = LRReduce;
+	parser->lrTable[33][3].actionParam = 107;
+	//reduce
+	parser->lrTable[34][3].LRTableFuncP = LRReduce;
+	parser->lrTable[34][3].actionParam = 107;
+	//reduce
+	parser->lrTable[47][3].LRTableFuncP = LRReduce;
+	parser->lrTable[47][3].actionParam = 107;
+	//reduce
+	parser->lrTable[48][3].LRTableFuncP = LRReduce;
+	parser->lrTable[48][3].actionParam = 107;
+	//reduce
+	parser->lrTable[56][3].LRTableFuncP = LRReduce;
+	parser->lrTable[56][3].actionParam = 107;
+	//reduce
+	parser->lrTable[57][3].LRTableFuncP = LRReduce;
+	parser->lrTable[57][3].actionParam = 107;
+	//reduce
+	parser->lrTable[58][3].LRTableFuncP = LRReduce;
+	parser->lrTable[58][3].actionParam = 107;
+	//reduce
+	parser->lrTable[59][3].LRTableFuncP = LRReduce;
+	parser->lrTable[59][3].actionParam = 107;
+	//reduce
+	parser->lrTable[0][4].LRTableFuncP = LRReduce;
+	parser->lrTable[0][4].actionParam = 103;
+	//reduce
+	parser->lrTable[1][4].LRTableFuncP = LRReduce;
+	parser->lrTable[1][4].actionParam = 103;
+	//reduce
+	parser->lrTable[2][4].LRTableFuncP = LRReduce;
+	parser->lrTable[2][4].actionParam = 103;
+	//reduce
+	parser->lrTable[3][4].LRTableFuncP = LRReduce;
+	parser->lrTable[3][4].actionParam = 103;
+	//reduce
+	parser->lrTable[4][4].LRTableFuncP = LRReduce;
+	parser->lrTable[4][4].actionParam = 103;
+	//reduce
+	parser->lrTable[2][4].LRTableFuncP = LRReduce;
+	parser->lrTable[2][4].actionParam = 103;
+	//reduce
+	parser->lrTable[7][4].LRTableFuncP = LRReduce;
+	parser->lrTable[7][4].actionParam = 103;
+	//reduce
+	parser->lrTable[8][4].LRTableFuncP = LRReduce;
+	parser->lrTable[8][4].actionParam = 103;
+	//reduce
+	parser->lrTable[7][4].LRTableFuncP = LRReduce;
+	parser->lrTable[7][4].actionParam = 103;
+	//reduce
+	parser->lrTable[10][4].LRTableFuncP = LRReduce;
+	parser->lrTable[10][4].actionParam = 103;
+	//reduce
+	parser->lrTable[11][4].LRTableFuncP = LRReduce;
+	parser->lrTable[11][4].actionParam = 103;
+	//reduce
+	parser->lrTable[10][4].LRTableFuncP = LRReduce;
+	parser->lrTable[10][4].actionParam = 103;
+	//reduce
+	parser->lrTable[13][4].LRTableFuncP = LRReduce;
+	parser->lrTable[13][4].actionParam = 103;
+	//reduce
+	parser->lrTable[13][4].LRTableFuncP = LRReduce;
+	parser->lrTable[13][4].actionParam = 103;
+	//reduce
+	parser->lrTable[15][4].LRTableFuncP = LRReduce;
+	parser->lrTable[15][4].actionParam = 103;
+	//reduce
+	parser->lrTable[15][4].LRTableFuncP = LRReduce;
+	parser->lrTable[15][4].actionParam = 103;
+	//reduce
+	parser->lrTable[17][4].LRTableFuncP = LRReduce;
+	parser->lrTable[17][4].actionParam = 103;
+	//reduce
+	parser->lrTable[17][4].LRTableFuncP = LRReduce;
+	parser->lrTable[17][4].actionParam = 103;
+	//reduce
+	parser->lrTable[19][4].LRTableFuncP = LRReduce;
+	parser->lrTable[19][4].actionParam = 103;
+	//reduce
+	parser->lrTable[20][4].LRTableFuncP = LRReduce;
+	parser->lrTable[20][4].actionParam = 103;
+	//reduce
+	parser->lrTable[21][4].LRTableFuncP = LRReduce;
+	parser->lrTable[21][4].actionParam = 103;
+	//reduce
+	parser->lrTable[21][4].LRTableFuncP = LRReduce;
+	parser->lrTable[21][4].actionParam = 103;
+	//reduce
+	parser->lrTable[23][4].LRTableFuncP = LRReduce;
+	parser->lrTable[23][4].actionParam = 103;
+	//reduce
+	parser->lrTable[23][4].LRTableFuncP = LRReduce;
+	parser->lrTable[23][4].actionParam = 103;
+	//reduce
+	parser->lrTable[27][4].LRTableFuncP = LRReduce;
+	parser->lrTable[27][4].actionParam = 103;
+	//reduce
+	parser->lrTable[28][4].LRTableFuncP = LRReduce;
+	parser->lrTable[28][4].actionParam = 103;
+	//reduce
+	parser->lrTable[29][4].LRTableFuncP = LRReduce;
+	parser->lrTable[29][4].actionParam = 103;
+	//reduce
+	parser->lrTable[30][4].LRTableFuncP = LRReduce;
+	parser->lrTable[30][4].actionParam = 103;
+	//reduce
+	parser->lrTable[33][4].LRTableFuncP = LRReduce;
+	parser->lrTable[33][4].actionParam = 103;
+	//reduce
+	parser->lrTable[34][4].LRTableFuncP = LRReduce;
+	parser->lrTable[34][4].actionParam = 103;
+	//reduce
+	parser->lrTable[47][4].LRTableFuncP = LRReduce;
+	parser->lrTable[47][4].actionParam = 103;
+	//reduce
+	parser->lrTable[48][4].LRTableFuncP = LRReduce;
+	parser->lrTable[48][4].actionParam = 103;
+	//reduce
+	parser->lrTable[56][4].LRTableFuncP = LRReduce;
+	parser->lrTable[56][4].actionParam = 103;
+	//reduce
+	parser->lrTable[57][4].LRTableFuncP = LRReduce;
+	parser->lrTable[57][4].actionParam = 103;
+	//reduce
+	parser->lrTable[58][4].LRTableFuncP = LRReduce;
+	parser->lrTable[58][4].actionParam = 103;
+	//reduce
+	parser->lrTable[59][4].LRTableFuncP = LRReduce;
+	parser->lrTable[59][4].actionParam = 103;
+	//reduce
+	parser->lrTable[0][5].LRTableFuncP = LRReduce;
+	parser->lrTable[0][5].actionParam = 105;
+	//reduce
+	parser->lrTable[1][5].LRTableFuncP = LRReduce;
+	parser->lrTable[1][5].actionParam = 105;
+	//reduce
+	parser->lrTable[2][5].LRTableFuncP = LRReduce;
+	parser->lrTable[2][5].actionParam = 105;
+	//reduce
+	parser->lrTable[3][5].LRTableFuncP = LRReduce;
+	parser->lrTable[3][5].actionParam = 105;
+	//reduce
+	parser->lrTable[4][5].LRTableFuncP = LRReduce;
+	parser->lrTable[4][5].actionParam = 105;
+	//reduce
+	parser->lrTable[2][5].LRTableFuncP = LRReduce;
+	parser->lrTable[2][5].actionParam = 105;
+	//reduce
+	parser->lrTable[7][5].LRTableFuncP = LRReduce;
+	parser->lrTable[7][5].actionParam = 105;
+	//reduce
+	parser->lrTable[8][5].LRTableFuncP = LRReduce;
+	parser->lrTable[8][5].actionParam = 105;
+	//reduce
+	parser->lrTable[7][5].LRTableFuncP = LRReduce;
+	parser->lrTable[7][5].actionParam = 105;
+	//reduce
+	parser->lrTable[10][5].LRTableFuncP = LRReduce;
+	parser->lrTable[10][5].actionParam = 105;
+	//reduce
+	parser->lrTable[11][5].LRTableFuncP = LRReduce;
+	parser->lrTable[11][5].actionParam = 105;
+	//reduce
+	parser->lrTable[10][5].LRTableFuncP = LRReduce;
+	parser->lrTable[10][5].actionParam = 105;
+	//reduce
+	parser->lrTable[13][5].LRTableFuncP = LRReduce;
+	parser->lrTable[13][5].actionParam = 105;
+	//reduce
+	parser->lrTable[13][5].LRTableFuncP = LRReduce;
+	parser->lrTable[13][5].actionParam = 105;
+	//reduce
+	parser->lrTable[15][5].LRTableFuncP = LRReduce;
+	parser->lrTable[15][5].actionParam = 105;
+	//reduce
+	parser->lrTable[15][5].LRTableFuncP = LRReduce;
+	parser->lrTable[15][5].actionParam = 105;
+	//reduce
+	parser->lrTable[17][5].LRTableFuncP = LRReduce;
+	parser->lrTable[17][5].actionParam = 105;
+	//reduce
+	parser->lrTable[17][5].LRTableFuncP = LRReduce;
+	parser->lrTable[17][5].actionParam = 105;
+	//reduce
+	parser->lrTable[19][5].LRTableFuncP = LRReduce;
+	parser->lrTable[19][5].actionParam = 105;
+	//reduce
+	parser->lrTable[20][5].LRTableFuncP = LRReduce;
+	parser->lrTable[20][5].actionParam = 105;
+	//reduce
+	parser->lrTable[21][5].LRTableFuncP = LRReduce;
+	parser->lrTable[21][5].actionParam = 105;
+	//reduce
+	parser->lrTable[21][5].LRTableFuncP = LRReduce;
+	parser->lrTable[21][5].actionParam = 105;
+	//reduce
+	parser->lrTable[23][5].LRTableFuncP = LRReduce;
+	parser->lrTable[23][5].actionParam = 105;
+	//reduce
+	parser->lrTable[23][5].LRTableFuncP = LRReduce;
+	parser->lrTable[23][5].actionParam = 105;
+	//reduce
+	parser->lrTable[27][5].LRTableFuncP = LRReduce;
+	parser->lrTable[27][5].actionParam = 105;
+	//reduce
+	parser->lrTable[28][5].LRTableFuncP = LRReduce;
+	parser->lrTable[28][5].actionParam = 105;
+	//reduce
+	parser->lrTable[29][5].LRTableFuncP = LRReduce;
+	parser->lrTable[29][5].actionParam = 105;
+	//reduce
+	parser->lrTable[30][5].LRTableFuncP = LRReduce;
+	parser->lrTable[30][5].actionParam = 105;
+	//reduce
+	parser->lrTable[33][5].LRTableFuncP = LRReduce;
+	parser->lrTable[33][5].actionParam = 105;
+	//reduce
+	parser->lrTable[34][5].LRTableFuncP = LRReduce;
+	parser->lrTable[34][5].actionParam = 105;
+	//reduce
+	parser->lrTable[47][5].LRTableFuncP = LRReduce;
+	parser->lrTable[47][5].actionParam = 105;
+	//reduce
+	parser->lrTable[48][5].LRTableFuncP = LRReduce;
+	parser->lrTable[48][5].actionParam = 105;
+	//reduce
+	parser->lrTable[56][5].LRTableFuncP = LRReduce;
+	parser->lrTable[56][5].actionParam = 105;
+	//reduce
+	parser->lrTable[57][5].LRTableFuncP = LRReduce;
+	parser->lrTable[57][5].actionParam = 105;
+	//reduce
+	parser->lrTable[58][5].LRTableFuncP = LRReduce;
+	parser->lrTable[58][5].actionParam = 105;
+	//reduce
+	parser->lrTable[59][5].LRTableFuncP = LRReduce;
+	parser->lrTable[59][5].actionParam = 105;
+	//reduce
+	parser->lrTable[0][6].LRTableFuncP = LRReduce;
+	parser->lrTable[0][6].actionParam = 102;
+	//reduce
+	parser->lrTable[1][6].LRTableFuncP = LRReduce;
+	parser->lrTable[1][6].actionParam = 102;
+	//reduce
+	parser->lrTable[2][6].LRTableFuncP = LRReduce;
+	parser->lrTable[2][6].actionParam = 102;
+	//reduce
+	parser->lrTable[3][6].LRTableFuncP = LRReduce;
+	parser->lrTable[3][6].actionParam = 102;
+	//reduce
+	parser->lrTable[4][6].LRTableFuncP = LRReduce;
+	parser->lrTable[4][6].actionParam = 102;
+	//reduce
+	parser->lrTable[2][6].LRTableFuncP = LRReduce;
+	parser->lrTable[2][6].actionParam = 102;
+	//reduce
+	parser->lrTable[7][6].LRTableFuncP = LRReduce;
+	parser->lrTable[7][6].actionParam = 102;
+	//reduce
+	parser->lrTable[8][6].LRTableFuncP = LRReduce;
+	parser->lrTable[8][6].actionParam = 102;
+	//reduce
+	parser->lrTable[7][6].LRTableFuncP = LRReduce;
+	parser->lrTable[7][6].actionParam = 102;
+	//reduce
+	parser->lrTable[10][6].LRTableFuncP = LRReduce;
+	parser->lrTable[10][6].actionParam = 102;
+	//reduce
+	parser->lrTable[11][6].LRTableFuncP = LRReduce;
+	parser->lrTable[11][6].actionParam = 102;
+	//reduce
+	parser->lrTable[10][6].LRTableFuncP = LRReduce;
+	parser->lrTable[10][6].actionParam = 102;
+	//reduce
+	parser->lrTable[13][6].LRTableFuncP = LRReduce;
+	parser->lrTable[13][6].actionParam = 102;
+	//reduce
+	parser->lrTable[13][6].LRTableFuncP = LRReduce;
+	parser->lrTable[13][6].actionParam = 102;
+	//reduce
+	parser->lrTable[15][6].LRTableFuncP = LRReduce;
+	parser->lrTable[15][6].actionParam = 102;
+	//reduce
+	parser->lrTable[15][6].LRTableFuncP = LRReduce;
+	parser->lrTable[15][6].actionParam = 102;
+	//reduce
+	parser->lrTable[17][6].LRTableFuncP = LRReduce;
+	parser->lrTable[17][6].actionParam = 102;
+	//reduce
+	parser->lrTable[17][6].LRTableFuncP = LRReduce;
+	parser->lrTable[17][6].actionParam = 102;
+	//reduce
+	parser->lrTable[19][6].LRTableFuncP = LRReduce;
+	parser->lrTable[19][6].actionParam = 102;
+	//reduce
+	parser->lrTable[20][6].LRTableFuncP = LRReduce;
+	parser->lrTable[20][6].actionParam = 102;
+	//reduce
+	parser->lrTable[21][6].LRTableFuncP = LRReduce;
+	parser->lrTable[21][6].actionParam = 102;
+	//reduce
+	parser->lrTable[21][6].LRTableFuncP = LRReduce;
+	parser->lrTable[21][6].actionParam = 102;
+	//reduce
+	parser->lrTable[23][6].LRTableFuncP = LRReduce;
+	parser->lrTable[23][6].actionParam = 102;
+	//reduce
+	parser->lrTable[23][6].LRTableFuncP = LRReduce;
+	parser->lrTable[23][6].actionParam = 102;
+	//reduce
+	parser->lrTable[27][6].LRTableFuncP = LRReduce;
+	parser->lrTable[27][6].actionParam = 102;
+	//reduce
+	parser->lrTable[28][6].LRTableFuncP = LRReduce;
+	parser->lrTable[28][6].actionParam = 102;
+	//reduce
+	parser->lrTable[29][6].LRTableFuncP = LRReduce;
+	parser->lrTable[29][6].actionParam = 102;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 102;
+	//reduce
+	parser->lrTable[33][6].LRTableFuncP = LRReduce;
+	parser->lrTable[33][6].actionParam = 102;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 102;
+	//reduce
+	parser->lrTable[47][6].LRTableFuncP = LRReduce;
+	parser->lrTable[47][6].actionParam = 102;
+	//reduce
+	parser->lrTable[48][6].LRTableFuncP = LRReduce;
+	parser->lrTable[48][6].actionParam = 102;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 102;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 102;
+	//reduce
+	parser->lrTable[58][6].LRTableFuncP = LRReduce;
+	parser->lrTable[58][6].actionParam = 102;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 102;
+	//shift
+	parser->lrTable[57][6].LRTableFuncP = LRShift;
+	parser->lrTable[57][6].actionParam = 58;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 10;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 10;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 42;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 42;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 42;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 42;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 42;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 44;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 44;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 44;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 44;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 44;
+	//shift
+	parser->lrTable[48][6].LRTableFuncP = LRShift;
+	parser->lrTable[48][6].actionParam = 59;
+	//shift
+	parser->lrTable[58][6].LRTableFuncP = LRShift;
+	parser->lrTable[58][6].actionParam = 60;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 55;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 55;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 55;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 55;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 55;
+	//shift
+	parser->lrTable[47][6].LRTableFuncP = LRShift;
+	parser->lrTable[47][6].actionParam = 61;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 57;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 57;
+	//reduce
+	parser->lrTable[48][6].LRTableFuncP = LRReduce;
+	parser->lrTable[48][6].actionParam = 57;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 57;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 57;
+	//reduce
+	parser->lrTable[58][6].LRTableFuncP = LRReduce;
+	parser->lrTable[58][6].actionParam = 57;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 57;
+	//shift
+	parser->lrTable[21][6].LRTableFuncP = LRShift;
+	parser->lrTable[21][6].actionParam = 62;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 59;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 59;
+	//reduce
+	parser->lrTable[47][6].LRTableFuncP = LRReduce;
+	parser->lrTable[47][6].actionParam = 59;
+	//reduce
+	parser->lrTable[48][6].LRTableFuncP = LRReduce;
+	parser->lrTable[48][6].actionParam = 59;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 59;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 59;
+	//reduce
+	parser->lrTable[58][6].LRTableFuncP = LRReduce;
+	parser->lrTable[58][6].actionParam = 59;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 59;
+	//shift
+	parser->lrTable[23][6].LRTableFuncP = LRShift;
+	parser->lrTable[23][6].actionParam = 63;
+	//reduce
+	parser->lrTable[21][6].LRTableFuncP = LRReduce;
+	parser->lrTable[21][6].actionParam = 61;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 61;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 61;
+	//reduce
+	parser->lrTable[47][6].LRTableFuncP = LRReduce;
+	parser->lrTable[47][6].actionParam = 61;
+	//reduce
+	parser->lrTable[48][6].LRTableFuncP = LRReduce;
+	parser->lrTable[48][6].actionParam = 61;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 61;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 61;
+	//reduce
+	parser->lrTable[58][6].LRTableFuncP = LRReduce;
+	parser->lrTable[58][6].actionParam = 61;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 61;
+	//shift
+	parser->lrTable[19][6].LRTableFuncP = LRShift;
+	parser->lrTable[19][6].actionParam = 64;
+	//reduce
+	parser->lrTable[21][6].LRTableFuncP = LRReduce;
+	parser->lrTable[21][6].actionParam = 63;
+	//reduce
+	parser->lrTable[23][6].LRTableFuncP = LRReduce;
+	parser->lrTable[23][6].actionParam = 63;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 63;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 63;
+	//reduce
+	parser->lrTable[47][6].LRTableFuncP = LRReduce;
+	parser->lrTable[47][6].actionParam = 63;
+	//reduce
+	parser->lrTable[48][6].LRTableFuncP = LRReduce;
+	parser->lrTable[48][6].actionParam = 63;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 63;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 63;
+	//reduce
+	parser->lrTable[58][6].LRTableFuncP = LRReduce;
+	parser->lrTable[58][6].actionParam = 63;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 63;
+	//shift
+	parser->lrTable[3][6].LRTableFuncP = LRShift;
+	parser->lrTable[3][6].actionParam = 65;
+	//shift
+	parser->lrTable[4][6].LRTableFuncP = LRShift;
+	parser->lrTable[4][6].actionParam = 66;
+	//reduce
+	parser->lrTable[19][6].LRTableFuncP = LRReduce;
+	parser->lrTable[19][6].actionParam = 65;
+	//reduce
+	parser->lrTable[21][6].LRTableFuncP = LRReduce;
+	parser->lrTable[21][6].actionParam = 65;
+	//reduce
+	parser->lrTable[23][6].LRTableFuncP = LRReduce;
+	parser->lrTable[23][6].actionParam = 65;
+	//reduce
+	parser->lrTable[30][6].LRTableFuncP = LRReduce;
+	parser->lrTable[30][6].actionParam = 65;
+	//reduce
+	parser->lrTable[34][6].LRTableFuncP = LRReduce;
+	parser->lrTable[34][6].actionParam = 65;
+	//reduce
+	parser->lrTable[47][6].LRTableFuncP = LRReduce;
+	parser->lrTable[47][6].actionParam = 65;
+	//reduce
+	parser->lrTable[48][6].LRTableFuncP = LRReduce;
+	parser->lrTable[48][6].actionParam = 65;
+	//reduce
+	parser->lrTable[56][6].LRTableFuncP = LRReduce;
+	parser->lrTable[56][6].actionParam = 65;
+	//reduce
+	parser->lrTable[57][6].LRTableFuncP = LRReduce;
+	parser->lrTable[57][6].actionParam = 65;
+	//reduce
+	parser->lrTable[58][6].LRTableFuncP = LRReduce;
+	parser->lrTable[58][6].actionParam = 65;
+	//reduce
+	parser->lrTable[59][6].LRTableFuncP = LRReduce;
+	parser->lrTable[59][6].actionParam = 65;
+	//shift
+	parser->lrTable[0][7].LRTableFuncP = LRShift;
+	parser->lrTable[0][7].actionParam = 68;
+	//shift
+	parser->lrTable[1][7].LRTableFuncP = LRShift;
+	parser->lrTable[1][7].actionParam = 69;
+	//shift
+	parser->lrTable[2][7].LRTableFuncP = LRShift;
+	parser->lrTable[2][7].actionParam = 70;
+	//reduce
+	parser->lrTable[3][7].LRTableFuncP = LRReduce;
+	parser->lrTable[3][7].actionParam = 67;
+	//reduce
+	parser->lrTable[4][7].LRTableFuncP = LRReduce;
+	parser->lrTable[4][7].actionParam = 67;
+	//reduce
+	parser->lrTable[19][7].LRTableFuncP = LRReduce;
+	parser->lrTable[19][7].actionParam = 67;
+	//reduce
+	parser->lrTable[21][7].LRTableFuncP = LRReduce;
+	parser->lrTable[21][7].actionParam = 67;
+	//reduce
+	parser->lrTable[23][7].LRTableFuncP = LRReduce;
+	parser->lrTable[23][7].actionParam = 67;
+	//reduce
+	parser->lrTable[30][7].LRTableFuncP = LRReduce;
+	parser->lrTable[30][7].actionParam = 67;
+	//reduce
+	parser->lrTable[34][7].LRTableFuncP = LRReduce;
+	parser->lrTable[34][7].actionParam = 67;
+	//reduce
+	parser->lrTable[47][7].LRTableFuncP = LRReduce;
+	parser->lrTable[47][7].actionParam = 67;
+	//reduce
+	parser->lrTable[48][7].LRTableFuncP = LRReduce;
+	parser->lrTable[48][7].actionParam = 67;
+	//reduce
+	parser->lrTable[56][7].LRTableFuncP = LRReduce;
+	parser->lrTable[56][7].actionParam = 67;
+	//reduce
+	parser->lrTable[57][7].LRTableFuncP = LRReduce;
+	parser->lrTable[57][7].actionParam = 67;
+	//reduce
+	parser->lrTable[58][7].LRTableFuncP = LRReduce;
+	parser->lrTable[58][7].actionParam = 67;
+	//reduce
+	parser->lrTable[59][7].LRTableFuncP = LRReduce;
+	parser->lrTable[59][7].actionParam = 67;
+	//shift
+	parser->lrTable[27][7].LRTableFuncP = LRShift;
+	parser->lrTable[27][7].actionParam = 71;
+	//shift
+	parser->lrTable[28][7].LRTableFuncP = LRShift;
+	parser->lrTable[28][7].actionParam = 72;
+	//reduce
+	parser->lrTable[0][8].LRTableFuncP = LRReduce;
+	parser->lrTable[0][8].actionParam = 70;
+	//reduce
+	parser->lrTable[1][8].LRTableFuncP = LRReduce;
+	parser->lrTable[1][8].actionParam = 70;
+	//reduce
+	parser->lrTable[3][8].LRTableFuncP = LRReduce;
+	parser->lrTable[3][8].actionParam = 70;
+	//reduce
+	parser->lrTable[4][8].LRTableFuncP = LRReduce;
+	parser->lrTable[4][8].actionParam = 70;
+	//reduce
+	parser->lrTable[2][8].LRTableFuncP = LRReduce;
+	parser->lrTable[2][8].actionParam = 70;
+	//reduce
+	parser->lrTable[19][8].LRTableFuncP = LRReduce;
+	parser->lrTable[19][8].actionParam = 70;
+	//reduce
+	parser->lrTable[21][8].LRTableFuncP = LRReduce;
+	parser->lrTable[21][8].actionParam = 70;
+	//reduce
+	parser->lrTable[23][8].LRTableFuncP = LRReduce;
+	parser->lrTable[23][8].actionParam = 70;
+	//reduce
+	parser->lrTable[30][8].LRTableFuncP = LRReduce;
+	parser->lrTable[30][8].actionParam = 70;
+	//reduce
+	parser->lrTable[34][8].LRTableFuncP = LRReduce;
+	parser->lrTable[34][8].actionParam = 70;
+	//reduce
+	parser->lrTable[47][8].LRTableFuncP = LRReduce;
+	parser->lrTable[47][8].actionParam = 70;
+	//reduce
+	parser->lrTable[48][8].LRTableFuncP = LRReduce;
+	parser->lrTable[48][8].actionParam = 70;
+	//reduce
+	parser->lrTable[56][8].LRTableFuncP = LRReduce;
+	parser->lrTable[56][8].actionParam = 70;
+	//reduce
+	parser->lrTable[57][8].LRTableFuncP = LRReduce;
+	parser->lrTable[57][8].actionParam = 70;
+	//reduce
+	parser->lrTable[58][8].LRTableFuncP = LRReduce;
+	parser->lrTable[58][8].actionParam = 70;
+	//reduce
+	parser->lrTable[59][8].LRTableFuncP = LRReduce;
+	parser->lrTable[59][8].actionParam = 70;
+	//shift
+	parser->lrTable[7][8].LRTableFuncP = LRShift;
+	parser->lrTable[7][8].actionParam = 73;
+	//shift
+	parser->lrTable[10][8].LRTableFuncP = LRShift;
+	parser->lrTable[10][8].actionParam = 74;
+	//reduce
+	parser->lrTable[0][9].LRTableFuncP = LRReduce;
+	parser->lrTable[0][9].actionParam = 75;
+	//reduce
+	parser->lrTable[1][9].LRTableFuncP = LRReduce;
+	parser->lrTable[1][9].actionParam = 75;
+	//reduce
+	parser->lrTable[3][9].LRTableFuncP = LRReduce;
+	parser->lrTable[3][9].actionParam = 75;
+	//reduce
+	parser->lrTable[4][9].LRTableFuncP = LRReduce;
+	parser->lrTable[4][9].actionParam = 75;
+	//reduce
+	parser->lrTable[2][9].LRTableFuncP = LRReduce;
+	parser->lrTable[2][9].actionParam = 75;
+	//reduce
+	parser->lrTable[19][9].LRTableFuncP = LRReduce;
+	parser->lrTable[19][9].actionParam = 75;
+	//reduce
+	parser->lrTable[21][9].LRTableFuncP = LRReduce;
+	parser->lrTable[21][9].actionParam = 75;
+	//reduce
+	parser->lrTable[23][9].LRTableFuncP = LRReduce;
+	parser->lrTable[23][9].actionParam = 75;
+	//reduce
+	parser->lrTable[27][9].LRTableFuncP = LRReduce;
+	parser->lrTable[27][9].actionParam = 75;
+	//reduce
+	parser->lrTable[28][9].LRTableFuncP = LRReduce;
+	parser->lrTable[28][9].actionParam = 75;
+	//reduce
+	parser->lrTable[30][9].LRTableFuncP = LRReduce;
+	parser->lrTable[30][9].actionParam = 75;
+	//reduce
+	parser->lrTable[34][9].LRTableFuncP = LRReduce;
+	parser->lrTable[34][9].actionParam = 75;
+	//reduce
+	parser->lrTable[47][9].LRTableFuncP = LRReduce;
+	parser->lrTable[47][9].actionParam = 75;
+	//reduce
+	parser->lrTable[48][9].LRTableFuncP = LRReduce;
+	parser->lrTable[48][9].actionParam = 75;
+	//reduce
+	parser->lrTable[56][9].LRTableFuncP = LRReduce;
+	parser->lrTable[56][9].actionParam = 75;
+	//reduce
+	parser->lrTable[57][9].LRTableFuncP = LRReduce;
+	parser->lrTable[57][9].actionParam = 75;
+	//reduce
+	parser->lrTable[58][9].LRTableFuncP = LRReduce;
+	parser->lrTable[58][9].actionParam = 75;
+	//reduce
+	parser->lrTable[59][9].LRTableFuncP = LRReduce;
+	parser->lrTable[59][9].actionParam = 75;
+	//shift
+	parser->lrTable[13][9].LRTableFuncP = LRShift;
+	parser->lrTable[13][9].actionParam = 75;
+	//shift
+	parser->lrTable[15][9].LRTableFuncP = LRShift;
+	parser->lrTable[15][9].actionParam = 76;
+	//shift
+	parser->lrTable[17][9].LRTableFuncP = LRShift;
+	parser->lrTable[17][9].actionParam = 77;
+	//reduce
+	parser->lrTable[0][10].LRTableFuncP = LRReduce;
+	parser->lrTable[0][10].actionParam = 78;
+	//reduce
+	parser->lrTable[1][10].LRTableFuncP = LRReduce;
+	parser->lrTable[1][10].actionParam = 78;
+	//reduce
+	parser->lrTable[3][10].LRTableFuncP = LRReduce;
+	parser->lrTable[3][10].actionParam = 78;
+	//reduce
+	parser->lrTable[4][10].LRTableFuncP = LRReduce;
+	parser->lrTable[4][10].actionParam = 78;
+	//reduce
+	parser->lrTable[2][10].LRTableFuncP = LRReduce;
+	parser->lrTable[2][10].actionParam = 78;
+	//reduce
+	parser->lrTable[7][10].LRTableFuncP = LRReduce;
+	parser->lrTable[7][10].actionParam = 78;
+	//reduce
+	parser->lrTable[10][10].LRTableFuncP = LRReduce;
+	parser->lrTable[10][10].actionParam = 78;
+	//reduce
+	parser->lrTable[19][10].LRTableFuncP = LRReduce;
+	parser->lrTable[19][10].actionParam = 78;
+	//reduce
+	parser->lrTable[21][10].LRTableFuncP = LRReduce;
+	parser->lrTable[21][10].actionParam = 78;
+	//reduce
+	parser->lrTable[23][10].LRTableFuncP = LRReduce;
+	parser->lrTable[23][10].actionParam = 78;
+	//reduce
+	parser->lrTable[27][10].LRTableFuncP = LRReduce;
+	parser->lrTable[27][10].actionParam = 78;
+	//reduce
+	parser->lrTable[28][10].LRTableFuncP = LRReduce;
+	parser->lrTable[28][10].actionParam = 78;
+	//reduce
+	parser->lrTable[30][10].LRTableFuncP = LRReduce;
+	parser->lrTable[30][10].actionParam = 78;
+	//reduce
+	parser->lrTable[34][10].LRTableFuncP = LRReduce;
+	parser->lrTable[34][10].actionParam = 78;
+	//reduce
+	parser->lrTable[47][10].LRTableFuncP = LRReduce;
+	parser->lrTable[47][10].actionParam = 78;
+	//reduce
+	parser->lrTable[48][10].LRTableFuncP = LRReduce;
+	parser->lrTable[48][10].actionParam = 78;
+	//reduce
+	parser->lrTable[56][10].LRTableFuncP = LRReduce;
+	parser->lrTable[56][10].actionParam = 78;
+	//reduce
+	parser->lrTable[57][10].LRTableFuncP = LRReduce;
+	parser->lrTable[57][10].actionParam = 78;
+	//reduce
+	parser->lrTable[58][10].LRTableFuncP = LRReduce;
+	parser->lrTable[58][10].actionParam = 78;
+	//reduce
+	parser->lrTable[59][10].LRTableFuncP = LRReduce;
+	parser->lrTable[59][10].actionParam = 78;
+	//shift
+	parser->lrTable[2][10].LRTableFuncP = LRShift;
+	parser->lrTable[2][10].actionParam = 78;
+	//shift
+	parser->lrTable[7][10].LRTableFuncP = LRShift;
+	parser->lrTable[7][10].actionParam = 79;
+	//shift
+	parser->lrTable[10][10].LRTableFuncP = LRShift;
+	parser->lrTable[10][10].actionParam = 80;
+	//shift
+	parser->lrTable[13][10].LRTableFuncP = LRShift;
+	parser->lrTable[13][10].actionParam = 81;
+	//shift
+	parser->lrTable[15][10].LRTableFuncP = LRShift;
+	parser->lrTable[15][10].actionParam = 82;
+	//shift
+	parser->lrTable[17][10].LRTableFuncP = LRShift;
+	parser->lrTable[17][10].actionParam = 83;
+	//shift
+	parser->lrTable[20][10].LRTableFuncP = LRShift;
+	parser->lrTable[20][10].actionParam = 84;
+	//shift
+	parser->lrTable[21][10].LRTableFuncP = LRShift;
+	parser->lrTable[21][10].actionParam = 85;
+	//shift
+	parser->lrTable[23][10].LRTableFuncP = LRShift;
+	parser->lrTable[23][10].actionParam = 86;
+	//reduce
+	parser->lrTable[0][11].LRTableFuncP = LRReduce;
+	parser->lrTable[0][11].actionParam = 81;
+	//reduce
+	parser->lrTable[1][11].LRTableFuncP = LRReduce;
+	parser->lrTable[1][11].actionParam = 81;
+	//reduce
+	parser->lrTable[3][11].LRTableFuncP = LRReduce;
+	parser->lrTable[3][11].actionParam = 81;
+	//reduce
+	parser->lrTable[4][11].LRTableFuncP = LRReduce;
+	parser->lrTable[4][11].actionParam = 81;
+	//reduce
+	parser->lrTable[2][11].LRTableFuncP = LRReduce;
+	parser->lrTable[2][11].actionParam = 81;
+	//reduce
+	parser->lrTable[7][11].LRTableFuncP = LRReduce;
+	parser->lrTable[7][11].actionParam = 81;
+	//reduce
+	parser->lrTable[10][11].LRTableFuncP = LRReduce;
+	parser->lrTable[10][11].actionParam = 81;
+	//reduce
+	parser->lrTable[13][11].LRTableFuncP = LRReduce;
+	parser->lrTable[13][11].actionParam = 81;
+	//reduce
+	parser->lrTable[15][11].LRTableFuncP = LRReduce;
+	parser->lrTable[15][11].actionParam = 81;
+	//reduce
+	parser->lrTable[17][11].LRTableFuncP = LRReduce;
+	parser->lrTable[17][11].actionParam = 81;
+	//reduce
+	parser->lrTable[19][11].LRTableFuncP = LRReduce;
+	parser->lrTable[19][11].actionParam = 81;
+	//reduce
+	parser->lrTable[21][11].LRTableFuncP = LRReduce;
+	parser->lrTable[21][11].actionParam = 81;
+	//reduce
+	parser->lrTable[23][11].LRTableFuncP = LRReduce;
+	parser->lrTable[23][11].actionParam = 81;
+	//reduce
+	parser->lrTable[27][11].LRTableFuncP = LRReduce;
+	parser->lrTable[27][11].actionParam = 81;
+	//reduce
+	parser->lrTable[28][11].LRTableFuncP = LRReduce;
+	parser->lrTable[28][11].actionParam = 81;
+	//reduce
+	parser->lrTable[30][11].LRTableFuncP = LRReduce;
+	parser->lrTable[30][11].actionParam = 81;
+	//reduce
+	parser->lrTable[34][11].LRTableFuncP = LRReduce;
+	parser->lrTable[34][11].actionParam = 81;
+	//reduce
+	parser->lrTable[47][11].LRTableFuncP = LRReduce;
+	parser->lrTable[47][11].actionParam = 81;
+	//reduce
+	parser->lrTable[48][11].LRTableFuncP = LRReduce;
+	parser->lrTable[48][11].actionParam = 81;
+	//reduce
+	parser->lrTable[56][11].LRTableFuncP = LRReduce;
+	parser->lrTable[56][11].actionParam = 81;
+	//reduce
+	parser->lrTable[57][11].LRTableFuncP = LRReduce;
+	parser->lrTable[57][11].actionParam = 81;
+	//reduce
+	parser->lrTable[58][11].LRTableFuncP = LRReduce;
+	parser->lrTable[58][11].actionParam = 81;
+	//reduce
+	parser->lrTable[59][11].LRTableFuncP = LRReduce;
+	parser->lrTable[59][11].actionParam = 81;
+	//goto
+	parser->lrTable[assignment_operator+TOTAL_TOKENS][11].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_operator+TOTAL_TOKENS][11].actionParam = 87;
+	//shift
+	parser->lrTable[4][11].LRTableFuncP = LRShift;
+	parser->lrTable[4][11].actionParam = 19;
+	//shift
+	parser->lrTable[7][11].LRTableFuncP = LRShift;
+	parser->lrTable[7][11].actionParam = 20;
+	//shift
+	parser->lrTable[8][11].LRTableFuncP = LRShift;
+	parser->lrTable[8][11].actionParam = 21;
+	//shift
+	parser->lrTable[10][11].LRTableFuncP = LRShift;
+	parser->lrTable[10][11].actionParam = 22;
+	//shift
+	parser->lrTable[11][11].LRTableFuncP = LRShift;
+	parser->lrTable[11][11].actionParam = 23;
+	//shift
+	parser->lrTable[25][11].LRTableFuncP = LRShift;
+	parser->lrTable[25][11].actionParam = 24;
+	//shift
+	parser->lrTable[29][11].LRTableFuncP = LRShift;
+	parser->lrTable[29][11].actionParam = 25;
+	//shift
+	parser->lrTable[35][11].LRTableFuncP = LRShift;
+	parser->lrTable[35][11].actionParam = 26;
+	//shift
+	parser->lrTable[36][11].LRTableFuncP = LRShift;
+	parser->lrTable[36][11].actionParam = 27;
+	//shift
+	parser->lrTable[37][11].LRTableFuncP = LRShift;
+	parser->lrTable[37][11].actionParam = 28;
+	//shift
+	parser->lrTable[38][11].LRTableFuncP = LRShift;
+	parser->lrTable[38][11].actionParam = 29;
+	//shift
+	parser->lrTable[39][11].LRTableFuncP = LRShift;
+	parser->lrTable[39][11].actionParam = 30;
+	//shift
+	parser->lrTable[51][11].LRTableFuncP = LRShift;
+	parser->lrTable[51][11].actionParam = 31;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][11].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][11].actionParam = 88;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][11].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][11].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][11].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][11].actionParam = 47;
+	//shift
+	parser->lrTable[8][11].LRTableFuncP = LRShift;
+	parser->lrTable[8][11].actionParam = 89;
+	//shift
+	parser->lrTable[11][11].LRTableFuncP = LRShift;
+	parser->lrTable[11][11].actionParam = 90;
+	//shift
+	parser->lrTable[29][11].LRTableFuncP = LRShift;
+	parser->lrTable[29][11].actionParam = 91;
+	//shift
+	parser->lrTable[33][11].LRTableFuncP = LRShift;
+	parser->lrTable[33][11].actionParam = 92;
+	//reduce
+	parser->lrTable[0][12].LRTableFuncP = LRReduce;
+	parser->lrTable[0][12].actionParam = 85;
+	//reduce
+	parser->lrTable[1][12].LRTableFuncP = LRReduce;
+	parser->lrTable[1][12].actionParam = 85;
+	//reduce
+	parser->lrTable[2][12].LRTableFuncP = LRReduce;
+	parser->lrTable[2][12].actionParam = 85;
+	//reduce
+	parser->lrTable[3][12].LRTableFuncP = LRReduce;
+	parser->lrTable[3][12].actionParam = 85;
+	//reduce
+	parser->lrTable[4][12].LRTableFuncP = LRReduce;
+	parser->lrTable[4][12].actionParam = 85;
+	//reduce
+	parser->lrTable[2][12].LRTableFuncP = LRReduce;
+	parser->lrTable[2][12].actionParam = 85;
+	//reduce
+	parser->lrTable[7][12].LRTableFuncP = LRReduce;
+	parser->lrTable[7][12].actionParam = 85;
+	//reduce
+	parser->lrTable[7][12].LRTableFuncP = LRReduce;
+	parser->lrTable[7][12].actionParam = 85;
+	//reduce
+	parser->lrTable[10][12].LRTableFuncP = LRReduce;
+	parser->lrTable[10][12].actionParam = 85;
+	//reduce
+	parser->lrTable[10][12].LRTableFuncP = LRReduce;
+	parser->lrTable[10][12].actionParam = 85;
+	//reduce
+	parser->lrTable[13][12].LRTableFuncP = LRReduce;
+	parser->lrTable[13][12].actionParam = 85;
+	//reduce
+	parser->lrTable[13][12].LRTableFuncP = LRReduce;
+	parser->lrTable[13][12].actionParam = 85;
+	//reduce
+	parser->lrTable[15][12].LRTableFuncP = LRReduce;
+	parser->lrTable[15][12].actionParam = 85;
+	//reduce
+	parser->lrTable[15][12].LRTableFuncP = LRReduce;
+	parser->lrTable[15][12].actionParam = 85;
+	//reduce
+	parser->lrTable[17][12].LRTableFuncP = LRReduce;
+	parser->lrTable[17][12].actionParam = 85;
+	//reduce
+	parser->lrTable[17][12].LRTableFuncP = LRReduce;
+	parser->lrTable[17][12].actionParam = 85;
+	//reduce
+	parser->lrTable[19][12].LRTableFuncP = LRReduce;
+	parser->lrTable[19][12].actionParam = 85;
+	//reduce
+	parser->lrTable[20][12].LRTableFuncP = LRReduce;
+	parser->lrTable[20][12].actionParam = 85;
+	//reduce
+	parser->lrTable[21][12].LRTableFuncP = LRReduce;
+	parser->lrTable[21][12].actionParam = 85;
+	//reduce
+	parser->lrTable[21][12].LRTableFuncP = LRReduce;
+	parser->lrTable[21][12].actionParam = 85;
 	//reduce
 	parser->lrTable[23][12].LRTableFuncP = LRReduce;
-	parser->lrTable[23][12].actionParam = 4;
-	//goto
-	parser->lrTable[StmtList+TOTAL_TOKENS][12].LRTableFuncP = LRGoto;
-	parser->lrTable[StmtList+TOTAL_TOKENS][12].actionParam = 33;
-	//goto
-	parser->lrTable[Stmt+TOTAL_TOKENS][12].LRTableFuncP = LRGoto;
-	parser->lrTable[Stmt+TOTAL_TOKENS][12].actionParam = 12;
-	//goto
-	parser->lrTable[Decl+TOTAL_TOKENS][12].LRTableFuncP = LRGoto;
-	parser->lrTable[Decl+TOTAL_TOKENS][12].actionParam = 13;
-	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][12].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][12].actionParam = 14;
-	//goto
-	parser->lrTable[IfStmt+TOTAL_TOKENS][12].LRTableFuncP = LRGoto;
-	parser->lrTable[IfStmt+TOTAL_TOKENS][12].actionParam = 15;
-	//goto
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][12].LRTableFuncP = LRGoto;
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][12].actionParam = 16;
+	parser->lrTable[23][12].actionParam = 85;
 	//reduce
-	parser->lrTable[41][13].LRTableFuncP = LRReduce;
-	parser->lrTable[41][13].actionParam = 5;
+	parser->lrTable[23][12].LRTableFuncP = LRReduce;
+	parser->lrTable[23][12].actionParam = 85;
+	//reduce
+	parser->lrTable[27][12].LRTableFuncP = LRReduce;
+	parser->lrTable[27][12].actionParam = 85;
+	//reduce
+	parser->lrTable[28][12].LRTableFuncP = LRReduce;
+	parser->lrTable[28][12].actionParam = 85;
+	//reduce
+	parser->lrTable[30][12].LRTableFuncP = LRReduce;
+	parser->lrTable[30][12].actionParam = 85;
+	//reduce
+	parser->lrTable[34][12].LRTableFuncP = LRReduce;
+	parser->lrTable[34][12].actionParam = 85;
+	//reduce
+	parser->lrTable[47][12].LRTableFuncP = LRReduce;
+	parser->lrTable[47][12].actionParam = 85;
+	//reduce
+	parser->lrTable[48][12].LRTableFuncP = LRReduce;
+	parser->lrTable[48][12].actionParam = 85;
+	//reduce
+	parser->lrTable[56][12].LRTableFuncP = LRReduce;
+	parser->lrTable[56][12].actionParam = 85;
+	//reduce
+	parser->lrTable[57][12].LRTableFuncP = LRReduce;
+	parser->lrTable[57][12].actionParam = 85;
+	//reduce
+	parser->lrTable[58][12].LRTableFuncP = LRReduce;
+	parser->lrTable[58][12].actionParam = 85;
+	//reduce
+	parser->lrTable[59][12].LRTableFuncP = LRReduce;
+	parser->lrTable[59][12].actionParam = 85;
+	//reduce
+	parser->lrTable[0][13].LRTableFuncP = LRReduce;
+	parser->lrTable[0][13].actionParam = 93;
+	//reduce
+	parser->lrTable[1][13].LRTableFuncP = LRReduce;
+	parser->lrTable[1][13].actionParam = 93;
+	//reduce
+	parser->lrTable[2][13].LRTableFuncP = LRReduce;
+	parser->lrTable[2][13].actionParam = 93;
+	//reduce
+	parser->lrTable[3][13].LRTableFuncP = LRReduce;
+	parser->lrTable[3][13].actionParam = 93;
+	//reduce
+	parser->lrTable[4][13].LRTableFuncP = LRReduce;
+	parser->lrTable[4][13].actionParam = 93;
+	//reduce
+	parser->lrTable[2][13].LRTableFuncP = LRReduce;
+	parser->lrTable[2][13].actionParam = 93;
+	//reduce
+	parser->lrTable[7][13].LRTableFuncP = LRReduce;
+	parser->lrTable[7][13].actionParam = 93;
+	//reduce
+	parser->lrTable[8][13].LRTableFuncP = LRReduce;
+	parser->lrTable[8][13].actionParam = 93;
+	//reduce
+	parser->lrTable[7][13].LRTableFuncP = LRReduce;
+	parser->lrTable[7][13].actionParam = 93;
+	//reduce
+	parser->lrTable[10][13].LRTableFuncP = LRReduce;
+	parser->lrTable[10][13].actionParam = 93;
+	//reduce
+	parser->lrTable[11][13].LRTableFuncP = LRReduce;
+	parser->lrTable[11][13].actionParam = 93;
+	//reduce
+	parser->lrTable[10][13].LRTableFuncP = LRReduce;
+	parser->lrTable[10][13].actionParam = 93;
+	//reduce
+	parser->lrTable[13][13].LRTableFuncP = LRReduce;
+	parser->lrTable[13][13].actionParam = 93;
+	//reduce
+	parser->lrTable[13][13].LRTableFuncP = LRReduce;
+	parser->lrTable[13][13].actionParam = 93;
+	//reduce
+	parser->lrTable[15][13].LRTableFuncP = LRReduce;
+	parser->lrTable[15][13].actionParam = 93;
+	//reduce
+	parser->lrTable[15][13].LRTableFuncP = LRReduce;
+	parser->lrTable[15][13].actionParam = 93;
+	//reduce
+	parser->lrTable[17][13].LRTableFuncP = LRReduce;
+	parser->lrTable[17][13].actionParam = 93;
+	//reduce
+	parser->lrTable[17][13].LRTableFuncP = LRReduce;
+	parser->lrTable[17][13].actionParam = 93;
+	//reduce
+	parser->lrTable[19][13].LRTableFuncP = LRReduce;
+	parser->lrTable[19][13].actionParam = 93;
+	//reduce
+	parser->lrTable[20][13].LRTableFuncP = LRReduce;
+	parser->lrTable[20][13].actionParam = 93;
+	//reduce
+	parser->lrTable[21][13].LRTableFuncP = LRReduce;
+	parser->lrTable[21][13].actionParam = 93;
+	//reduce
+	parser->lrTable[21][13].LRTableFuncP = LRReduce;
+	parser->lrTable[21][13].actionParam = 93;
 	//reduce
 	parser->lrTable[23][13].LRTableFuncP = LRReduce;
-	parser->lrTable[23][13].actionParam = 5;
+	parser->lrTable[23][13].actionParam = 93;
+	//reduce
+	parser->lrTable[23][13].LRTableFuncP = LRReduce;
+	parser->lrTable[23][13].actionParam = 93;
+	//reduce
+	parser->lrTable[27][13].LRTableFuncP = LRReduce;
+	parser->lrTable[27][13].actionParam = 93;
+	//reduce
+	parser->lrTable[28][13].LRTableFuncP = LRReduce;
+	parser->lrTable[28][13].actionParam = 93;
 	//reduce
 	parser->lrTable[29][13].LRTableFuncP = LRReduce;
-	parser->lrTable[29][13].actionParam = 5;
+	parser->lrTable[29][13].actionParam = 93;
 	//reduce
 	parser->lrTable[30][13].LRTableFuncP = LRReduce;
-	parser->lrTable[30][13].actionParam = 5;
-	//reduce
-	parser->lrTable[31][13].LRTableFuncP = LRReduce;
-	parser->lrTable[31][13].actionParam = 5;
-	//reduce
-	parser->lrTable[32][13].LRTableFuncP = LRReduce;
-	parser->lrTable[32][13].actionParam = 5;
+	parser->lrTable[30][13].actionParam = 93;
 	//reduce
 	parser->lrTable[33][13].LRTableFuncP = LRReduce;
-	parser->lrTable[33][13].actionParam = 5;
+	parser->lrTable[33][13].actionParam = 93;
 	//reduce
-	parser->lrTable[38][13].LRTableFuncP = LRReduce;
-	parser->lrTable[38][13].actionParam = 5;
+	parser->lrTable[34][13].LRTableFuncP = LRReduce;
+	parser->lrTable[34][13].actionParam = 93;
 	//reduce
-	parser->lrTable[39][13].LRTableFuncP = LRReduce;
-	parser->lrTable[39][13].actionParam = 5;
+	parser->lrTable[47][13].LRTableFuncP = LRReduce;
+	parser->lrTable[47][13].actionParam = 93;
 	//reduce
-	parser->lrTable[40][13].LRTableFuncP = LRReduce;
-	parser->lrTable[40][13].actionParam = 5;
+	parser->lrTable[48][13].LRTableFuncP = LRReduce;
+	parser->lrTable[48][13].actionParam = 93;
+	//reduce
+	parser->lrTable[56][13].LRTableFuncP = LRReduce;
+	parser->lrTable[56][13].actionParam = 93;
+	//reduce
+	parser->lrTable[57][13].LRTableFuncP = LRReduce;
+	parser->lrTable[57][13].actionParam = 93;
+	//reduce
+	parser->lrTable[58][13].LRTableFuncP = LRReduce;
+	parser->lrTable[58][13].actionParam = 93;
+	//reduce
+	parser->lrTable[59][13].LRTableFuncP = LRReduce;
+	parser->lrTable[59][13].actionParam = 93;
 	//shift
-	parser->lrTable[45][14].LRTableFuncP = LRShift;
-	parser->lrTable[45][14].actionParam = 34;
+	parser->lrTable[51][13].LRTableFuncP = LRShift;
+	parser->lrTable[51][13].actionParam = 93;
+	//shift
+	parser->lrTable[30][13].LRTableFuncP = LRShift;
+	parser->lrTable[30][13].actionParam = 94;
+	//shift
+	parser->lrTable[57][13].LRTableFuncP = LRShift;
+	parser->lrTable[57][13].actionParam = 95;
 	//reduce
-	parser->lrTable[41][15].LRTableFuncP = LRReduce;
-	parser->lrTable[41][15].actionParam = 7;
+	parser->lrTable[30][13].LRTableFuncP = LRReduce;
+	parser->lrTable[30][13].actionParam = 17;
+	//reduce
+	parser->lrTable[30][13].LRTableFuncP = LRReduce;
+	parser->lrTable[30][13].actionParam = 18;
+	//reduce
+	parser->lrTable[57][13].LRTableFuncP = LRReduce;
+	parser->lrTable[57][13].actionParam = 18;
+	//shift
+	parser->lrTable[2][13].LRTableFuncP = LRShift;
+	parser->lrTable[2][13].actionParam = 15;
+	//reduce
+	parser->lrTable[56][13].LRTableFuncP = LRReduce;
+	parser->lrTable[56][13].actionParam = 9;
+	//reduce
+	parser->lrTable[57][13].LRTableFuncP = LRReduce;
+	parser->lrTable[57][13].actionParam = 9;
+	//reduce
+	parser->lrTable[56][13].LRTableFuncP = LRReduce;
+	parser->lrTable[56][13].actionParam = 8;
+	//reduce
+	parser->lrTable[57][13].LRTableFuncP = LRReduce;
+	parser->lrTable[57][13].actionParam = 8;
+	//reduce
+	parser->lrTable[0][14].LRTableFuncP = LRReduce;
+	parser->lrTable[0][14].actionParam = 86;
+	//reduce
+	parser->lrTable[1][14].LRTableFuncP = LRReduce;
+	parser->lrTable[1][14].actionParam = 86;
+	//reduce
+	parser->lrTable[2][14].LRTableFuncP = LRReduce;
+	parser->lrTable[2][14].actionParam = 86;
+	//reduce
+	parser->lrTable[3][14].LRTableFuncP = LRReduce;
+	parser->lrTable[3][14].actionParam = 86;
+	//reduce
+	parser->lrTable[4][14].LRTableFuncP = LRReduce;
+	parser->lrTable[4][14].actionParam = 86;
+	//reduce
+	parser->lrTable[2][14].LRTableFuncP = LRReduce;
+	parser->lrTable[2][14].actionParam = 86;
+	//reduce
+	parser->lrTable[7][14].LRTableFuncP = LRReduce;
+	parser->lrTable[7][14].actionParam = 86;
+	//reduce
+	parser->lrTable[7][14].LRTableFuncP = LRReduce;
+	parser->lrTable[7][14].actionParam = 86;
+	//reduce
+	parser->lrTable[10][14].LRTableFuncP = LRReduce;
+	parser->lrTable[10][14].actionParam = 86;
+	//reduce
+	parser->lrTable[10][14].LRTableFuncP = LRReduce;
+	parser->lrTable[10][14].actionParam = 86;
+	//reduce
+	parser->lrTable[13][14].LRTableFuncP = LRReduce;
+	parser->lrTable[13][14].actionParam = 86;
+	//reduce
+	parser->lrTable[13][14].LRTableFuncP = LRReduce;
+	parser->lrTable[13][14].actionParam = 86;
+	//reduce
+	parser->lrTable[15][14].LRTableFuncP = LRReduce;
+	parser->lrTable[15][14].actionParam = 86;
+	//reduce
+	parser->lrTable[15][14].LRTableFuncP = LRReduce;
+	parser->lrTable[15][14].actionParam = 86;
+	//reduce
+	parser->lrTable[17][14].LRTableFuncP = LRReduce;
+	parser->lrTable[17][14].actionParam = 86;
+	//reduce
+	parser->lrTable[17][14].LRTableFuncP = LRReduce;
+	parser->lrTable[17][14].actionParam = 86;
+	//reduce
+	parser->lrTable[19][14].LRTableFuncP = LRReduce;
+	parser->lrTable[19][14].actionParam = 86;
+	//reduce
+	parser->lrTable[20][14].LRTableFuncP = LRReduce;
+	parser->lrTable[20][14].actionParam = 86;
+	//reduce
+	parser->lrTable[21][14].LRTableFuncP = LRReduce;
+	parser->lrTable[21][14].actionParam = 86;
+	//reduce
+	parser->lrTable[21][14].LRTableFuncP = LRReduce;
+	parser->lrTable[21][14].actionParam = 86;
+	//reduce
+	parser->lrTable[23][14].LRTableFuncP = LRReduce;
+	parser->lrTable[23][14].actionParam = 86;
+	//reduce
+	parser->lrTable[23][14].LRTableFuncP = LRReduce;
+	parser->lrTable[23][14].actionParam = 86;
+	//reduce
+	parser->lrTable[27][14].LRTableFuncP = LRReduce;
+	parser->lrTable[27][14].actionParam = 86;
+	//reduce
+	parser->lrTable[28][14].LRTableFuncP = LRReduce;
+	parser->lrTable[28][14].actionParam = 86;
+	//reduce
+	parser->lrTable[30][14].LRTableFuncP = LRReduce;
+	parser->lrTable[30][14].actionParam = 86;
+	//reduce
+	parser->lrTable[34][14].LRTableFuncP = LRReduce;
+	parser->lrTable[34][14].actionParam = 86;
+	//reduce
+	parser->lrTable[47][14].LRTableFuncP = LRReduce;
+	parser->lrTable[47][14].actionParam = 86;
+	//reduce
+	parser->lrTable[48][14].LRTableFuncP = LRReduce;
+	parser->lrTable[48][14].actionParam = 86;
+	//reduce
+	parser->lrTable[56][14].LRTableFuncP = LRReduce;
+	parser->lrTable[56][14].actionParam = 86;
+	//reduce
+	parser->lrTable[57][14].LRTableFuncP = LRReduce;
+	parser->lrTable[57][14].actionParam = 86;
+	//reduce
+	parser->lrTable[58][14].LRTableFuncP = LRReduce;
+	parser->lrTable[58][14].actionParam = 86;
+	//reduce
+	parser->lrTable[59][14].LRTableFuncP = LRReduce;
+	parser->lrTable[59][14].actionParam = 86;
+	//reduce
+	parser->lrTable[0][15].LRTableFuncP = LRReduce;
+	parser->lrTable[0][15].actionParam = 87;
+	//reduce
+	parser->lrTable[1][15].LRTableFuncP = LRReduce;
+	parser->lrTable[1][15].actionParam = 87;
+	//reduce
+	parser->lrTable[2][15].LRTableFuncP = LRReduce;
+	parser->lrTable[2][15].actionParam = 87;
+	//reduce
+	parser->lrTable[3][15].LRTableFuncP = LRReduce;
+	parser->lrTable[3][15].actionParam = 87;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 87;
+	//reduce
+	parser->lrTable[2][15].LRTableFuncP = LRReduce;
+	parser->lrTable[2][15].actionParam = 87;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 87;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 87;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 87;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 87;
+	//reduce
+	parser->lrTable[13][15].LRTableFuncP = LRReduce;
+	parser->lrTable[13][15].actionParam = 87;
+	//reduce
+	parser->lrTable[13][15].LRTableFuncP = LRReduce;
+	parser->lrTable[13][15].actionParam = 87;
+	//reduce
+	parser->lrTable[15][15].LRTableFuncP = LRReduce;
+	parser->lrTable[15][15].actionParam = 87;
+	//reduce
+	parser->lrTable[15][15].LRTableFuncP = LRReduce;
+	parser->lrTable[15][15].actionParam = 87;
+	//reduce
+	parser->lrTable[17][15].LRTableFuncP = LRReduce;
+	parser->lrTable[17][15].actionParam = 87;
+	//reduce
+	parser->lrTable[17][15].LRTableFuncP = LRReduce;
+	parser->lrTable[17][15].actionParam = 87;
+	//reduce
+	parser->lrTable[19][15].LRTableFuncP = LRReduce;
+	parser->lrTable[19][15].actionParam = 87;
+	//reduce
+	parser->lrTable[20][15].LRTableFuncP = LRReduce;
+	parser->lrTable[20][15].actionParam = 87;
+	//reduce
+	parser->lrTable[21][15].LRTableFuncP = LRReduce;
+	parser->lrTable[21][15].actionParam = 87;
+	//reduce
+	parser->lrTable[21][15].LRTableFuncP = LRReduce;
+	parser->lrTable[21][15].actionParam = 87;
 	//reduce
 	parser->lrTable[23][15].LRTableFuncP = LRReduce;
-	parser->lrTable[23][15].actionParam = 7;
+	parser->lrTable[23][15].actionParam = 87;
 	//reduce
-	parser->lrTable[29][15].LRTableFuncP = LRReduce;
-	parser->lrTable[29][15].actionParam = 7;
+	parser->lrTable[23][15].LRTableFuncP = LRReduce;
+	parser->lrTable[23][15].actionParam = 87;
+	//reduce
+	parser->lrTable[27][15].LRTableFuncP = LRReduce;
+	parser->lrTable[27][15].actionParam = 87;
+	//reduce
+	parser->lrTable[28][15].LRTableFuncP = LRReduce;
+	parser->lrTable[28][15].actionParam = 87;
 	//reduce
 	parser->lrTable[30][15].LRTableFuncP = LRReduce;
-	parser->lrTable[30][15].actionParam = 7;
+	parser->lrTable[30][15].actionParam = 87;
 	//reduce
-	parser->lrTable[31][15].LRTableFuncP = LRReduce;
-	parser->lrTable[31][15].actionParam = 7;
+	parser->lrTable[34][15].LRTableFuncP = LRReduce;
+	parser->lrTable[34][15].actionParam = 87;
 	//reduce
-	parser->lrTable[32][15].LRTableFuncP = LRReduce;
-	parser->lrTable[32][15].actionParam = 7;
+	parser->lrTable[47][15].LRTableFuncP = LRReduce;
+	parser->lrTable[47][15].actionParam = 87;
 	//reduce
-	parser->lrTable[33][15].LRTableFuncP = LRReduce;
-	parser->lrTable[33][15].actionParam = 7;
+	parser->lrTable[48][15].LRTableFuncP = LRReduce;
+	parser->lrTable[48][15].actionParam = 87;
+	//reduce
+	parser->lrTable[56][15].LRTableFuncP = LRReduce;
+	parser->lrTable[56][15].actionParam = 87;
+	//reduce
+	parser->lrTable[57][15].LRTableFuncP = LRReduce;
+	parser->lrTable[57][15].actionParam = 87;
+	//reduce
+	parser->lrTable[58][15].LRTableFuncP = LRReduce;
+	parser->lrTable[58][15].actionParam = 87;
+	//reduce
+	parser->lrTable[59][15].LRTableFuncP = LRReduce;
+	parser->lrTable[59][15].actionParam = 87;
+	//shift
+	parser->lrTable[30][15].LRTableFuncP = LRShift;
+	parser->lrTable[30][15].actionParam = 96;
+	//shift
+	parser->lrTable[57][15].LRTableFuncP = LRShift;
+	parser->lrTable[57][15].actionParam = 58;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][15].actionParam = 97;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][15].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][15].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].actionParam = 98;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][15].actionParam = 100;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][15].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][15].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][15].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].actionParam = 101;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].actionParam = 102;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].actionParam = 103;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 104;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 105;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 106;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 111;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 112;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 113;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 114;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 115;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 116;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 117;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 46;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 46;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 46;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 46;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 46;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 46;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 46;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 46;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 46;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 46;
 	//reduce
 	parser->lrTable[38][15].LRTableFuncP = LRReduce;
-	parser->lrTable[38][15].actionParam = 7;
+	parser->lrTable[38][15].actionParam = 46;
 	//reduce
 	parser->lrTable[39][15].LRTableFuncP = LRReduce;
-	parser->lrTable[39][15].actionParam = 7;
+	parser->lrTable[39][15].actionParam = 46;
 	//reduce
-	parser->lrTable[40][15].LRTableFuncP = LRReduce;
-	parser->lrTable[40][15].actionParam = 7;
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 46;
 	//reduce
-	parser->lrTable[41][16].LRTableFuncP = LRReduce;
-	parser->lrTable[41][16].actionParam = 8;
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 47;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 47;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 47;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 47;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 47;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 47;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 47;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 47;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 47;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 47;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 47;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 47;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 47;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 48;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 48;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 48;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 48;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 48;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 48;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 48;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 48;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 48;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 48;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 48;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 48;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 48;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 50;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 50;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 50;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 50;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 50;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 50;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 50;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 50;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 50;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 50;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 50;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 50;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 50;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 49;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 49;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 49;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 49;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 49;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 49;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 49;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 49;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 49;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 49;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 49;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 49;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 49;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 51;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 51;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 51;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 51;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 51;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 51;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 51;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 51;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 51;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 51;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 51;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 51;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 51;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 52;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 52;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 52;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 52;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 52;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 52;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 52;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 52;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 52;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 52;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 52;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 52;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 52;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 53;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 53;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 53;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 53;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 53;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 53;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 53;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 53;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 53;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 53;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 53;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 53;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 53;
+	//reduce
+	parser->lrTable[4][15].LRTableFuncP = LRReduce;
+	parser->lrTable[4][15].actionParam = 54;
+	//reduce
+	parser->lrTable[7][15].LRTableFuncP = LRReduce;
+	parser->lrTable[7][15].actionParam = 54;
+	//reduce
+	parser->lrTable[8][15].LRTableFuncP = LRReduce;
+	parser->lrTable[8][15].actionParam = 54;
+	//reduce
+	parser->lrTable[10][15].LRTableFuncP = LRReduce;
+	parser->lrTable[10][15].actionParam = 54;
+	//reduce
+	parser->lrTable[11][15].LRTableFuncP = LRReduce;
+	parser->lrTable[11][15].actionParam = 54;
+	//reduce
+	parser->lrTable[25][15].LRTableFuncP = LRReduce;
+	parser->lrTable[25][15].actionParam = 54;
+	//reduce
+	parser->lrTable[29][15].LRTableFuncP = LRReduce;
+	parser->lrTable[29][15].actionParam = 54;
+	//reduce
+	parser->lrTable[35][15].LRTableFuncP = LRReduce;
+	parser->lrTable[35][15].actionParam = 54;
+	//reduce
+	parser->lrTable[36][15].LRTableFuncP = LRReduce;
+	parser->lrTable[36][15].actionParam = 54;
+	//reduce
+	parser->lrTable[37][15].LRTableFuncP = LRReduce;
+	parser->lrTable[37][15].actionParam = 54;
+	//reduce
+	parser->lrTable[38][15].LRTableFuncP = LRReduce;
+	parser->lrTable[38][15].actionParam = 54;
+	//reduce
+	parser->lrTable[39][15].LRTableFuncP = LRReduce;
+	parser->lrTable[39][15].actionParam = 54;
+	//reduce
+	parser->lrTable[51][15].LRTableFuncP = LRReduce;
+	parser->lrTable[51][15].actionParam = 54;
+	//shift
+	parser->lrTable[4][15].LRTableFuncP = LRShift;
+	parser->lrTable[4][15].actionParam = 19;
+	//shift
+	parser->lrTable[7][15].LRTableFuncP = LRShift;
+	parser->lrTable[7][15].actionParam = 20;
+	//shift
+	parser->lrTable[8][15].LRTableFuncP = LRShift;
+	parser->lrTable[8][15].actionParam = 21;
+	//shift
+	parser->lrTable[10][15].LRTableFuncP = LRShift;
+	parser->lrTable[10][15].actionParam = 22;
+	//shift
+	parser->lrTable[11][15].LRTableFuncP = LRShift;
+	parser->lrTable[11][15].actionParam = 23;
+	//shift
+	parser->lrTable[25][15].LRTableFuncP = LRShift;
+	parser->lrTable[25][15].actionParam = 24;
+	//shift
+	parser->lrTable[29][15].LRTableFuncP = LRShift;
+	parser->lrTable[29][15].actionParam = 25;
+	//shift
+	parser->lrTable[35][15].LRTableFuncP = LRShift;
+	parser->lrTable[35][15].actionParam = 26;
+	//shift
+	parser->lrTable[36][15].LRTableFuncP = LRShift;
+	parser->lrTable[36][15].actionParam = 27;
+	//shift
+	parser->lrTable[37][15].LRTableFuncP = LRShift;
+	parser->lrTable[37][15].actionParam = 28;
+	//shift
+	parser->lrTable[38][15].LRTableFuncP = LRShift;
+	parser->lrTable[38][15].actionParam = 29;
+	//shift
+	parser->lrTable[39][15].LRTableFuncP = LRShift;
+	parser->lrTable[39][15].actionParam = 30;
+	//shift
+	parser->lrTable[51][15].LRTableFuncP = LRShift;
+	parser->lrTable[51][15].actionParam = 31;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][15].actionParam = 118;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][15].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][15].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][15].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][15].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][15].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][15].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][15].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][15].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][15].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][15].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][15].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][15].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][15].actionParam = 47;
+	//reduce
+	parser->lrTable[0][16].LRTableFuncP = LRReduce;
+	parser->lrTable[0][16].actionParam = 88;
+	//reduce
+	parser->lrTable[1][16].LRTableFuncP = LRReduce;
+	parser->lrTable[1][16].actionParam = 88;
+	//reduce
+	parser->lrTable[2][16].LRTableFuncP = LRReduce;
+	parser->lrTable[2][16].actionParam = 88;
+	//reduce
+	parser->lrTable[3][16].LRTableFuncP = LRReduce;
+	parser->lrTable[3][16].actionParam = 88;
+	//reduce
+	parser->lrTable[4][16].LRTableFuncP = LRReduce;
+	parser->lrTable[4][16].actionParam = 88;
+	//reduce
+	parser->lrTable[2][16].LRTableFuncP = LRReduce;
+	parser->lrTable[2][16].actionParam = 88;
+	//reduce
+	parser->lrTable[7][16].LRTableFuncP = LRReduce;
+	parser->lrTable[7][16].actionParam = 88;
+	//reduce
+	parser->lrTable[7][16].LRTableFuncP = LRReduce;
+	parser->lrTable[7][16].actionParam = 88;
+	//reduce
+	parser->lrTable[10][16].LRTableFuncP = LRReduce;
+	parser->lrTable[10][16].actionParam = 88;
+	//reduce
+	parser->lrTable[10][16].LRTableFuncP = LRReduce;
+	parser->lrTable[10][16].actionParam = 88;
+	//reduce
+	parser->lrTable[13][16].LRTableFuncP = LRReduce;
+	parser->lrTable[13][16].actionParam = 88;
+	//reduce
+	parser->lrTable[13][16].LRTableFuncP = LRReduce;
+	parser->lrTable[13][16].actionParam = 88;
+	//reduce
+	parser->lrTable[15][16].LRTableFuncP = LRReduce;
+	parser->lrTable[15][16].actionParam = 88;
+	//reduce
+	parser->lrTable[15][16].LRTableFuncP = LRReduce;
+	parser->lrTable[15][16].actionParam = 88;
+	//reduce
+	parser->lrTable[17][16].LRTableFuncP = LRReduce;
+	parser->lrTable[17][16].actionParam = 88;
+	//reduce
+	parser->lrTable[17][16].LRTableFuncP = LRReduce;
+	parser->lrTable[17][16].actionParam = 88;
+	//reduce
+	parser->lrTable[19][16].LRTableFuncP = LRReduce;
+	parser->lrTable[19][16].actionParam = 88;
+	//reduce
+	parser->lrTable[20][16].LRTableFuncP = LRReduce;
+	parser->lrTable[20][16].actionParam = 88;
+	//reduce
+	parser->lrTable[21][16].LRTableFuncP = LRReduce;
+	parser->lrTable[21][16].actionParam = 88;
+	//reduce
+	parser->lrTable[21][16].LRTableFuncP = LRReduce;
+	parser->lrTable[21][16].actionParam = 88;
 	//reduce
 	parser->lrTable[23][16].LRTableFuncP = LRReduce;
-	parser->lrTable[23][16].actionParam = 8;
+	parser->lrTable[23][16].actionParam = 88;
 	//reduce
-	parser->lrTable[29][16].LRTableFuncP = LRReduce;
-	parser->lrTable[29][16].actionParam = 8;
+	parser->lrTable[23][16].LRTableFuncP = LRReduce;
+	parser->lrTable[23][16].actionParam = 88;
+	//reduce
+	parser->lrTable[27][16].LRTableFuncP = LRReduce;
+	parser->lrTable[27][16].actionParam = 88;
+	//reduce
+	parser->lrTable[28][16].LRTableFuncP = LRReduce;
+	parser->lrTable[28][16].actionParam = 88;
 	//reduce
 	parser->lrTable[30][16].LRTableFuncP = LRReduce;
-	parser->lrTable[30][16].actionParam = 8;
+	parser->lrTable[30][16].actionParam = 88;
 	//reduce
-	parser->lrTable[31][16].LRTableFuncP = LRReduce;
-	parser->lrTable[31][16].actionParam = 8;
+	parser->lrTable[34][16].LRTableFuncP = LRReduce;
+	parser->lrTable[34][16].actionParam = 88;
 	//reduce
-	parser->lrTable[32][16].LRTableFuncP = LRReduce;
-	parser->lrTable[32][16].actionParam = 8;
+	parser->lrTable[47][16].LRTableFuncP = LRReduce;
+	parser->lrTable[47][16].actionParam = 88;
 	//reduce
-	parser->lrTable[33][16].LRTableFuncP = LRReduce;
-	parser->lrTable[33][16].actionParam = 8;
+	parser->lrTable[48][16].LRTableFuncP = LRReduce;
+	parser->lrTable[48][16].actionParam = 88;
 	//reduce
-	parser->lrTable[38][16].LRTableFuncP = LRReduce;
-	parser->lrTable[38][16].actionParam = 8;
+	parser->lrTable[56][16].LRTableFuncP = LRReduce;
+	parser->lrTable[56][16].actionParam = 88;
 	//reduce
-	parser->lrTable[39][16].LRTableFuncP = LRReduce;
-	parser->lrTable[39][16].actionParam = 8;
+	parser->lrTable[57][16].LRTableFuncP = LRReduce;
+	parser->lrTable[57][16].actionParam = 88;
 	//reduce
-	parser->lrTable[40][16].LRTableFuncP = LRReduce;
-	parser->lrTable[40][16].actionParam = 8;
+	parser->lrTable[58][16].LRTableFuncP = LRReduce;
+	parser->lrTable[58][16].actionParam = 88;
+	//reduce
+	parser->lrTable[59][16].LRTableFuncP = LRReduce;
+	parser->lrTable[59][16].actionParam = 88;
+	//reduce
+	parser->lrTable[0][17].LRTableFuncP = LRReduce;
+	parser->lrTable[0][17].actionParam = 96;
+	//reduce
+	parser->lrTable[1][17].LRTableFuncP = LRReduce;
+	parser->lrTable[1][17].actionParam = 96;
+	//reduce
+	parser->lrTable[2][17].LRTableFuncP = LRReduce;
+	parser->lrTable[2][17].actionParam = 96;
+	//reduce
+	parser->lrTable[3][17].LRTableFuncP = LRReduce;
+	parser->lrTable[3][17].actionParam = 96;
+	//reduce
+	parser->lrTable[4][17].LRTableFuncP = LRReduce;
+	parser->lrTable[4][17].actionParam = 96;
+	//reduce
+	parser->lrTable[2][17].LRTableFuncP = LRReduce;
+	parser->lrTable[2][17].actionParam = 96;
+	//reduce
+	parser->lrTable[7][17].LRTableFuncP = LRReduce;
+	parser->lrTable[7][17].actionParam = 96;
+	//reduce
+	parser->lrTable[8][17].LRTableFuncP = LRReduce;
+	parser->lrTable[8][17].actionParam = 96;
+	//reduce
+	parser->lrTable[7][17].LRTableFuncP = LRReduce;
+	parser->lrTable[7][17].actionParam = 96;
+	//reduce
+	parser->lrTable[10][17].LRTableFuncP = LRReduce;
+	parser->lrTable[10][17].actionParam = 96;
+	//reduce
+	parser->lrTable[11][17].LRTableFuncP = LRReduce;
+	parser->lrTable[11][17].actionParam = 96;
+	//reduce
+	parser->lrTable[10][17].LRTableFuncP = LRReduce;
+	parser->lrTable[10][17].actionParam = 96;
+	//reduce
+	parser->lrTable[13][17].LRTableFuncP = LRReduce;
+	parser->lrTable[13][17].actionParam = 96;
+	//reduce
+	parser->lrTable[13][17].LRTableFuncP = LRReduce;
+	parser->lrTable[13][17].actionParam = 96;
+	//reduce
+	parser->lrTable[15][17].LRTableFuncP = LRReduce;
+	parser->lrTable[15][17].actionParam = 96;
+	//reduce
+	parser->lrTable[15][17].LRTableFuncP = LRReduce;
+	parser->lrTable[15][17].actionParam = 96;
+	//reduce
+	parser->lrTable[17][17].LRTableFuncP = LRReduce;
+	parser->lrTable[17][17].actionParam = 96;
+	//reduce
+	parser->lrTable[17][17].LRTableFuncP = LRReduce;
+	parser->lrTable[17][17].actionParam = 96;
+	//reduce
+	parser->lrTable[19][17].LRTableFuncP = LRReduce;
+	parser->lrTable[19][17].actionParam = 96;
+	//reduce
+	parser->lrTable[20][17].LRTableFuncP = LRReduce;
+	parser->lrTable[20][17].actionParam = 96;
+	//reduce
+	parser->lrTable[21][17].LRTableFuncP = LRReduce;
+	parser->lrTable[21][17].actionParam = 96;
+	//reduce
+	parser->lrTable[21][17].LRTableFuncP = LRReduce;
+	parser->lrTable[21][17].actionParam = 96;
+	//reduce
+	parser->lrTable[23][17].LRTableFuncP = LRReduce;
+	parser->lrTable[23][17].actionParam = 96;
+	//reduce
+	parser->lrTable[23][17].LRTableFuncP = LRReduce;
+	parser->lrTable[23][17].actionParam = 96;
+	//reduce
+	parser->lrTable[27][17].LRTableFuncP = LRReduce;
+	parser->lrTable[27][17].actionParam = 96;
+	//reduce
+	parser->lrTable[28][17].LRTableFuncP = LRReduce;
+	parser->lrTable[28][17].actionParam = 96;
+	//reduce
+	parser->lrTable[29][17].LRTableFuncP = LRReduce;
+	parser->lrTable[29][17].actionParam = 96;
+	//reduce
+	parser->lrTable[30][17].LRTableFuncP = LRReduce;
+	parser->lrTable[30][17].actionParam = 96;
+	//reduce
+	parser->lrTable[33][17].LRTableFuncP = LRReduce;
+	parser->lrTable[33][17].actionParam = 96;
+	//reduce
+	parser->lrTable[34][17].LRTableFuncP = LRReduce;
+	parser->lrTable[34][17].actionParam = 96;
+	//reduce
+	parser->lrTable[47][17].LRTableFuncP = LRReduce;
+	parser->lrTable[47][17].actionParam = 96;
+	//reduce
+	parser->lrTable[48][17].LRTableFuncP = LRReduce;
+	parser->lrTable[48][17].actionParam = 96;
+	//reduce
+	parser->lrTable[56][17].LRTableFuncP = LRReduce;
+	parser->lrTable[56][17].actionParam = 96;
+	//reduce
+	parser->lrTable[57][17].LRTableFuncP = LRReduce;
+	parser->lrTable[57][17].actionParam = 96;
+	//reduce
+	parser->lrTable[58][17].LRTableFuncP = LRReduce;
+	parser->lrTable[58][17].actionParam = 96;
+	//reduce
+	parser->lrTable[59][17].LRTableFuncP = LRReduce;
+	parser->lrTable[59][17].actionParam = 96;
+	//reduce
+	parser->lrTable[0][18].LRTableFuncP = LRReduce;
+	parser->lrTable[0][18].actionParam = 97;
+	//reduce
+	parser->lrTable[1][18].LRTableFuncP = LRReduce;
+	parser->lrTable[1][18].actionParam = 97;
+	//reduce
+	parser->lrTable[2][18].LRTableFuncP = LRReduce;
+	parser->lrTable[2][18].actionParam = 97;
+	//reduce
+	parser->lrTable[3][18].LRTableFuncP = LRReduce;
+	parser->lrTable[3][18].actionParam = 97;
+	//reduce
+	parser->lrTable[4][18].LRTableFuncP = LRReduce;
+	parser->lrTable[4][18].actionParam = 97;
+	//reduce
+	parser->lrTable[2][18].LRTableFuncP = LRReduce;
+	parser->lrTable[2][18].actionParam = 97;
+	//reduce
+	parser->lrTable[7][18].LRTableFuncP = LRReduce;
+	parser->lrTable[7][18].actionParam = 97;
+	//reduce
+	parser->lrTable[8][18].LRTableFuncP = LRReduce;
+	parser->lrTable[8][18].actionParam = 97;
+	//reduce
+	parser->lrTable[7][18].LRTableFuncP = LRReduce;
+	parser->lrTable[7][18].actionParam = 97;
+	//reduce
+	parser->lrTable[10][18].LRTableFuncP = LRReduce;
+	parser->lrTable[10][18].actionParam = 97;
+	//reduce
+	parser->lrTable[11][18].LRTableFuncP = LRReduce;
+	parser->lrTable[11][18].actionParam = 97;
+	//reduce
+	parser->lrTable[10][18].LRTableFuncP = LRReduce;
+	parser->lrTable[10][18].actionParam = 97;
+	//reduce
+	parser->lrTable[13][18].LRTableFuncP = LRReduce;
+	parser->lrTable[13][18].actionParam = 97;
+	//reduce
+	parser->lrTable[13][18].LRTableFuncP = LRReduce;
+	parser->lrTable[13][18].actionParam = 97;
+	//reduce
+	parser->lrTable[15][18].LRTableFuncP = LRReduce;
+	parser->lrTable[15][18].actionParam = 97;
+	//reduce
+	parser->lrTable[15][18].LRTableFuncP = LRReduce;
+	parser->lrTable[15][18].actionParam = 97;
+	//reduce
+	parser->lrTable[17][18].LRTableFuncP = LRReduce;
+	parser->lrTable[17][18].actionParam = 97;
+	//reduce
+	parser->lrTable[17][18].LRTableFuncP = LRReduce;
+	parser->lrTable[17][18].actionParam = 97;
+	//reduce
+	parser->lrTable[19][18].LRTableFuncP = LRReduce;
+	parser->lrTable[19][18].actionParam = 97;
+	//reduce
+	parser->lrTable[20][18].LRTableFuncP = LRReduce;
+	parser->lrTable[20][18].actionParam = 97;
+	//reduce
+	parser->lrTable[21][18].LRTableFuncP = LRReduce;
+	parser->lrTable[21][18].actionParam = 97;
+	//reduce
+	parser->lrTable[21][18].LRTableFuncP = LRReduce;
+	parser->lrTable[21][18].actionParam = 97;
+	//reduce
+	parser->lrTable[23][18].LRTableFuncP = LRReduce;
+	parser->lrTable[23][18].actionParam = 97;
+	//reduce
+	parser->lrTable[23][18].LRTableFuncP = LRReduce;
+	parser->lrTable[23][18].actionParam = 97;
+	//reduce
+	parser->lrTable[27][18].LRTableFuncP = LRReduce;
+	parser->lrTable[27][18].actionParam = 97;
+	//reduce
+	parser->lrTable[28][18].LRTableFuncP = LRReduce;
+	parser->lrTable[28][18].actionParam = 97;
+	//reduce
+	parser->lrTable[29][18].LRTableFuncP = LRReduce;
+	parser->lrTable[29][18].actionParam = 97;
+	//reduce
+	parser->lrTable[30][18].LRTableFuncP = LRReduce;
+	parser->lrTable[30][18].actionParam = 97;
+	//reduce
+	parser->lrTable[33][18].LRTableFuncP = LRReduce;
+	parser->lrTable[33][18].actionParam = 97;
+	//reduce
+	parser->lrTable[34][18].LRTableFuncP = LRReduce;
+	parser->lrTable[34][18].actionParam = 97;
+	//reduce
+	parser->lrTable[47][18].LRTableFuncP = LRReduce;
+	parser->lrTable[47][18].actionParam = 97;
+	//reduce
+	parser->lrTable[48][18].LRTableFuncP = LRReduce;
+	parser->lrTable[48][18].actionParam = 97;
+	//reduce
+	parser->lrTable[56][18].LRTableFuncP = LRReduce;
+	parser->lrTable[56][18].actionParam = 97;
+	//reduce
+	parser->lrTable[57][18].LRTableFuncP = LRReduce;
+	parser->lrTable[57][18].actionParam = 97;
+	//reduce
+	parser->lrTable[58][18].LRTableFuncP = LRReduce;
+	parser->lrTable[58][18].actionParam = 97;
+	//reduce
+	parser->lrTable[59][18].LRTableFuncP = LRReduce;
+	parser->lrTable[59][18].actionParam = 97;
 	//shift
-	parser->lrTable[3][17].LRTableFuncP = LRShift;
-	parser->lrTable[3][17].actionParam = 35;
+	parser->lrTable[4][18].LRTableFuncP = LRShift;
+	parser->lrTable[4][18].actionParam = 19;
 	//shift
-	parser->lrTable[45][17].LRTableFuncP = LRShift;
-	parser->lrTable[45][17].actionParam = 36;
+	parser->lrTable[7][18].LRTableFuncP = LRShift;
+	parser->lrTable[7][18].actionParam = 20;
 	//shift
-	parser->lrTable[3][18].LRTableFuncP = LRShift;
-	parser->lrTable[3][18].actionParam = 37;
+	parser->lrTable[8][18].LRTableFuncP = LRShift;
+	parser->lrTable[8][18].actionParam = 21;
 	//shift
-	parser->lrTable[45][18].LRTableFuncP = LRShift;
-	parser->lrTable[45][18].actionParam = 38;
+	parser->lrTable[10][18].LRTableFuncP = LRShift;
+	parser->lrTable[10][18].actionParam = 22;
 	//shift
-	parser->lrTable[3][19].LRTableFuncP = LRShift;
-	parser->lrTable[3][19].actionParam = 39;
+	parser->lrTable[11][18].LRTableFuncP = LRShift;
+	parser->lrTable[11][18].actionParam = 23;
 	//shift
-	parser->lrTable[45][19].LRTableFuncP = LRShift;
-	parser->lrTable[45][19].actionParam = 40;
+	parser->lrTable[25][18].LRTableFuncP = LRShift;
+	parser->lrTable[25][18].actionParam = 24;
+	//shift
+	parser->lrTable[29][18].LRTableFuncP = LRShift;
+	parser->lrTable[29][18].actionParam = 25;
+	//shift
+	parser->lrTable[35][18].LRTableFuncP = LRShift;
+	parser->lrTable[35][18].actionParam = 26;
+	//shift
+	parser->lrTable[36][18].LRTableFuncP = LRShift;
+	parser->lrTable[36][18].actionParam = 27;
+	//shift
+	parser->lrTable[37][18].LRTableFuncP = LRShift;
+	parser->lrTable[37][18].actionParam = 28;
+	//shift
+	parser->lrTable[38][18].LRTableFuncP = LRShift;
+	parser->lrTable[38][18].actionParam = 29;
+	//shift
+	parser->lrTable[39][18].LRTableFuncP = LRShift;
+	parser->lrTable[39][18].actionParam = 30;
+	//shift
+	parser->lrTable[51][18].LRTableFuncP = LRShift;
+	parser->lrTable[51][18].actionParam = 31;
+	//reduce
+	parser->lrTable[30][18].LRTableFuncP = LRReduce;
+	parser->lrTable[30][18].actionParam = 98;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][18].actionParam = 119;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][18].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][18].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][18].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][18].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][18].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][18].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][18].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][18].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][18].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][18].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][18].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][18].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][18].actionParam = 47;
+	//goto
+	parser->lrTable[argument_expression_list_opt+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[argument_expression_list_opt+TOTAL_TOKENS][18].actionParam = 120;
+	//goto
+	parser->lrTable[argument_expression_list+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[argument_expression_list+TOTAL_TOKENS][18].actionParam = 121;
+	//shift
+	parser->lrTable[4][18].LRTableFuncP = LRShift;
+	parser->lrTable[4][18].actionParam = 19;
+	//shift
+	parser->lrTable[7][18].LRTableFuncP = LRShift;
+	parser->lrTable[7][18].actionParam = 20;
+	//shift
+	parser->lrTable[8][18].LRTableFuncP = LRShift;
+	parser->lrTable[8][18].actionParam = 21;
+	//shift
+	parser->lrTable[10][18].LRTableFuncP = LRShift;
+	parser->lrTable[10][18].actionParam = 22;
+	//shift
+	parser->lrTable[11][18].LRTableFuncP = LRShift;
+	parser->lrTable[11][18].actionParam = 23;
+	//shift
+	parser->lrTable[25][18].LRTableFuncP = LRShift;
+	parser->lrTable[25][18].actionParam = 24;
+	//shift
+	parser->lrTable[29][18].LRTableFuncP = LRShift;
+	parser->lrTable[29][18].actionParam = 25;
+	//shift
+	parser->lrTable[35][18].LRTableFuncP = LRShift;
+	parser->lrTable[35][18].actionParam = 26;
+	//shift
+	parser->lrTable[36][18].LRTableFuncP = LRShift;
+	parser->lrTable[36][18].actionParam = 27;
+	//shift
+	parser->lrTable[37][18].LRTableFuncP = LRShift;
+	parser->lrTable[37][18].actionParam = 28;
+	//shift
+	parser->lrTable[38][18].LRTableFuncP = LRShift;
+	parser->lrTable[38][18].actionParam = 29;
+	//shift
+	parser->lrTable[39][18].LRTableFuncP = LRShift;
+	parser->lrTable[39][18].actionParam = 30;
+	//shift
+	parser->lrTable[51][18].LRTableFuncP = LRShift;
+	parser->lrTable[51][18].actionParam = 31;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][18].actionParam = 122;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][18].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][18].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][18].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][18].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][18].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][18].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][18].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][18].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][18].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][18].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][18].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][18].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][18].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][18].actionParam = 47;
+	//reduce
+	parser->lrTable[30][18].LRTableFuncP = LRReduce;
+	parser->lrTable[30][18].actionParam = 20;
+	//reduce
+	parser->lrTable[57][18].LRTableFuncP = LRReduce;
+	parser->lrTable[57][18].actionParam = 20;
+	//shift
+	parser->lrTable[31][18].LRTableFuncP = LRShift;
+	parser->lrTable[31][18].actionParam = 123;
+	//shift
+	parser->lrTable[40][18].LRTableFuncP = LRShift;
+	parser->lrTable[40][18].actionParam = 4;
+	//shift
+	parser->lrTable[41][18].LRTableFuncP = LRShift;
+	parser->lrTable[41][18].actionParam = 5;
+	//shift
+	parser->lrTable[42][18].LRTableFuncP = LRShift;
+	parser->lrTable[42][18].actionParam = 6;
+	//shift
+	parser->lrTable[43][18].LRTableFuncP = LRShift;
+	parser->lrTable[43][18].actionParam = 7;
+	//goto
+	parser->lrTable[type_specifier+TOTAL_TOKENS][18].LRTableFuncP = LRGoto;
+	parser->lrTable[type_specifier+TOTAL_TOKENS][18].actionParam = 49;
+	//reduce
+	parser->lrTable[0][19].LRTableFuncP = LRReduce;
+	parser->lrTable[0][19].actionParam = 108;
+	//reduce
+	parser->lrTable[1][19].LRTableFuncP = LRReduce;
+	parser->lrTable[1][19].actionParam = 108;
+	//reduce
+	parser->lrTable[2][19].LRTableFuncP = LRReduce;
+	parser->lrTable[2][19].actionParam = 108;
+	//reduce
+	parser->lrTable[3][19].LRTableFuncP = LRReduce;
+	parser->lrTable[3][19].actionParam = 108;
+	//reduce
+	parser->lrTable[4][19].LRTableFuncP = LRReduce;
+	parser->lrTable[4][19].actionParam = 108;
+	//reduce
+	parser->lrTable[2][19].LRTableFuncP = LRReduce;
+	parser->lrTable[2][19].actionParam = 108;
+	//reduce
+	parser->lrTable[7][19].LRTableFuncP = LRReduce;
+	parser->lrTable[7][19].actionParam = 108;
+	//reduce
+	parser->lrTable[8][19].LRTableFuncP = LRReduce;
+	parser->lrTable[8][19].actionParam = 108;
+	//reduce
+	parser->lrTable[7][19].LRTableFuncP = LRReduce;
+	parser->lrTable[7][19].actionParam = 108;
+	//reduce
+	parser->lrTable[10][19].LRTableFuncP = LRReduce;
+	parser->lrTable[10][19].actionParam = 108;
+	//reduce
+	parser->lrTable[11][19].LRTableFuncP = LRReduce;
+	parser->lrTable[11][19].actionParam = 108;
+	//reduce
+	parser->lrTable[10][19].LRTableFuncP = LRReduce;
+	parser->lrTable[10][19].actionParam = 108;
+	//reduce
+	parser->lrTable[13][19].LRTableFuncP = LRReduce;
+	parser->lrTable[13][19].actionParam = 108;
+	//reduce
+	parser->lrTable[13][19].LRTableFuncP = LRReduce;
+	parser->lrTable[13][19].actionParam = 108;
+	//reduce
+	parser->lrTable[15][19].LRTableFuncP = LRReduce;
+	parser->lrTable[15][19].actionParam = 108;
+	//reduce
+	parser->lrTable[15][19].LRTableFuncP = LRReduce;
+	parser->lrTable[15][19].actionParam = 108;
+	//reduce
+	parser->lrTable[17][19].LRTableFuncP = LRReduce;
+	parser->lrTable[17][19].actionParam = 108;
+	//reduce
+	parser->lrTable[17][19].LRTableFuncP = LRReduce;
+	parser->lrTable[17][19].actionParam = 108;
+	//reduce
+	parser->lrTable[19][19].LRTableFuncP = LRReduce;
+	parser->lrTable[19][19].actionParam = 108;
+	//reduce
+	parser->lrTable[20][19].LRTableFuncP = LRReduce;
+	parser->lrTable[20][19].actionParam = 108;
+	//reduce
+	parser->lrTable[21][19].LRTableFuncP = LRReduce;
+	parser->lrTable[21][19].actionParam = 108;
+	//reduce
+	parser->lrTable[21][19].LRTableFuncP = LRReduce;
+	parser->lrTable[21][19].actionParam = 108;
+	//reduce
+	parser->lrTable[23][19].LRTableFuncP = LRReduce;
+	parser->lrTable[23][19].actionParam = 108;
+	//reduce
+	parser->lrTable[23][19].LRTableFuncP = LRReduce;
+	parser->lrTable[23][19].actionParam = 108;
+	//reduce
+	parser->lrTable[27][19].LRTableFuncP = LRReduce;
+	parser->lrTable[27][19].actionParam = 108;
+	//reduce
+	parser->lrTable[28][19].LRTableFuncP = LRReduce;
+	parser->lrTable[28][19].actionParam = 108;
+	//reduce
+	parser->lrTable[29][19].LRTableFuncP = LRReduce;
+	parser->lrTable[29][19].actionParam = 108;
+	//reduce
+	parser->lrTable[30][19].LRTableFuncP = LRReduce;
+	parser->lrTable[30][19].actionParam = 108;
+	//reduce
+	parser->lrTable[33][19].LRTableFuncP = LRReduce;
+	parser->lrTable[33][19].actionParam = 108;
+	//reduce
+	parser->lrTable[34][19].LRTableFuncP = LRReduce;
+	parser->lrTable[34][19].actionParam = 108;
+	//reduce
+	parser->lrTable[47][19].LRTableFuncP = LRReduce;
+	parser->lrTable[47][19].actionParam = 108;
+	//reduce
+	parser->lrTable[48][19].LRTableFuncP = LRReduce;
+	parser->lrTable[48][19].actionParam = 108;
+	//reduce
+	parser->lrTable[56][19].LRTableFuncP = LRReduce;
+	parser->lrTable[56][19].actionParam = 108;
+	//reduce
+	parser->lrTable[57][19].LRTableFuncP = LRReduce;
+	parser->lrTable[57][19].actionParam = 108;
+	//reduce
+	parser->lrTable[58][19].LRTableFuncP = LRReduce;
+	parser->lrTable[58][19].actionParam = 108;
+	//reduce
+	parser->lrTable[59][19].LRTableFuncP = LRReduce;
+	parser->lrTable[59][19].actionParam = 108;
+	//reduce
+	parser->lrTable[30][19].LRTableFuncP = LRReduce;
+	parser->lrTable[30][19].actionParam = 43;
+	//reduce
+	parser->lrTable[34][19].LRTableFuncP = LRReduce;
+	parser->lrTable[34][19].actionParam = 43;
+	//reduce
+	parser->lrTable[56][19].LRTableFuncP = LRReduce;
+	parser->lrTable[56][19].actionParam = 43;
+	//reduce
+	parser->lrTable[57][19].LRTableFuncP = LRReduce;
+	parser->lrTable[57][19].actionParam = 43;
+	//reduce
+	parser->lrTable[59][19].LRTableFuncP = LRReduce;
+	parser->lrTable[59][19].actionParam = 43;
+	//shift
+	parser->lrTable[47][19].LRTableFuncP = LRShift;
+	parser->lrTable[47][19].actionParam = 61;
+	//reduce
+	parser->lrTable[30][19].LRTableFuncP = LRReduce;
+	parser->lrTable[30][19].actionParam = 58;
+	//reduce
+	parser->lrTable[34][19].LRTableFuncP = LRReduce;
+	parser->lrTable[34][19].actionParam = 58;
+	//reduce
+	parser->lrTable[48][19].LRTableFuncP = LRReduce;
+	parser->lrTable[48][19].actionParam = 58;
+	//reduce
+	parser->lrTable[56][19].LRTableFuncP = LRReduce;
+	parser->lrTable[56][19].actionParam = 58;
+	//reduce
+	parser->lrTable[57][19].LRTableFuncP = LRReduce;
+	parser->lrTable[57][19].actionParam = 58;
+	//reduce
+	parser->lrTable[58][19].LRTableFuncP = LRReduce;
+	parser->lrTable[58][19].actionParam = 58;
+	//reduce
+	parser->lrTable[59][19].LRTableFuncP = LRReduce;
+	parser->lrTable[59][19].actionParam = 58;
+	//reduce
+	parser->lrTable[0][20].LRTableFuncP = LRReduce;
+	parser->lrTable[0][20].actionParam = 81;
+	//reduce
+	parser->lrTable[1][20].LRTableFuncP = LRReduce;
+	parser->lrTable[1][20].actionParam = 81;
+	//reduce
+	parser->lrTable[3][20].LRTableFuncP = LRReduce;
+	parser->lrTable[3][20].actionParam = 81;
+	//reduce
+	parser->lrTable[4][20].LRTableFuncP = LRReduce;
+	parser->lrTable[4][20].actionParam = 81;
+	//reduce
+	parser->lrTable[2][20].LRTableFuncP = LRReduce;
+	parser->lrTable[2][20].actionParam = 81;
+	//reduce
+	parser->lrTable[7][20].LRTableFuncP = LRReduce;
+	parser->lrTable[7][20].actionParam = 81;
+	//reduce
+	parser->lrTable[10][20].LRTableFuncP = LRReduce;
+	parser->lrTable[10][20].actionParam = 81;
+	//reduce
+	parser->lrTable[13][20].LRTableFuncP = LRReduce;
+	parser->lrTable[13][20].actionParam = 81;
+	//reduce
+	parser->lrTable[15][20].LRTableFuncP = LRReduce;
+	parser->lrTable[15][20].actionParam = 81;
+	//reduce
+	parser->lrTable[17][20].LRTableFuncP = LRReduce;
+	parser->lrTable[17][20].actionParam = 81;
+	//reduce
+	parser->lrTable[19][20].LRTableFuncP = LRReduce;
+	parser->lrTable[19][20].actionParam = 81;
+	//reduce
+	parser->lrTable[21][20].LRTableFuncP = LRReduce;
+	parser->lrTable[21][20].actionParam = 81;
+	//reduce
+	parser->lrTable[23][20].LRTableFuncP = LRReduce;
+	parser->lrTable[23][20].actionParam = 81;
+	//reduce
+	parser->lrTable[27][20].LRTableFuncP = LRReduce;
+	parser->lrTable[27][20].actionParam = 81;
+	//reduce
+	parser->lrTable[28][20].LRTableFuncP = LRReduce;
+	parser->lrTable[28][20].actionParam = 81;
+	//reduce
+	parser->lrTable[30][20].LRTableFuncP = LRReduce;
+	parser->lrTable[30][20].actionParam = 81;
+	//reduce
+	parser->lrTable[34][20].LRTableFuncP = LRReduce;
+	parser->lrTable[34][20].actionParam = 81;
+	//reduce
+	parser->lrTable[47][20].LRTableFuncP = LRReduce;
+	parser->lrTable[47][20].actionParam = 81;
+	//reduce
+	parser->lrTable[48][20].LRTableFuncP = LRReduce;
+	parser->lrTable[48][20].actionParam = 81;
+	//reduce
+	parser->lrTable[56][20].LRTableFuncP = LRReduce;
+	parser->lrTable[56][20].actionParam = 81;
+	//reduce
+	parser->lrTable[57][20].LRTableFuncP = LRReduce;
+	parser->lrTable[57][20].actionParam = 81;
+	//reduce
+	parser->lrTable[58][20].LRTableFuncP = LRReduce;
+	parser->lrTable[58][20].actionParam = 81;
+	//reduce
+	parser->lrTable[59][20].LRTableFuncP = LRReduce;
+	parser->lrTable[59][20].actionParam = 81;
+	//shift
+	parser->lrTable[57][20].LRTableFuncP = LRShift;
+	parser->lrTable[57][20].actionParam = 58;
+	//shift
+	parser->lrTable[59][20].LRTableFuncP = LRShift;
+	parser->lrTable[59][20].actionParam = 126;
+	//shift
+	parser->lrTable[21][20].LRTableFuncP = LRShift;
+	parser->lrTable[21][20].actionParam = 62;
+	//reduce
+	parser->lrTable[30][20].LRTableFuncP = LRReduce;
+	parser->lrTable[30][20].actionParam = 60;
+	//reduce
+	parser->lrTable[34][20].LRTableFuncP = LRReduce;
+	parser->lrTable[34][20].actionParam = 60;
+	//reduce
+	parser->lrTable[47][20].LRTableFuncP = LRReduce;
+	parser->lrTable[47][20].actionParam = 60;
+	//reduce
+	parser->lrTable[48][20].LRTableFuncP = LRReduce;
+	parser->lrTable[48][20].actionParam = 60;
+	//reduce
+	parser->lrTable[56][20].LRTableFuncP = LRReduce;
+	parser->lrTable[56][20].actionParam = 60;
+	//reduce
+	parser->lrTable[57][20].LRTableFuncP = LRReduce;
+	parser->lrTable[57][20].actionParam = 60;
+	//reduce
+	parser->lrTable[58][20].LRTableFuncP = LRReduce;
+	parser->lrTable[58][20].actionParam = 60;
+	//reduce
+	parser->lrTable[59][20].LRTableFuncP = LRReduce;
+	parser->lrTable[59][20].actionParam = 60;
+	//shift
+	parser->lrTable[23][20].LRTableFuncP = LRShift;
+	parser->lrTable[23][20].actionParam = 63;
+	//reduce
+	parser->lrTable[21][20].LRTableFuncP = LRReduce;
+	parser->lrTable[21][20].actionParam = 62;
+	//reduce
+	parser->lrTable[30][20].LRTableFuncP = LRReduce;
+	parser->lrTable[30][20].actionParam = 62;
+	//reduce
+	parser->lrTable[34][20].LRTableFuncP = LRReduce;
+	parser->lrTable[34][20].actionParam = 62;
+	//reduce
+	parser->lrTable[47][20].LRTableFuncP = LRReduce;
+	parser->lrTable[47][20].actionParam = 62;
+	//reduce
+	parser->lrTable[48][20].LRTableFuncP = LRReduce;
+	parser->lrTable[48][20].actionParam = 62;
+	//reduce
+	parser->lrTable[56][20].LRTableFuncP = LRReduce;
+	parser->lrTable[56][20].actionParam = 62;
+	//reduce
+	parser->lrTable[57][20].LRTableFuncP = LRReduce;
+	parser->lrTable[57][20].actionParam = 62;
+	//reduce
+	parser->lrTable[58][20].LRTableFuncP = LRReduce;
+	parser->lrTable[58][20].actionParam = 62;
+	//reduce
+	parser->lrTable[59][20].LRTableFuncP = LRReduce;
+	parser->lrTable[59][20].actionParam = 62;
+	//shift
+	parser->lrTable[19][20].LRTableFuncP = LRShift;
+	parser->lrTable[19][20].actionParam = 64;
+	//reduce
+	parser->lrTable[21][20].LRTableFuncP = LRReduce;
+	parser->lrTable[21][20].actionParam = 64;
+	//reduce
+	parser->lrTable[23][20].LRTableFuncP = LRReduce;
+	parser->lrTable[23][20].actionParam = 64;
+	//reduce
+	parser->lrTable[30][20].LRTableFuncP = LRReduce;
+	parser->lrTable[30][20].actionParam = 64;
+	//reduce
+	parser->lrTable[34][20].LRTableFuncP = LRReduce;
+	parser->lrTable[34][20].actionParam = 64;
+	//reduce
+	parser->lrTable[47][20].LRTableFuncP = LRReduce;
+	parser->lrTable[47][20].actionParam = 64;
+	//reduce
+	parser->lrTable[48][20].LRTableFuncP = LRReduce;
+	parser->lrTable[48][20].actionParam = 64;
+	//reduce
+	parser->lrTable[56][20].LRTableFuncP = LRReduce;
+	parser->lrTable[56][20].actionParam = 64;
+	//reduce
+	parser->lrTable[57][20].LRTableFuncP = LRReduce;
+	parser->lrTable[57][20].actionParam = 64;
+	//reduce
+	parser->lrTable[58][20].LRTableFuncP = LRReduce;
+	parser->lrTable[58][20].actionParam = 64;
+	//reduce
+	parser->lrTable[59][20].LRTableFuncP = LRReduce;
+	parser->lrTable[59][20].actionParam = 64;
 	//shift
 	parser->lrTable[3][20].LRTableFuncP = LRShift;
-	parser->lrTable[3][20].actionParam = 41;
+	parser->lrTable[3][20].actionParam = 65;
 	//shift
-	parser->lrTable[45][20].LRTableFuncP = LRShift;
-	parser->lrTable[45][20].actionParam = 42;
+	parser->lrTable[4][20].LRTableFuncP = LRShift;
+	parser->lrTable[4][20].actionParam = 66;
+	//reduce
+	parser->lrTable[19][20].LRTableFuncP = LRReduce;
+	parser->lrTable[19][20].actionParam = 66;
+	//reduce
+	parser->lrTable[21][20].LRTableFuncP = LRReduce;
+	parser->lrTable[21][20].actionParam = 66;
+	//reduce
+	parser->lrTable[23][20].LRTableFuncP = LRReduce;
+	parser->lrTable[23][20].actionParam = 66;
+	//reduce
+	parser->lrTable[30][20].LRTableFuncP = LRReduce;
+	parser->lrTable[30][20].actionParam = 66;
+	//reduce
+	parser->lrTable[34][20].LRTableFuncP = LRReduce;
+	parser->lrTable[34][20].actionParam = 66;
+	//reduce
+	parser->lrTable[47][20].LRTableFuncP = LRReduce;
+	parser->lrTable[47][20].actionParam = 66;
+	//reduce
+	parser->lrTable[48][20].LRTableFuncP = LRReduce;
+	parser->lrTable[48][20].actionParam = 66;
+	//reduce
+	parser->lrTable[56][20].LRTableFuncP = LRReduce;
+	parser->lrTable[56][20].actionParam = 66;
+	//reduce
+	parser->lrTable[57][20].LRTableFuncP = LRReduce;
+	parser->lrTable[57][20].actionParam = 66;
+	//reduce
+	parser->lrTable[58][20].LRTableFuncP = LRReduce;
+	parser->lrTable[58][20].actionParam = 66;
+	//reduce
+	parser->lrTable[59][20].LRTableFuncP = LRReduce;
+	parser->lrTable[59][20].actionParam = 66;
 	//shift
-	parser->lrTable[5][21].LRTableFuncP = LRShift;
-	parser->lrTable[5][21].actionParam = 43;
+	parser->lrTable[0][21].LRTableFuncP = LRShift;
+	parser->lrTable[0][21].actionParam = 68;
 	//shift
-	parser->lrTable[9][21].LRTableFuncP = LRShift;
-	parser->lrTable[9][21].actionParam = 44;
+	parser->lrTable[1][21].LRTableFuncP = LRShift;
+	parser->lrTable[1][21].actionParam = 69;
 	//shift
-	parser->lrTable[11][21].LRTableFuncP = LRShift;
-	parser->lrTable[11][21].actionParam = 45;
+	parser->lrTable[2][21].LRTableFuncP = LRShift;
+	parser->lrTable[2][21].actionParam = 70;
+	//reduce
+	parser->lrTable[3][21].LRTableFuncP = LRReduce;
+	parser->lrTable[3][21].actionParam = 68;
+	//reduce
+	parser->lrTable[4][21].LRTableFuncP = LRReduce;
+	parser->lrTable[4][21].actionParam = 68;
+	//reduce
+	parser->lrTable[19][21].LRTableFuncP = LRReduce;
+	parser->lrTable[19][21].actionParam = 68;
+	//reduce
+	parser->lrTable[21][21].LRTableFuncP = LRReduce;
+	parser->lrTable[21][21].actionParam = 68;
+	//reduce
+	parser->lrTable[23][21].LRTableFuncP = LRReduce;
+	parser->lrTable[23][21].actionParam = 68;
+	//reduce
+	parser->lrTable[30][21].LRTableFuncP = LRReduce;
+	parser->lrTable[30][21].actionParam = 68;
+	//reduce
+	parser->lrTable[34][21].LRTableFuncP = LRReduce;
+	parser->lrTable[34][21].actionParam = 68;
+	//reduce
+	parser->lrTable[47][21].LRTableFuncP = LRReduce;
+	parser->lrTable[47][21].actionParam = 68;
+	//reduce
+	parser->lrTable[48][21].LRTableFuncP = LRReduce;
+	parser->lrTable[48][21].actionParam = 68;
+	//reduce
+	parser->lrTable[56][21].LRTableFuncP = LRReduce;
+	parser->lrTable[56][21].actionParam = 68;
+	//reduce
+	parser->lrTable[57][21].LRTableFuncP = LRReduce;
+	parser->lrTable[57][21].actionParam = 68;
+	//reduce
+	parser->lrTable[58][21].LRTableFuncP = LRReduce;
+	parser->lrTable[58][21].actionParam = 68;
+	//reduce
+	parser->lrTable[59][21].LRTableFuncP = LRReduce;
+	parser->lrTable[59][21].actionParam = 68;
 	//shift
-	parser->lrTable[12][21].LRTableFuncP = LRShift;
-	parser->lrTable[12][21].actionParam = 46;
+	parser->lrTable[0][22].LRTableFuncP = LRShift;
+	parser->lrTable[0][22].actionParam = 68;
 	//shift
-	parser->lrTable[20][21].LRTableFuncP = LRShift;
-	parser->lrTable[20][21].actionParam = 47;
+	parser->lrTable[1][22].LRTableFuncP = LRShift;
+	parser->lrTable[1][22].actionParam = 69;
 	//shift
-	parser->lrTable[24][21].LRTableFuncP = LRShift;
-	parser->lrTable[24][21].actionParam = 48;
+	parser->lrTable[2][22].LRTableFuncP = LRShift;
+	parser->lrTable[2][22].actionParam = 70;
+	//reduce
+	parser->lrTable[3][22].LRTableFuncP = LRReduce;
+	parser->lrTable[3][22].actionParam = 69;
+	//reduce
+	parser->lrTable[4][22].LRTableFuncP = LRReduce;
+	parser->lrTable[4][22].actionParam = 69;
+	//reduce
+	parser->lrTable[19][22].LRTableFuncP = LRReduce;
+	parser->lrTable[19][22].actionParam = 69;
+	//reduce
+	parser->lrTable[21][22].LRTableFuncP = LRReduce;
+	parser->lrTable[21][22].actionParam = 69;
+	//reduce
+	parser->lrTable[23][22].LRTableFuncP = LRReduce;
+	parser->lrTable[23][22].actionParam = 69;
+	//reduce
+	parser->lrTable[30][22].LRTableFuncP = LRReduce;
+	parser->lrTable[30][22].actionParam = 69;
+	//reduce
+	parser->lrTable[34][22].LRTableFuncP = LRReduce;
+	parser->lrTable[34][22].actionParam = 69;
+	//reduce
+	parser->lrTable[47][22].LRTableFuncP = LRReduce;
+	parser->lrTable[47][22].actionParam = 69;
+	//reduce
+	parser->lrTable[48][22].LRTableFuncP = LRReduce;
+	parser->lrTable[48][22].actionParam = 69;
+	//reduce
+	parser->lrTable[56][22].LRTableFuncP = LRReduce;
+	parser->lrTable[56][22].actionParam = 69;
+	//reduce
+	parser->lrTable[57][22].LRTableFuncP = LRReduce;
+	parser->lrTable[57][22].actionParam = 69;
+	//reduce
+	parser->lrTable[58][22].LRTableFuncP = LRReduce;
+	parser->lrTable[58][22].actionParam = 69;
+	//reduce
+	parser->lrTable[59][22].LRTableFuncP = LRReduce;
+	parser->lrTable[59][22].actionParam = 69;
 	//shift
-	parser->lrTable[25][21].LRTableFuncP = LRShift;
-	parser->lrTable[25][21].actionParam = 49;
+	parser->lrTable[27][22].LRTableFuncP = LRShift;
+	parser->lrTable[27][22].actionParam = 71;
 	//shift
-	parser->lrTable[26][21].LRTableFuncP = LRShift;
-	parser->lrTable[26][21].actionParam = 50;
-	//shift
-	parser->lrTable[27][21].LRTableFuncP = LRShift;
-	parser->lrTable[27][21].actionParam = 51;
-	//shift
-	parser->lrTable[28][21].LRTableFuncP = LRShift;
-	parser->lrTable[28][21].actionParam = 52;
-	//shift
-	parser->lrTable[40][21].LRTableFuncP = LRShift;
-	parser->lrTable[40][21].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][21].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][21].actionParam = 54;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][21].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][21].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][21].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][21].actionParam = 56;
-	//goto
-	parser->lrTable[CondExpr+TOTAL_TOKENS][21].LRTableFuncP = LRGoto;
-	parser->lrTable[CondExpr+TOTAL_TOKENS][21].actionParam = 57;
-	//shift
-	parser->lrTable[40][22].LRTableFuncP = LRShift;
-	parser->lrTable[40][22].actionParam = 8;
-	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][22].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][22].actionParam = 58;
-	//shift
-	parser->lrTable[5][23].LRTableFuncP = LRShift;
-	parser->lrTable[5][23].actionParam = 43;
-	//shift
-	parser->lrTable[9][23].LRTableFuncP = LRShift;
-	parser->lrTable[9][23].actionParam = 44;
-	//shift
-	parser->lrTable[11][23].LRTableFuncP = LRShift;
-	parser->lrTable[11][23].actionParam = 45;
-	//shift
-	parser->lrTable[12][23].LRTableFuncP = LRShift;
-	parser->lrTable[12][23].actionParam = 46;
-	//shift
-	parser->lrTable[20][23].LRTableFuncP = LRShift;
-	parser->lrTable[20][23].actionParam = 47;
-	//shift
-	parser->lrTable[24][23].LRTableFuncP = LRShift;
-	parser->lrTable[24][23].actionParam = 48;
-	//shift
-	parser->lrTable[25][23].LRTableFuncP = LRShift;
-	parser->lrTable[25][23].actionParam = 49;
-	//shift
-	parser->lrTable[26][23].LRTableFuncP = LRShift;
-	parser->lrTable[26][23].actionParam = 50;
+	parser->lrTable[28][22].LRTableFuncP = LRShift;
+	parser->lrTable[28][22].actionParam = 72;
+	//reduce
+	parser->lrTable[0][23].LRTableFuncP = LRReduce;
+	parser->lrTable[0][23].actionParam = 73;
+	//reduce
+	parser->lrTable[1][23].LRTableFuncP = LRReduce;
+	parser->lrTable[1][23].actionParam = 73;
+	//reduce
+	parser->lrTable[3][23].LRTableFuncP = LRReduce;
+	parser->lrTable[3][23].actionParam = 73;
+	//reduce
+	parser->lrTable[4][23].LRTableFuncP = LRReduce;
+	parser->lrTable[4][23].actionParam = 73;
+	//reduce
+	parser->lrTable[2][23].LRTableFuncP = LRReduce;
+	parser->lrTable[2][23].actionParam = 73;
+	//reduce
+	parser->lrTable[19][23].LRTableFuncP = LRReduce;
+	parser->lrTable[19][23].actionParam = 73;
+	//reduce
+	parser->lrTable[21][23].LRTableFuncP = LRReduce;
+	parser->lrTable[21][23].actionParam = 73;
+	//reduce
+	parser->lrTable[23][23].LRTableFuncP = LRReduce;
+	parser->lrTable[23][23].actionParam = 73;
+	//reduce
+	parser->lrTable[30][23].LRTableFuncP = LRReduce;
+	parser->lrTable[30][23].actionParam = 73;
+	//reduce
+	parser->lrTable[34][23].LRTableFuncP = LRReduce;
+	parser->lrTable[34][23].actionParam = 73;
+	//reduce
+	parser->lrTable[47][23].LRTableFuncP = LRReduce;
+	parser->lrTable[47][23].actionParam = 73;
+	//reduce
+	parser->lrTable[48][23].LRTableFuncP = LRReduce;
+	parser->lrTable[48][23].actionParam = 73;
+	//reduce
+	parser->lrTable[56][23].LRTableFuncP = LRReduce;
+	parser->lrTable[56][23].actionParam = 73;
+	//reduce
+	parser->lrTable[57][23].LRTableFuncP = LRReduce;
+	parser->lrTable[57][23].actionParam = 73;
+	//reduce
+	parser->lrTable[58][23].LRTableFuncP = LRReduce;
+	parser->lrTable[58][23].actionParam = 73;
+	//reduce
+	parser->lrTable[59][23].LRTableFuncP = LRReduce;
+	parser->lrTable[59][23].actionParam = 73;
 	//shift
 	parser->lrTable[27][23].LRTableFuncP = LRShift;
-	parser->lrTable[27][23].actionParam = 51;
+	parser->lrTable[27][23].actionParam = 71;
 	//shift
 	parser->lrTable[28][23].LRTableFuncP = LRShift;
-	parser->lrTable[28][23].actionParam = 52;
-	//shift
-	parser->lrTable[40][23].LRTableFuncP = LRShift;
-	parser->lrTable[40][23].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][23].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][23].actionParam = 54;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][23].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][23].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][23].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][23].actionParam = 56;
-	//goto
-	parser->lrTable[CondExpr+TOTAL_TOKENS][23].LRTableFuncP = LRGoto;
-	parser->lrTable[CondExpr+TOTAL_TOKENS][23].actionParam = 59;
-	//shift
-	parser->lrTable[9][24].LRTableFuncP = LRShift;
-	parser->lrTable[9][24].actionParam = 44;
-	//shift
-	parser->lrTable[11][24].LRTableFuncP = LRShift;
-	parser->lrTable[11][24].actionParam = 45;
-	//shift
-	parser->lrTable[12][24].LRTableFuncP = LRShift;
-	parser->lrTable[12][24].actionParam = 46;
-	//shift
-	parser->lrTable[20][24].LRTableFuncP = LRShift;
-	parser->lrTable[20][24].actionParam = 60;
-	//shift
-	parser->lrTable[24][24].LRTableFuncP = LRShift;
-	parser->lrTable[24][24].actionParam = 48;
-	//shift
-	parser->lrTable[25][24].LRTableFuncP = LRShift;
-	parser->lrTable[25][24].actionParam = 49;
-	//shift
-	parser->lrTable[26][24].LRTableFuncP = LRShift;
-	parser->lrTable[26][24].actionParam = 50;
+	parser->lrTable[28][23].actionParam = 72;
+	//reduce
+	parser->lrTable[0][24].LRTableFuncP = LRReduce;
+	parser->lrTable[0][24].actionParam = 72;
+	//reduce
+	parser->lrTable[1][24].LRTableFuncP = LRReduce;
+	parser->lrTable[1][24].actionParam = 72;
+	//reduce
+	parser->lrTable[3][24].LRTableFuncP = LRReduce;
+	parser->lrTable[3][24].actionParam = 72;
+	//reduce
+	parser->lrTable[4][24].LRTableFuncP = LRReduce;
+	parser->lrTable[4][24].actionParam = 72;
+	//reduce
+	parser->lrTable[2][24].LRTableFuncP = LRReduce;
+	parser->lrTable[2][24].actionParam = 72;
+	//reduce
+	parser->lrTable[19][24].LRTableFuncP = LRReduce;
+	parser->lrTable[19][24].actionParam = 72;
+	//reduce
+	parser->lrTable[21][24].LRTableFuncP = LRReduce;
+	parser->lrTable[21][24].actionParam = 72;
+	//reduce
+	parser->lrTable[23][24].LRTableFuncP = LRReduce;
+	parser->lrTable[23][24].actionParam = 72;
+	//reduce
+	parser->lrTable[30][24].LRTableFuncP = LRReduce;
+	parser->lrTable[30][24].actionParam = 72;
+	//reduce
+	parser->lrTable[34][24].LRTableFuncP = LRReduce;
+	parser->lrTable[34][24].actionParam = 72;
+	//reduce
+	parser->lrTable[47][24].LRTableFuncP = LRReduce;
+	parser->lrTable[47][24].actionParam = 72;
+	//reduce
+	parser->lrTable[48][24].LRTableFuncP = LRReduce;
+	parser->lrTable[48][24].actionParam = 72;
+	//reduce
+	parser->lrTable[56][24].LRTableFuncP = LRReduce;
+	parser->lrTable[56][24].actionParam = 72;
+	//reduce
+	parser->lrTable[57][24].LRTableFuncP = LRReduce;
+	parser->lrTable[57][24].actionParam = 72;
+	//reduce
+	parser->lrTable[58][24].LRTableFuncP = LRReduce;
+	parser->lrTable[58][24].actionParam = 72;
+	//reduce
+	parser->lrTable[59][24].LRTableFuncP = LRReduce;
+	parser->lrTable[59][24].actionParam = 72;
 	//shift
 	parser->lrTable[27][24].LRTableFuncP = LRShift;
-	parser->lrTable[27][24].actionParam = 51;
+	parser->lrTable[27][24].actionParam = 71;
 	//shift
 	parser->lrTable[28][24].LRTableFuncP = LRShift;
-	parser->lrTable[28][24].actionParam = 52;
-	//shift
-	parser->lrTable[40][24].LRTableFuncP = LRShift;
-	parser->lrTable[40][24].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][24].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][24].actionParam = 61;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][24].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][24].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][24].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][24].actionParam = 56;
+	parser->lrTable[28][24].actionParam = 72;
+	//reduce
+	parser->lrTable[0][25].LRTableFuncP = LRReduce;
+	parser->lrTable[0][25].actionParam = 71;
+	//reduce
+	parser->lrTable[1][25].LRTableFuncP = LRReduce;
+	parser->lrTable[1][25].actionParam = 71;
+	//reduce
+	parser->lrTable[3][25].LRTableFuncP = LRReduce;
+	parser->lrTable[3][25].actionParam = 71;
+	//reduce
+	parser->lrTable[4][25].LRTableFuncP = LRReduce;
+	parser->lrTable[4][25].actionParam = 71;
+	//reduce
+	parser->lrTable[2][25].LRTableFuncP = LRReduce;
+	parser->lrTable[2][25].actionParam = 71;
+	//reduce
+	parser->lrTable[19][25].LRTableFuncP = LRReduce;
+	parser->lrTable[19][25].actionParam = 71;
 	//reduce
 	parser->lrTable[21][25].LRTableFuncP = LRReduce;
-	parser->lrTable[21][25].actionParam = 18;
+	parser->lrTable[21][25].actionParam = 71;
 	//reduce
-	parser->lrTable[45][25].LRTableFuncP = LRReduce;
-	parser->lrTable[45][25].actionParam = 18;
+	parser->lrTable[23][25].LRTableFuncP = LRReduce;
+	parser->lrTable[23][25].actionParam = 71;
+	//reduce
+	parser->lrTable[30][25].LRTableFuncP = LRReduce;
+	parser->lrTable[30][25].actionParam = 71;
+	//reduce
+	parser->lrTable[34][25].LRTableFuncP = LRReduce;
+	parser->lrTable[34][25].actionParam = 71;
+	//reduce
+	parser->lrTable[47][25].LRTableFuncP = LRReduce;
+	parser->lrTable[47][25].actionParam = 71;
+	//reduce
+	parser->lrTable[48][25].LRTableFuncP = LRReduce;
+	parser->lrTable[48][25].actionParam = 71;
+	//reduce
+	parser->lrTable[56][25].LRTableFuncP = LRReduce;
+	parser->lrTable[56][25].actionParam = 71;
+	//reduce
+	parser->lrTable[57][25].LRTableFuncP = LRReduce;
+	parser->lrTable[57][25].actionParam = 71;
+	//reduce
+	parser->lrTable[58][25].LRTableFuncP = LRReduce;
+	parser->lrTable[58][25].actionParam = 71;
+	//reduce
+	parser->lrTable[59][25].LRTableFuncP = LRReduce;
+	parser->lrTable[59][25].actionParam = 71;
 	//shift
-	parser->lrTable[9][26].LRTableFuncP = LRShift;
-	parser->lrTable[9][26].actionParam = 44;
+	parser->lrTable[27][25].LRTableFuncP = LRShift;
+	parser->lrTable[27][25].actionParam = 71;
 	//shift
-	parser->lrTable[11][26].LRTableFuncP = LRShift;
-	parser->lrTable[11][26].actionParam = 45;
+	parser->lrTable[28][25].LRTableFuncP = LRShift;
+	parser->lrTable[28][25].actionParam = 72;
+	//reduce
+	parser->lrTable[0][26].LRTableFuncP = LRReduce;
+	parser->lrTable[0][26].actionParam = 74;
+	//reduce
+	parser->lrTable[1][26].LRTableFuncP = LRReduce;
+	parser->lrTable[1][26].actionParam = 74;
+	//reduce
+	parser->lrTable[3][26].LRTableFuncP = LRReduce;
+	parser->lrTable[3][26].actionParam = 74;
+	//reduce
+	parser->lrTable[4][26].LRTableFuncP = LRReduce;
+	parser->lrTable[4][26].actionParam = 74;
+	//reduce
+	parser->lrTable[2][26].LRTableFuncP = LRReduce;
+	parser->lrTable[2][26].actionParam = 74;
+	//reduce
+	parser->lrTable[19][26].LRTableFuncP = LRReduce;
+	parser->lrTable[19][26].actionParam = 74;
+	//reduce
+	parser->lrTable[21][26].LRTableFuncP = LRReduce;
+	parser->lrTable[21][26].actionParam = 74;
+	//reduce
+	parser->lrTable[23][26].LRTableFuncP = LRReduce;
+	parser->lrTable[23][26].actionParam = 74;
+	//reduce
+	parser->lrTable[30][26].LRTableFuncP = LRReduce;
+	parser->lrTable[30][26].actionParam = 74;
+	//reduce
+	parser->lrTable[34][26].LRTableFuncP = LRReduce;
+	parser->lrTable[34][26].actionParam = 74;
+	//reduce
+	parser->lrTable[47][26].LRTableFuncP = LRReduce;
+	parser->lrTable[47][26].actionParam = 74;
+	//reduce
+	parser->lrTable[48][26].LRTableFuncP = LRReduce;
+	parser->lrTable[48][26].actionParam = 74;
+	//reduce
+	parser->lrTable[56][26].LRTableFuncP = LRReduce;
+	parser->lrTable[56][26].actionParam = 74;
+	//reduce
+	parser->lrTable[57][26].LRTableFuncP = LRReduce;
+	parser->lrTable[57][26].actionParam = 74;
+	//reduce
+	parser->lrTable[58][26].LRTableFuncP = LRReduce;
+	parser->lrTable[58][26].actionParam = 74;
+	//reduce
+	parser->lrTable[59][26].LRTableFuncP = LRReduce;
+	parser->lrTable[59][26].actionParam = 74;
 	//shift
-	parser->lrTable[12][26].LRTableFuncP = LRShift;
-	parser->lrTable[12][26].actionParam = 46;
+	parser->lrTable[7][26].LRTableFuncP = LRShift;
+	parser->lrTable[7][26].actionParam = 73;
 	//shift
-	parser->lrTable[20][26].LRTableFuncP = LRShift;
-	parser->lrTable[20][26].actionParam = 60;
-	//shift
-	parser->lrTable[24][26].LRTableFuncP = LRShift;
-	parser->lrTable[24][26].actionParam = 48;
-	//shift
-	parser->lrTable[25][26].LRTableFuncP = LRShift;
-	parser->lrTable[25][26].actionParam = 49;
-	//shift
-	parser->lrTable[26][26].LRTableFuncP = LRShift;
-	parser->lrTable[26][26].actionParam = 50;
-	//shift
-	parser->lrTable[27][26].LRTableFuncP = LRShift;
-	parser->lrTable[27][26].actionParam = 51;
-	//shift
-	parser->lrTable[28][26].LRTableFuncP = LRShift;
-	parser->lrTable[28][26].actionParam = 52;
-	//shift
-	parser->lrTable[40][26].LRTableFuncP = LRShift;
-	parser->lrTable[40][26].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][26].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][26].actionParam = 62;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][26].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][26].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][26].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][26].actionParam = 56;
+	parser->lrTable[10][26].LRTableFuncP = LRShift;
+	parser->lrTable[10][26].actionParam = 74;
+	//reduce
+	parser->lrTable[0][27].LRTableFuncP = LRReduce;
+	parser->lrTable[0][27].actionParam = 76;
+	//reduce
+	parser->lrTable[1][27].LRTableFuncP = LRReduce;
+	parser->lrTable[1][27].actionParam = 76;
+	//reduce
+	parser->lrTable[3][27].LRTableFuncP = LRReduce;
+	parser->lrTable[3][27].actionParam = 76;
+	//reduce
+	parser->lrTable[4][27].LRTableFuncP = LRReduce;
+	parser->lrTable[4][27].actionParam = 76;
+	//reduce
+	parser->lrTable[2][27].LRTableFuncP = LRReduce;
+	parser->lrTable[2][27].actionParam = 76;
+	//reduce
+	parser->lrTable[19][27].LRTableFuncP = LRReduce;
+	parser->lrTable[19][27].actionParam = 76;
 	//reduce
 	parser->lrTable[21][27].LRTableFuncP = LRReduce;
-	parser->lrTable[21][27].actionParam = 19;
+	parser->lrTable[21][27].actionParam = 76;
 	//reduce
-	parser->lrTable[45][27].LRTableFuncP = LRReduce;
-	parser->lrTable[45][27].actionParam = 19;
-	//shift
-	parser->lrTable[9][28].LRTableFuncP = LRShift;
-	parser->lrTable[9][28].actionParam = 44;
-	//shift
-	parser->lrTable[11][28].LRTableFuncP = LRShift;
-	parser->lrTable[11][28].actionParam = 45;
-	//shift
-	parser->lrTable[12][28].LRTableFuncP = LRShift;
-	parser->lrTable[12][28].actionParam = 46;
-	//shift
-	parser->lrTable[20][28].LRTableFuncP = LRShift;
-	parser->lrTable[20][28].actionParam = 60;
-	//shift
-	parser->lrTable[24][28].LRTableFuncP = LRShift;
-	parser->lrTable[24][28].actionParam = 48;
-	//shift
-	parser->lrTable[25][28].LRTableFuncP = LRShift;
-	parser->lrTable[25][28].actionParam = 49;
-	//shift
-	parser->lrTable[26][28].LRTableFuncP = LRShift;
-	parser->lrTable[26][28].actionParam = 50;
-	//shift
-	parser->lrTable[27][28].LRTableFuncP = LRShift;
-	parser->lrTable[27][28].actionParam = 51;
-	//shift
-	parser->lrTable[28][28].LRTableFuncP = LRShift;
-	parser->lrTable[28][28].actionParam = 52;
-	//shift
-	parser->lrTable[40][28].LRTableFuncP = LRShift;
-	parser->lrTable[40][28].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][28].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][28].actionParam = 63;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][28].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][28].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][28].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][28].actionParam = 56;
-	//shift
-	parser->lrTable[9][29].LRTableFuncP = LRShift;
-	parser->lrTable[9][29].actionParam = 44;
-	//shift
-	parser->lrTable[11][29].LRTableFuncP = LRShift;
-	parser->lrTable[11][29].actionParam = 45;
-	//shift
-	parser->lrTable[12][29].LRTableFuncP = LRShift;
-	parser->lrTable[12][29].actionParam = 46;
-	//shift
-	parser->lrTable[20][29].LRTableFuncP = LRShift;
-	parser->lrTable[20][29].actionParam = 60;
-	//shift
-	parser->lrTable[24][29].LRTableFuncP = LRShift;
-	parser->lrTable[24][29].actionParam = 48;
-	//shift
-	parser->lrTable[25][29].LRTableFuncP = LRShift;
-	parser->lrTable[25][29].actionParam = 49;
-	//shift
-	parser->lrTable[26][29].LRTableFuncP = LRShift;
-	parser->lrTable[26][29].actionParam = 50;
-	//shift
-	parser->lrTable[27][29].LRTableFuncP = LRShift;
-	parser->lrTable[27][29].actionParam = 51;
-	//shift
-	parser->lrTable[28][29].LRTableFuncP = LRShift;
-	parser->lrTable[28][29].actionParam = 52;
-	//shift
-	parser->lrTable[40][29].LRTableFuncP = LRShift;
-	parser->lrTable[40][29].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][29].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][29].actionParam = 64;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][29].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][29].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][29].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][29].actionParam = 56;
-	//shift
-	parser->lrTable[9][30].LRTableFuncP = LRShift;
-	parser->lrTable[9][30].actionParam = 44;
-	//shift
-	parser->lrTable[11][30].LRTableFuncP = LRShift;
-	parser->lrTable[11][30].actionParam = 45;
-	//shift
-	parser->lrTable[12][30].LRTableFuncP = LRShift;
-	parser->lrTable[12][30].actionParam = 46;
-	//shift
-	parser->lrTable[20][30].LRTableFuncP = LRShift;
-	parser->lrTable[20][30].actionParam = 60;
-	//shift
-	parser->lrTable[24][30].LRTableFuncP = LRShift;
-	parser->lrTable[24][30].actionParam = 48;
-	//shift
-	parser->lrTable[25][30].LRTableFuncP = LRShift;
-	parser->lrTable[25][30].actionParam = 49;
-	//shift
-	parser->lrTable[26][30].LRTableFuncP = LRShift;
-	parser->lrTable[26][30].actionParam = 50;
-	//shift
-	parser->lrTable[27][30].LRTableFuncP = LRShift;
-	parser->lrTable[27][30].actionParam = 51;
-	//shift
-	parser->lrTable[28][30].LRTableFuncP = LRShift;
-	parser->lrTable[28][30].actionParam = 52;
-	//shift
-	parser->lrTable[40][30].LRTableFuncP = LRShift;
-	parser->lrTable[40][30].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][30].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][30].actionParam = 65;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][30].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][30].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][30].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][30].actionParam = 56;
-	//shift
-	parser->lrTable[9][31].LRTableFuncP = LRShift;
-	parser->lrTable[9][31].actionParam = 44;
-	//shift
-	parser->lrTable[11][31].LRTableFuncP = LRShift;
-	parser->lrTable[11][31].actionParam = 45;
-	//shift
-	parser->lrTable[12][31].LRTableFuncP = LRShift;
-	parser->lrTable[12][31].actionParam = 46;
-	//shift
-	parser->lrTable[20][31].LRTableFuncP = LRShift;
-	parser->lrTable[20][31].actionParam = 60;
-	//shift
-	parser->lrTable[24][31].LRTableFuncP = LRShift;
-	parser->lrTable[24][31].actionParam = 48;
-	//shift
-	parser->lrTable[25][31].LRTableFuncP = LRShift;
-	parser->lrTable[25][31].actionParam = 49;
-	//shift
-	parser->lrTable[26][31].LRTableFuncP = LRShift;
-	parser->lrTable[26][31].actionParam = 50;
-	//shift
-	parser->lrTable[27][31].LRTableFuncP = LRShift;
-	parser->lrTable[27][31].actionParam = 51;
-	//shift
-	parser->lrTable[28][31].LRTableFuncP = LRShift;
-	parser->lrTable[28][31].actionParam = 52;
-	//shift
-	parser->lrTable[40][31].LRTableFuncP = LRShift;
-	parser->lrTable[40][31].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][31].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][31].actionParam = 66;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][31].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][31].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][31].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][31].actionParam = 56;
-	//accept
-	for (int i = 0; i < TOTAL_TOKENS+GRAMMER_SYMBOL_COUNT; i++){
-		parser->lrTable[i][32].LRTableFuncP = LRAccept;
-		parser->lrTable[i][32].actionParam = -1;
-	}
+	parser->lrTable[23][27].LRTableFuncP = LRReduce;
+	parser->lrTable[23][27].actionParam = 76;
 	//reduce
-	parser->lrTable[41][33].LRTableFuncP = LRReduce;
-	parser->lrTable[41][33].actionParam = 3;
+	parser->lrTable[27][27].LRTableFuncP = LRReduce;
+	parser->lrTable[27][27].actionParam = 76;
+	//reduce
+	parser->lrTable[28][27].LRTableFuncP = LRReduce;
+	parser->lrTable[28][27].actionParam = 76;
+	//reduce
+	parser->lrTable[30][27].LRTableFuncP = LRReduce;
+	parser->lrTable[30][27].actionParam = 76;
+	//reduce
+	parser->lrTable[34][27].LRTableFuncP = LRReduce;
+	parser->lrTable[34][27].actionParam = 76;
+	//reduce
+	parser->lrTable[47][27].LRTableFuncP = LRReduce;
+	parser->lrTable[47][27].actionParam = 76;
+	//reduce
+	parser->lrTable[48][27].LRTableFuncP = LRReduce;
+	parser->lrTable[48][27].actionParam = 76;
+	//reduce
+	parser->lrTable[56][27].LRTableFuncP = LRReduce;
+	parser->lrTable[56][27].actionParam = 76;
+	//reduce
+	parser->lrTable[57][27].LRTableFuncP = LRReduce;
+	parser->lrTable[57][27].actionParam = 76;
+	//reduce
+	parser->lrTable[58][27].LRTableFuncP = LRReduce;
+	parser->lrTable[58][27].actionParam = 76;
+	//reduce
+	parser->lrTable[59][27].LRTableFuncP = LRReduce;
+	parser->lrTable[59][27].actionParam = 76;
+	//shift
+	parser->lrTable[7][27].LRTableFuncP = LRShift;
+	parser->lrTable[7][27].actionParam = 73;
+	//shift
+	parser->lrTable[10][27].LRTableFuncP = LRShift;
+	parser->lrTable[10][27].actionParam = 74;
+	//reduce
+	parser->lrTable[0][28].LRTableFuncP = LRReduce;
+	parser->lrTable[0][28].actionParam = 77;
+	//reduce
+	parser->lrTable[1][28].LRTableFuncP = LRReduce;
+	parser->lrTable[1][28].actionParam = 77;
+	//reduce
+	parser->lrTable[3][28].LRTableFuncP = LRReduce;
+	parser->lrTable[3][28].actionParam = 77;
+	//reduce
+	parser->lrTable[4][28].LRTableFuncP = LRReduce;
+	parser->lrTable[4][28].actionParam = 77;
+	//reduce
+	parser->lrTable[2][28].LRTableFuncP = LRReduce;
+	parser->lrTable[2][28].actionParam = 77;
+	//reduce
+	parser->lrTable[19][28].LRTableFuncP = LRReduce;
+	parser->lrTable[19][28].actionParam = 77;
+	//reduce
+	parser->lrTable[21][28].LRTableFuncP = LRReduce;
+	parser->lrTable[21][28].actionParam = 77;
+	//reduce
+	parser->lrTable[23][28].LRTableFuncP = LRReduce;
+	parser->lrTable[23][28].actionParam = 77;
+	//reduce
+	parser->lrTable[27][28].LRTableFuncP = LRReduce;
+	parser->lrTable[27][28].actionParam = 77;
+	//reduce
+	parser->lrTable[28][28].LRTableFuncP = LRReduce;
+	parser->lrTable[28][28].actionParam = 77;
+	//reduce
+	parser->lrTable[30][28].LRTableFuncP = LRReduce;
+	parser->lrTable[30][28].actionParam = 77;
+	//reduce
+	parser->lrTable[34][28].LRTableFuncP = LRReduce;
+	parser->lrTable[34][28].actionParam = 77;
+	//reduce
+	parser->lrTable[47][28].LRTableFuncP = LRReduce;
+	parser->lrTable[47][28].actionParam = 77;
+	//reduce
+	parser->lrTable[48][28].LRTableFuncP = LRReduce;
+	parser->lrTable[48][28].actionParam = 77;
+	//reduce
+	parser->lrTable[56][28].LRTableFuncP = LRReduce;
+	parser->lrTable[56][28].actionParam = 77;
+	//reduce
+	parser->lrTable[57][28].LRTableFuncP = LRReduce;
+	parser->lrTable[57][28].actionParam = 77;
+	//reduce
+	parser->lrTable[58][28].LRTableFuncP = LRReduce;
+	parser->lrTable[58][28].actionParam = 77;
+	//reduce
+	parser->lrTable[59][28].LRTableFuncP = LRReduce;
+	parser->lrTable[59][28].actionParam = 77;
+	//shift
+	parser->lrTable[13][28].LRTableFuncP = LRShift;
+	parser->lrTable[13][28].actionParam = 75;
+	//shift
+	parser->lrTable[15][28].LRTableFuncP = LRShift;
+	parser->lrTable[15][28].actionParam = 76;
+	//shift
+	parser->lrTable[17][28].LRTableFuncP = LRShift;
+	parser->lrTable[17][28].actionParam = 77;
+	//reduce
+	parser->lrTable[0][29].LRTableFuncP = LRReduce;
+	parser->lrTable[0][29].actionParam = 79;
+	//reduce
+	parser->lrTable[1][29].LRTableFuncP = LRReduce;
+	parser->lrTable[1][29].actionParam = 79;
+	//reduce
+	parser->lrTable[3][29].LRTableFuncP = LRReduce;
+	parser->lrTable[3][29].actionParam = 79;
+	//reduce
+	parser->lrTable[4][29].LRTableFuncP = LRReduce;
+	parser->lrTable[4][29].actionParam = 79;
+	//reduce
+	parser->lrTable[2][29].LRTableFuncP = LRReduce;
+	parser->lrTable[2][29].actionParam = 79;
+	//reduce
+	parser->lrTable[7][29].LRTableFuncP = LRReduce;
+	parser->lrTable[7][29].actionParam = 79;
+	//reduce
+	parser->lrTable[10][29].LRTableFuncP = LRReduce;
+	parser->lrTable[10][29].actionParam = 79;
+	//reduce
+	parser->lrTable[19][29].LRTableFuncP = LRReduce;
+	parser->lrTable[19][29].actionParam = 79;
+	//reduce
+	parser->lrTable[21][29].LRTableFuncP = LRReduce;
+	parser->lrTable[21][29].actionParam = 79;
+	//reduce
+	parser->lrTable[23][29].LRTableFuncP = LRReduce;
+	parser->lrTable[23][29].actionParam = 79;
+	//reduce
+	parser->lrTable[27][29].LRTableFuncP = LRReduce;
+	parser->lrTable[27][29].actionParam = 79;
+	//reduce
+	parser->lrTable[28][29].LRTableFuncP = LRReduce;
+	parser->lrTable[28][29].actionParam = 79;
+	//reduce
+	parser->lrTable[30][29].LRTableFuncP = LRReduce;
+	parser->lrTable[30][29].actionParam = 79;
+	//reduce
+	parser->lrTable[34][29].LRTableFuncP = LRReduce;
+	parser->lrTable[34][29].actionParam = 79;
+	//reduce
+	parser->lrTable[47][29].LRTableFuncP = LRReduce;
+	parser->lrTable[47][29].actionParam = 79;
+	//reduce
+	parser->lrTable[48][29].LRTableFuncP = LRReduce;
+	parser->lrTable[48][29].actionParam = 79;
+	//reduce
+	parser->lrTable[56][29].LRTableFuncP = LRReduce;
+	parser->lrTable[56][29].actionParam = 79;
+	//reduce
+	parser->lrTable[57][29].LRTableFuncP = LRReduce;
+	parser->lrTable[57][29].actionParam = 79;
+	//reduce
+	parser->lrTable[58][29].LRTableFuncP = LRReduce;
+	parser->lrTable[58][29].actionParam = 79;
+	//reduce
+	parser->lrTable[59][29].LRTableFuncP = LRReduce;
+	parser->lrTable[59][29].actionParam = 79;
+	//shift
+	parser->lrTable[13][29].LRTableFuncP = LRShift;
+	parser->lrTable[13][29].actionParam = 75;
+	//shift
+	parser->lrTable[15][29].LRTableFuncP = LRShift;
+	parser->lrTable[15][29].actionParam = 76;
+	//shift
+	parser->lrTable[17][29].LRTableFuncP = LRShift;
+	parser->lrTable[17][29].actionParam = 77;
+	//reduce
+	parser->lrTable[0][30].LRTableFuncP = LRReduce;
+	parser->lrTable[0][30].actionParam = 80;
+	//reduce
+	parser->lrTable[1][30].LRTableFuncP = LRReduce;
+	parser->lrTable[1][30].actionParam = 80;
+	//reduce
+	parser->lrTable[3][30].LRTableFuncP = LRReduce;
+	parser->lrTable[3][30].actionParam = 80;
+	//reduce
+	parser->lrTable[4][30].LRTableFuncP = LRReduce;
+	parser->lrTable[4][30].actionParam = 80;
+	//reduce
+	parser->lrTable[2][30].LRTableFuncP = LRReduce;
+	parser->lrTable[2][30].actionParam = 80;
+	//reduce
+	parser->lrTable[7][30].LRTableFuncP = LRReduce;
+	parser->lrTable[7][30].actionParam = 80;
+	//reduce
+	parser->lrTable[10][30].LRTableFuncP = LRReduce;
+	parser->lrTable[10][30].actionParam = 80;
+	//reduce
+	parser->lrTable[19][30].LRTableFuncP = LRReduce;
+	parser->lrTable[19][30].actionParam = 80;
+	//reduce
+	parser->lrTable[21][30].LRTableFuncP = LRReduce;
+	parser->lrTable[21][30].actionParam = 80;
+	//reduce
+	parser->lrTable[23][30].LRTableFuncP = LRReduce;
+	parser->lrTable[23][30].actionParam = 80;
+	//reduce
+	parser->lrTable[27][30].LRTableFuncP = LRReduce;
+	parser->lrTable[27][30].actionParam = 80;
+	//reduce
+	parser->lrTable[28][30].LRTableFuncP = LRReduce;
+	parser->lrTable[28][30].actionParam = 80;
+	//reduce
+	parser->lrTable[30][30].LRTableFuncP = LRReduce;
+	parser->lrTable[30][30].actionParam = 80;
+	//reduce
+	parser->lrTable[34][30].LRTableFuncP = LRReduce;
+	parser->lrTable[34][30].actionParam = 80;
+	//reduce
+	parser->lrTable[47][30].LRTableFuncP = LRReduce;
+	parser->lrTable[47][30].actionParam = 80;
+	//reduce
+	parser->lrTable[48][30].LRTableFuncP = LRReduce;
+	parser->lrTable[48][30].actionParam = 80;
+	//reduce
+	parser->lrTable[56][30].LRTableFuncP = LRReduce;
+	parser->lrTable[56][30].actionParam = 80;
+	//reduce
+	parser->lrTable[57][30].LRTableFuncP = LRReduce;
+	parser->lrTable[57][30].actionParam = 80;
+	//reduce
+	parser->lrTable[58][30].LRTableFuncP = LRReduce;
+	parser->lrTable[58][30].actionParam = 80;
+	//reduce
+	parser->lrTable[59][30].LRTableFuncP = LRReduce;
+	parser->lrTable[59][30].actionParam = 80;
+	//reduce
+	parser->lrTable[0][31].LRTableFuncP = LRReduce;
+	parser->lrTable[0][31].actionParam = 83;
+	//reduce
+	parser->lrTable[1][31].LRTableFuncP = LRReduce;
+	parser->lrTable[1][31].actionParam = 83;
+	//reduce
+	parser->lrTable[3][31].LRTableFuncP = LRReduce;
+	parser->lrTable[3][31].actionParam = 83;
+	//reduce
+	parser->lrTable[4][31].LRTableFuncP = LRReduce;
+	parser->lrTable[4][31].actionParam = 83;
+	//reduce
+	parser->lrTable[2][31].LRTableFuncP = LRReduce;
+	parser->lrTable[2][31].actionParam = 83;
+	//reduce
+	parser->lrTable[7][31].LRTableFuncP = LRReduce;
+	parser->lrTable[7][31].actionParam = 83;
+	//reduce
+	parser->lrTable[10][31].LRTableFuncP = LRReduce;
+	parser->lrTable[10][31].actionParam = 83;
+	//reduce
+	parser->lrTable[13][31].LRTableFuncP = LRReduce;
+	parser->lrTable[13][31].actionParam = 83;
+	//reduce
+	parser->lrTable[15][31].LRTableFuncP = LRReduce;
+	parser->lrTable[15][31].actionParam = 83;
+	//reduce
+	parser->lrTable[17][31].LRTableFuncP = LRReduce;
+	parser->lrTable[17][31].actionParam = 83;
+	//reduce
+	parser->lrTable[19][31].LRTableFuncP = LRReduce;
+	parser->lrTable[19][31].actionParam = 83;
+	//reduce
+	parser->lrTable[21][31].LRTableFuncP = LRReduce;
+	parser->lrTable[21][31].actionParam = 83;
+	//reduce
+	parser->lrTable[23][31].LRTableFuncP = LRReduce;
+	parser->lrTable[23][31].actionParam = 83;
+	//reduce
+	parser->lrTable[27][31].LRTableFuncP = LRReduce;
+	parser->lrTable[27][31].actionParam = 83;
+	//reduce
+	parser->lrTable[28][31].LRTableFuncP = LRReduce;
+	parser->lrTable[28][31].actionParam = 83;
+	//reduce
+	parser->lrTable[30][31].LRTableFuncP = LRReduce;
+	parser->lrTable[30][31].actionParam = 83;
+	//reduce
+	parser->lrTable[34][31].LRTableFuncP = LRReduce;
+	parser->lrTable[34][31].actionParam = 83;
+	//reduce
+	parser->lrTable[47][31].LRTableFuncP = LRReduce;
+	parser->lrTable[47][31].actionParam = 83;
+	//reduce
+	parser->lrTable[48][31].LRTableFuncP = LRReduce;
+	parser->lrTable[48][31].actionParam = 83;
+	//reduce
+	parser->lrTable[56][31].LRTableFuncP = LRReduce;
+	parser->lrTable[56][31].actionParam = 83;
+	//reduce
+	parser->lrTable[57][31].LRTableFuncP = LRReduce;
+	parser->lrTable[57][31].actionParam = 83;
+	//reduce
+	parser->lrTable[58][31].LRTableFuncP = LRReduce;
+	parser->lrTable[58][31].actionParam = 83;
+	//reduce
+	parser->lrTable[59][31].LRTableFuncP = LRReduce;
+	parser->lrTable[59][31].actionParam = 83;
+	//reduce
+	parser->lrTable[0][32].LRTableFuncP = LRReduce;
+	parser->lrTable[0][32].actionParam = 82;
+	//reduce
+	parser->lrTable[1][32].LRTableFuncP = LRReduce;
+	parser->lrTable[1][32].actionParam = 82;
+	//reduce
+	parser->lrTable[3][32].LRTableFuncP = LRReduce;
+	parser->lrTable[3][32].actionParam = 82;
+	//reduce
+	parser->lrTable[4][32].LRTableFuncP = LRReduce;
+	parser->lrTable[4][32].actionParam = 82;
+	//reduce
+	parser->lrTable[2][32].LRTableFuncP = LRReduce;
+	parser->lrTable[2][32].actionParam = 82;
+	//reduce
+	parser->lrTable[7][32].LRTableFuncP = LRReduce;
+	parser->lrTable[7][32].actionParam = 82;
+	//reduce
+	parser->lrTable[10][32].LRTableFuncP = LRReduce;
+	parser->lrTable[10][32].actionParam = 82;
+	//reduce
+	parser->lrTable[13][32].LRTableFuncP = LRReduce;
+	parser->lrTable[13][32].actionParam = 82;
+	//reduce
+	parser->lrTable[15][32].LRTableFuncP = LRReduce;
+	parser->lrTable[15][32].actionParam = 82;
+	//reduce
+	parser->lrTable[17][32].LRTableFuncP = LRReduce;
+	parser->lrTable[17][32].actionParam = 82;
+	//reduce
+	parser->lrTable[19][32].LRTableFuncP = LRReduce;
+	parser->lrTable[19][32].actionParam = 82;
+	//reduce
+	parser->lrTable[21][32].LRTableFuncP = LRReduce;
+	parser->lrTable[21][32].actionParam = 82;
+	//reduce
+	parser->lrTable[23][32].LRTableFuncP = LRReduce;
+	parser->lrTable[23][32].actionParam = 82;
+	//reduce
+	parser->lrTable[27][32].LRTableFuncP = LRReduce;
+	parser->lrTable[27][32].actionParam = 82;
+	//reduce
+	parser->lrTable[28][32].LRTableFuncP = LRReduce;
+	parser->lrTable[28][32].actionParam = 82;
+	//reduce
+	parser->lrTable[30][32].LRTableFuncP = LRReduce;
+	parser->lrTable[30][32].actionParam = 82;
+	//reduce
+	parser->lrTable[34][32].LRTableFuncP = LRReduce;
+	parser->lrTable[34][32].actionParam = 82;
+	//reduce
+	parser->lrTable[47][32].LRTableFuncP = LRReduce;
+	parser->lrTable[47][32].actionParam = 82;
+	//reduce
+	parser->lrTable[48][32].LRTableFuncP = LRReduce;
+	parser->lrTable[48][32].actionParam = 82;
+	//reduce
+	parser->lrTable[56][32].LRTableFuncP = LRReduce;
+	parser->lrTable[56][32].actionParam = 82;
+	//reduce
+	parser->lrTable[57][32].LRTableFuncP = LRReduce;
+	parser->lrTable[57][32].actionParam = 82;
+	//reduce
+	parser->lrTable[58][32].LRTableFuncP = LRReduce;
+	parser->lrTable[58][32].actionParam = 82;
+	//reduce
+	parser->lrTable[59][32].LRTableFuncP = LRReduce;
+	parser->lrTable[59][32].actionParam = 82;
+	//reduce
+	parser->lrTable[0][33].LRTableFuncP = LRReduce;
+	parser->lrTable[0][33].actionParam = 84;
+	//reduce
+	parser->lrTable[1][33].LRTableFuncP = LRReduce;
+	parser->lrTable[1][33].actionParam = 84;
+	//reduce
+	parser->lrTable[3][33].LRTableFuncP = LRReduce;
+	parser->lrTable[3][33].actionParam = 84;
+	//reduce
+	parser->lrTable[4][33].LRTableFuncP = LRReduce;
+	parser->lrTable[4][33].actionParam = 84;
+	//reduce
+	parser->lrTable[2][33].LRTableFuncP = LRReduce;
+	parser->lrTable[2][33].actionParam = 84;
+	//reduce
+	parser->lrTable[7][33].LRTableFuncP = LRReduce;
+	parser->lrTable[7][33].actionParam = 84;
+	//reduce
+	parser->lrTable[10][33].LRTableFuncP = LRReduce;
+	parser->lrTable[10][33].actionParam = 84;
+	//reduce
+	parser->lrTable[13][33].LRTableFuncP = LRReduce;
+	parser->lrTable[13][33].actionParam = 84;
+	//reduce
+	parser->lrTable[15][33].LRTableFuncP = LRReduce;
+	parser->lrTable[15][33].actionParam = 84;
+	//reduce
+	parser->lrTable[17][33].LRTableFuncP = LRReduce;
+	parser->lrTable[17][33].actionParam = 84;
+	//reduce
+	parser->lrTable[19][33].LRTableFuncP = LRReduce;
+	parser->lrTable[19][33].actionParam = 84;
+	//reduce
+	parser->lrTable[21][33].LRTableFuncP = LRReduce;
+	parser->lrTable[21][33].actionParam = 84;
 	//reduce
 	parser->lrTable[23][33].LRTableFuncP = LRReduce;
-	parser->lrTable[23][33].actionParam = 3;
+	parser->lrTable[23][33].actionParam = 84;
 	//reduce
-	parser->lrTable[41][34].LRTableFuncP = LRReduce;
-	parser->lrTable[41][34].actionParam = 6;
+	parser->lrTable[27][33].LRTableFuncP = LRReduce;
+	parser->lrTable[27][33].actionParam = 84;
+	//reduce
+	parser->lrTable[28][33].LRTableFuncP = LRReduce;
+	parser->lrTable[28][33].actionParam = 84;
+	//reduce
+	parser->lrTable[30][33].LRTableFuncP = LRReduce;
+	parser->lrTable[30][33].actionParam = 84;
+	//reduce
+	parser->lrTable[34][33].LRTableFuncP = LRReduce;
+	parser->lrTable[34][33].actionParam = 84;
+	//reduce
+	parser->lrTable[47][33].LRTableFuncP = LRReduce;
+	parser->lrTable[47][33].actionParam = 84;
+	//reduce
+	parser->lrTable[48][33].LRTableFuncP = LRReduce;
+	parser->lrTable[48][33].actionParam = 84;
+	//reduce
+	parser->lrTable[56][33].LRTableFuncP = LRReduce;
+	parser->lrTable[56][33].actionParam = 84;
+	//reduce
+	parser->lrTable[57][33].LRTableFuncP = LRReduce;
+	parser->lrTable[57][33].actionParam = 84;
+	//reduce
+	parser->lrTable[58][33].LRTableFuncP = LRReduce;
+	parser->lrTable[58][33].actionParam = 84;
+	//reduce
+	parser->lrTable[59][33].LRTableFuncP = LRReduce;
+	parser->lrTable[59][33].actionParam = 84;
+	//reduce
+	parser->lrTable[30][33].LRTableFuncP = LRReduce;
+	parser->lrTable[30][33].actionParam = 45;
+	//reduce
+	parser->lrTable[34][33].LRTableFuncP = LRReduce;
+	parser->lrTable[34][33].actionParam = 45;
+	//reduce
+	parser->lrTable[56][33].LRTableFuncP = LRReduce;
+	parser->lrTable[56][33].actionParam = 45;
+	//reduce
+	parser->lrTable[57][33].LRTableFuncP = LRReduce;
+	parser->lrTable[57][33].actionParam = 45;
+	//reduce
+	parser->lrTable[59][33].LRTableFuncP = LRReduce;
+	parser->lrTable[59][33].actionParam = 45;
+	//reduce
+	parser->lrTable[30][33].LRTableFuncP = LRReduce;
+	parser->lrTable[30][33].actionParam = 100;
+	//reduce
+	parser->lrTable[57][33].LRTableFuncP = LRReduce;
+	parser->lrTable[57][33].actionParam = 100;
+	//shift
+	parser->lrTable[30][33].LRTableFuncP = LRShift;
+	parser->lrTable[30][33].actionParam = 127;
+	//shift
+	parser->lrTable[57][33].LRTableFuncP = LRShift;
+	parser->lrTable[57][33].actionParam = 128;
+	//reduce
+	parser->lrTable[30][33].LRTableFuncP = LRReduce;
+	parser->lrTable[30][33].actionParam = 99;
+	//shift
+	parser->lrTable[34][33].LRTableFuncP = LRShift;
+	parser->lrTable[34][33].actionParam = 129;
+	//shift
+	parser->lrTable[57][33].LRTableFuncP = LRShift;
+	parser->lrTable[57][33].actionParam = 58;
+	//shift
+	parser->lrTable[40][33].LRTableFuncP = LRShift;
+	parser->lrTable[40][33].actionParam = 4;
+	//shift
+	parser->lrTable[41][33].LRTableFuncP = LRShift;
+	parser->lrTable[41][33].actionParam = 5;
+	//shift
+	parser->lrTable[42][33].LRTableFuncP = LRShift;
+	parser->lrTable[42][33].actionParam = 6;
+	//shift
+	parser->lrTable[43][33].LRTableFuncP = LRShift;
+	parser->lrTable[43][33].actionParam = 7;
+	//reduce
+	parser->lrTable[4][33].LRTableFuncP = LRReduce;
+	parser->lrTable[4][33].actionParam = 22;
+	//reduce
+	parser->lrTable[7][33].LRTableFuncP = LRReduce;
+	parser->lrTable[7][33].actionParam = 22;
+	//reduce
+	parser->lrTable[8][33].LRTableFuncP = LRReduce;
+	parser->lrTable[8][33].actionParam = 22;
+	//reduce
+	parser->lrTable[10][33].LRTableFuncP = LRReduce;
+	parser->lrTable[10][33].actionParam = 22;
+	//reduce
+	parser->lrTable[11][33].LRTableFuncP = LRReduce;
+	parser->lrTable[11][33].actionParam = 22;
+	//reduce
+	parser->lrTable[25][33].LRTableFuncP = LRReduce;
+	parser->lrTable[25][33].actionParam = 22;
+	//reduce
+	parser->lrTable[29][33].LRTableFuncP = LRReduce;
+	parser->lrTable[29][33].actionParam = 22;
+	//reduce
+	parser->lrTable[31][33].LRTableFuncP = LRReduce;
+	parser->lrTable[31][33].actionParam = 22;
+	//reduce
+	parser->lrTable[32][33].LRTableFuncP = LRReduce;
+	parser->lrTable[32][33].actionParam = 22;
+	//reduce
+	parser->lrTable[35][33].LRTableFuncP = LRReduce;
+	parser->lrTable[35][33].actionParam = 22;
+	//reduce
+	parser->lrTable[36][33].LRTableFuncP = LRReduce;
+	parser->lrTable[36][33].actionParam = 22;
+	//reduce
+	parser->lrTable[37][33].LRTableFuncP = LRReduce;
+	parser->lrTable[37][33].actionParam = 22;
+	//reduce
+	parser->lrTable[38][33].LRTableFuncP = LRReduce;
+	parser->lrTable[38][33].actionParam = 22;
+	//reduce
+	parser->lrTable[39][33].LRTableFuncP = LRReduce;
+	parser->lrTable[39][33].actionParam = 22;
+	//reduce
+	parser->lrTable[44][33].LRTableFuncP = LRReduce;
+	parser->lrTable[44][33].actionParam = 22;
+	//reduce
+	parser->lrTable[49][33].LRTableFuncP = LRReduce;
+	parser->lrTable[49][33].actionParam = 22;
+	//reduce
+	parser->lrTable[50][33].LRTableFuncP = LRReduce;
+	parser->lrTable[50][33].actionParam = 22;
+	//reduce
+	parser->lrTable[56][33].LRTableFuncP = LRReduce;
+	parser->lrTable[56][33].actionParam = 22;
+	//reduce
+	parser->lrTable[51][33].LRTableFuncP = LRReduce;
+	parser->lrTable[51][33].actionParam = 22;
+	//goto
+	parser->lrTable[type_specifier+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[type_specifier+TOTAL_TOKENS][33].actionParam = 131;
+	//reduce
+	parser->lrTable[52][33].LRTableFuncP = LRReduce;
+	parser->lrTable[52][33].actionParam = 15;
+	//reduce
+	parser->lrTable[40][33].LRTableFuncP = LRReduce;
+	parser->lrTable[40][33].actionParam = 15;
+	//reduce
+	parser->lrTable[41][33].LRTableFuncP = LRReduce;
+	parser->lrTable[41][33].actionParam = 15;
+	//reduce
+	parser->lrTable[42][33].LRTableFuncP = LRReduce;
+	parser->lrTable[42][33].actionParam = 15;
+	//reduce
+	parser->lrTable[43][33].LRTableFuncP = LRReduce;
+	parser->lrTable[43][33].actionParam = 15;
+	//reduce
+	parser->lrTable[30][33].LRTableFuncP = LRReduce;
+	parser->lrTable[30][33].actionParam = 19;
+	//reduce
+	parser->lrTable[57][33].LRTableFuncP = LRReduce;
+	parser->lrTable[57][33].actionParam = 19;
+	//shift
+	parser->lrTable[4][33].LRTableFuncP = LRShift;
+	parser->lrTable[4][33].actionParam = 19;
+	//shift
+	parser->lrTable[7][33].LRTableFuncP = LRShift;
+	parser->lrTable[7][33].actionParam = 20;
+	//shift
+	parser->lrTable[8][33].LRTableFuncP = LRShift;
+	parser->lrTable[8][33].actionParam = 21;
+	//shift
+	parser->lrTable[10][33].LRTableFuncP = LRShift;
+	parser->lrTable[10][33].actionParam = 22;
+	//shift
+	parser->lrTable[11][33].LRTableFuncP = LRShift;
+	parser->lrTable[11][33].actionParam = 23;
+	//shift
+	parser->lrTable[25][33].LRTableFuncP = LRShift;
+	parser->lrTable[25][33].actionParam = 24;
+	//shift
+	parser->lrTable[29][33].LRTableFuncP = LRShift;
+	parser->lrTable[29][33].actionParam = 25;
+	//shift
+	parser->lrTable[35][33].LRTableFuncP = LRShift;
+	parser->lrTable[35][33].actionParam = 26;
+	//shift
+	parser->lrTable[36][33].LRTableFuncP = LRShift;
+	parser->lrTable[36][33].actionParam = 27;
+	//shift
+	parser->lrTable[37][33].LRTableFuncP = LRShift;
+	parser->lrTable[37][33].actionParam = 28;
+	//shift
+	parser->lrTable[38][33].LRTableFuncP = LRShift;
+	parser->lrTable[38][33].actionParam = 29;
+	//shift
+	parser->lrTable[39][33].LRTableFuncP = LRShift;
+	parser->lrTable[39][33].actionParam = 30;
+	//shift
+	parser->lrTable[51][33].LRTableFuncP = LRShift;
+	parser->lrTable[51][33].actionParam = 31;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][33].actionParam = 134;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][33].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][33].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][33].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][33].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][33].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][33].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][33].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][33].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][33].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][33].actionParam = 99;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][33].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][33].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][33].actionParam = 47;
+	//reduce
+	parser->lrTable[0][34].LRTableFuncP = LRReduce;
+	parser->lrTable[0][34].actionParam = 94;
+	//reduce
+	parser->lrTable[1][34].LRTableFuncP = LRReduce;
+	parser->lrTable[1][34].actionParam = 94;
+	//reduce
+	parser->lrTable[2][34].LRTableFuncP = LRReduce;
+	parser->lrTable[2][34].actionParam = 94;
+	//reduce
+	parser->lrTable[3][34].LRTableFuncP = LRReduce;
+	parser->lrTable[3][34].actionParam = 94;
+	//reduce
+	parser->lrTable[4][34].LRTableFuncP = LRReduce;
+	parser->lrTable[4][34].actionParam = 94;
+	//reduce
+	parser->lrTable[2][34].LRTableFuncP = LRReduce;
+	parser->lrTable[2][34].actionParam = 94;
+	//reduce
+	parser->lrTable[7][34].LRTableFuncP = LRReduce;
+	parser->lrTable[7][34].actionParam = 94;
+	//reduce
+	parser->lrTable[8][34].LRTableFuncP = LRReduce;
+	parser->lrTable[8][34].actionParam = 94;
+	//reduce
+	parser->lrTable[7][34].LRTableFuncP = LRReduce;
+	parser->lrTable[7][34].actionParam = 94;
+	//reduce
+	parser->lrTable[10][34].LRTableFuncP = LRReduce;
+	parser->lrTable[10][34].actionParam = 94;
+	//reduce
+	parser->lrTable[11][34].LRTableFuncP = LRReduce;
+	parser->lrTable[11][34].actionParam = 94;
+	//reduce
+	parser->lrTable[10][34].LRTableFuncP = LRReduce;
+	parser->lrTable[10][34].actionParam = 94;
+	//reduce
+	parser->lrTable[13][34].LRTableFuncP = LRReduce;
+	parser->lrTable[13][34].actionParam = 94;
+	//reduce
+	parser->lrTable[13][34].LRTableFuncP = LRReduce;
+	parser->lrTable[13][34].actionParam = 94;
+	//reduce
+	parser->lrTable[15][34].LRTableFuncP = LRReduce;
+	parser->lrTable[15][34].actionParam = 94;
+	//reduce
+	parser->lrTable[15][34].LRTableFuncP = LRReduce;
+	parser->lrTable[15][34].actionParam = 94;
+	//reduce
+	parser->lrTable[17][34].LRTableFuncP = LRReduce;
+	parser->lrTable[17][34].actionParam = 94;
+	//reduce
+	parser->lrTable[17][34].LRTableFuncP = LRReduce;
+	parser->lrTable[17][34].actionParam = 94;
+	//reduce
+	parser->lrTable[19][34].LRTableFuncP = LRReduce;
+	parser->lrTable[19][34].actionParam = 94;
+	//reduce
+	parser->lrTable[20][34].LRTableFuncP = LRReduce;
+	parser->lrTable[20][34].actionParam = 94;
+	//reduce
+	parser->lrTable[21][34].LRTableFuncP = LRReduce;
+	parser->lrTable[21][34].actionParam = 94;
+	//reduce
+	parser->lrTable[21][34].LRTableFuncP = LRReduce;
+	parser->lrTable[21][34].actionParam = 94;
 	//reduce
 	parser->lrTable[23][34].LRTableFuncP = LRReduce;
-	parser->lrTable[23][34].actionParam = 6;
+	parser->lrTable[23][34].actionParam = 94;
+	//reduce
+	parser->lrTable[23][34].LRTableFuncP = LRReduce;
+	parser->lrTable[23][34].actionParam = 94;
+	//reduce
+	parser->lrTable[27][34].LRTableFuncP = LRReduce;
+	parser->lrTable[27][34].actionParam = 94;
+	//reduce
+	parser->lrTable[28][34].LRTableFuncP = LRReduce;
+	parser->lrTable[28][34].actionParam = 94;
 	//reduce
 	parser->lrTable[29][34].LRTableFuncP = LRReduce;
-	parser->lrTable[29][34].actionParam = 6;
+	parser->lrTable[29][34].actionParam = 94;
 	//reduce
 	parser->lrTable[30][34].LRTableFuncP = LRReduce;
-	parser->lrTable[30][34].actionParam = 6;
-	//reduce
-	parser->lrTable[31][34].LRTableFuncP = LRReduce;
-	parser->lrTable[31][34].actionParam = 6;
-	//reduce
-	parser->lrTable[32][34].LRTableFuncP = LRReduce;
-	parser->lrTable[32][34].actionParam = 6;
+	parser->lrTable[30][34].actionParam = 94;
 	//reduce
 	parser->lrTable[33][34].LRTableFuncP = LRReduce;
-	parser->lrTable[33][34].actionParam = 6;
+	parser->lrTable[33][34].actionParam = 94;
 	//reduce
-	parser->lrTable[38][34].LRTableFuncP = LRReduce;
-	parser->lrTable[38][34].actionParam = 6;
+	parser->lrTable[34][34].LRTableFuncP = LRReduce;
+	parser->lrTable[34][34].actionParam = 94;
 	//reduce
-	parser->lrTable[39][34].LRTableFuncP = LRReduce;
-	parser->lrTable[39][34].actionParam = 6;
+	parser->lrTable[47][34].LRTableFuncP = LRReduce;
+	parser->lrTable[47][34].actionParam = 94;
 	//reduce
-	parser->lrTable[40][34].LRTableFuncP = LRReduce;
-	parser->lrTable[40][34].actionParam = 6;
+	parser->lrTable[48][34].LRTableFuncP = LRReduce;
+	parser->lrTable[48][34].actionParam = 94;
+	//reduce
+	parser->lrTable[56][34].LRTableFuncP = LRReduce;
+	parser->lrTable[56][34].actionParam = 94;
+	//reduce
+	parser->lrTable[57][34].LRTableFuncP = LRReduce;
+	parser->lrTable[57][34].actionParam = 94;
+	//reduce
+	parser->lrTable[58][34].LRTableFuncP = LRReduce;
+	parser->lrTable[58][34].actionParam = 94;
+	//reduce
+	parser->lrTable[59][34].LRTableFuncP = LRReduce;
+	parser->lrTable[59][34].actionParam = 94;
 	//shift
-	parser->lrTable[9][35].LRTableFuncP = LRShift;
-	parser->lrTable[9][35].actionParam = 44;
+	parser->lrTable[4][34].LRTableFuncP = LRShift;
+	parser->lrTable[4][34].actionParam = 19;
+	//shift
+	parser->lrTable[7][34].LRTableFuncP = LRShift;
+	parser->lrTable[7][34].actionParam = 20;
+	//shift
+	parser->lrTable[8][34].LRTableFuncP = LRShift;
+	parser->lrTable[8][34].actionParam = 21;
+	//shift
+	parser->lrTable[10][34].LRTableFuncP = LRShift;
+	parser->lrTable[10][34].actionParam = 22;
+	//shift
+	parser->lrTable[11][34].LRTableFuncP = LRShift;
+	parser->lrTable[11][34].actionParam = 23;
+	//shift
+	parser->lrTable[25][34].LRTableFuncP = LRShift;
+	parser->lrTable[25][34].actionParam = 24;
+	//shift
+	parser->lrTable[29][34].LRTableFuncP = LRShift;
+	parser->lrTable[29][34].actionParam = 25;
+	//shift
+	parser->lrTable[35][34].LRTableFuncP = LRShift;
+	parser->lrTable[35][34].actionParam = 26;
+	//shift
+	parser->lrTable[36][34].LRTableFuncP = LRShift;
+	parser->lrTable[36][34].actionParam = 27;
+	//shift
+	parser->lrTable[37][34].LRTableFuncP = LRShift;
+	parser->lrTable[37][34].actionParam = 28;
+	//shift
+	parser->lrTable[38][34].LRTableFuncP = LRShift;
+	parser->lrTable[38][34].actionParam = 29;
+	//shift
+	parser->lrTable[39][34].LRTableFuncP = LRShift;
+	parser->lrTable[39][34].actionParam = 30;
+	//shift
+	parser->lrTable[51][34].LRTableFuncP = LRShift;
+	parser->lrTable[51][34].actionParam = 31;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][34].actionParam = 135;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][34].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][34].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][34].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][34].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][34].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][34].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][34].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][34].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][34].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][34].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][34].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][34].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][34].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][34].actionParam = 47;
+	//reduce
+	parser->lrTable[0][35].LRTableFuncP = LRReduce;
+	parser->lrTable[0][35].actionParam = 95;
+	//reduce
+	parser->lrTable[1][35].LRTableFuncP = LRReduce;
+	parser->lrTable[1][35].actionParam = 95;
+	//reduce
+	parser->lrTable[2][35].LRTableFuncP = LRReduce;
+	parser->lrTable[2][35].actionParam = 95;
+	//reduce
+	parser->lrTable[3][35].LRTableFuncP = LRReduce;
+	parser->lrTable[3][35].actionParam = 95;
+	//reduce
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 95;
+	//reduce
+	parser->lrTable[2][35].LRTableFuncP = LRReduce;
+	parser->lrTable[2][35].actionParam = 95;
+	//reduce
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 95;
+	//reduce
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 95;
+	//reduce
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 95;
+	//reduce
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 95;
+	//reduce
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 95;
+	//reduce
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 95;
+	//reduce
+	parser->lrTable[13][35].LRTableFuncP = LRReduce;
+	parser->lrTable[13][35].actionParam = 95;
+	//reduce
+	parser->lrTable[13][35].LRTableFuncP = LRReduce;
+	parser->lrTable[13][35].actionParam = 95;
+	//reduce
+	parser->lrTable[15][35].LRTableFuncP = LRReduce;
+	parser->lrTable[15][35].actionParam = 95;
+	//reduce
+	parser->lrTable[15][35].LRTableFuncP = LRReduce;
+	parser->lrTable[15][35].actionParam = 95;
+	//reduce
+	parser->lrTable[17][35].LRTableFuncP = LRReduce;
+	parser->lrTable[17][35].actionParam = 95;
+	//reduce
+	parser->lrTable[17][35].LRTableFuncP = LRReduce;
+	parser->lrTable[17][35].actionParam = 95;
+	//reduce
+	parser->lrTable[19][35].LRTableFuncP = LRReduce;
+	parser->lrTable[19][35].actionParam = 95;
+	//reduce
+	parser->lrTable[20][35].LRTableFuncP = LRReduce;
+	parser->lrTable[20][35].actionParam = 95;
+	//reduce
+	parser->lrTable[21][35].LRTableFuncP = LRReduce;
+	parser->lrTable[21][35].actionParam = 95;
+	//reduce
+	parser->lrTable[21][35].LRTableFuncP = LRReduce;
+	parser->lrTable[21][35].actionParam = 95;
+	//reduce
+	parser->lrTable[23][35].LRTableFuncP = LRReduce;
+	parser->lrTable[23][35].actionParam = 95;
+	//reduce
+	parser->lrTable[23][35].LRTableFuncP = LRReduce;
+	parser->lrTable[23][35].actionParam = 95;
+	//reduce
+	parser->lrTable[27][35].LRTableFuncP = LRReduce;
+	parser->lrTable[27][35].actionParam = 95;
+	//reduce
+	parser->lrTable[28][35].LRTableFuncP = LRReduce;
+	parser->lrTable[28][35].actionParam = 95;
+	//reduce
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 95;
+	//reduce
+	parser->lrTable[30][35].LRTableFuncP = LRReduce;
+	parser->lrTable[30][35].actionParam = 95;
+	//reduce
+	parser->lrTable[33][35].LRTableFuncP = LRReduce;
+	parser->lrTable[33][35].actionParam = 95;
+	//reduce
+	parser->lrTable[34][35].LRTableFuncP = LRReduce;
+	parser->lrTable[34][35].actionParam = 95;
+	//reduce
+	parser->lrTable[47][35].LRTableFuncP = LRReduce;
+	parser->lrTable[47][35].actionParam = 95;
+	//reduce
+	parser->lrTable[48][35].LRTableFuncP = LRReduce;
+	parser->lrTable[48][35].actionParam = 95;
+	//reduce
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 95;
+	//reduce
+	parser->lrTable[57][35].LRTableFuncP = LRReduce;
+	parser->lrTable[57][35].actionParam = 95;
+	//reduce
+	parser->lrTable[58][35].LRTableFuncP = LRReduce;
+	parser->lrTable[58][35].actionParam = 95;
+	//reduce
+	parser->lrTable[59][35].LRTableFuncP = LRReduce;
+	parser->lrTable[59][35].actionParam = 95;
+	//reduce
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 24;
+	//reduce
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 24;
+	//reduce
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 24;
+	//reduce
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 24;
+	//reduce
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 24;
+	//reduce
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 24;
+	//reduce
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 24;
+	//reduce
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 24;
+	//reduce
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 24;
+	//reduce
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 24;
+	//reduce
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 24;
+	//reduce
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 24;
+	//reduce
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 24;
+	//reduce
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 24;
+	//reduce
+	parser->lrTable[40][35].LRTableFuncP = LRReduce;
+	parser->lrTable[40][35].actionParam = 24;
+	//reduce
+	parser->lrTable[41][35].LRTableFuncP = LRReduce;
+	parser->lrTable[41][35].actionParam = 24;
+	//reduce
+	parser->lrTable[42][35].LRTableFuncP = LRReduce;
+	parser->lrTable[42][35].actionParam = 24;
+	//reduce
+	parser->lrTable[43][35].LRTableFuncP = LRReduce;
+	parser->lrTable[43][35].actionParam = 24;
+	//reduce
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 24;
+	//reduce
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 24;
+	//reduce
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 24;
+	//reduce
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 24;
+	//reduce
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 24;
+	//shift
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 53;
+	//shift
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
+	//shift
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
+	//shift
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
+	//shift
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
 	parser->lrTable[11][35].LRTableFuncP = LRShift;
-	parser->lrTable[11][35].actionParam = 45;
-	//shift
-	parser->lrTable[12][35].LRTableFuncP = LRShift;
-	parser->lrTable[12][35].actionParam = 46;
-	//shift
-	parser->lrTable[20][35].LRTableFuncP = LRShift;
-	parser->lrTable[20][35].actionParam = 60;
-	//shift
-	parser->lrTable[24][35].LRTableFuncP = LRShift;
-	parser->lrTable[24][35].actionParam = 48;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
 	parser->lrTable[25][35].LRTableFuncP = LRShift;
-	parser->lrTable[25][35].actionParam = 49;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[26][35].LRTableFuncP = LRShift;
-	parser->lrTable[26][35].actionParam = 50;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[27][35].LRTableFuncP = LRShift;
-	parser->lrTable[27][35].actionParam = 51;
+	parser->lrTable[31][35].LRTableFuncP = LRShift;
+	parser->lrTable[31][35].actionParam = 123;
 	//shift
-	parser->lrTable[28][35].LRTableFuncP = LRShift;
-	parser->lrTable[28][35].actionParam = 52;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
+	//shift
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
+	//shift
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
+	//shift
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
+	//shift
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
+	//shift
+	parser->lrTable[44][35].LRTableFuncP = LRShift;
+	parser->lrTable[44][35].actionParam = 136;
+	//shift
+	parser->lrTable[49][35].LRTableFuncP = LRShift;
+	parser->lrTable[49][35].actionParam = 137;
+	//shift
+	parser->lrTable[50][35].LRTableFuncP = LRShift;
+	parser->lrTable[50][35].actionParam = 138;
+	//shift
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
+	//shift
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
+	//reduce
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 26;
+	//goto
+	parser->lrTable[statement_list_opt+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement_list_opt+TOTAL_TOKENS][35].actionParam = 141;
+	//goto
+	parser->lrTable[statement_list+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement_list+TOTAL_TOKENS][35].actionParam = 142;
+	//goto
+	parser->lrTable[statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement+TOTAL_TOKENS][35].actionParam = 143;
+	//goto
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 144;
+	//goto
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].actionParam = 145;
+	//goto
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].actionParam = 146;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
 	parser->lrTable[40][35].LRTableFuncP = LRShift;
-	parser->lrTable[40][35].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][35].actionParam = 67;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][35].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][35].actionParam = 56;
+	parser->lrTable[40][35].actionParam = 4;
+	//shift
+	parser->lrTable[41][35].LRTableFuncP = LRShift;
+	parser->lrTable[41][35].actionParam = 5;
+	//shift
+	parser->lrTable[42][35].LRTableFuncP = LRShift;
+	parser->lrTable[42][35].actionParam = 6;
+	//shift
+	parser->lrTable[43][35].LRTableFuncP = LRShift;
+	parser->lrTable[43][35].actionParam = 7;
 	//reduce
-	parser->lrTable[41][36].LRTableFuncP = LRReduce;
-	parser->lrTable[41][36].actionParam = 11;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 23;
 	//reduce
-	parser->lrTable[23][36].LRTableFuncP = LRReduce;
-	parser->lrTable[23][36].actionParam = 11;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 23;
 	//reduce
-	parser->lrTable[29][36].LRTableFuncP = LRReduce;
-	parser->lrTable[29][36].actionParam = 11;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 23;
 	//reduce
-	parser->lrTable[30][36].LRTableFuncP = LRReduce;
-	parser->lrTable[30][36].actionParam = 11;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 23;
 	//reduce
-	parser->lrTable[31][36].LRTableFuncP = LRReduce;
-	parser->lrTable[31][36].actionParam = 11;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 23;
 	//reduce
-	parser->lrTable[32][36].LRTableFuncP = LRReduce;
-	parser->lrTable[32][36].actionParam = 11;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 23;
 	//reduce
-	parser->lrTable[33][36].LRTableFuncP = LRReduce;
-	parser->lrTable[33][36].actionParam = 11;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 23;
 	//reduce
-	parser->lrTable[38][36].LRTableFuncP = LRReduce;
-	parser->lrTable[38][36].actionParam = 11;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 23;
 	//reduce
-	parser->lrTable[39][36].LRTableFuncP = LRReduce;
-	parser->lrTable[39][36].actionParam = 11;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 23;
 	//reduce
-	parser->lrTable[40][36].LRTableFuncP = LRReduce;
-	parser->lrTable[40][36].actionParam = 11;
-	//shift
-	parser->lrTable[9][37].LRTableFuncP = LRShift;
-	parser->lrTable[9][37].actionParam = 44;
-	//shift
-	parser->lrTable[11][37].LRTableFuncP = LRShift;
-	parser->lrTable[11][37].actionParam = 45;
-	//shift
-	parser->lrTable[12][37].LRTableFuncP = LRShift;
-	parser->lrTable[12][37].actionParam = 46;
-	//shift
-	parser->lrTable[20][37].LRTableFuncP = LRShift;
-	parser->lrTable[20][37].actionParam = 60;
-	//shift
-	parser->lrTable[24][37].LRTableFuncP = LRShift;
-	parser->lrTable[24][37].actionParam = 48;
-	//shift
-	parser->lrTable[25][37].LRTableFuncP = LRShift;
-	parser->lrTable[25][37].actionParam = 49;
-	//shift
-	parser->lrTable[26][37].LRTableFuncP = LRShift;
-	parser->lrTable[26][37].actionParam = 50;
-	//shift
-	parser->lrTable[27][37].LRTableFuncP = LRShift;
-	parser->lrTable[27][37].actionParam = 51;
-	//shift
-	parser->lrTable[28][37].LRTableFuncP = LRShift;
-	parser->lrTable[28][37].actionParam = 52;
-	//shift
-	parser->lrTable[40][37].LRTableFuncP = LRShift;
-	parser->lrTable[40][37].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][37].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][37].actionParam = 68;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][37].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][37].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][37].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][37].actionParam = 56;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 23;
 	//reduce
-	parser->lrTable[41][38].LRTableFuncP = LRReduce;
-	parser->lrTable[41][38].actionParam = 9;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 23;
 	//reduce
-	parser->lrTable[23][38].LRTableFuncP = LRReduce;
-	parser->lrTable[23][38].actionParam = 9;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 23;
 	//reduce
-	parser->lrTable[29][38].LRTableFuncP = LRReduce;
-	parser->lrTable[29][38].actionParam = 9;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 23;
 	//reduce
-	parser->lrTable[30][38].LRTableFuncP = LRReduce;
-	parser->lrTable[30][38].actionParam = 9;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 23;
 	//reduce
-	parser->lrTable[31][38].LRTableFuncP = LRReduce;
-	parser->lrTable[31][38].actionParam = 9;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 23;
 	//reduce
-	parser->lrTable[32][38].LRTableFuncP = LRReduce;
-	parser->lrTable[32][38].actionParam = 9;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 23;
 	//reduce
-	parser->lrTable[33][38].LRTableFuncP = LRReduce;
-	parser->lrTable[33][38].actionParam = 9;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 23;
 	//reduce
-	parser->lrTable[38][38].LRTableFuncP = LRReduce;
-	parser->lrTable[38][38].actionParam = 9;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 23;
 	//reduce
-	parser->lrTable[39][38].LRTableFuncP = LRReduce;
-	parser->lrTable[39][38].actionParam = 9;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 23;
+	//goto
+	parser->lrTable[type_specifier+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[type_specifier+TOTAL_TOKENS][35].actionParam = 131;
 	//reduce
-	parser->lrTable[40][38].LRTableFuncP = LRReduce;
-	parser->lrTable[40][38].actionParam = 9;
-	//shift
-	parser->lrTable[9][39].LRTableFuncP = LRShift;
-	parser->lrTable[9][39].actionParam = 44;
-	//shift
-	parser->lrTable[11][39].LRTableFuncP = LRShift;
-	parser->lrTable[11][39].actionParam = 45;
-	//shift
-	parser->lrTable[12][39].LRTableFuncP = LRShift;
-	parser->lrTable[12][39].actionParam = 46;
-	//shift
-	parser->lrTable[20][39].LRTableFuncP = LRShift;
-	parser->lrTable[20][39].actionParam = 60;
-	//shift
-	parser->lrTable[24][39].LRTableFuncP = LRShift;
-	parser->lrTable[24][39].actionParam = 48;
-	//shift
-	parser->lrTable[25][39].LRTableFuncP = LRShift;
-	parser->lrTable[25][39].actionParam = 49;
-	//shift
-	parser->lrTable[26][39].LRTableFuncP = LRShift;
-	parser->lrTable[26][39].actionParam = 50;
+	parser->lrTable[30][35].LRTableFuncP = LRReduce;
+	parser->lrTable[30][35].actionParam = 56;
+	//reduce
+	parser->lrTable[34][35].LRTableFuncP = LRReduce;
+	parser->lrTable[34][35].actionParam = 56;
+	//reduce
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 56;
+	//reduce
+	parser->lrTable[57][35].LRTableFuncP = LRReduce;
+	parser->lrTable[57][35].actionParam = 56;
+	//reduce
+	parser->lrTable[59][35].LRTableFuncP = LRReduce;
+	parser->lrTable[59][35].actionParam = 56;
+	//reduce
+	parser->lrTable[30][35].LRTableFuncP = LRReduce;
+	parser->lrTable[30][35].actionParam = 101;
+	//reduce
+	parser->lrTable[57][35].LRTableFuncP = LRReduce;
+	parser->lrTable[57][35].actionParam = 101;
 	//shift
-	parser->lrTable[27][39].LRTableFuncP = LRShift;
-	parser->lrTable[27][39].actionParam = 51;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 149;
 	//shift
-	parser->lrTable[28][39].LRTableFuncP = LRShift;
-	parser->lrTable[28][39].actionParam = 52;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 150;
 	//shift
-	parser->lrTable[40][39].LRTableFuncP = LRShift;
-	parser->lrTable[40][39].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][39].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][39].actionParam = 69;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][39].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][39].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][39].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][39].actionParam = 56;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 151;
 	//reduce
-	parser->lrTable[41][40].LRTableFuncP = LRReduce;
-	parser->lrTable[41][40].actionParam = 15;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 35;
 	//reduce
-	parser->lrTable[23][40].LRTableFuncP = LRReduce;
-	parser->lrTable[23][40].actionParam = 15;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 35;
 	//reduce
-	parser->lrTable[29][40].LRTableFuncP = LRReduce;
-	parser->lrTable[29][40].actionParam = 15;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 35;
 	//reduce
-	parser->lrTable[30][40].LRTableFuncP = LRReduce;
-	parser->lrTable[30][40].actionParam = 15;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 35;
 	//reduce
-	parser->lrTable[31][40].LRTableFuncP = LRReduce;
-	parser->lrTable[31][40].actionParam = 15;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 35;
 	//reduce
-	parser->lrTable[32][40].LRTableFuncP = LRReduce;
-	parser->lrTable[32][40].actionParam = 15;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 35;
 	//reduce
-	parser->lrTable[33][40].LRTableFuncP = LRReduce;
-	parser->lrTable[33][40].actionParam = 15;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 35;
 	//reduce
-	parser->lrTable[38][40].LRTableFuncP = LRReduce;
-	parser->lrTable[38][40].actionParam = 15;
+	parser->lrTable[30][35].LRTableFuncP = LRReduce;
+	parser->lrTable[30][35].actionParam = 35;
 	//reduce
-	parser->lrTable[39][40].LRTableFuncP = LRReduce;
-	parser->lrTable[39][40].actionParam = 15;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 35;
 	//reduce
-	parser->lrTable[40][40].LRTableFuncP = LRReduce;
-	parser->lrTable[40][40].actionParam = 15;
-	//shift
-	parser->lrTable[9][41].LRTableFuncP = LRShift;
-	parser->lrTable[9][41].actionParam = 44;
-	//shift
-	parser->lrTable[11][41].LRTableFuncP = LRShift;
-	parser->lrTable[11][41].actionParam = 45;
-	//shift
-	parser->lrTable[12][41].LRTableFuncP = LRShift;
-	parser->lrTable[12][41].actionParam = 46;
-	//shift
-	parser->lrTable[20][41].LRTableFuncP = LRShift;
-	parser->lrTable[20][41].actionParam = 60;
-	//shift
-	parser->lrTable[24][41].LRTableFuncP = LRShift;
-	parser->lrTable[24][41].actionParam = 48;
-	//shift
-	parser->lrTable[25][41].LRTableFuncP = LRShift;
-	parser->lrTable[25][41].actionParam = 49;
-	//shift
-	parser->lrTable[26][41].LRTableFuncP = LRShift;
-	parser->lrTable[26][41].actionParam = 50;
-	//shift
-	parser->lrTable[27][41].LRTableFuncP = LRShift;
-	parser->lrTable[27][41].actionParam = 51;
-	//shift
-	parser->lrTable[28][41].LRTableFuncP = LRShift;
-	parser->lrTable[28][41].actionParam = 52;
-	//shift
-	parser->lrTable[40][41].LRTableFuncP = LRShift;
-	parser->lrTable[40][41].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][41].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][41].actionParam = 70;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][41].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][41].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][41].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][41].actionParam = 56;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 35;
 	//reduce
-	parser->lrTable[41][42].LRTableFuncP = LRReduce;
-	parser->lrTable[41][42].actionParam = 13;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 35;
 	//reduce
-	parser->lrTable[23][42].LRTableFuncP = LRReduce;
-	parser->lrTable[23][42].actionParam = 13;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 35;
 	//reduce
-	parser->lrTable[29][42].LRTableFuncP = LRReduce;
-	parser->lrTable[29][42].actionParam = 13;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 35;
 	//reduce
-	parser->lrTable[30][42].LRTableFuncP = LRReduce;
-	parser->lrTable[30][42].actionParam = 13;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 35;
 	//reduce
-	parser->lrTable[31][42].LRTableFuncP = LRReduce;
-	parser->lrTable[31][42].actionParam = 13;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 35;
 	//reduce
-	parser->lrTable[32][42].LRTableFuncP = LRReduce;
-	parser->lrTable[32][42].actionParam = 13;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 35;
 	//reduce
-	parser->lrTable[33][42].LRTableFuncP = LRReduce;
-	parser->lrTable[33][42].actionParam = 13;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 35;
 	//reduce
-	parser->lrTable[38][42].LRTableFuncP = LRReduce;
-	parser->lrTable[38][42].actionParam = 13;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 35;
 	//reduce
-	parser->lrTable[39][42].LRTableFuncP = LRReduce;
-	parser->lrTable[39][42].actionParam = 13;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 35;
 	//reduce
-	parser->lrTable[40][42].LRTableFuncP = LRReduce;
-	parser->lrTable[40][42].actionParam = 13;
-	//shift
-	parser->lrTable[9][43].LRTableFuncP = LRShift;
-	parser->lrTable[9][43].actionParam = 44;
-	//shift
-	parser->lrTable[11][43].LRTableFuncP = LRShift;
-	parser->lrTable[11][43].actionParam = 45;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 35;
+	//reduce
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 35;
+	//reduce
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 31;
+	//reduce
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 31;
+	//reduce
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 31;
+	//reduce
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 31;
+	//reduce
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 31;
+	//reduce
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 31;
+	//reduce
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 31;
+	//reduce
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 31;
+	//reduce
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 31;
+	//reduce
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 31;
+	//reduce
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 31;
+	//reduce
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 31;
+	//reduce
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 31;
+	//reduce
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 31;
+	//reduce
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 31;
+	//reduce
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 31;
+	//reduce
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 31;
+	//reduce
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 31;
+	//reduce
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 31;
+	//reduce
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 31;
 	//shift
-	parser->lrTable[12][43].LRTableFuncP = LRShift;
-	parser->lrTable[12][43].actionParam = 46;
+	parser->lrTable[32][35].LRTableFuncP = LRShift;
+	parser->lrTable[32][35].actionParam = 152;
 	//shift
-	parser->lrTable[20][43].LRTableFuncP = LRShift;
-	parser->lrTable[20][43].actionParam = 60;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[24][43].LRTableFuncP = LRShift;
-	parser->lrTable[24][43].actionParam = 48;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[25][43].LRTableFuncP = LRShift;
-	parser->lrTable[25][43].actionParam = 49;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[26][43].LRTableFuncP = LRShift;
-	parser->lrTable[26][43].actionParam = 50;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[27][43].LRTableFuncP = LRShift;
-	parser->lrTable[27][43].actionParam = 51;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[28][43].LRTableFuncP = LRShift;
-	parser->lrTable[28][43].actionParam = 52;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[40][43].LRTableFuncP = LRShift;
-	parser->lrTable[40][43].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][43].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][43].actionParam = 71;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][43].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][43].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][43].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][43].actionParam = 56;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[40][44].LRTableFuncP = LRShift;
-	parser->lrTable[40][44].actionParam = 72;
+	parser->lrTable[31][35].LRTableFuncP = LRShift;
+	parser->lrTable[31][35].actionParam = 123;
 	//shift
-	parser->lrTable[9][45].LRTableFuncP = LRShift;
-	parser->lrTable[9][45].actionParam = 44;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[11][45].LRTableFuncP = LRShift;
-	parser->lrTable[11][45].actionParam = 45;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[12][45].LRTableFuncP = LRShift;
-	parser->lrTable[12][45].actionParam = 46;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[20][45].LRTableFuncP = LRShift;
-	parser->lrTable[20][45].actionParam = 60;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[24][45].LRTableFuncP = LRShift;
-	parser->lrTable[24][45].actionParam = 48;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[25][45].LRTableFuncP = LRShift;
-	parser->lrTable[25][45].actionParam = 49;
+	parser->lrTable[44][35].LRTableFuncP = LRShift;
+	parser->lrTable[44][35].actionParam = 136;
 	//shift
-	parser->lrTable[26][45].LRTableFuncP = LRShift;
-	parser->lrTable[26][45].actionParam = 50;
+	parser->lrTable[49][35].LRTableFuncP = LRShift;
+	parser->lrTable[49][35].actionParam = 137;
 	//shift
-	parser->lrTable[27][45].LRTableFuncP = LRShift;
-	parser->lrTable[27][45].actionParam = 51;
+	parser->lrTable[50][35].LRTableFuncP = LRShift;
+	parser->lrTable[50][35].actionParam = 138;
 	//shift
-	parser->lrTable[28][45].LRTableFuncP = LRShift;
-	parser->lrTable[28][45].actionParam = 52;
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
 	//shift
-	parser->lrTable[40][45].LRTableFuncP = LRShift;
-	parser->lrTable[40][45].actionParam = 53;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
+	//reduce
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 27;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][45].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][45].actionParam = 73;
-	//shift
-	parser->lrTable[40][46].LRTableFuncP = LRShift;
-	parser->lrTable[40][46].actionParam = 74;
-	//shift
-	parser->lrTable[5][47].LRTableFuncP = LRShift;
-	parser->lrTable[5][47].actionParam = 43;
-	//shift
-	parser->lrTable[9][47].LRTableFuncP = LRShift;
-	parser->lrTable[9][47].actionParam = 44;
-	//shift
-	parser->lrTable[11][47].LRTableFuncP = LRShift;
-	parser->lrTable[11][47].actionParam = 45;
-	//shift
-	parser->lrTable[12][47].LRTableFuncP = LRShift;
-	parser->lrTable[12][47].actionParam = 46;
-	//shift
-	parser->lrTable[20][47].LRTableFuncP = LRShift;
-	parser->lrTable[20][47].actionParam = 47;
-	//shift
-	parser->lrTable[24][47].LRTableFuncP = LRShift;
-	parser->lrTable[24][47].actionParam = 48;
-	//shift
-	parser->lrTable[25][47].LRTableFuncP = LRShift;
-	parser->lrTable[25][47].actionParam = 49;
-	//shift
-	parser->lrTable[26][47].LRTableFuncP = LRShift;
-	parser->lrTable[26][47].actionParam = 50;
-	//shift
-	parser->lrTable[27][47].LRTableFuncP = LRShift;
-	parser->lrTable[27][47].actionParam = 51;
-	//shift
-	parser->lrTable[28][47].LRTableFuncP = LRShift;
-	parser->lrTable[28][47].actionParam = 52;
-	//shift
-	parser->lrTable[40][47].LRTableFuncP = LRShift;
-	parser->lrTable[40][47].actionParam = 53;
+	parser->lrTable[statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement+TOTAL_TOKENS][35].actionParam = 153;
 	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][47].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][47].actionParam = 75;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 144;
 	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][47].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][47].actionParam = 55;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].actionParam = 145;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][47].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][47].actionParam = 56;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].actionParam = 146;
 	//goto
-	parser->lrTable[CondExpr+TOTAL_TOKENS][47].LRTableFuncP = LRGoto;
-	parser->lrTable[CondExpr+TOTAL_TOKENS][47].actionParam = 76;
-	//reduce
-	parser->lrTable[0][48].LRTableFuncP = LRReduce;
-	parser->lrTable[0][48].actionParam = 35;
-	//reduce
-	parser->lrTable[1][48].LRTableFuncP = LRReduce;
-	parser->lrTable[1][48].actionParam = 35;
-	//reduce
-	parser->lrTable[2][48].LRTableFuncP = LRReduce;
-	parser->lrTable[2][48].actionParam = 35;
-	//reduce
-	parser->lrTable[3][48].LRTableFuncP = LRReduce;
-	parser->lrTable[3][48].actionParam = 35;
-	//reduce
-	parser->lrTable[4][48].LRTableFuncP = LRReduce;
-	parser->lrTable[4][48].actionParam = 35;
-	//reduce
-	parser->lrTable[5][48].LRTableFuncP = LRReduce;
-	parser->lrTable[5][48].actionParam = 35;
-	//reduce
-	parser->lrTable[3][48].LRTableFuncP = LRReduce;
-	parser->lrTable[3][48].actionParam = 35;
-	//reduce
-	parser->lrTable[8][48].LRTableFuncP = LRReduce;
-	parser->lrTable[8][48].actionParam = 35;
-	//reduce
-	parser->lrTable[11][48].LRTableFuncP = LRReduce;
-	parser->lrTable[11][48].actionParam = 35;
-	//reduce
-	parser->lrTable[14][48].LRTableFuncP = LRReduce;
-	parser->lrTable[14][48].actionParam = 35;
-	//reduce
-	parser->lrTable[16][48].LRTableFuncP = LRReduce;
-	parser->lrTable[16][48].actionParam = 35;
-	//reduce
-	parser->lrTable[18][48].LRTableFuncP = LRReduce;
-	parser->lrTable[18][48].actionParam = 35;
-	//reduce
-	parser->lrTable[21][48].LRTableFuncP = LRReduce;
-	parser->lrTable[21][48].actionParam = 35;
-	//reduce
-	parser->lrTable[36][48].LRTableFuncP = LRReduce;
-	parser->lrTable[36][48].actionParam = 35;
-	//reduce
-	parser->lrTable[37][48].LRTableFuncP = LRReduce;
-	parser->lrTable[37][48].actionParam = 35;
-	//reduce
-	parser->lrTable[45][48].LRTableFuncP = LRReduce;
-	parser->lrTable[45][48].actionParam = 35;
-	//reduce
-	parser->lrTable[0][49].LRTableFuncP = LRReduce;
-	parser->lrTable[0][49].actionParam = 37;
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//reduce
-	parser->lrTable[1][49].LRTableFuncP = LRReduce;
-	parser->lrTable[1][49].actionParam = 37;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 28;
 	//reduce
-	parser->lrTable[2][49].LRTableFuncP = LRReduce;
-	parser->lrTable[2][49].actionParam = 37;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 28;
 	//reduce
-	parser->lrTable[3][49].LRTableFuncP = LRReduce;
-	parser->lrTable[3][49].actionParam = 37;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 28;
 	//reduce
-	parser->lrTable[4][49].LRTableFuncP = LRReduce;
-	parser->lrTable[4][49].actionParam = 37;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 28;
 	//reduce
-	parser->lrTable[5][49].LRTableFuncP = LRReduce;
-	parser->lrTable[5][49].actionParam = 37;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 28;
 	//reduce
-	parser->lrTable[3][49].LRTableFuncP = LRReduce;
-	parser->lrTable[3][49].actionParam = 37;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 28;
 	//reduce
-	parser->lrTable[8][49].LRTableFuncP = LRReduce;
-	parser->lrTable[8][49].actionParam = 37;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 28;
 	//reduce
-	parser->lrTable[11][49].LRTableFuncP = LRReduce;
-	parser->lrTable[11][49].actionParam = 37;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 28;
 	//reduce
-	parser->lrTable[14][49].LRTableFuncP = LRReduce;
-	parser->lrTable[14][49].actionParam = 37;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 28;
 	//reduce
-	parser->lrTable[16][49].LRTableFuncP = LRReduce;
-	parser->lrTable[16][49].actionParam = 37;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 28;
 	//reduce
-	parser->lrTable[18][49].LRTableFuncP = LRReduce;
-	parser->lrTable[18][49].actionParam = 37;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 28;
 	//reduce
-	parser->lrTable[21][49].LRTableFuncP = LRReduce;
-	parser->lrTable[21][49].actionParam = 37;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 28;
 	//reduce
-	parser->lrTable[36][49].LRTableFuncP = LRReduce;
-	parser->lrTable[36][49].actionParam = 37;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 28;
 	//reduce
-	parser->lrTable[37][49].LRTableFuncP = LRReduce;
-	parser->lrTable[37][49].actionParam = 37;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 28;
 	//reduce
-	parser->lrTable[45][49].LRTableFuncP = LRReduce;
-	parser->lrTable[45][49].actionParam = 37;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 28;
 	//reduce
-	parser->lrTable[0][50].LRTableFuncP = LRReduce;
-	parser->lrTable[0][50].actionParam = 38;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 28;
 	//reduce
-	parser->lrTable[1][50].LRTableFuncP = LRReduce;
-	parser->lrTable[1][50].actionParam = 38;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 28;
 	//reduce
-	parser->lrTable[2][50].LRTableFuncP = LRReduce;
-	parser->lrTable[2][50].actionParam = 38;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 28;
 	//reduce
-	parser->lrTable[3][50].LRTableFuncP = LRReduce;
-	parser->lrTable[3][50].actionParam = 38;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 28;
 	//reduce
-	parser->lrTable[4][50].LRTableFuncP = LRReduce;
-	parser->lrTable[4][50].actionParam = 38;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 30;
 	//reduce
-	parser->lrTable[5][50].LRTableFuncP = LRReduce;
-	parser->lrTable[5][50].actionParam = 38;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 30;
 	//reduce
-	parser->lrTable[3][50].LRTableFuncP = LRReduce;
-	parser->lrTable[3][50].actionParam = 38;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 30;
 	//reduce
-	parser->lrTable[8][50].LRTableFuncP = LRReduce;
-	parser->lrTable[8][50].actionParam = 38;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 30;
 	//reduce
-	parser->lrTable[11][50].LRTableFuncP = LRReduce;
-	parser->lrTable[11][50].actionParam = 38;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 30;
 	//reduce
-	parser->lrTable[14][50].LRTableFuncP = LRReduce;
-	parser->lrTable[14][50].actionParam = 38;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 30;
 	//reduce
-	parser->lrTable[16][50].LRTableFuncP = LRReduce;
-	parser->lrTable[16][50].actionParam = 38;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 30;
 	//reduce
-	parser->lrTable[18][50].LRTableFuncP = LRReduce;
-	parser->lrTable[18][50].actionParam = 38;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 30;
 	//reduce
-	parser->lrTable[21][50].LRTableFuncP = LRReduce;
-	parser->lrTable[21][50].actionParam = 38;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 30;
 	//reduce
-	parser->lrTable[36][50].LRTableFuncP = LRReduce;
-	parser->lrTable[36][50].actionParam = 38;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 30;
 	//reduce
-	parser->lrTable[37][50].LRTableFuncP = LRReduce;
-	parser->lrTable[37][50].actionParam = 38;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 30;
 	//reduce
-	parser->lrTable[45][50].LRTableFuncP = LRReduce;
-	parser->lrTable[45][50].actionParam = 38;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 30;
 	//reduce
-	parser->lrTable[0][51].LRTableFuncP = LRReduce;
-	parser->lrTable[0][51].actionParam = 34;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 30;
 	//reduce
-	parser->lrTable[1][51].LRTableFuncP = LRReduce;
-	parser->lrTable[1][51].actionParam = 34;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 30;
 	//reduce
-	parser->lrTable[2][51].LRTableFuncP = LRReduce;
-	parser->lrTable[2][51].actionParam = 34;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 30;
 	//reduce
-	parser->lrTable[3][51].LRTableFuncP = LRReduce;
-	parser->lrTable[3][51].actionParam = 34;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 30;
 	//reduce
-	parser->lrTable[4][51].LRTableFuncP = LRReduce;
-	parser->lrTable[4][51].actionParam = 34;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 30;
 	//reduce
-	parser->lrTable[5][51].LRTableFuncP = LRReduce;
-	parser->lrTable[5][51].actionParam = 34;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 30;
 	//reduce
-	parser->lrTable[3][51].LRTableFuncP = LRReduce;
-	parser->lrTable[3][51].actionParam = 34;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 30;
 	//reduce
-	parser->lrTable[8][51].LRTableFuncP = LRReduce;
-	parser->lrTable[8][51].actionParam = 34;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 30;
 	//reduce
-	parser->lrTable[11][51].LRTableFuncP = LRReduce;
-	parser->lrTable[11][51].actionParam = 34;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 32;
 	//reduce
-	parser->lrTable[14][51].LRTableFuncP = LRReduce;
-	parser->lrTable[14][51].actionParam = 34;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 32;
 	//reduce
-	parser->lrTable[16][51].LRTableFuncP = LRReduce;
-	parser->lrTable[16][51].actionParam = 34;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 32;
 	//reduce
-	parser->lrTable[18][51].LRTableFuncP = LRReduce;
-	parser->lrTable[18][51].actionParam = 34;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 32;
 	//reduce
-	parser->lrTable[21][51].LRTableFuncP = LRReduce;
-	parser->lrTable[21][51].actionParam = 34;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 32;
 	//reduce
-	parser->lrTable[36][51].LRTableFuncP = LRReduce;
-	parser->lrTable[36][51].actionParam = 34;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 32;
 	//reduce
-	parser->lrTable[37][51].LRTableFuncP = LRReduce;
-	parser->lrTable[37][51].actionParam = 34;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 32;
 	//reduce
-	parser->lrTable[45][51].LRTableFuncP = LRReduce;
-	parser->lrTable[45][51].actionParam = 34;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 32;
 	//reduce
-	parser->lrTable[0][52].LRTableFuncP = LRReduce;
-	parser->lrTable[0][52].actionParam = 36;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 32;
 	//reduce
-	parser->lrTable[1][52].LRTableFuncP = LRReduce;
-	parser->lrTable[1][52].actionParam = 36;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 32;
 	//reduce
-	parser->lrTable[2][52].LRTableFuncP = LRReduce;
-	parser->lrTable[2][52].actionParam = 36;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 32;
 	//reduce
-	parser->lrTable[3][52].LRTableFuncP = LRReduce;
-	parser->lrTable[3][52].actionParam = 36;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 32;
 	//reduce
-	parser->lrTable[4][52].LRTableFuncP = LRReduce;
-	parser->lrTable[4][52].actionParam = 36;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 32;
 	//reduce
-	parser->lrTable[5][52].LRTableFuncP = LRReduce;
-	parser->lrTable[5][52].actionParam = 36;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 32;
 	//reduce
-	parser->lrTable[3][52].LRTableFuncP = LRReduce;
-	parser->lrTable[3][52].actionParam = 36;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 32;
 	//reduce
-	parser->lrTable[8][52].LRTableFuncP = LRReduce;
-	parser->lrTable[8][52].actionParam = 36;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 32;
 	//reduce
-	parser->lrTable[11][52].LRTableFuncP = LRReduce;
-	parser->lrTable[11][52].actionParam = 36;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 32;
 	//reduce
-	parser->lrTable[14][52].LRTableFuncP = LRReduce;
-	parser->lrTable[14][52].actionParam = 36;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 32;
 	//reduce
-	parser->lrTable[16][52].LRTableFuncP = LRReduce;
-	parser->lrTable[16][52].actionParam = 36;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 32;
 	//reduce
-	parser->lrTable[18][52].LRTableFuncP = LRReduce;
-	parser->lrTable[18][52].actionParam = 36;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 32;
 	//reduce
-	parser->lrTable[21][52].LRTableFuncP = LRReduce;
-	parser->lrTable[21][52].actionParam = 36;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 33;
 	//reduce
-	parser->lrTable[36][52].LRTableFuncP = LRReduce;
-	parser->lrTable[36][52].actionParam = 36;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 33;
 	//reduce
-	parser->lrTable[37][52].LRTableFuncP = LRReduce;
-	parser->lrTable[37][52].actionParam = 36;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 33;
 	//reduce
-	parser->lrTable[45][52].LRTableFuncP = LRReduce;
-	parser->lrTable[45][52].actionParam = 36;
-	//shift
-	parser->lrTable[9][53].LRTableFuncP = LRShift;
-	parser->lrTable[9][53].actionParam = 77;
-	//shift
-	parser->lrTable[12][53].LRTableFuncP = LRShift;
-	parser->lrTable[12][53].actionParam = 78;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 33;
 	//reduce
-	parser->lrTable[0][53].LRTableFuncP = LRReduce;
-	parser->lrTable[0][53].actionParam = 33;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 33;
 	//reduce
-	parser->lrTable[1][53].LRTableFuncP = LRReduce;
-	parser->lrTable[1][53].actionParam = 33;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 33;
 	//reduce
-	parser->lrTable[2][53].LRTableFuncP = LRReduce;
-	parser->lrTable[2][53].actionParam = 33;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 33;
 	//reduce
-	parser->lrTable[3][53].LRTableFuncP = LRReduce;
-	parser->lrTable[3][53].actionParam = 33;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 33;
 	//reduce
-	parser->lrTable[4][53].LRTableFuncP = LRReduce;
-	parser->lrTable[4][53].actionParam = 33;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 33;
 	//reduce
-	parser->lrTable[5][53].LRTableFuncP = LRReduce;
-	parser->lrTable[5][53].actionParam = 33;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 33;
 	//reduce
-	parser->lrTable[3][53].LRTableFuncP = LRReduce;
-	parser->lrTable[3][53].actionParam = 33;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 33;
 	//reduce
-	parser->lrTable[8][53].LRTableFuncP = LRReduce;
-	parser->lrTable[8][53].actionParam = 33;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 33;
 	//reduce
-	parser->lrTable[11][53].LRTableFuncP = LRReduce;
-	parser->lrTable[11][53].actionParam = 33;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 33;
 	//reduce
-	parser->lrTable[14][53].LRTableFuncP = LRReduce;
-	parser->lrTable[14][53].actionParam = 33;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 33;
 	//reduce
-	parser->lrTable[16][53].LRTableFuncP = LRReduce;
-	parser->lrTable[16][53].actionParam = 33;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 33;
 	//reduce
-	parser->lrTable[18][53].LRTableFuncP = LRReduce;
-	parser->lrTable[18][53].actionParam = 33;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 33;
 	//reduce
-	parser->lrTable[21][53].LRTableFuncP = LRReduce;
-	parser->lrTable[21][53].actionParam = 33;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 33;
 	//reduce
-	parser->lrTable[36][53].LRTableFuncP = LRReduce;
-	parser->lrTable[36][53].actionParam = 33;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 33;
 	//reduce
-	parser->lrTable[37][53].LRTableFuncP = LRReduce;
-	parser->lrTable[37][53].actionParam = 33;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 33;
 	//reduce
-	parser->lrTable[45][53].LRTableFuncP = LRReduce;
-	parser->lrTable[45][53].actionParam = 33;
-	//shift
-	parser->lrTable[0][54].LRTableFuncP = LRShift;
-	parser->lrTable[0][54].actionParam = 79;
-	//shift
-	parser->lrTable[1][54].LRTableFuncP = LRShift;
-	parser->lrTable[1][54].actionParam = 80;
-	//shift
-	parser->lrTable[2][54].LRTableFuncP = LRShift;
-	parser->lrTable[2][54].actionParam = 81;
-	//shift
-	parser->lrTable[3][54].LRTableFuncP = LRShift;
-	parser->lrTable[3][54].actionParam = 82;
-	//shift
-	parser->lrTable[4][54].LRTableFuncP = LRShift;
-	parser->lrTable[4][54].actionParam = 83;
-	//shift
-	parser->lrTable[5][54].LRTableFuncP = LRShift;
-	parser->lrTable[5][54].actionParam = 84;
-	//shift
-	parser->lrTable[3][54].LRTableFuncP = LRShift;
-	parser->lrTable[3][54].actionParam = 85;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 33;
 	//shift
-	parser->lrTable[8][54].LRTableFuncP = LRShift;
-	parser->lrTable[8][54].actionParam = 86;
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 154;
 	//shift
-	parser->lrTable[11][54].LRTableFuncP = LRShift;
-	parser->lrTable[11][54].actionParam = 87;
-	//shift
-	parser->lrTable[36][54].LRTableFuncP = LRShift;
-	parser->lrTable[36][54].actionParam = 88;
-	//shift
-	parser->lrTable[37][54].LRTableFuncP = LRShift;
-	parser->lrTable[37][54].actionParam = 89;
-	//goto
-	parser->lrTable[RelOp+TOTAL_TOKENS][54].LRTableFuncP = LRGoto;
-	parser->lrTable[RelOp+TOTAL_TOKENS][54].actionParam = 90;
-	//shift
-	parser->lrTable[14][55].LRTableFuncP = LRShift;
-	parser->lrTable[14][55].actionParam = 91;
-	//shift
-	parser->lrTable[16][55].LRTableFuncP = LRShift;
-	parser->lrTable[16][55].actionParam = 92;
-	//shift
-	parser->lrTable[18][55].LRTableFuncP = LRShift;
-	parser->lrTable[18][55].actionParam = 93;
-	//reduce
-	parser->lrTable[0][55].LRTableFuncP = LRReduce;
-	parser->lrTable[0][55].actionParam = 27;
-	//reduce
-	parser->lrTable[1][55].LRTableFuncP = LRReduce;
-	parser->lrTable[1][55].actionParam = 27;
+	parser->lrTable[57][35].LRTableFuncP = LRShift;
+	parser->lrTable[57][35].actionParam = 58;
 	//reduce
-	parser->lrTable[2][55].LRTableFuncP = LRReduce;
-	parser->lrTable[2][55].actionParam = 27;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 25;
 	//reduce
-	parser->lrTable[3][55].LRTableFuncP = LRReduce;
-	parser->lrTable[3][55].actionParam = 27;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 25;
 	//reduce
-	parser->lrTable[4][55].LRTableFuncP = LRReduce;
-	parser->lrTable[4][55].actionParam = 27;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 25;
 	//reduce
-	parser->lrTable[5][55].LRTableFuncP = LRReduce;
-	parser->lrTable[5][55].actionParam = 27;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 25;
 	//reduce
-	parser->lrTable[3][55].LRTableFuncP = LRReduce;
-	parser->lrTable[3][55].actionParam = 27;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 25;
 	//reduce
-	parser->lrTable[8][55].LRTableFuncP = LRReduce;
-	parser->lrTable[8][55].actionParam = 27;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 25;
 	//reduce
-	parser->lrTable[11][55].LRTableFuncP = LRReduce;
-	parser->lrTable[11][55].actionParam = 27;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 25;
 	//reduce
-	parser->lrTable[21][55].LRTableFuncP = LRReduce;
-	parser->lrTable[21][55].actionParam = 27;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 25;
 	//reduce
-	parser->lrTable[36][55].LRTableFuncP = LRReduce;
-	parser->lrTable[36][55].actionParam = 27;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 25;
 	//reduce
-	parser->lrTable[37][55].LRTableFuncP = LRReduce;
-	parser->lrTable[37][55].actionParam = 27;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 25;
 	//reduce
-	parser->lrTable[45][55].LRTableFuncP = LRReduce;
-	parser->lrTable[45][55].actionParam = 27;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 25;
 	//reduce
-	parser->lrTable[0][56].LRTableFuncP = LRReduce;
-	parser->lrTable[0][56].actionParam = 31;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 25;
 	//reduce
-	parser->lrTable[1][56].LRTableFuncP = LRReduce;
-	parser->lrTable[1][56].actionParam = 31;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 25;
 	//reduce
-	parser->lrTable[2][56].LRTableFuncP = LRReduce;
-	parser->lrTable[2][56].actionParam = 31;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 25;
 	//reduce
-	parser->lrTable[3][56].LRTableFuncP = LRReduce;
-	parser->lrTable[3][56].actionParam = 31;
+	parser->lrTable[40][35].LRTableFuncP = LRReduce;
+	parser->lrTable[40][35].actionParam = 25;
 	//reduce
-	parser->lrTable[4][56].LRTableFuncP = LRReduce;
-	parser->lrTable[4][56].actionParam = 31;
+	parser->lrTable[41][35].LRTableFuncP = LRReduce;
+	parser->lrTable[41][35].actionParam = 25;
 	//reduce
-	parser->lrTable[5][56].LRTableFuncP = LRReduce;
-	parser->lrTable[5][56].actionParam = 31;
+	parser->lrTable[42][35].LRTableFuncP = LRReduce;
+	parser->lrTable[42][35].actionParam = 25;
 	//reduce
-	parser->lrTable[3][56].LRTableFuncP = LRReduce;
-	parser->lrTable[3][56].actionParam = 31;
+	parser->lrTable[43][35].LRTableFuncP = LRReduce;
+	parser->lrTable[43][35].actionParam = 25;
 	//reduce
-	parser->lrTable[8][56].LRTableFuncP = LRReduce;
-	parser->lrTable[8][56].actionParam = 31;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 25;
 	//reduce
-	parser->lrTable[11][56].LRTableFuncP = LRReduce;
-	parser->lrTable[11][56].actionParam = 31;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 25;
 	//reduce
-	parser->lrTable[14][56].LRTableFuncP = LRReduce;
-	parser->lrTable[14][56].actionParam = 31;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 25;
 	//reduce
-	parser->lrTable[16][56].LRTableFuncP = LRReduce;
-	parser->lrTable[16][56].actionParam = 31;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 25;
 	//reduce
-	parser->lrTable[18][56].LRTableFuncP = LRReduce;
-	parser->lrTable[18][56].actionParam = 31;
-	//reduce
-	parser->lrTable[21][56].LRTableFuncP = LRReduce;
-	parser->lrTable[21][56].actionParam = 31;
-	//reduce
-	parser->lrTable[36][56].LRTableFuncP = LRReduce;
-	parser->lrTable[36][56].actionParam = 31;
-	//reduce
-	parser->lrTable[37][56].LRTableFuncP = LRReduce;
-	parser->lrTable[37][56].actionParam = 31;
-	//reduce
-	parser->lrTable[45][56].LRTableFuncP = LRReduce;
-	parser->lrTable[45][56].actionParam = 31;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 25;
 	//shift
-	parser->lrTable[21][57].LRTableFuncP = LRShift;
-	parser->lrTable[21][57].actionParam = 94;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[45][58].LRTableFuncP = LRShift;
-	parser->lrTable[45][58].actionParam = 95;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[21][59].LRTableFuncP = LRShift;
-	parser->lrTable[21][59].actionParam = 96;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[9][60].LRTableFuncP = LRShift;
-	parser->lrTable[9][60].actionParam = 44;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[11][60].LRTableFuncP = LRShift;
-	parser->lrTable[11][60].actionParam = 45;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[12][60].LRTableFuncP = LRShift;
-	parser->lrTable[12][60].actionParam = 46;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[20][60].LRTableFuncP = LRShift;
-	parser->lrTable[20][60].actionParam = 60;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[24][60].LRTableFuncP = LRShift;
-	parser->lrTable[24][60].actionParam = 48;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[25][60].LRTableFuncP = LRShift;
-	parser->lrTable[25][60].actionParam = 49;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[26][60].LRTableFuncP = LRShift;
-	parser->lrTable[26][60].actionParam = 50;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[27][60].LRTableFuncP = LRShift;
-	parser->lrTable[27][60].actionParam = 51;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[28][60].LRTableFuncP = LRShift;
-	parser->lrTable[28][60].actionParam = 52;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[40][60].LRTableFuncP = LRShift;
-	parser->lrTable[40][60].actionParam = 53;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
 	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][60].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][60].actionParam = 97;
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 155;
 	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][60].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][60].actionParam = 55;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][60].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][60].actionParam = 56;
-	//shift
-	parser->lrTable[8][61].LRTableFuncP = LRShift;
-	parser->lrTable[8][61].actionParam = 86;
-	//shift
-	parser->lrTable[11][61].LRTableFuncP = LRShift;
-	parser->lrTable[11][61].actionParam = 87;
-	//reduce
-	parser->lrTable[21][61].LRTableFuncP = LRReduce;
-	parser->lrTable[21][61].actionParam = 17;
-	//reduce
-	parser->lrTable[45][61].LRTableFuncP = LRReduce;
-	parser->lrTable[45][61].actionParam = 17;
-	//shift
-	parser->lrTable[8][62].LRTableFuncP = LRShift;
-	parser->lrTable[8][62].actionParam = 86;
-	//shift
-	parser->lrTable[11][62].LRTableFuncP = LRShift;
-	parser->lrTable[11][62].actionParam = 87;
-	//reduce
-	parser->lrTable[21][62].LRTableFuncP = LRReduce;
-	parser->lrTable[21][62].actionParam = 20;
-	//reduce
-	parser->lrTable[45][62].LRTableFuncP = LRReduce;
-	parser->lrTable[45][62].actionParam = 20;
-	//shift
-	parser->lrTable[8][63].LRTableFuncP = LRShift;
-	parser->lrTable[8][63].actionParam = 86;
-	//shift
-	parser->lrTable[11][63].LRTableFuncP = LRShift;
-	parser->lrTable[11][63].actionParam = 87;
-	//reduce
-	parser->lrTable[21][63].LRTableFuncP = LRReduce;
-	parser->lrTable[21][63].actionParam = 21;
-	//reduce
-	parser->lrTable[45][63].LRTableFuncP = LRReduce;
-	parser->lrTable[45][63].actionParam = 21;
-	//shift
-	parser->lrTable[8][64].LRTableFuncP = LRShift;
-	parser->lrTable[8][64].actionParam = 86;
-	//shift
-	parser->lrTable[11][64].LRTableFuncP = LRShift;
-	parser->lrTable[11][64].actionParam = 87;
-	//reduce
-	parser->lrTable[21][64].LRTableFuncP = LRReduce;
-	parser->lrTable[21][64].actionParam = 23;
-	//reduce
-	parser->lrTable[45][64].LRTableFuncP = LRReduce;
-	parser->lrTable[45][64].actionParam = 23;
-	//shift
-	parser->lrTable[8][65].LRTableFuncP = LRShift;
-	parser->lrTable[8][65].actionParam = 86;
-	//shift
-	parser->lrTable[11][65].LRTableFuncP = LRShift;
-	parser->lrTable[11][65].actionParam = 87;
-	//reduce
-	parser->lrTable[21][65].LRTableFuncP = LRReduce;
-	parser->lrTable[21][65].actionParam = 22;
-	//reduce
-	parser->lrTable[45][65].LRTableFuncP = LRReduce;
-	parser->lrTable[45][65].actionParam = 22;
-	//shift
-	parser->lrTable[8][66].LRTableFuncP = LRShift;
-	parser->lrTable[8][66].actionParam = 86;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
-	parser->lrTable[11][66].LRTableFuncP = LRShift;
-	parser->lrTable[11][66].actionParam = 87;
-	//reduce
-	parser->lrTable[21][66].LRTableFuncP = LRReduce;
-	parser->lrTable[21][66].actionParam = 24;
-	//reduce
-	parser->lrTable[45][66].LRTableFuncP = LRReduce;
-	parser->lrTable[45][66].actionParam = 24;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[8][67].LRTableFuncP = LRShift;
-	parser->lrTable[8][67].actionParam = 86;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[11][67].LRTableFuncP = LRShift;
-	parser->lrTable[11][67].actionParam = 87;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[45][67].LRTableFuncP = LRShift;
-	parser->lrTable[45][67].actionParam = 98;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[8][68].LRTableFuncP = LRShift;
-	parser->lrTable[8][68].actionParam = 86;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[11][68].LRTableFuncP = LRShift;
-	parser->lrTable[11][68].actionParam = 87;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[45][68].LRTableFuncP = LRShift;
-	parser->lrTable[45][68].actionParam = 99;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[8][69].LRTableFuncP = LRShift;
-	parser->lrTable[8][69].actionParam = 86;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[11][69].LRTableFuncP = LRShift;
-	parser->lrTable[11][69].actionParam = 87;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[45][69].LRTableFuncP = LRShift;
-	parser->lrTable[45][69].actionParam = 100;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[8][70].LRTableFuncP = LRShift;
-	parser->lrTable[8][70].actionParam = 86;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[11][70].LRTableFuncP = LRShift;
-	parser->lrTable[11][70].actionParam = 87;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[45][70].LRTableFuncP = LRShift;
-	parser->lrTable[45][70].actionParam = 101;
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
 	//shift
-	parser->lrTable[8][71].LRTableFuncP = LRShift;
-	parser->lrTable[8][71].actionParam = 86;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
+	//goto
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 156;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
-	parser->lrTable[11][71].LRTableFuncP = LRShift;
-	parser->lrTable[11][71].actionParam = 87;
-	//reduce
-	parser->lrTable[21][71].LRTableFuncP = LRReduce;
-	parser->lrTable[21][71].actionParam = 45;
-	//reduce
-	parser->lrTable[45][71].LRTableFuncP = LRReduce;
-	parser->lrTable[45][71].actionParam = 45;
-	//reduce
-	parser->lrTable[0][72].LRTableFuncP = LRReduce;
-	parser->lrTable[0][72].actionParam = 41;
-	//reduce
-	parser->lrTable[1][72].LRTableFuncP = LRReduce;
-	parser->lrTable[1][72].actionParam = 41;
-	//reduce
-	parser->lrTable[2][72].LRTableFuncP = LRReduce;
-	parser->lrTable[2][72].actionParam = 41;
-	//reduce
-	parser->lrTable[3][72].LRTableFuncP = LRReduce;
-	parser->lrTable[3][72].actionParam = 41;
-	//reduce
-	parser->lrTable[4][72].LRTableFuncP = LRReduce;
-	parser->lrTable[4][72].actionParam = 41;
-	//reduce
-	parser->lrTable[5][72].LRTableFuncP = LRReduce;
-	parser->lrTable[5][72].actionParam = 41;
-	//reduce
-	parser->lrTable[3][72].LRTableFuncP = LRReduce;
-	parser->lrTable[3][72].actionParam = 41;
-	//reduce
-	parser->lrTable[8][72].LRTableFuncP = LRReduce;
-	parser->lrTable[8][72].actionParam = 41;
-	//reduce
-	parser->lrTable[11][72].LRTableFuncP = LRReduce;
-	parser->lrTable[11][72].actionParam = 41;
-	//reduce
-	parser->lrTable[14][72].LRTableFuncP = LRReduce;
-	parser->lrTable[14][72].actionParam = 41;
-	//reduce
-	parser->lrTable[16][72].LRTableFuncP = LRReduce;
-	parser->lrTable[16][72].actionParam = 41;
-	//reduce
-	parser->lrTable[18][72].LRTableFuncP = LRReduce;
-	parser->lrTable[18][72].actionParam = 41;
-	//reduce
-	parser->lrTable[21][72].LRTableFuncP = LRReduce;
-	parser->lrTable[21][72].actionParam = 41;
-	//reduce
-	parser->lrTable[36][72].LRTableFuncP = LRReduce;
-	parser->lrTable[36][72].actionParam = 41;
-	//reduce
-	parser->lrTable[37][72].LRTableFuncP = LRReduce;
-	parser->lrTable[37][72].actionParam = 41;
-	//reduce
-	parser->lrTable[45][72].LRTableFuncP = LRReduce;
-	parser->lrTable[45][72].actionParam = 41;
-	//reduce
-	parser->lrTable[0][73].LRTableFuncP = LRReduce;
-	parser->lrTable[0][73].actionParam = 43;
-	//reduce
-	parser->lrTable[1][73].LRTableFuncP = LRReduce;
-	parser->lrTable[1][73].actionParam = 43;
-	//reduce
-	parser->lrTable[2][73].LRTableFuncP = LRReduce;
-	parser->lrTable[2][73].actionParam = 43;
-	//reduce
-	parser->lrTable[3][73].LRTableFuncP = LRReduce;
-	parser->lrTable[3][73].actionParam = 43;
-	//reduce
-	parser->lrTable[4][73].LRTableFuncP = LRReduce;
-	parser->lrTable[4][73].actionParam = 43;
-	//reduce
-	parser->lrTable[5][73].LRTableFuncP = LRReduce;
-	parser->lrTable[5][73].actionParam = 43;
-	//reduce
-	parser->lrTable[3][73].LRTableFuncP = LRReduce;
-	parser->lrTable[3][73].actionParam = 43;
-	//reduce
-	parser->lrTable[8][73].LRTableFuncP = LRReduce;
-	parser->lrTable[8][73].actionParam = 43;
-	//reduce
-	parser->lrTable[11][73].LRTableFuncP = LRReduce;
-	parser->lrTable[11][73].actionParam = 43;
-	//reduce
-	parser->lrTable[14][73].LRTableFuncP = LRReduce;
-	parser->lrTable[14][73].actionParam = 43;
-	//reduce
-	parser->lrTable[16][73].LRTableFuncP = LRReduce;
-	parser->lrTable[16][73].actionParam = 43;
-	//reduce
-	parser->lrTable[18][73].LRTableFuncP = LRReduce;
-	parser->lrTable[18][73].actionParam = 43;
-	//reduce
-	parser->lrTable[21][73].LRTableFuncP = LRReduce;
-	parser->lrTable[21][73].actionParam = 43;
-	//reduce
-	parser->lrTable[36][73].LRTableFuncP = LRReduce;
-	parser->lrTable[36][73].actionParam = 43;
-	//reduce
-	parser->lrTable[37][73].LRTableFuncP = LRReduce;
-	parser->lrTable[37][73].actionParam = 43;
-	//reduce
-	parser->lrTable[45][73].LRTableFuncP = LRReduce;
-	parser->lrTable[45][73].actionParam = 43;
-	//reduce
-	parser->lrTable[0][74].LRTableFuncP = LRReduce;
-	parser->lrTable[0][74].actionParam = 42;
-	//reduce
-	parser->lrTable[1][74].LRTableFuncP = LRReduce;
-	parser->lrTable[1][74].actionParam = 42;
-	//reduce
-	parser->lrTable[2][74].LRTableFuncP = LRReduce;
-	parser->lrTable[2][74].actionParam = 42;
-	//reduce
-	parser->lrTable[3][74].LRTableFuncP = LRReduce;
-	parser->lrTable[3][74].actionParam = 42;
-	//reduce
-	parser->lrTable[4][74].LRTableFuncP = LRReduce;
-	parser->lrTable[4][74].actionParam = 42;
-	//reduce
-	parser->lrTable[5][74].LRTableFuncP = LRReduce;
-	parser->lrTable[5][74].actionParam = 42;
-	//reduce
-	parser->lrTable[3][74].LRTableFuncP = LRReduce;
-	parser->lrTable[3][74].actionParam = 42;
-	//reduce
-	parser->lrTable[8][74].LRTableFuncP = LRReduce;
-	parser->lrTable[8][74].actionParam = 42;
-	//reduce
-	parser->lrTable[11][74].LRTableFuncP = LRReduce;
-	parser->lrTable[11][74].actionParam = 42;
-	//reduce
-	parser->lrTable[14][74].LRTableFuncP = LRReduce;
-	parser->lrTable[14][74].actionParam = 42;
-	//reduce
-	parser->lrTable[16][74].LRTableFuncP = LRReduce;
-	parser->lrTable[16][74].actionParam = 42;
-	//reduce
-	parser->lrTable[18][74].LRTableFuncP = LRReduce;
-	parser->lrTable[18][74].actionParam = 42;
-	//reduce
-	parser->lrTable[21][74].LRTableFuncP = LRReduce;
-	parser->lrTable[21][74].actionParam = 42;
-	//reduce
-	parser->lrTable[36][74].LRTableFuncP = LRReduce;
-	parser->lrTable[36][74].actionParam = 42;
-	//reduce
-	parser->lrTable[37][74].LRTableFuncP = LRReduce;
-	parser->lrTable[37][74].actionParam = 42;
-	//reduce
-	parser->lrTable[45][74].LRTableFuncP = LRReduce;
-	parser->lrTable[45][74].actionParam = 42;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[0][75].LRTableFuncP = LRShift;
-	parser->lrTable[0][75].actionParam = 79;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[1][75].LRTableFuncP = LRShift;
-	parser->lrTable[1][75].actionParam = 80;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[2][75].LRTableFuncP = LRShift;
-	parser->lrTable[2][75].actionParam = 81;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[3][75].LRTableFuncP = LRShift;
-	parser->lrTable[3][75].actionParam = 82;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[4][75].LRTableFuncP = LRShift;
-	parser->lrTable[4][75].actionParam = 83;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[5][75].LRTableFuncP = LRShift;
-	parser->lrTable[5][75].actionParam = 84;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[3][75].LRTableFuncP = LRShift;
-	parser->lrTable[3][75].actionParam = 85;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[8][75].LRTableFuncP = LRShift;
-	parser->lrTable[8][75].actionParam = 86;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[11][75].LRTableFuncP = LRShift;
-	parser->lrTable[11][75].actionParam = 87;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[21][75].LRTableFuncP = LRShift;
-	parser->lrTable[21][75].actionParam = 102;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[36][75].LRTableFuncP = LRShift;
-	parser->lrTable[36][75].actionParam = 88;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[37][75].LRTableFuncP = LRShift;
-	parser->lrTable[37][75].actionParam = 89;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
 	//goto
-	parser->lrTable[RelOp+TOTAL_TOKENS][75].LRTableFuncP = LRGoto;
-	parser->lrTable[RelOp+TOTAL_TOKENS][75].actionParam = 90;
-	//shift
-	parser->lrTable[21][76].LRTableFuncP = LRShift;
-	parser->lrTable[21][76].actionParam = 103;
-	//reduce
-	parser->lrTable[0][77].LRTableFuncP = LRReduce;
-	parser->lrTable[0][77].actionParam = 39;
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 157;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//reduce
-	parser->lrTable[1][77].LRTableFuncP = LRReduce;
-	parser->lrTable[1][77].actionParam = 39;
+	parser->lrTable[52][35].LRTableFuncP = LRReduce;
+	parser->lrTable[52][35].actionParam = 21;
 	//reduce
-	parser->lrTable[2][77].LRTableFuncP = LRReduce;
-	parser->lrTable[2][77].actionParam = 39;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 21;
 	//reduce
-	parser->lrTable[3][77].LRTableFuncP = LRReduce;
-	parser->lrTable[3][77].actionParam = 39;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 21;
 	//reduce
-	parser->lrTable[4][77].LRTableFuncP = LRReduce;
-	parser->lrTable[4][77].actionParam = 39;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 21;
 	//reduce
-	parser->lrTable[5][77].LRTableFuncP = LRReduce;
-	parser->lrTable[5][77].actionParam = 39;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 21;
 	//reduce
-	parser->lrTable[3][77].LRTableFuncP = LRReduce;
-	parser->lrTable[3][77].actionParam = 39;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 21;
 	//reduce
-	parser->lrTable[8][77].LRTableFuncP = LRReduce;
-	parser->lrTable[8][77].actionParam = 39;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 21;
 	//reduce
-	parser->lrTable[11][77].LRTableFuncP = LRReduce;
-	parser->lrTable[11][77].actionParam = 39;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 21;
 	//reduce
-	parser->lrTable[14][77].LRTableFuncP = LRReduce;
-	parser->lrTable[14][77].actionParam = 39;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 21;
 	//reduce
-	parser->lrTable[16][77].LRTableFuncP = LRReduce;
-	parser->lrTable[16][77].actionParam = 39;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 21;
 	//reduce
-	parser->lrTable[18][77].LRTableFuncP = LRReduce;
-	parser->lrTable[18][77].actionParam = 39;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 21;
 	//reduce
-	parser->lrTable[21][77].LRTableFuncP = LRReduce;
-	parser->lrTable[21][77].actionParam = 39;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 21;
 	//reduce
-	parser->lrTable[36][77].LRTableFuncP = LRReduce;
-	parser->lrTable[36][77].actionParam = 39;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 21;
 	//reduce
-	parser->lrTable[37][77].LRTableFuncP = LRReduce;
-	parser->lrTable[37][77].actionParam = 39;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 21;
 	//reduce
-	parser->lrTable[45][77].LRTableFuncP = LRReduce;
-	parser->lrTable[45][77].actionParam = 39;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 21;
 	//reduce
-	parser->lrTable[0][78].LRTableFuncP = LRReduce;
-	parser->lrTable[0][78].actionParam = 40;
+	parser->lrTable[40][35].LRTableFuncP = LRReduce;
+	parser->lrTable[40][35].actionParam = 21;
 	//reduce
-	parser->lrTable[1][78].LRTableFuncP = LRReduce;
-	parser->lrTable[1][78].actionParam = 40;
+	parser->lrTable[41][35].LRTableFuncP = LRReduce;
+	parser->lrTable[41][35].actionParam = 21;
 	//reduce
-	parser->lrTable[2][78].LRTableFuncP = LRReduce;
-	parser->lrTable[2][78].actionParam = 40;
+	parser->lrTable[42][35].LRTableFuncP = LRReduce;
+	parser->lrTable[42][35].actionParam = 21;
 	//reduce
-	parser->lrTable[3][78].LRTableFuncP = LRReduce;
-	parser->lrTable[3][78].actionParam = 40;
+	parser->lrTable[43][35].LRTableFuncP = LRReduce;
+	parser->lrTable[43][35].actionParam = 21;
 	//reduce
-	parser->lrTable[4][78].LRTableFuncP = LRReduce;
-	parser->lrTable[4][78].actionParam = 40;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 21;
 	//reduce
-	parser->lrTable[5][78].LRTableFuncP = LRReduce;
-	parser->lrTable[5][78].actionParam = 40;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 21;
 	//reduce
-	parser->lrTable[3][78].LRTableFuncP = LRReduce;
-	parser->lrTable[3][78].actionParam = 40;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 21;
 	//reduce
-	parser->lrTable[8][78].LRTableFuncP = LRReduce;
-	parser->lrTable[8][78].actionParam = 40;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 21;
 	//reduce
-	parser->lrTable[11][78].LRTableFuncP = LRReduce;
-	parser->lrTable[11][78].actionParam = 40;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 21;
 	//reduce
-	parser->lrTable[14][78].LRTableFuncP = LRReduce;
-	parser->lrTable[14][78].actionParam = 40;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 21;
 	//reduce
-	parser->lrTable[16][78].LRTableFuncP = LRReduce;
-	parser->lrTable[16][78].actionParam = 40;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 29;
 	//reduce
-	parser->lrTable[18][78].LRTableFuncP = LRReduce;
-	parser->lrTable[18][78].actionParam = 40;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 29;
 	//reduce
-	parser->lrTable[21][78].LRTableFuncP = LRReduce;
-	parser->lrTable[21][78].actionParam = 40;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 29;
 	//reduce
-	parser->lrTable[36][78].LRTableFuncP = LRReduce;
-	parser->lrTable[36][78].actionParam = 40;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 29;
 	//reduce
-	parser->lrTable[37][78].LRTableFuncP = LRReduce;
-	parser->lrTable[37][78].actionParam = 40;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 29;
 	//reduce
-	parser->lrTable[45][78].LRTableFuncP = LRReduce;
-	parser->lrTable[45][78].actionParam = 40;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 29;
 	//reduce
-	parser->lrTable[9][79].LRTableFuncP = LRReduce;
-	parser->lrTable[9][79].actionParam = 55;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 29;
 	//reduce
-	parser->lrTable[11][79].LRTableFuncP = LRReduce;
-	parser->lrTable[11][79].actionParam = 55;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 29;
 	//reduce
-	parser->lrTable[12][79].LRTableFuncP = LRReduce;
-	parser->lrTable[12][79].actionParam = 55;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 29;
 	//reduce
-	parser->lrTable[20][79].LRTableFuncP = LRReduce;
-	parser->lrTable[20][79].actionParam = 55;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 29;
 	//reduce
-	parser->lrTable[24][79].LRTableFuncP = LRReduce;
-	parser->lrTable[24][79].actionParam = 55;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 29;
 	//reduce
-	parser->lrTable[25][79].LRTableFuncP = LRReduce;
-	parser->lrTable[25][79].actionParam = 55;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 29;
 	//reduce
-	parser->lrTable[26][79].LRTableFuncP = LRReduce;
-	parser->lrTable[26][79].actionParam = 55;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 29;
 	//reduce
-	parser->lrTable[27][79].LRTableFuncP = LRReduce;
-	parser->lrTable[27][79].actionParam = 55;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 29;
 	//reduce
-	parser->lrTable[28][79].LRTableFuncP = LRReduce;
-	parser->lrTable[28][79].actionParam = 55;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 29;
 	//reduce
-	parser->lrTable[40][79].LRTableFuncP = LRReduce;
-	parser->lrTable[40][79].actionParam = 55;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 29;
 	//reduce
-	parser->lrTable[9][80].LRTableFuncP = LRReduce;
-	parser->lrTable[9][80].actionParam = 52;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 29;
 	//reduce
-	parser->lrTable[11][80].LRTableFuncP = LRReduce;
-	parser->lrTable[11][80].actionParam = 52;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 29;
 	//reduce
-	parser->lrTable[12][80].LRTableFuncP = LRReduce;
-	parser->lrTable[12][80].actionParam = 52;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 29;
 	//reduce
-	parser->lrTable[20][80].LRTableFuncP = LRReduce;
-	parser->lrTable[20][80].actionParam = 52;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 34;
 	//reduce
-	parser->lrTable[24][80].LRTableFuncP = LRReduce;
-	parser->lrTable[24][80].actionParam = 52;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 34;
 	//reduce
-	parser->lrTable[25][80].LRTableFuncP = LRReduce;
-	parser->lrTable[25][80].actionParam = 52;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 34;
 	//reduce
-	parser->lrTable[26][80].LRTableFuncP = LRReduce;
-	parser->lrTable[26][80].actionParam = 52;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 34;
 	//reduce
-	parser->lrTable[27][80].LRTableFuncP = LRReduce;
-	parser->lrTable[27][80].actionParam = 52;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 34;
 	//reduce
-	parser->lrTable[28][80].LRTableFuncP = LRReduce;
-	parser->lrTable[28][80].actionParam = 52;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 34;
 	//reduce
-	parser->lrTable[40][80].LRTableFuncP = LRReduce;
-	parser->lrTable[40][80].actionParam = 52;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 34;
 	//reduce
-	parser->lrTable[9][81].LRTableFuncP = LRReduce;
-	parser->lrTable[9][81].actionParam = 53;
+	parser->lrTable[30][35].LRTableFuncP = LRReduce;
+	parser->lrTable[30][35].actionParam = 34;
 	//reduce
-	parser->lrTable[11][81].LRTableFuncP = LRReduce;
-	parser->lrTable[11][81].actionParam = 53;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 34;
 	//reduce
-	parser->lrTable[12][81].LRTableFuncP = LRReduce;
-	parser->lrTable[12][81].actionParam = 53;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 34;
 	//reduce
-	parser->lrTable[20][81].LRTableFuncP = LRReduce;
-	parser->lrTable[20][81].actionParam = 53;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 34;
 	//reduce
-	parser->lrTable[24][81].LRTableFuncP = LRReduce;
-	parser->lrTable[24][81].actionParam = 53;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 34;
 	//reduce
-	parser->lrTable[25][81].LRTableFuncP = LRReduce;
-	parser->lrTable[25][81].actionParam = 53;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 34;
 	//reduce
-	parser->lrTable[26][81].LRTableFuncP = LRReduce;
-	parser->lrTable[26][81].actionParam = 53;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 34;
 	//reduce
-	parser->lrTable[27][81].LRTableFuncP = LRReduce;
-	parser->lrTable[27][81].actionParam = 53;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 34;
 	//reduce
-	parser->lrTable[28][81].LRTableFuncP = LRReduce;
-	parser->lrTable[28][81].actionParam = 53;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 34;
 	//reduce
-	parser->lrTable[40][81].LRTableFuncP = LRReduce;
-	parser->lrTable[40][81].actionParam = 53;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 34;
 	//reduce
-	parser->lrTable[9][82].LRTableFuncP = LRReduce;
-	parser->lrTable[9][82].actionParam = 49;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 34;
 	//reduce
-	parser->lrTable[11][82].LRTableFuncP = LRReduce;
-	parser->lrTable[11][82].actionParam = 49;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 34;
 	//reduce
-	parser->lrTable[12][82].LRTableFuncP = LRReduce;
-	parser->lrTable[12][82].actionParam = 49;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 34;
 	//reduce
-	parser->lrTable[20][82].LRTableFuncP = LRReduce;
-	parser->lrTable[20][82].actionParam = 49;
-	//reduce
-	parser->lrTable[24][82].LRTableFuncP = LRReduce;
-	parser->lrTable[24][82].actionParam = 49;
-	//reduce
-	parser->lrTable[25][82].LRTableFuncP = LRReduce;
-	parser->lrTable[25][82].actionParam = 49;
-	//reduce
-	parser->lrTable[26][82].LRTableFuncP = LRReduce;
-	parser->lrTable[26][82].actionParam = 49;
-	//reduce
-	parser->lrTable[27][82].LRTableFuncP = LRReduce;
-	parser->lrTable[27][82].actionParam = 49;
-	//reduce
-	parser->lrTable[28][82].LRTableFuncP = LRReduce;
-	parser->lrTable[28][82].actionParam = 49;
-	//reduce
-	parser->lrTable[40][82].LRTableFuncP = LRReduce;
-	parser->lrTable[40][82].actionParam = 49;
-	//reduce
-	parser->lrTable[9][83].LRTableFuncP = LRReduce;
-	parser->lrTable[9][83].actionParam = 50;
-	//reduce
-	parser->lrTable[11][83].LRTableFuncP = LRReduce;
-	parser->lrTable[11][83].actionParam = 50;
-	//reduce
-	parser->lrTable[12][83].LRTableFuncP = LRReduce;
-	parser->lrTable[12][83].actionParam = 50;
-	//reduce
-	parser->lrTable[20][83].LRTableFuncP = LRReduce;
-	parser->lrTable[20][83].actionParam = 50;
-	//reduce
-	parser->lrTable[24][83].LRTableFuncP = LRReduce;
-	parser->lrTable[24][83].actionParam = 50;
-	//reduce
-	parser->lrTable[25][83].LRTableFuncP = LRReduce;
-	parser->lrTable[25][83].actionParam = 50;
-	//reduce
-	parser->lrTable[26][83].LRTableFuncP = LRReduce;
-	parser->lrTable[26][83].actionParam = 50;
-	//reduce
-	parser->lrTable[27][83].LRTableFuncP = LRReduce;
-	parser->lrTable[27][83].actionParam = 50;
-	//reduce
-	parser->lrTable[28][83].LRTableFuncP = LRReduce;
-	parser->lrTable[28][83].actionParam = 50;
-	//reduce
-	parser->lrTable[40][83].LRTableFuncP = LRReduce;
-	parser->lrTable[40][83].actionParam = 50;
-	//reduce
-	parser->lrTable[9][84].LRTableFuncP = LRReduce;
-	parser->lrTable[9][84].actionParam = 51;
-	//reduce
-	parser->lrTable[11][84].LRTableFuncP = LRReduce;
-	parser->lrTable[11][84].actionParam = 51;
-	//reduce
-	parser->lrTable[12][84].LRTableFuncP = LRReduce;
-	parser->lrTable[12][84].actionParam = 51;
-	//reduce
-	parser->lrTable[20][84].LRTableFuncP = LRReduce;
-	parser->lrTable[20][84].actionParam = 51;
-	//reduce
-	parser->lrTable[24][84].LRTableFuncP = LRReduce;
-	parser->lrTable[24][84].actionParam = 51;
-	//reduce
-	parser->lrTable[25][84].LRTableFuncP = LRReduce;
-	parser->lrTable[25][84].actionParam = 51;
-	//reduce
-	parser->lrTable[26][84].LRTableFuncP = LRReduce;
-	parser->lrTable[26][84].actionParam = 51;
-	//reduce
-	parser->lrTable[27][84].LRTableFuncP = LRReduce;
-	parser->lrTable[27][84].actionParam = 51;
-	//reduce
-	parser->lrTable[28][84].LRTableFuncP = LRReduce;
-	parser->lrTable[28][84].actionParam = 51;
-	//reduce
-	parser->lrTable[40][84].LRTableFuncP = LRReduce;
-	parser->lrTable[40][84].actionParam = 51;
-	//reduce
-	parser->lrTable[9][85].LRTableFuncP = LRReduce;
-	parser->lrTable[9][85].actionParam = 54;
-	//reduce
-	parser->lrTable[11][85].LRTableFuncP = LRReduce;
-	parser->lrTable[11][85].actionParam = 54;
-	//reduce
-	parser->lrTable[12][85].LRTableFuncP = LRReduce;
-	parser->lrTable[12][85].actionParam = 54;
-	//reduce
-	parser->lrTable[20][85].LRTableFuncP = LRReduce;
-	parser->lrTable[20][85].actionParam = 54;
-	//reduce
-	parser->lrTable[24][85].LRTableFuncP = LRReduce;
-	parser->lrTable[24][85].actionParam = 54;
-	//reduce
-	parser->lrTable[25][85].LRTableFuncP = LRReduce;
-	parser->lrTable[25][85].actionParam = 54;
-	//reduce
-	parser->lrTable[26][85].LRTableFuncP = LRReduce;
-	parser->lrTable[26][85].actionParam = 54;
-	//reduce
-	parser->lrTable[27][85].LRTableFuncP = LRReduce;
-	parser->lrTable[27][85].actionParam = 54;
-	//reduce
-	parser->lrTable[28][85].LRTableFuncP = LRReduce;
-	parser->lrTable[28][85].actionParam = 54;
-	//reduce
-	parser->lrTable[40][85].LRTableFuncP = LRReduce;
-	parser->lrTable[40][85].actionParam = 54;
-	//shift
-	parser->lrTable[9][86].LRTableFuncP = LRShift;
-	parser->lrTable[9][86].actionParam = 44;
-	//shift
-	parser->lrTable[11][86].LRTableFuncP = LRShift;
-	parser->lrTable[11][86].actionParam = 45;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 34;
 	//shift
-	parser->lrTable[12][86].LRTableFuncP = LRShift;
-	parser->lrTable[12][86].actionParam = 46;
+	parser->lrTable[30][35].LRTableFuncP = LRShift;
+	parser->lrTable[30][35].actionParam = 158;
 	//shift
-	parser->lrTable[20][86].LRTableFuncP = LRShift;
-	parser->lrTable[20][86].actionParam = 60;
+	parser->lrTable[57][35].LRTableFuncP = LRShift;
+	parser->lrTable[57][35].actionParam = 58;
 	//shift
-	parser->lrTable[24][86].LRTableFuncP = LRShift;
-	parser->lrTable[24][86].actionParam = 48;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[25][86].LRTableFuncP = LRShift;
-	parser->lrTable[25][86].actionParam = 49;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[26][86].LRTableFuncP = LRShift;
-	parser->lrTable[26][86].actionParam = 50;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[27][86].LRTableFuncP = LRShift;
-	parser->lrTable[27][86].actionParam = 51;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[28][86].LRTableFuncP = LRShift;
-	parser->lrTable[28][86].actionParam = 52;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[40][86].LRTableFuncP = LRShift;
-	parser->lrTable[40][86].actionParam = 53;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][86].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][86].actionParam = 104;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][86].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][86].actionParam = 56;
-	//shift
-	parser->lrTable[9][87].LRTableFuncP = LRShift;
-	parser->lrTable[9][87].actionParam = 44;
-	//shift
-	parser->lrTable[11][87].LRTableFuncP = LRShift;
-	parser->lrTable[11][87].actionParam = 45;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[12][87].LRTableFuncP = LRShift;
-	parser->lrTable[12][87].actionParam = 46;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[20][87].LRTableFuncP = LRShift;
-	parser->lrTable[20][87].actionParam = 60;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[24][87].LRTableFuncP = LRShift;
-	parser->lrTable[24][87].actionParam = 48;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[25][87].LRTableFuncP = LRShift;
-	parser->lrTable[25][87].actionParam = 49;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[26][87].LRTableFuncP = LRShift;
-	parser->lrTable[26][87].actionParam = 50;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[27][87].LRTableFuncP = LRShift;
-	parser->lrTable[27][87].actionParam = 51;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[28][87].LRTableFuncP = LRShift;
-	parser->lrTable[28][87].actionParam = 52;
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
 	//shift
-	parser->lrTable[40][87].LRTableFuncP = LRShift;
-	parser->lrTable[40][87].actionParam = 53;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
 	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][87].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][87].actionParam = 105;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 159;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][87].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][87].actionParam = 56;
-	//shift
-	parser->lrTable[9][88].LRTableFuncP = LRShift;
-	parser->lrTable[9][88].actionParam = 44;
-	//shift
-	parser->lrTable[11][88].LRTableFuncP = LRShift;
-	parser->lrTable[11][88].actionParam = 45;
-	//shift
-	parser->lrTable[12][88].LRTableFuncP = LRShift;
-	parser->lrTable[12][88].actionParam = 46;
-	//shift
-	parser->lrTable[20][88].LRTableFuncP = LRShift;
-	parser->lrTable[20][88].actionParam = 60;
-	//shift
-	parser->lrTable[24][88].LRTableFuncP = LRShift;
-	parser->lrTable[24][88].actionParam = 48;
-	//shift
-	parser->lrTable[25][88].LRTableFuncP = LRShift;
-	parser->lrTable[25][88].actionParam = 49;
-	//shift
-	parser->lrTable[26][88].LRTableFuncP = LRShift;
-	parser->lrTable[26][88].actionParam = 50;
-	//shift
-	parser->lrTable[27][88].LRTableFuncP = LRShift;
-	parser->lrTable[27][88].actionParam = 51;
-	//shift
-	parser->lrTable[28][88].LRTableFuncP = LRShift;
-	parser->lrTable[28][88].actionParam = 52;
-	//shift
-	parser->lrTable[40][88].LRTableFuncP = LRShift;
-	parser->lrTable[40][88].actionParam = 53;
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
 	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][88].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][88].actionParam = 106;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
 	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][88].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][88].actionParam = 55;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][88].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][88].actionParam = 56;
-	//shift
-	parser->lrTable[9][89].LRTableFuncP = LRShift;
-	parser->lrTable[9][89].actionParam = 44;
-	//shift
-	parser->lrTable[11][89].LRTableFuncP = LRShift;
-	parser->lrTable[11][89].actionParam = 45;
-	//shift
-	parser->lrTable[12][89].LRTableFuncP = LRShift;
-	parser->lrTable[12][89].actionParam = 46;
-	//shift
-	parser->lrTable[20][89].LRTableFuncP = LRShift;
-	parser->lrTable[20][89].actionParam = 60;
-	//shift
-	parser->lrTable[24][89].LRTableFuncP = LRShift;
-	parser->lrTable[24][89].actionParam = 48;
-	//shift
-	parser->lrTable[25][89].LRTableFuncP = LRShift;
-	parser->lrTable[25][89].actionParam = 49;
-	//shift
-	parser->lrTable[26][89].LRTableFuncP = LRShift;
-	parser->lrTable[26][89].actionParam = 50;
-	//shift
-	parser->lrTable[27][89].LRTableFuncP = LRShift;
-	parser->lrTable[27][89].actionParam = 51;
-	//shift
-	parser->lrTable[28][89].LRTableFuncP = LRShift;
-	parser->lrTable[28][89].actionParam = 52;
-	//shift
-	parser->lrTable[40][89].LRTableFuncP = LRShift;
-	parser->lrTable[40][89].actionParam = 53;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
 	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][89].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][89].actionParam = 107;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
 	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][89].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][89].actionParam = 55;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][89].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][89].actionParam = 56;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
-	parser->lrTable[9][90].LRTableFuncP = LRShift;
-	parser->lrTable[9][90].actionParam = 44;
+	parser->lrTable[30][35].LRTableFuncP = LRShift;
+	parser->lrTable[30][35].actionParam = 160;
 	//shift
-	parser->lrTable[11][90].LRTableFuncP = LRShift;
-	parser->lrTable[11][90].actionParam = 45;
+	parser->lrTable[57][35].LRTableFuncP = LRShift;
+	parser->lrTable[57][35].actionParam = 58;
 	//shift
-	parser->lrTable[12][90].LRTableFuncP = LRShift;
-	parser->lrTable[12][90].actionParam = 46;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[20][90].LRTableFuncP = LRShift;
-	parser->lrTable[20][90].actionParam = 60;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[24][90].LRTableFuncP = LRShift;
-	parser->lrTable[24][90].actionParam = 48;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[25][90].LRTableFuncP = LRShift;
-	parser->lrTable[25][90].actionParam = 49;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[26][90].LRTableFuncP = LRShift;
-	parser->lrTable[26][90].actionParam = 50;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[27][90].LRTableFuncP = LRShift;
-	parser->lrTable[27][90].actionParam = 51;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[28][90].LRTableFuncP = LRShift;
-	parser->lrTable[28][90].actionParam = 52;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[40][90].LRTableFuncP = LRShift;
-	parser->lrTable[40][90].actionParam = 53;
-	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][90].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][90].actionParam = 108;
-	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][90].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][90].actionParam = 55;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][90].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][90].actionParam = 56;
+	parser->lrTable[31][35].LRTableFuncP = LRShift;
+	parser->lrTable[31][35].actionParam = 123;
 	//shift
-	parser->lrTable[9][91].LRTableFuncP = LRShift;
-	parser->lrTable[9][91].actionParam = 44;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[11][91].LRTableFuncP = LRShift;
-	parser->lrTable[11][91].actionParam = 45;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[12][91].LRTableFuncP = LRShift;
-	parser->lrTable[12][91].actionParam = 46;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[20][91].LRTableFuncP = LRShift;
-	parser->lrTable[20][91].actionParam = 60;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[24][91].LRTableFuncP = LRShift;
-	parser->lrTable[24][91].actionParam = 48;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[25][91].LRTableFuncP = LRShift;
-	parser->lrTable[25][91].actionParam = 49;
+	parser->lrTable[44][35].LRTableFuncP = LRShift;
+	parser->lrTable[44][35].actionParam = 136;
 	//shift
-	parser->lrTable[26][91].LRTableFuncP = LRShift;
-	parser->lrTable[26][91].actionParam = 50;
+	parser->lrTable[49][35].LRTableFuncP = LRShift;
+	parser->lrTable[49][35].actionParam = 137;
 	//shift
-	parser->lrTable[27][91].LRTableFuncP = LRShift;
-	parser->lrTable[27][91].actionParam = 51;
+	parser->lrTable[50][35].LRTableFuncP = LRShift;
+	parser->lrTable[50][35].actionParam = 138;
 	//shift
-	parser->lrTable[28][91].LRTableFuncP = LRShift;
-	parser->lrTable[28][91].actionParam = 52;
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
 	//shift
-	parser->lrTable[40][91].LRTableFuncP = LRShift;
-	parser->lrTable[40][91].actionParam = 53;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][91].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][91].actionParam = 109;
-	//shift
-	parser->lrTable[9][92].LRTableFuncP = LRShift;
-	parser->lrTable[9][92].actionParam = 44;
+	parser->lrTable[statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement+TOTAL_TOKENS][35].actionParam = 161;
+	//goto
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 144;
+	//goto
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].actionParam = 145;
+	//goto
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].actionParam = 146;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
-	parser->lrTable[11][92].LRTableFuncP = LRShift;
-	parser->lrTable[11][92].actionParam = 45;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[12][92].LRTableFuncP = LRShift;
-	parser->lrTable[12][92].actionParam = 46;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[20][92].LRTableFuncP = LRShift;
-	parser->lrTable[20][92].actionParam = 60;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[24][92].LRTableFuncP = LRShift;
-	parser->lrTable[24][92].actionParam = 48;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[25][92].LRTableFuncP = LRShift;
-	parser->lrTable[25][92].actionParam = 49;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[26][92].LRTableFuncP = LRShift;
-	parser->lrTable[26][92].actionParam = 50;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[27][92].LRTableFuncP = LRShift;
-	parser->lrTable[27][92].actionParam = 51;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[28][92].LRTableFuncP = LRShift;
-	parser->lrTable[28][92].actionParam = 52;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[40][92].LRTableFuncP = LRShift;
-	parser->lrTable[40][92].actionParam = 53;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][92].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][92].actionParam = 110;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[9][93].LRTableFuncP = LRShift;
-	parser->lrTable[9][93].actionParam = 44;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[11][93].LRTableFuncP = LRShift;
-	parser->lrTable[11][93].actionParam = 45;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[12][93].LRTableFuncP = LRShift;
-	parser->lrTable[12][93].actionParam = 46;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[20][93].LRTableFuncP = LRShift;
-	parser->lrTable[20][93].actionParam = 60;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
+	//reduce
+	parser->lrTable[30][35].LRTableFuncP = LRReduce;
+	parser->lrTable[30][35].actionParam = 40;
+	//goto
+	parser->lrTable[expression_opt+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_opt+TOTAL_TOKENS][35].actionParam = 162;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 163;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
-	parser->lrTable[24][93].LRTableFuncP = LRShift;
-	parser->lrTable[24][93].actionParam = 48;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[25][93].LRTableFuncP = LRShift;
-	parser->lrTable[25][93].actionParam = 49;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[26][93].LRTableFuncP = LRShift;
-	parser->lrTable[26][93].actionParam = 50;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[27][93].LRTableFuncP = LRShift;
-	parser->lrTable[27][93].actionParam = 51;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[28][93].LRTableFuncP = LRShift;
-	parser->lrTable[28][93].actionParam = 52;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[40][93].LRTableFuncP = LRShift;
-	parser->lrTable[40][93].actionParam = 53;
-	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][93].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][93].actionParam = 111;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[22][94].LRTableFuncP = LRShift;
-	parser->lrTable[22][94].actionParam = 112;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[5][95].LRTableFuncP = LRShift;
-	parser->lrTable[5][95].actionParam = 43;
+	parser->lrTable[31][35].LRTableFuncP = LRShift;
+	parser->lrTable[31][35].actionParam = 123;
 	//shift
-	parser->lrTable[9][95].LRTableFuncP = LRShift;
-	parser->lrTable[9][95].actionParam = 44;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[11][95].LRTableFuncP = LRShift;
-	parser->lrTable[11][95].actionParam = 45;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[12][95].LRTableFuncP = LRShift;
-	parser->lrTable[12][95].actionParam = 46;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[20][95].LRTableFuncP = LRShift;
-	parser->lrTable[20][95].actionParam = 47;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[24][95].LRTableFuncP = LRShift;
-	parser->lrTable[24][95].actionParam = 48;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[25][95].LRTableFuncP = LRShift;
-	parser->lrTable[25][95].actionParam = 49;
+	parser->lrTable[44][35].LRTableFuncP = LRShift;
+	parser->lrTable[44][35].actionParam = 136;
 	//shift
-	parser->lrTable[26][95].LRTableFuncP = LRShift;
-	parser->lrTable[26][95].actionParam = 50;
+	parser->lrTable[49][35].LRTableFuncP = LRShift;
+	parser->lrTable[49][35].actionParam = 137;
 	//shift
-	parser->lrTable[27][95].LRTableFuncP = LRShift;
-	parser->lrTable[27][95].actionParam = 51;
+	parser->lrTable[50][35].LRTableFuncP = LRShift;
+	parser->lrTable[50][35].actionParam = 138;
 	//shift
-	parser->lrTable[28][95].LRTableFuncP = LRShift;
-	parser->lrTable[28][95].actionParam = 52;
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
 	//shift
-	parser->lrTable[40][95].LRTableFuncP = LRShift;
-	parser->lrTable[40][95].actionParam = 53;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
 	//goto
-	parser->lrTable[Expr+TOTAL_TOKENS][95].LRTableFuncP = LRGoto;
-	parser->lrTable[Expr+TOTAL_TOKENS][95].actionParam = 54;
+	parser->lrTable[statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement+TOTAL_TOKENS][35].actionParam = 164;
 	//goto
-	parser->lrTable[Term+TOTAL_TOKENS][95].LRTableFuncP = LRGoto;
-	parser->lrTable[Term+TOTAL_TOKENS][95].actionParam = 55;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 144;
 	//goto
-	parser->lrTable[Factor+TOTAL_TOKENS][95].LRTableFuncP = LRGoto;
-	parser->lrTable[Factor+TOTAL_TOKENS][95].actionParam = 56;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].actionParam = 145;
 	//goto
-	parser->lrTable[CondExpr+TOTAL_TOKENS][95].LRTableFuncP = LRGoto;
-	parser->lrTable[CondExpr+TOTAL_TOKENS][95].actionParam = 113;
-	//shift
-	parser->lrTable[22][96].LRTableFuncP = LRShift;
-	parser->lrTable[22][96].actionParam = 114;
-	//shift
-	parser->lrTable[8][97].LRTableFuncP = LRShift;
-	parser->lrTable[8][97].actionParam = 86;
-	//shift
-	parser->lrTable[11][97].LRTableFuncP = LRShift;
-	parser->lrTable[11][97].actionParam = 87;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].actionParam = 146;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
+	//goto
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
-	parser->lrTable[21][97].LRTableFuncP = LRShift;
-	parser->lrTable[21][97].actionParam = 102;
-	//reduce
-	parser->lrTable[41][98].LRTableFuncP = LRReduce;
-	parser->lrTable[41][98].actionParam = 12;
-	//reduce
-	parser->lrTable[23][98].LRTableFuncP = LRReduce;
-	parser->lrTable[23][98].actionParam = 12;
-	//reduce
-	parser->lrTable[29][98].LRTableFuncP = LRReduce;
-	parser->lrTable[29][98].actionParam = 12;
-	//reduce
-	parser->lrTable[30][98].LRTableFuncP = LRReduce;
-	parser->lrTable[30][98].actionParam = 12;
+	parser->lrTable[46][35].LRTableFuncP = LRShift;
+	parser->lrTable[46][35].actionParam = 165;
 	//reduce
-	parser->lrTable[31][98].LRTableFuncP = LRReduce;
-	parser->lrTable[31][98].actionParam = 12;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 36;
 	//reduce
-	parser->lrTable[32][98].LRTableFuncP = LRReduce;
-	parser->lrTable[32][98].actionParam = 12;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 36;
 	//reduce
-	parser->lrTable[33][98].LRTableFuncP = LRReduce;
-	parser->lrTable[33][98].actionParam = 12;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 36;
 	//reduce
-	parser->lrTable[38][98].LRTableFuncP = LRReduce;
-	parser->lrTable[38][98].actionParam = 12;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 36;
 	//reduce
-	parser->lrTable[39][98].LRTableFuncP = LRReduce;
-	parser->lrTable[39][98].actionParam = 12;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 36;
 	//reduce
-	parser->lrTable[40][98].LRTableFuncP = LRReduce;
-	parser->lrTable[40][98].actionParam = 12;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 36;
 	//reduce
-	parser->lrTable[41][99].LRTableFuncP = LRReduce;
-	parser->lrTable[41][99].actionParam = 10;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 36;
 	//reduce
-	parser->lrTable[23][99].LRTableFuncP = LRReduce;
-	parser->lrTable[23][99].actionParam = 10;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 36;
 	//reduce
-	parser->lrTable[29][99].LRTableFuncP = LRReduce;
-	parser->lrTable[29][99].actionParam = 10;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 36;
 	//reduce
-	parser->lrTable[30][99].LRTableFuncP = LRReduce;
-	parser->lrTable[30][99].actionParam = 10;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 36;
 	//reduce
-	parser->lrTable[31][99].LRTableFuncP = LRReduce;
-	parser->lrTable[31][99].actionParam = 10;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 36;
 	//reduce
-	parser->lrTable[32][99].LRTableFuncP = LRReduce;
-	parser->lrTable[32][99].actionParam = 10;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 36;
 	//reduce
-	parser->lrTable[33][99].LRTableFuncP = LRReduce;
-	parser->lrTable[33][99].actionParam = 10;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 36;
 	//reduce
-	parser->lrTable[38][99].LRTableFuncP = LRReduce;
-	parser->lrTable[38][99].actionParam = 10;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 36;
 	//reduce
-	parser->lrTable[39][99].LRTableFuncP = LRReduce;
-	parser->lrTable[39][99].actionParam = 10;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 36;
 	//reduce
-	parser->lrTable[40][99].LRTableFuncP = LRReduce;
-	parser->lrTable[40][99].actionParam = 10;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 36;
 	//reduce
-	parser->lrTable[41][100].LRTableFuncP = LRReduce;
-	parser->lrTable[41][100].actionParam = 16;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 36;
 	//reduce
-	parser->lrTable[23][100].LRTableFuncP = LRReduce;
-	parser->lrTable[23][100].actionParam = 16;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 36;
 	//reduce
-	parser->lrTable[29][100].LRTableFuncP = LRReduce;
-	parser->lrTable[29][100].actionParam = 16;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 36;
 	//reduce
-	parser->lrTable[30][100].LRTableFuncP = LRReduce;
-	parser->lrTable[30][100].actionParam = 16;
-	//reduce
-	parser->lrTable[31][100].LRTableFuncP = LRReduce;
-	parser->lrTable[31][100].actionParam = 16;
-	//reduce
-	parser->lrTable[32][100].LRTableFuncP = LRReduce;
-	parser->lrTable[32][100].actionParam = 16;
-	//reduce
-	parser->lrTable[33][100].LRTableFuncP = LRReduce;
-	parser->lrTable[33][100].actionParam = 16;
-	//reduce
-	parser->lrTable[38][100].LRTableFuncP = LRReduce;
-	parser->lrTable[38][100].actionParam = 16;
-	//reduce
-	parser->lrTable[39][100].LRTableFuncP = LRReduce;
-	parser->lrTable[39][100].actionParam = 16;
-	//reduce
-	parser->lrTable[40][100].LRTableFuncP = LRReduce;
-	parser->lrTable[40][100].actionParam = 16;
-	//reduce
-	parser->lrTable[41][101].LRTableFuncP = LRReduce;
-	parser->lrTable[41][101].actionParam = 14;
-	//reduce
-	parser->lrTable[23][101].LRTableFuncP = LRReduce;
-	parser->lrTable[23][101].actionParam = 14;
-	//reduce
-	parser->lrTable[29][101].LRTableFuncP = LRReduce;
-	parser->lrTable[29][101].actionParam = 14;
-	//reduce
-	parser->lrTable[30][101].LRTableFuncP = LRReduce;
-	parser->lrTable[30][101].actionParam = 14;
-	//reduce
-	parser->lrTable[31][101].LRTableFuncP = LRReduce;
-	parser->lrTable[31][101].actionParam = 14;
-	//reduce
-	parser->lrTable[32][101].LRTableFuncP = LRReduce;
-	parser->lrTable[32][101].actionParam = 14;
-	//reduce
-	parser->lrTable[33][101].LRTableFuncP = LRReduce;
-	parser->lrTable[33][101].actionParam = 14;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 36;
+	//shift
+	parser->lrTable[30][35].LRTableFuncP = LRShift;
+	parser->lrTable[30][35].actionParam = 166;
+	//shift
+	parser->lrTable[57][35].LRTableFuncP = LRShift;
+	parser->lrTable[57][35].actionParam = 58;
 	//reduce
-	parser->lrTable[38][101].LRTableFuncP = LRReduce;
-	parser->lrTable[38][101].actionParam = 14;
+	parser->lrTable[30][35].LRTableFuncP = LRReduce;
+	parser->lrTable[30][35].actionParam = 41;
 	//reduce
-	parser->lrTable[39][101].LRTableFuncP = LRReduce;
-	parser->lrTable[39][101].actionParam = 14;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 38;
 	//reduce
-	parser->lrTable[40][101].LRTableFuncP = LRReduce;
-	parser->lrTable[40][101].actionParam = 14;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 38;
 	//reduce
-	parser->lrTable[0][102].LRTableFuncP = LRReduce;
-	parser->lrTable[0][102].actionParam = 32;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 38;
 	//reduce
-	parser->lrTable[1][102].LRTableFuncP = LRReduce;
-	parser->lrTable[1][102].actionParam = 32;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 38;
 	//reduce
-	parser->lrTable[2][102].LRTableFuncP = LRReduce;
-	parser->lrTable[2][102].actionParam = 32;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 38;
 	//reduce
-	parser->lrTable[3][102].LRTableFuncP = LRReduce;
-	parser->lrTable[3][102].actionParam = 32;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 38;
 	//reduce
-	parser->lrTable[4][102].LRTableFuncP = LRReduce;
-	parser->lrTable[4][102].actionParam = 32;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 38;
 	//reduce
-	parser->lrTable[5][102].LRTableFuncP = LRReduce;
-	parser->lrTable[5][102].actionParam = 32;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 38;
 	//reduce
-	parser->lrTable[3][102].LRTableFuncP = LRReduce;
-	parser->lrTable[3][102].actionParam = 32;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 38;
 	//reduce
-	parser->lrTable[8][102].LRTableFuncP = LRReduce;
-	parser->lrTable[8][102].actionParam = 32;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 38;
 	//reduce
-	parser->lrTable[11][102].LRTableFuncP = LRReduce;
-	parser->lrTable[11][102].actionParam = 32;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 38;
 	//reduce
-	parser->lrTable[14][102].LRTableFuncP = LRReduce;
-	parser->lrTable[14][102].actionParam = 32;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 38;
 	//reduce
-	parser->lrTable[16][102].LRTableFuncP = LRReduce;
-	parser->lrTable[16][102].actionParam = 32;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 38;
 	//reduce
-	parser->lrTable[18][102].LRTableFuncP = LRReduce;
-	parser->lrTable[18][102].actionParam = 32;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 38;
 	//reduce
-	parser->lrTable[21][102].LRTableFuncP = LRReduce;
-	parser->lrTable[21][102].actionParam = 32;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 38;
 	//reduce
-	parser->lrTable[36][102].LRTableFuncP = LRReduce;
-	parser->lrTable[36][102].actionParam = 32;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 38;
 	//reduce
-	parser->lrTable[37][102].LRTableFuncP = LRReduce;
-	parser->lrTable[37][102].actionParam = 32;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 38;
 	//reduce
-	parser->lrTable[45][102].LRTableFuncP = LRReduce;
-	parser->lrTable[45][102].actionParam = 32;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 38;
 	//reduce
-	parser->lrTable[21][103].LRTableFuncP = LRReduce;
-	parser->lrTable[21][103].actionParam = 48;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 38;
 	//reduce
-	parser->lrTable[45][103].LRTableFuncP = LRReduce;
-	parser->lrTable[45][103].actionParam = 48;
-	//shift
-	parser->lrTable[14][104].LRTableFuncP = LRShift;
-	parser->lrTable[14][104].actionParam = 91;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 38;
 	//shift
-	parser->lrTable[16][104].LRTableFuncP = LRShift;
-	parser->lrTable[16][104].actionParam = 92;
-	//shift
-	parser->lrTable[18][104].LRTableFuncP = LRShift;
-	parser->lrTable[18][104].actionParam = 93;
-	//reduce
-	parser->lrTable[0][104].LRTableFuncP = LRReduce;
-	parser->lrTable[0][104].actionParam = 25;
-	//reduce
-	parser->lrTable[1][104].LRTableFuncP = LRReduce;
-	parser->lrTable[1][104].actionParam = 25;
-	//reduce
-	parser->lrTable[2][104].LRTableFuncP = LRReduce;
-	parser->lrTable[2][104].actionParam = 25;
-	//reduce
-	parser->lrTable[3][104].LRTableFuncP = LRReduce;
-	parser->lrTable[3][104].actionParam = 25;
-	//reduce
-	parser->lrTable[4][104].LRTableFuncP = LRReduce;
-	parser->lrTable[4][104].actionParam = 25;
-	//reduce
-	parser->lrTable[5][104].LRTableFuncP = LRReduce;
-	parser->lrTable[5][104].actionParam = 25;
-	//reduce
-	parser->lrTable[3][104].LRTableFuncP = LRReduce;
-	parser->lrTable[3][104].actionParam = 25;
-	//reduce
-	parser->lrTable[8][104].LRTableFuncP = LRReduce;
-	parser->lrTable[8][104].actionParam = 25;
-	//reduce
-	parser->lrTable[11][104].LRTableFuncP = LRReduce;
-	parser->lrTable[11][104].actionParam = 25;
-	//reduce
-	parser->lrTable[21][104].LRTableFuncP = LRReduce;
-	parser->lrTable[21][104].actionParam = 25;
-	//reduce
-	parser->lrTable[36][104].LRTableFuncP = LRReduce;
-	parser->lrTable[36][104].actionParam = 25;
-	//reduce
-	parser->lrTable[37][104].LRTableFuncP = LRReduce;
-	parser->lrTable[37][104].actionParam = 25;
-	//reduce
-	parser->lrTable[45][104].LRTableFuncP = LRReduce;
-	parser->lrTable[45][104].actionParam = 25;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[14][105].LRTableFuncP = LRShift;
-	parser->lrTable[14][105].actionParam = 91;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[16][105].LRTableFuncP = LRShift;
-	parser->lrTable[16][105].actionParam = 92;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[18][105].LRTableFuncP = LRShift;
-	parser->lrTable[18][105].actionParam = 93;
-	//reduce
-	parser->lrTable[0][105].LRTableFuncP = LRReduce;
-	parser->lrTable[0][105].actionParam = 26;
-	//reduce
-	parser->lrTable[1][105].LRTableFuncP = LRReduce;
-	parser->lrTable[1][105].actionParam = 26;
-	//reduce
-	parser->lrTable[2][105].LRTableFuncP = LRReduce;
-	parser->lrTable[2][105].actionParam = 26;
-	//reduce
-	parser->lrTable[3][105].LRTableFuncP = LRReduce;
-	parser->lrTable[3][105].actionParam = 26;
-	//reduce
-	parser->lrTable[4][105].LRTableFuncP = LRReduce;
-	parser->lrTable[4][105].actionParam = 26;
-	//reduce
-	parser->lrTable[5][105].LRTableFuncP = LRReduce;
-	parser->lrTable[5][105].actionParam = 26;
-	//reduce
-	parser->lrTable[3][105].LRTableFuncP = LRReduce;
-	parser->lrTable[3][105].actionParam = 26;
-	//reduce
-	parser->lrTable[8][105].LRTableFuncP = LRReduce;
-	parser->lrTable[8][105].actionParam = 26;
-	//reduce
-	parser->lrTable[11][105].LRTableFuncP = LRReduce;
-	parser->lrTable[11][105].actionParam = 26;
-	//reduce
-	parser->lrTable[21][105].LRTableFuncP = LRReduce;
-	parser->lrTable[21][105].actionParam = 26;
-	//reduce
-	parser->lrTable[36][105].LRTableFuncP = LRReduce;
-	parser->lrTable[36][105].actionParam = 26;
-	//reduce
-	parser->lrTable[37][105].LRTableFuncP = LRReduce;
-	parser->lrTable[37][105].actionParam = 26;
-	//reduce
-	parser->lrTable[45][105].LRTableFuncP = LRReduce;
-	parser->lrTable[45][105].actionParam = 26;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[8][106].LRTableFuncP = LRShift;
-	parser->lrTable[8][106].actionParam = 86;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[11][106].LRTableFuncP = LRShift;
-	parser->lrTable[11][106].actionParam = 87;
-	//reduce
-	parser->lrTable[21][106].LRTableFuncP = LRReduce;
-	parser->lrTable[21][106].actionParam = 46;
-	//reduce
-	parser->lrTable[45][106].LRTableFuncP = LRReduce;
-	parser->lrTable[45][106].actionParam = 46;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[8][107].LRTableFuncP = LRShift;
-	parser->lrTable[8][107].actionParam = 86;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[11][107].LRTableFuncP = LRShift;
-	parser->lrTable[11][107].actionParam = 87;
-	//reduce
-	parser->lrTable[21][107].LRTableFuncP = LRReduce;
-	parser->lrTable[21][107].actionParam = 47;
-	//reduce
-	parser->lrTable[45][107].LRTableFuncP = LRReduce;
-	parser->lrTable[45][107].actionParam = 47;
+	parser->lrTable[31][35].LRTableFuncP = LRShift;
+	parser->lrTable[31][35].actionParam = 123;
 	//shift
-	parser->lrTable[8][108].LRTableFuncP = LRShift;
-	parser->lrTable[8][108].actionParam = 86;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
 	//shift
-	parser->lrTable[11][108].LRTableFuncP = LRShift;
-	parser->lrTable[11][108].actionParam = 87;
-	//reduce
-	parser->lrTable[21][108].LRTableFuncP = LRReduce;
-	parser->lrTable[21][108].actionParam = 44;
-	//reduce
-	parser->lrTable[45][108].LRTableFuncP = LRReduce;
-	parser->lrTable[45][108].actionParam = 44;
-	//reduce
-	parser->lrTable[0][109].LRTableFuncP = LRReduce;
-	parser->lrTable[0][109].actionParam = 29;
-	//reduce
-	parser->lrTable[1][109].LRTableFuncP = LRReduce;
-	parser->lrTable[1][109].actionParam = 29;
-	//reduce
-	parser->lrTable[2][109].LRTableFuncP = LRReduce;
-	parser->lrTable[2][109].actionParam = 29;
-	//reduce
-	parser->lrTable[3][109].LRTableFuncP = LRReduce;
-	parser->lrTable[3][109].actionParam = 29;
-	//reduce
-	parser->lrTable[4][109].LRTableFuncP = LRReduce;
-	parser->lrTable[4][109].actionParam = 29;
-	//reduce
-	parser->lrTable[5][109].LRTableFuncP = LRReduce;
-	parser->lrTable[5][109].actionParam = 29;
-	//reduce
-	parser->lrTable[3][109].LRTableFuncP = LRReduce;
-	parser->lrTable[3][109].actionParam = 29;
-	//reduce
-	parser->lrTable[8][109].LRTableFuncP = LRReduce;
-	parser->lrTable[8][109].actionParam = 29;
-	//reduce
-	parser->lrTable[11][109].LRTableFuncP = LRReduce;
-	parser->lrTable[11][109].actionParam = 29;
-	//reduce
-	parser->lrTable[14][109].LRTableFuncP = LRReduce;
-	parser->lrTable[14][109].actionParam = 29;
-	//reduce
-	parser->lrTable[16][109].LRTableFuncP = LRReduce;
-	parser->lrTable[16][109].actionParam = 29;
-	//reduce
-	parser->lrTable[18][109].LRTableFuncP = LRReduce;
-	parser->lrTable[18][109].actionParam = 29;
-	//reduce
-	parser->lrTable[21][109].LRTableFuncP = LRReduce;
-	parser->lrTable[21][109].actionParam = 29;
-	//reduce
-	parser->lrTable[36][109].LRTableFuncP = LRReduce;
-	parser->lrTable[36][109].actionParam = 29;
-	//reduce
-	parser->lrTable[37][109].LRTableFuncP = LRReduce;
-	parser->lrTable[37][109].actionParam = 29;
-	//reduce
-	parser->lrTable[45][109].LRTableFuncP = LRReduce;
-	parser->lrTable[45][109].actionParam = 29;
-	//reduce
-	parser->lrTable[0][110].LRTableFuncP = LRReduce;
-	parser->lrTable[0][110].actionParam = 28;
-	//reduce
-	parser->lrTable[1][110].LRTableFuncP = LRReduce;
-	parser->lrTable[1][110].actionParam = 28;
-	//reduce
-	parser->lrTable[2][110].LRTableFuncP = LRReduce;
-	parser->lrTable[2][110].actionParam = 28;
-	//reduce
-	parser->lrTable[3][110].LRTableFuncP = LRReduce;
-	parser->lrTable[3][110].actionParam = 28;
-	//reduce
-	parser->lrTable[4][110].LRTableFuncP = LRReduce;
-	parser->lrTable[4][110].actionParam = 28;
-	//reduce
-	parser->lrTable[5][110].LRTableFuncP = LRReduce;
-	parser->lrTable[5][110].actionParam = 28;
-	//reduce
-	parser->lrTable[3][110].LRTableFuncP = LRReduce;
-	parser->lrTable[3][110].actionParam = 28;
-	//reduce
-	parser->lrTable[8][110].LRTableFuncP = LRReduce;
-	parser->lrTable[8][110].actionParam = 28;
-	//reduce
-	parser->lrTable[11][110].LRTableFuncP = LRReduce;
-	parser->lrTable[11][110].actionParam = 28;
-	//reduce
-	parser->lrTable[14][110].LRTableFuncP = LRReduce;
-	parser->lrTable[14][110].actionParam = 28;
-	//reduce
-	parser->lrTable[16][110].LRTableFuncP = LRReduce;
-	parser->lrTable[16][110].actionParam = 28;
-	//reduce
-	parser->lrTable[18][110].LRTableFuncP = LRReduce;
-	parser->lrTable[18][110].actionParam = 28;
-	//reduce
-	parser->lrTable[21][110].LRTableFuncP = LRReduce;
-	parser->lrTable[21][110].actionParam = 28;
-	//reduce
-	parser->lrTable[36][110].LRTableFuncP = LRReduce;
-	parser->lrTable[36][110].actionParam = 28;
-	//reduce
-	parser->lrTable[37][110].LRTableFuncP = LRReduce;
-	parser->lrTable[37][110].actionParam = 28;
-	//reduce
-	parser->lrTable[45][110].LRTableFuncP = LRReduce;
-	parser->lrTable[45][110].actionParam = 28;
-	//reduce
-	parser->lrTable[0][111].LRTableFuncP = LRReduce;
-	parser->lrTable[0][111].actionParam = 30;
-	//reduce
-	parser->lrTable[1][111].LRTableFuncP = LRReduce;
-	parser->lrTable[1][111].actionParam = 30;
-	//reduce
-	parser->lrTable[2][111].LRTableFuncP = LRReduce;
-	parser->lrTable[2][111].actionParam = 30;
-	//reduce
-	parser->lrTable[3][111].LRTableFuncP = LRReduce;
-	parser->lrTable[3][111].actionParam = 30;
-	//reduce
-	parser->lrTable[4][111].LRTableFuncP = LRReduce;
-	parser->lrTable[4][111].actionParam = 30;
-	//reduce
-	parser->lrTable[5][111].LRTableFuncP = LRReduce;
-	parser->lrTable[5][111].actionParam = 30;
-	//reduce
-	parser->lrTable[3][111].LRTableFuncP = LRReduce;
-	parser->lrTable[3][111].actionParam = 30;
-	//reduce
-	parser->lrTable[8][111].LRTableFuncP = LRReduce;
-	parser->lrTable[8][111].actionParam = 30;
-	//reduce
-	parser->lrTable[11][111].LRTableFuncP = LRReduce;
-	parser->lrTable[11][111].actionParam = 30;
-	//reduce
-	parser->lrTable[14][111].LRTableFuncP = LRReduce;
-	parser->lrTable[14][111].actionParam = 30;
-	//reduce
-	parser->lrTable[16][111].LRTableFuncP = LRReduce;
-	parser->lrTable[16][111].actionParam = 30;
-	//reduce
-	parser->lrTable[18][111].LRTableFuncP = LRReduce;
-	parser->lrTable[18][111].actionParam = 30;
-	//reduce
-	parser->lrTable[21][111].LRTableFuncP = LRReduce;
-	parser->lrTable[21][111].actionParam = 30;
-	//reduce
-	parser->lrTable[36][111].LRTableFuncP = LRReduce;
-	parser->lrTable[36][111].actionParam = 30;
-	//reduce
-	parser->lrTable[37][111].LRTableFuncP = LRReduce;
-	parser->lrTable[37][111].actionParam = 30;
-	//reduce
-	parser->lrTable[45][111].LRTableFuncP = LRReduce;
-	parser->lrTable[45][111].actionParam = 30;
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
 	//shift
-	parser->lrTable[29][112].LRTableFuncP = LRShift;
-	parser->lrTable[29][112].actionParam = 1;
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
 	//shift
-	parser->lrTable[30][112].LRTableFuncP = LRShift;
-	parser->lrTable[30][112].actionParam = 2;
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
 	//shift
-	parser->lrTable[31][112].LRTableFuncP = LRShift;
-	parser->lrTable[31][112].actionParam = 3;
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
 	//shift
-	parser->lrTable[32][112].LRTableFuncP = LRShift;
-	parser->lrTable[32][112].actionParam = 4;
+	parser->lrTable[44][35].LRTableFuncP = LRShift;
+	parser->lrTable[44][35].actionParam = 136;
 	//shift
-	parser->lrTable[33][112].LRTableFuncP = LRShift;
-	parser->lrTable[33][112].actionParam = 5;
+	parser->lrTable[49][35].LRTableFuncP = LRShift;
+	parser->lrTable[49][35].actionParam = 137;
 	//shift
-	parser->lrTable[38][112].LRTableFuncP = LRShift;
-	parser->lrTable[38][112].actionParam = 6;
+	parser->lrTable[50][35].LRTableFuncP = LRShift;
+	parser->lrTable[50][35].actionParam = 138;
 	//shift
-	parser->lrTable[39][112].LRTableFuncP = LRShift;
-	parser->lrTable[39][112].actionParam = 7;
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
 	//shift
-	parser->lrTable[40][112].LRTableFuncP = LRShift;
-	parser->lrTable[40][112].actionParam = 8;
-	//reduce
-	parser->lrTable[23][112].LRTableFuncP = LRReduce;
-	parser->lrTable[23][112].actionParam = 4;
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
+	//goto
+	parser->lrTable[statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement+TOTAL_TOKENS][35].actionParam = 167;
+	//goto
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 144;
+	//goto
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].actionParam = 145;
+	//goto
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].actionParam = 146;
+	//goto
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
+	//goto
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
 	//goto
-	parser->lrTable[StmtList+TOTAL_TOKENS][112].LRTableFuncP = LRGoto;
-	parser->lrTable[StmtList+TOTAL_TOKENS][112].actionParam = 115;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
 	//goto
-	parser->lrTable[Stmt+TOTAL_TOKENS][112].LRTableFuncP = LRGoto;
-	parser->lrTable[Stmt+TOTAL_TOKENS][112].actionParam = 12;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
 	//goto
-	parser->lrTable[Decl+TOTAL_TOKENS][112].LRTableFuncP = LRGoto;
-	parser->lrTable[Decl+TOTAL_TOKENS][112].actionParam = 13;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
 	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][112].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][112].actionParam = 14;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
 	//goto
-	parser->lrTable[IfStmt+TOTAL_TOKENS][112].LRTableFuncP = LRGoto;
-	parser->lrTable[IfStmt+TOTAL_TOKENS][112].actionParam = 15;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
 	//goto
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][112].LRTableFuncP = LRGoto;
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][112].actionParam = 16;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//shift
-	parser->lrTable[45][113].LRTableFuncP = LRShift;
-	parser->lrTable[45][113].actionParam = 116;
+	parser->lrTable[4][35].LRTableFuncP = LRShift;
+	parser->lrTable[4][35].actionParam = 19;
 	//shift
-	parser->lrTable[29][114].LRTableFuncP = LRShift;
-	parser->lrTable[29][114].actionParam = 1;
+	parser->lrTable[7][35].LRTableFuncP = LRShift;
+	parser->lrTable[7][35].actionParam = 20;
 	//shift
-	parser->lrTable[30][114].LRTableFuncP = LRShift;
-	parser->lrTable[30][114].actionParam = 2;
+	parser->lrTable[8][35].LRTableFuncP = LRShift;
+	parser->lrTable[8][35].actionParam = 21;
 	//shift
-	parser->lrTable[31][114].LRTableFuncP = LRShift;
-	parser->lrTable[31][114].actionParam = 3;
+	parser->lrTable[10][35].LRTableFuncP = LRShift;
+	parser->lrTable[10][35].actionParam = 22;
 	//shift
-	parser->lrTable[32][114].LRTableFuncP = LRShift;
-	parser->lrTable[32][114].actionParam = 4;
+	parser->lrTable[11][35].LRTableFuncP = LRShift;
+	parser->lrTable[11][35].actionParam = 23;
 	//shift
-	parser->lrTable[33][114].LRTableFuncP = LRShift;
-	parser->lrTable[33][114].actionParam = 5;
+	parser->lrTable[25][35].LRTableFuncP = LRShift;
+	parser->lrTable[25][35].actionParam = 24;
 	//shift
-	parser->lrTable[38][114].LRTableFuncP = LRShift;
-	parser->lrTable[38][114].actionParam = 6;
+	parser->lrTable[29][35].LRTableFuncP = LRShift;
+	parser->lrTable[29][35].actionParam = 25;
 	//shift
-	parser->lrTable[39][114].LRTableFuncP = LRShift;
-	parser->lrTable[39][114].actionParam = 7;
+	parser->lrTable[31][35].LRTableFuncP = LRShift;
+	parser->lrTable[31][35].actionParam = 123;
 	//shift
-	parser->lrTable[40][114].LRTableFuncP = LRShift;
-	parser->lrTable[40][114].actionParam = 8;
-	//reduce
-	parser->lrTable[23][114].LRTableFuncP = LRReduce;
-	parser->lrTable[23][114].actionParam = 4;
+	parser->lrTable[35][35].LRTableFuncP = LRShift;
+	parser->lrTable[35][35].actionParam = 26;
+	//shift
+	parser->lrTable[36][35].LRTableFuncP = LRShift;
+	parser->lrTable[36][35].actionParam = 27;
+	//shift
+	parser->lrTable[37][35].LRTableFuncP = LRShift;
+	parser->lrTable[37][35].actionParam = 28;
+	//shift
+	parser->lrTable[38][35].LRTableFuncP = LRShift;
+	parser->lrTable[38][35].actionParam = 29;
+	//shift
+	parser->lrTable[39][35].LRTableFuncP = LRShift;
+	parser->lrTable[39][35].actionParam = 30;
+	//shift
+	parser->lrTable[44][35].LRTableFuncP = LRShift;
+	parser->lrTable[44][35].actionParam = 136;
+	//shift
+	parser->lrTable[49][35].LRTableFuncP = LRShift;
+	parser->lrTable[49][35].actionParam = 137;
+	//shift
+	parser->lrTable[50][35].LRTableFuncP = LRShift;
+	parser->lrTable[50][35].actionParam = 138;
+	//shift
+	parser->lrTable[56][35].LRTableFuncP = LRShift;
+	parser->lrTable[56][35].actionParam = 139;
+	//shift
+	parser->lrTable[51][35].LRTableFuncP = LRShift;
+	parser->lrTable[51][35].actionParam = 31;
 	//goto
-	parser->lrTable[StmtList+TOTAL_TOKENS][114].LRTableFuncP = LRGoto;
-	parser->lrTable[StmtList+TOTAL_TOKENS][114].actionParam = 117;
+	parser->lrTable[statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[statement+TOTAL_TOKENS][35].actionParam = 168;
 	//goto
-	parser->lrTable[Stmt+TOTAL_TOKENS][114].LRTableFuncP = LRGoto;
-	parser->lrTable[Stmt+TOTAL_TOKENS][114].actionParam = 12;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression_statement+TOTAL_TOKENS][35].actionParam = 144;
 	//goto
-	parser->lrTable[Decl+TOTAL_TOKENS][114].LRTableFuncP = LRGoto;
-	parser->lrTable[Decl+TOTAL_TOKENS][114].actionParam = 13;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[selection_statement+TOTAL_TOKENS][35].actionParam = 145;
 	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][114].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][114].actionParam = 14;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[iteration_statement+TOTAL_TOKENS][35].actionParam = 146;
 	//goto
-	parser->lrTable[IfStmt+TOTAL_TOKENS][114].LRTableFuncP = LRGoto;
-	parser->lrTable[IfStmt+TOTAL_TOKENS][114].actionParam = 15;
+	parser->lrTable[expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[expression+TOTAL_TOKENS][35].actionParam = 147;
 	//goto
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][114].LRTableFuncP = LRGoto;
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][114].actionParam = 16;
-	//shift
-	parser->lrTable[23][115].LRTableFuncP = LRShift;
-	parser->lrTable[23][115].actionParam = 118;
-	//shift
-	parser->lrTable[40][116].LRTableFuncP = LRShift;
-	parser->lrTable[40][116].actionParam = 8;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[assignment_expression+TOTAL_TOKENS][35].actionParam = 33;
 	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][116].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][116].actionParam = 119;
-	//shift
-	parser->lrTable[23][117].LRTableFuncP = LRShift;
-	parser->lrTable[23][117].actionParam = 120;
-	//shift
-	parser->lrTable[35][118].LRTableFuncP = LRShift;
-	parser->lrTable[35][118].actionParam = 121;
-	//reduce
-	parser->lrTable[41][118].LRTableFuncP = LRReduce;
-	parser->lrTable[41][118].actionParam = 56;
-	//reduce
-	parser->lrTable[23][118].LRTableFuncP = LRReduce;
-	parser->lrTable[23][118].actionParam = 56;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[conditional_expression+TOTAL_TOKENS][35].actionParam = 34;
+	//goto
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_or_expression+TOTAL_TOKENS][35].actionParam = 35;
+	//goto
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[logical_and_expression+TOTAL_TOKENS][35].actionParam = 36;
+	//goto
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_or_expression+TOTAL_TOKENS][35].actionParam = 37;
+	//goto
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_xor_expression+TOTAL_TOKENS][35].actionParam = 38;
+	//goto
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[bitwise_and_expression+TOTAL_TOKENS][35].actionParam = 39;
+	//goto
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[equality_expression+TOTAL_TOKENS][35].actionParam = 40;
+	//goto
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[relational_expression+TOTAL_TOKENS][35].actionParam = 41;
+	//goto
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[additive_expression+TOTAL_TOKENS][35].actionParam = 43;
+	//goto
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[multiplicative_expression+TOTAL_TOKENS][35].actionParam = 44;
+	//goto
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_expression+TOTAL_TOKENS][35].actionParam = 45;
+	//goto
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[unary_operator+TOTAL_TOKENS][35].actionParam = 46;
+	//goto
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].LRTableFuncP = LRGoto;
+	parser->lrTable[postfix_expression+TOTAL_TOKENS][35].actionParam = 47;
 	//reduce
-	parser->lrTable[29][118].LRTableFuncP = LRReduce;
-	parser->lrTable[29][118].actionParam = 56;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 37;
 	//reduce
-	parser->lrTable[30][118].LRTableFuncP = LRReduce;
-	parser->lrTable[30][118].actionParam = 56;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 37;
 	//reduce
-	parser->lrTable[31][118].LRTableFuncP = LRReduce;
-	parser->lrTable[31][118].actionParam = 56;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 37;
 	//reduce
-	parser->lrTable[32][118].LRTableFuncP = LRReduce;
-	parser->lrTable[32][118].actionParam = 56;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 37;
 	//reduce
-	parser->lrTable[33][118].LRTableFuncP = LRReduce;
-	parser->lrTable[33][118].actionParam = 56;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 37;
 	//reduce
-	parser->lrTable[38][118].LRTableFuncP = LRReduce;
-	parser->lrTable[38][118].actionParam = 56;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 37;
 	//reduce
-	parser->lrTable[39][118].LRTableFuncP = LRReduce;
-	parser->lrTable[39][118].actionParam = 56;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 37;
 	//reduce
-	parser->lrTable[40][118].LRTableFuncP = LRReduce;
-	parser->lrTable[40][118].actionParam = 56;
-	//shift
-	parser->lrTable[21][119].LRTableFuncP = LRShift;
-	parser->lrTable[21][119].actionParam = 122;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 37;
 	//reduce
-	parser->lrTable[41][120].LRTableFuncP = LRReduce;
-	parser->lrTable[41][120].actionParam = 59;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 37;
 	//reduce
-	parser->lrTable[23][120].LRTableFuncP = LRReduce;
-	parser->lrTable[23][120].actionParam = 59;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 37;
 	//reduce
-	parser->lrTable[29][120].LRTableFuncP = LRReduce;
-	parser->lrTable[29][120].actionParam = 59;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 37;
 	//reduce
-	parser->lrTable[30][120].LRTableFuncP = LRReduce;
-	parser->lrTable[30][120].actionParam = 59;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 37;
 	//reduce
-	parser->lrTable[31][120].LRTableFuncP = LRReduce;
-	parser->lrTable[31][120].actionParam = 59;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 37;
 	//reduce
-	parser->lrTable[32][120].LRTableFuncP = LRReduce;
-	parser->lrTable[32][120].actionParam = 59;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 37;
 	//reduce
-	parser->lrTable[33][120].LRTableFuncP = LRReduce;
-	parser->lrTable[33][120].actionParam = 59;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 37;
 	//reduce
-	parser->lrTable[38][120].LRTableFuncP = LRReduce;
-	parser->lrTable[38][120].actionParam = 59;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 37;
 	//reduce
-	parser->lrTable[39][120].LRTableFuncP = LRReduce;
-	parser->lrTable[39][120].actionParam = 59;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 37;
 	//reduce
-	parser->lrTable[40][120].LRTableFuncP = LRReduce;
-	parser->lrTable[40][120].actionParam = 59;
-	//shift
-	parser->lrTable[22][121].LRTableFuncP = LRShift;
-	parser->lrTable[22][121].actionParam = 123;
-	//shift
-	parser->lrTable[22][122].LRTableFuncP = LRShift;
-	parser->lrTable[22][122].actionParam = 124;
-	//shift
-	parser->lrTable[29][123].LRTableFuncP = LRShift;
-	parser->lrTable[29][123].actionParam = 1;
-	//shift
-	parser->lrTable[30][123].LRTableFuncP = LRShift;
-	parser->lrTable[30][123].actionParam = 2;
-	//shift
-	parser->lrTable[31][123].LRTableFuncP = LRShift;
-	parser->lrTable[31][123].actionParam = 3;
-	//shift
-	parser->lrTable[32][123].LRTableFuncP = LRShift;
-	parser->lrTable[32][123].actionParam = 4;
-	//shift
-	parser->lrTable[33][123].LRTableFuncP = LRShift;
-	parser->lrTable[33][123].actionParam = 5;
-	//shift
-	parser->lrTable[38][123].LRTableFuncP = LRShift;
-	parser->lrTable[38][123].actionParam = 6;
-	//shift
-	parser->lrTable[39][123].LRTableFuncP = LRShift;
-	parser->lrTable[39][123].actionParam = 7;
-	//shift
-	parser->lrTable[40][123].LRTableFuncP = LRShift;
-	parser->lrTable[40][123].actionParam = 8;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 37;
 	//reduce
-	parser->lrTable[23][123].LRTableFuncP = LRReduce;
-	parser->lrTable[23][123].actionParam = 4;
-	//goto
-	parser->lrTable[StmtList+TOTAL_TOKENS][123].LRTableFuncP = LRGoto;
-	parser->lrTable[StmtList+TOTAL_TOKENS][123].actionParam = 125;
-	//goto
-	parser->lrTable[Stmt+TOTAL_TOKENS][123].LRTableFuncP = LRGoto;
-	parser->lrTable[Stmt+TOTAL_TOKENS][123].actionParam = 12;
-	//goto
-	parser->lrTable[Decl+TOTAL_TOKENS][123].LRTableFuncP = LRGoto;
-	parser->lrTable[Decl+TOTAL_TOKENS][123].actionParam = 13;
-	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][123].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][123].actionParam = 14;
-	//goto
-	parser->lrTable[IfStmt+TOTAL_TOKENS][123].LRTableFuncP = LRGoto;
-	parser->lrTable[IfStmt+TOTAL_TOKENS][123].actionParam = 15;
-	//goto
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][123].LRTableFuncP = LRGoto;
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][123].actionParam = 16;
-	//shift
-	parser->lrTable[29][124].LRTableFuncP = LRShift;
-	parser->lrTable[29][124].actionParam = 1;
-	//shift
-	parser->lrTable[30][124].LRTableFuncP = LRShift;
-	parser->lrTable[30][124].actionParam = 2;
-	//shift
-	parser->lrTable[31][124].LRTableFuncP = LRShift;
-	parser->lrTable[31][124].actionParam = 3;
-	//shift
-	parser->lrTable[32][124].LRTableFuncP = LRShift;
-	parser->lrTable[32][124].actionParam = 4;
-	//shift
-	parser->lrTable[33][124].LRTableFuncP = LRShift;
-	parser->lrTable[33][124].actionParam = 5;
-	//shift
-	parser->lrTable[38][124].LRTableFuncP = LRShift;
-	parser->lrTable[38][124].actionParam = 6;
-	//shift
-	parser->lrTable[39][124].LRTableFuncP = LRShift;
-	parser->lrTable[39][124].actionParam = 7;
-	//shift
-	parser->lrTable[40][124].LRTableFuncP = LRShift;
-	parser->lrTable[40][124].actionParam = 8;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 37;
 	//reduce
-	parser->lrTable[23][124].LRTableFuncP = LRReduce;
-	parser->lrTable[23][124].actionParam = 4;
-	//goto
-	parser->lrTable[StmtList+TOTAL_TOKENS][124].LRTableFuncP = LRGoto;
-	parser->lrTable[StmtList+TOTAL_TOKENS][124].actionParam = 126;
-	//goto
-	parser->lrTable[Stmt+TOTAL_TOKENS][124].LRTableFuncP = LRGoto;
-	parser->lrTable[Stmt+TOTAL_TOKENS][124].actionParam = 12;
-	//goto
-	parser->lrTable[Decl+TOTAL_TOKENS][124].LRTableFuncP = LRGoto;
-	parser->lrTable[Decl+TOTAL_TOKENS][124].actionParam = 13;
-	//goto
-	parser->lrTable[Assi+TOTAL_TOKENS][124].LRTableFuncP = LRGoto;
-	parser->lrTable[Assi+TOTAL_TOKENS][124].actionParam = 14;
-	//goto
-	parser->lrTable[IfStmt+TOTAL_TOKENS][124].LRTableFuncP = LRGoto;
-	parser->lrTable[IfStmt+TOTAL_TOKENS][124].actionParam = 15;
-	//goto
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][124].LRTableFuncP = LRGoto;
-	parser->lrTable[LoopStmt+TOTAL_TOKENS][124].actionParam = 16;
-	//shift
-	parser->lrTable[23][125].LRTableFuncP = LRShift;
-	parser->lrTable[23][125].actionParam = 127;
-	//shift
-	parser->lrTable[23][126].LRTableFuncP = LRShift;
-	parser->lrTable[23][126].actionParam = 128;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 37;
 	//reduce
-	parser->lrTable[41][127].LRTableFuncP = LRReduce;
-	parser->lrTable[41][127].actionParam = 57;
+	parser->lrTable[4][35].LRTableFuncP = LRReduce;
+	parser->lrTable[4][35].actionParam = 39;
 	//reduce
-	parser->lrTable[23][127].LRTableFuncP = LRReduce;
-	parser->lrTable[23][127].actionParam = 57;
+	parser->lrTable[7][35].LRTableFuncP = LRReduce;
+	parser->lrTable[7][35].actionParam = 39;
 	//reduce
-	parser->lrTable[29][127].LRTableFuncP = LRReduce;
-	parser->lrTable[29][127].actionParam = 57;
+	parser->lrTable[8][35].LRTableFuncP = LRReduce;
+	parser->lrTable[8][35].actionParam = 39;
 	//reduce
-	parser->lrTable[30][127].LRTableFuncP = LRReduce;
-	parser->lrTable[30][127].actionParam = 57;
+	parser->lrTable[10][35].LRTableFuncP = LRReduce;
+	parser->lrTable[10][35].actionParam = 39;
 	//reduce
-	parser->lrTable[31][127].LRTableFuncP = LRReduce;
-	parser->lrTable[31][127].actionParam = 57;
+	parser->lrTable[11][35].LRTableFuncP = LRReduce;
+	parser->lrTable[11][35].actionParam = 39;
 	//reduce
-	parser->lrTable[32][127].LRTableFuncP = LRReduce;
-	parser->lrTable[32][127].actionParam = 57;
+	parser->lrTable[25][35].LRTableFuncP = LRReduce;
+	parser->lrTable[25][35].actionParam = 39;
 	//reduce
-	parser->lrTable[33][127].LRTableFuncP = LRReduce;
-	parser->lrTable[33][127].actionParam = 57;
+	parser->lrTable[29][35].LRTableFuncP = LRReduce;
+	parser->lrTable[29][35].actionParam = 39;
 	//reduce
-	parser->lrTable[38][127].LRTableFuncP = LRReduce;
-	parser->lrTable[38][127].actionParam = 57;
+	parser->lrTable[31][35].LRTableFuncP = LRReduce;
+	parser->lrTable[31][35].actionParam = 39;
 	//reduce
-	parser->lrTable[39][127].LRTableFuncP = LRReduce;
-	parser->lrTable[39][127].actionParam = 57;
+	parser->lrTable[32][35].LRTableFuncP = LRReduce;
+	parser->lrTable[32][35].actionParam = 39;
 	//reduce
-	parser->lrTable[40][127].LRTableFuncP = LRReduce;
-	parser->lrTable[40][127].actionParam = 57;
+	parser->lrTable[35][35].LRTableFuncP = LRReduce;
+	parser->lrTable[35][35].actionParam = 39;
 	//reduce
-	parser->lrTable[41][128].LRTableFuncP = LRReduce;
-	parser->lrTable[41][128].actionParam = 58;
+	parser->lrTable[36][35].LRTableFuncP = LRReduce;
+	parser->lrTable[36][35].actionParam = 39;
 	//reduce
-	parser->lrTable[23][128].LRTableFuncP = LRReduce;
-	parser->lrTable[23][128].actionParam = 58;
+	parser->lrTable[37][35].LRTableFuncP = LRReduce;
+	parser->lrTable[37][35].actionParam = 39;
 	//reduce
-	parser->lrTable[29][128].LRTableFuncP = LRReduce;
-	parser->lrTable[29][128].actionParam = 58;
+	parser->lrTable[38][35].LRTableFuncP = LRReduce;
+	parser->lrTable[38][35].actionParam = 39;
 	//reduce
-	parser->lrTable[30][128].LRTableFuncP = LRReduce;
-	parser->lrTable[30][128].actionParam = 58;
+	parser->lrTable[39][35].LRTableFuncP = LRReduce;
+	parser->lrTable[39][35].actionParam = 39;
 	//reduce
-	parser->lrTable[31][128].LRTableFuncP = LRReduce;
-	parser->lrTable[31][128].actionParam = 58;
+	parser->lrTable[44][35].LRTableFuncP = LRReduce;
+	parser->lrTable[44][35].actionParam = 39;
 	//reduce
-	parser->lrTable[32][128].LRTableFuncP = LRReduce;
-	parser->lrTable[32][128].actionParam = 58;
+	parser->lrTable[46][35].LRTableFuncP = LRReduce;
+	parser->lrTable[46][35].actionParam = 39;
 	//reduce
-	parser->lrTable[33][128].LRTableFuncP = LRReduce;
-	parser->lrTable[33][128].actionParam = 58;
+	parser->lrTable[49][35].LRTableFuncP = LRReduce;
+	parser->lrTable[49][35].actionParam = 39;
 	//reduce
-	parser->lrTable[38][128].LRTableFuncP = LRReduce;
-	parser->lrTable[38][128].actionParam = 58;
+	parser->lrTable[50][35].LRTableFuncP = LRReduce;
+	parser->lrTable[50][35].actionParam = 39;
 	//reduce
-	parser->lrTable[39][128].LRTableFuncP = LRReduce;
-	parser->lrTable[39][128].actionParam = 58;
+	parser->lrTable[56][35].LRTableFuncP = LRReduce;
+	parser->lrTable[56][35].actionParam = 39;
 	//reduce
-	parser->lrTable[40][128].LRTableFuncP = LRReduce;
-	parser->lrTable[40][128].actionParam = 58;
+	parser->lrTable[51][35].LRTableFuncP = LRReduce;
+	parser->lrTable[51][35].actionParam = 39;
 }

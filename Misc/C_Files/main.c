@@ -40,8 +40,10 @@ Lexer* initTokenList(){
 // The main function serves as the entry point to the program.
 // It initializes a lexer and a parser, and generates a parse tree.
 int main() {
-    Lexer* lexer = initLexer(FILENAME);
-    Parser* parser = initParser(lexer);
-    generateTree(parser);
+    //testLexer();
+    //Lexer* lexer = initLexer(FILENAME);
+    //Parser* parser = initParser(lexer);
+    //generateTree(parser);
+    //printTree(parser->treeHead);
     return 0;
 }

@@ -68,11 +68,12 @@ Parser* initParser(Lexer* lexer){
 	memcpy(parser->reduceGrammerBy, tempRuleReduceBy, sizeof(tempRuleReduceBy));
 	memcpy(parser->ReduceGrammerRule, tempRules, sizeof(tempRules));
 
-    printf("Parser Initialized Succesfully! XD\n");
+    printf("Parser Initialized Succesfully! XD");
     return parser;
 }
 
 void generateTree(Parser* parser){
+	parser->isError = 0;
 	printf("\n");
 	StackValue val1;
 	int val2;
