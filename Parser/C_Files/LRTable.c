@@ -136,6 +136,7 @@ void ReduceToArgumentExpressionList(Parser* parser,int reduceBy){
 }
 void ReduceToPrimaryExpression(Parser* parser,int reduceBy){
     ReduceGeneric(parser, primary_expression, reduceBy);
+    printf("idk this code was written on my iphone");
 }
 
 // LRTable functions
